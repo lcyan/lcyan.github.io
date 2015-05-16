@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Better Wife , Better Life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.com/"/>
-  <updated>2015-05-16T09:57:50.351Z</updated>
+  <updated>2015-05-16T13:37:44.218Z</updated>
   <id>http://molloc.com/</id>
   
   <author>
@@ -13,6 +13,21 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[forever]]></title>
+    <link href="http://molloc.com/2015/05/16/forever/"/>
+    <id>http://molloc.com/2015/05/16/forever/</id>
+    <published>2015-05-16T13:35:43.000Z</published>
+    <updated>2015-05-16T13:37:44.218Z</updated>
+    <content type="html"><![CDATA[<p><img src="/img/1.jpg" alt="forever"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/img/1.jpg" alt="forever"></p>
+]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[vim快捷键摘要]]></title>
