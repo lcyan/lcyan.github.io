@@ -80,6 +80,64 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/05/16/vim快捷键摘要/" title="vim快捷键摘要" itemprop="url">vim快捷键摘要</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Lcyan" target="_blank" itemprop="author">Lcyan</a>
+		
+  <p class="article-time">
+    <time datetime="2015-05-16T09:56:52.000Z" itemprop="datePublished"> 发表于 2015-05-16</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <div class="col-xs-12 col-md-9 main"><br><br><h2 id="articleHeader0">一般模式常用快捷键</h2><br><br><div class="x-scroll"><table width="95%"><tbody><br><tr><td colspan="2">移动光标的方法</td></tr><br><tr><br><td width="180">h 或 向左箭头键(←)</td><br>        <td>光标向左移动一个字符</td><br></tr><br><tr><br><td>j 或 向下箭头键(↓)</td><br>        <td>光标向下移动一个字符</td><br></tr><br><tr><br><td>k 或 向上箭头键(↑)</td><br>        <td>光标向上移动一个字符</td><br></tr><br><tr><br><td>l 或 向右箭头键(→)</td><br>        <td>光标向右移动一个字符</td><br></tr><br><tr><td colspan="2"><br>        如果你将右手放在键盘上的话，你会发现 hjkl 是排列在一起的，因此可以使用这四个按钮来移动光标。<br>        如果想要进行多次移动的话，例如向下移动 30 行，可以使用 “30j” 或 “30↓” 的组合按键，<br>        亦即加上想要进行的次数(数字)后，按下动作即可！</td></tr><br><tr><br><td>[Ctrl] + [f]</td><br>        <td>屏幕『向下』移动一页，相当于 [Page Down]按键<br>        (<span>常用</span>)</td><br></tr><br><tr><br><td>[Ctrl] + [b]</td><br>        <td>屏幕『向上』移动一页，相当于 [Page Up] 按键<br>        (<span>常用</span>)</td><br></tr><br><tr><br><td>[Ctrl] + [d]</td><br>        <td>屏幕『向下』移动半页</td><br></tr><br><tr><br><td>[Ctrl] + [u]</td><br>        <td>屏幕『向上』移动半页</td><br></tr><br><tr><br><td>+</td><br>        <td>光标移动到非空格符的下一列</td><br></tr><br><tr><br><td>-</td><br>        <td>光标移动到非空格符的上一列</td><br></tr><br><tr><br><td>n&lt;space&gt;</td><br>        <td>那个 n 表示『数字』，例如 20 。按下数字后再按空格键，光标会向右移动这一行的 n<br>        个字符。例如 20&lt;space&gt; 则光标会向后面移动 20 个字符距离。</td><br></tr><br><tr><br><td>0 或功能键[Home]</td><br>        <td>这是数字『 0 』：移动到这一行的最前面字符处<br>        (<span>常用</span>)</td><br></tr><br><tr><br><td>$ 或功能键[End]</td><br>        <td>移动到这一行的最后面字符处(<span>常用</span>)</td><br></tr><br><tr><br><td>H</td><br>        <td>光标移动到这个屏幕的最上方那一行的第一个字符</td><br></tr><br><tr><br><td>M</td><br>        <td>光标移动到这个屏幕的中央那一行的第一个字符</td><br></tr><br><tr><br><td>L</td><br>        <td>光标移动到这个屏幕的最下方那一行的第一个字符</td><br></tr><br><tr><br><td>G</td><br>        <td>移动到这个档案的最后一行(<span>常用</span>)</td><br></tr><br><tr><br><td>nG</td><br>        <td>n 为数字。移动到这个档案的第 n 行。例如 20G 则会移动到这个档案的第 20<br>        行(可配合 :set nu)</td><br></tr><br><tr><br><td>gg</td><br>        <td>移动到这个档案的第一行，相当于 1G 啊！<br>        (<span>常用</span>)</td><br></tr><br><tr><br><td>n&lt;Enter&gt;</td><br>        <td>n 为数字。光标向下移动 n 行(<span>常用</span>)</td><br></tr><br><tr><td colspan="2">搜寻与取代</td></tr><br><tr><br><td>/word</td><br>        <td>向光标之下寻找一个名称为 word 的字符串。例如要在档案内搜寻 vbird<br>        这个字符串，就输入 /vbird 即可！<br>        (<span>常用</span>)</td><br></tr><br><tr><br><td>?word</td><br>        <td>向光标之上寻找一个字符串名称为 word 的字符串。</td><br></tr><br><tr><br><td>n</td><br>        <td>这个 n 是英文按键。代表『<u>重复前一个搜寻的动作</u>』。举例来说，<br>        如果刚刚我们执行 /vbird 去向下搜寻 vbird 这个字符串，则按下 n 后，会向下继续搜寻下一个名称为 vbird<br>        的字符串。如果是执行 ?vbird 的话，那么按下 n 则会向上继续搜寻名称为 vbird 的字符串！</td><br></tr><br><tr><br><td>N</td><br>        <td>这个 N 是英文按键。与 n 刚好相反，为『反向』进行前一个搜寻动作。<br>        例如 /vbird 后，按下 N 则表示『向上』搜寻 vbird 。</td><br></tr><br><tr><td colspan="2"><br>        使用 /word 配合 n 及 N 是非常有帮助的！可以让你重复的找到一些你搜寻的关键词！<br>    </td></tr><br><tr><br><td>:n1,n2s/word1/word2/g</td><br>        <td>n1 与 n2 为数字。在第 n1 与 n2 行之间寻找 word1 这个字符串，并将该字符串取代为<br>        word2 ！举例来说，在 100 到 200 行之间搜寻 vbird 并取代为 VBIRD 则：<br><br>        『:100,200s/vbird/VBIRD/g』。(<span>常用</span>)</td><br></tr><br><tr><br><td>:1,$s/word1/word2/g</td><br>        <td>从第一行到最后一行寻找 word1 字符串，并将该字符串取代为<br>        word2 ！(<span>常用</span>)</td><br></tr><br><tr><br><td>:1,$s/word1/word2/gc</td><br>        <td>从第一行到最后一行寻找 word1 字符串，并将该字符串取代为<br>        word2 ！且在取代前显示提示字符给用户确认 (confirm)<br>        是否需要取代！(<span>常用</span>)</td><br></tr><br><tr><td colspan="2">删除、复制与贴上</td></tr><br><tr><br><td>x, X</td><br>        <td>在一行字当中，x 为向后删除一个字符 (相当于 [del] 按键)，<br>         X 为向前删除一个字符(相当于 [backspace] 亦即是退格键)<br>        (<span>常用</span>)</td><br></tr><br><tr><br><td>nx</td><br>        <td>n 为数字，连续向后删除 n 个字符。举例来说，我要连续删除 10 个字符，<br>        『10x』。</td><br></tr><br><tr><br><td>dd</td><br>        <td>删除游标所在的那一整列(<span>常用</span>)</td><br></tr><br><tr><br><td>ndd</td><br>        <td>n 为数字。删除光标所在的向下 n 列，例如 20dd 则是删除 20 列<br>        (<span>常用</span>)</td><br></tr><br><tr><br><td>d1G</td><br>        <td>删除光标所在到第一行的所有数据</td><br></tr><br><tr><br><td>dG</td><br>        <td>删除光标所在到最后一行的所有数据</td><br></tr><br><tr><br><td>d$</td><br>        <td>删除游标所在处，到该行的最后一个字符</td><br></tr><br><tr><br><td>d0</td><br>        <td>那个是数字的 0 ，删除游标所在处，到该行的最前面一个字符</td><br></tr><br><tr><br><td>yy</td><br>        <td>复制游标所在的那一行(<span>常用</span>)</td><br></tr><br><tr><br><td>nyy</td><br>        <td>n 为数字。复制光标所在的向下 n 列，例如 20yy 则是复制 20<br>        列(<span>常用</span>)</td><br></tr><br><tr><br><td>y1G</td><br>        <td>复制游标所在列到第一列的所有数据</td><br></tr><br><tr><br><td>yG</td><br>        <td>复制游标所在列到最后一列的所有数据</td><br></tr><br><tr><br><td>y0</td><br>        <td>复制光标所在的那个字符到该行行首的所有数据</td><br></tr><br><tr><br><td>y$</td><br>        <td>复制光标所在的那个字符到该行行尾的所有数据</td><br></tr><br><tr><br><td>p, P</td><br>        <td>p 为将已复制的数据在光标下一行贴上，P 则为贴在游标上一行！<br>        举例来说，我目前光标在第 20 行，且已经复制了 10 行数据。则按下 p 后，<br>        那 10 行数据会贴在原本的 20 行之后，亦即由 21 行开始贴。但如果是按下 P 呢？<br>        那么原本的第 20 行会被推到变成 30 行。<br>        (<span>常用</span>)</td><br></tr><br><tr><br><td>J</td><br>        <td>将光标所在列与下一列的数据结合成同一列</td><br></tr><br><tr><br><td>c</td><br>        <td>重复删除多个数据，例如向下删除 10 行，[ 10cj ]</td><br></tr><br><tr><br><td>u</td><br>        <td>复原前一个动作。(<span>常用</span>)</td><br></tr><br><tr><br><td>[Ctrl]+r</td><br>        <td>重做上一个动作。(<span>常用</span>)</td><br></tr><br><tr><td colspan="2">这个 u 与 [Ctrl]+r 是很常用的指令！一个是复原，另一个则是重做一次～<br>        利用这两个功能按键，你的编辑，嘿嘿！很快乐的啦！</td></tr><br><tr><br><td>.</td><br>        <td>不要怀疑！这就是小数点！意思是重复前一个动作的意思。<br>        如果你想要重复删除、重复贴上等等动作，按下小数点『.』就好了！<br>        (<span>常用</span>)</td><br></tr><br></tbody></table></div><br><h2 id="articleHeader1">一般模式切换到编辑模式的可用的按钮说明</h2><br><br><div class="x-scroll"><table width="95%"><tbody><br><tr><td colspan="2">进入插入或取代的编辑模式</td></tr><br><tr><br><td width="120">i, I</td><br>        <td>进入插入模式(Insert mode)：<br><br>        i 为『从目前光标所在处插入』， I 为『在目前所在行的第一个非空格符处开始插入』。<br>        (<span>常用</span>)</td><br></tr><br><tr><br><td>a, A</td><br>        <td>进入插入模式(Insert mode)：<br><br>        a 为『从目前光标所在的下一个字符处开始插入』， A<br>        为『从光标所在行的最后一个字符处开始插入』。(<span>常用</span>)</td><br></tr><br><tr><br><td>o, O</td><br>        <td>进入插入模式(Insert mode)：<br><br>        这是英文字母 o 的大小写。o 为『在目前光标所在的下一行处插入新的一行』；<br>        O 为在目前光标所在处的上一行插入新的一行！(<span>常用</span>)</td><br></tr><br><tr><br><td>r, R</td><br>        <td>进入取代模式(Replace mode)：<br><br>        r 只会取代光标所在的那一个字符一次；R会一直取代光标所在的文字，直到按下<br>        ESC 为止；(<span>常用</span>)</td><br></tr><br><tr><td colspan="2">上面这些按键中，在 vi 画面的左下角处会出现『—INSERT—』或『—REPLACE—』的字样。<br>        由名称就知道该动作了吧！！特别注意的是，我们上面也提过了，你想要在档案里面输入字符时，<br>        一定要在左下角处看到 INSERT 或 REPLACE 才能输入喔！</td></tr><br><tr><br><td>[Esc]</td><br>        <td>退出编辑模式，回到一般模式中(<span>常用</span>)</td><br></tr><br></tbody></table></div><br><h2 id="articleHeader2">一般模式切换到指令列模式的可用的按钮说明</h2><br><br><div class="x-scroll"><table width="95%"><tbody><br><tr><td colspan="2">指令列的储存、离开等指令</td></tr><br><tr><br><td width="160">:w</td><br>        <td>将编辑的数据写入硬盘档案中(<span>常用</span>)</td><br></tr><br><tr><br><td>:w!</td><br>        <td>若文件属性为『只读』时，强制写入该档案。不过，到底能不能写入，<br>        还是跟你对该档案的档案权限有关啊！</td><br></tr><br><tr><br><td>:q</td><br>        <td>离开 vi (<span>常用</span>)</td><br></tr><br><tr><br><td>:q!</td><br>        <td>若曾修改过档案，又不想储存，使用 ! 为强制离开不储存档案。</td><br></tr><br><tr><td colspan="2">注意一下啊，那个惊叹号 (!) 在 vi 当中，常常具有『强制』的意思～</td></tr><br><tr><br><td>:wq</td><br>        <td>储存后离开，若为 :wq! 则为强制储存后离开<br>        (<span>常用</span>)</td><br></tr><br><tr><br><td>ZZ</td><br>        <td>这是大写的 Z 喔！若档案没有更动，则不储存离开，若档案已经被更动过，则储存后离开！</td><br></tr><br><tr><br><td>:w [filename]</td><br>        <td>将编辑的数据储存成另一个档案（类似另存新档）</td><br><iframe id="tmp_downloadhelper_iframe" style="display: none;"></iframe></tr><br><tr><br><td>:r [filename]</td><br>        <td>在编辑的数据中，读入另一个档案的数据。亦即将 『filename』<br>        这个档案内容加到游标所在行后面</td><br></tr><br><tr><br><td>:n1,n2 w [filename]</td><br>        <td>将 n1 到 n2 的内容储存成 filename 这个档案。</td><br></tr><br><tr><br><td>:! command</td><br>        <td>暂时离开 vi 到指令列模式下执行 command 的显示结果！例如<br><br>        『:! ls /home』即可在 vi 当中察看 /home 底下以 ls 输出的档案信息！</td><br></tr><br><tr><td colspan="2">vim 环境的变更</td></tr><br><tr><br><td>:set nu</td><br>        <td>显示行号，设定之后，会在每一行的前缀显示该行的行号</td><br></tr><br><tr><br><td>:set nonu</td><br>        <td>与 set nu 相反，为取消行号！</td><br></tr><br></tbody><br></table><br></div>
+</div>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/linux/">linux</a><a href="/tags/vi/">vi</a><a href="/tags/vim/">vim</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/05/16/vim快捷键摘要/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/05/15/hello-world/" title="Hello Hexo" itemprop="url">Hello Hexo</a>
   </h1>
   <p class="article-author">By
@@ -211,7 +269,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/linux/" title="linux">linux<sup>1</sup></a></li>
+				<li><a href="/tags/linux/" title="linux">linux<sup>2</sup></a></li>
 			
 		
 			
@@ -220,6 +278,14 @@
 		
 			
 				<li><a href="/tags/alias/" title="alias">alias<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/vim/" title="vim">vim<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/vi/" title="vi">vi<sup>1</sup></a></li>
 			
 		
 		</ul>
