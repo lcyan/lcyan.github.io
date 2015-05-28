@@ -308,11 +308,11 @@ nothing, current, upstream, simple, matching</p>
     <link href="http://molloc.com/2015/05/16/forever/"/>
     <id>http://molloc.com/2015/05/16/forever/</id>
     <published>2015-05-16T13:35:43.000Z</published>
-    <updated>2015-05-28T08:03:52.575Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://static.molloc.com/static/img/1.png" target="_blank" rel="external">1.png</a></p>
+    <updated>2015-05-28T08:07:02.455Z</updated>
+    <content type="html"><![CDATA[<p>(http://static.molloc.com/static/img/1.png)</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p><a href="http://static.molloc.com/static/img/1.png" target="_blank" rel="external">1.png</a></p>
+    <![CDATA[<p>(http://static.molloc.com/static/img/1.png)</p>
 ]]>
     </summary>
     
