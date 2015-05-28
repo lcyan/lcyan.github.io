@@ -306,11 +306,11 @@ nothing, current, upstream, simple, matching</p>
     <link href="http://molloc.com/2015/05/16/forever/"/>
     <id>http://molloc.com/2015/05/16/forever/</id>
     <published>2015-05-16T13:35:43.000Z</published>
-    <updated>2015-05-28T07:59:50.058Z</updated>
-    <content type="html"><![CDATA[<p><a href="img/1.png">1.png</a></p>
+    <updated>2015-05-28T08:01:38.586Z</updated>
+    <content type="html"><![CDATA[<p><a href="/img/1.png">1.png</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p><a href="img/1.png">1.png</a></p>
+    <![CDATA[<p><a href="/img/1.png">1.png</a></p>
 ]]>
     </summary>
     
