@@ -100,6 +100,7 @@
 		<h2 id="git_push">git push</h2><p>通常对于一个本地的新建分支，例如<code>git checkout -b develop</code>, 在<code>develop</code>分支<code>commit</code>了代码之后，如果直接执行<code>git push</code>命令，<code>develop</code>分支将不会被<code>push</code>到远程仓库（但此时<code>git push</code>操作有可能会推送一些代码到远程仓库，这取决于我们本地<code>git config</code>配置中的<code>push.default</code>默认行为，下文将会逐一详解）。  </p>
 <p>因此我们至少需要显式指定将要推送的分支名，例如<code>git push origin develop</code>，才能将本地新分支推送到远程仓库。  </p>
 <p>当我们通过显式指定分支名进行初次<code>push</code>操作后，本地有了新的<code>commit</code>，此时执行<code>git push</code>命令会有什么效果呢？  </p>
+<a id="more"></a>
 <p>如果你未曾改动过<code>git config</code>中的<code>push.default</code>属性，根据我们使用的git不同版本（Git 2.0之前或之后），<code>git push</code>通常会有两种截然不同的行为:</p>
 <ol>
 <li>develop分支中本地新增的commit被push到远程仓库</li>
@@ -180,9 +181,9 @@
 
 
 <div class="next">
-<a href="/2015/05/16/forever/"  title="forever">
+<a href="/2015/05/15/hello-world/"  title="Hello Hexo">
  <strong>下一篇：</strong><br/> 
- <span>forever
+ <span>Hello Hexo
 </span>
 </a>
 </div>
@@ -212,7 +213,7 @@
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">7</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">6</span></li></ul>
   </div>
 
 
