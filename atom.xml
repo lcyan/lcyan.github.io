@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Better Wife , Better Life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.com/"/>
-  <updated>2015-05-29T03:10:04.481Z</updated>
+  <updated>2015-05-29T03:23:59.773Z</updated>
   <id>http://molloc.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://molloc.com/2015/05/27/%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/"/>
     <id>http://molloc.com/2015/05/27/考试总结/</id>
     <published>2015-05-27T15:11:32.000Z</published>
-    <updated>2015-05-29T03:10:04.481Z</updated>
+    <updated>2015-05-29T03:23:59.773Z</updated>
     <content type="html"><![CDATA[<ol>
 <li><p>项目团队将不能如期完成一个客户可交付成果,项目经理首先应该 (A)</p>
 <ul>
@@ -28,7 +28,7 @@
 <li>C. 启动奖励体系,以便不会错过期限</li>
 <li><p>D. 搜索风险管理计划,确定应对这项风险的正确措施</p>
 <p>解析:问题处理步骤和理念,顺序是得到实际数据-分析数据=解决问题.</p>
-</li>
+<a id="more"></a></li>
 </ul>
 </li>
 <li><p>在项目施工阶段,供应商处发生火灾,导致原材料的供应延迟了一周,项目经理识别了这个延误的风险,并包含在计划当中.发生这个事件之后,项目经理首先应该(D)</p>
@@ -38,7 +38,7 @@
 <li>C. 更新项目基准</li>
 <li><p><strong>D. 更新风险登记册</strong></p>
 <p>解析: 考点<strong>风险发生的处理步骤</strong>.题干是一个已知-未知的风险,第一步骤根据时间情况更新风险登记册.</p>
-<a id="more"></a></li>
+</li>
 </ul>
 </li>
 <li><p>你是一个跨部门项目的项目经理,有四个部门就内部技术规格难以达成一致,但又必须达成一致.采取折中的办法达成的结果无法让客户满意.你下一步应该做的是(C)</p>
@@ -265,17 +265,7 @@
 <li>B. 将进度变更通知干系人</li>
 <li>C. 启动奖励体系,以便不会错过期限</li>
 <li><p>D. 搜索风险管理计划,确定应对这项风险的正确措施</p>
-<p>解析:问题处理步骤和理念,顺序是得到实际数据-分析数据=解决问题.</p>
-</li>
-</ul>
-</li>
-<li><p>在项目施工阶段,供应商处发生火灾,导致原材料的供应延迟了一周,项目经理识别了这个延误的风险,并包含在计划当中.发生这个事件之后,项目经理首先应该(D)</p>
-<ul>
-<li>A. 执行风险响应计划.</li>
-<li>B. 由于材料延误,要求项目延期.</li>
-<li>C. 更新项目基准</li>
-<li><p><strong>D. 更新风险登记册</strong></p>
-<p>解析: 考点<strong>风险发生的处理步骤</strong>.题干是一个已知-未知的风险,第一步骤根据时间情况更新风险登记册.</p>]]>
+<p>解析:问题处理步骤和理念,顺序是得到实际数据-分析数据=解决问题.</p>]]>
     
     </summary>
     
@@ -335,7 +325,7 @@
     <link href="http://molloc.com/2015/05/22/Git-push%E4%B8%8Epull%E7%9A%84%E9%BB%98%E8%AE%A4%E8%A1%8C%E4%B8%BA/"/>
     <id>http://molloc.com/2015/05/22/Git-push与pull的默认行为/</id>
     <published>2015-05-22T04:20:18.000Z</published>
-    <updated>2015-05-29T03:17:28.779Z</updated>
+    <updated>2015-05-29T03:30:41.275Z</updated>
     <content type="html"><![CDATA[<h2 id="git_push">git push</h2><p>通常对于一个本地的新建分支，例如<code>git checkout -b develop</code>, 在<code>develop</code>分支<code>commit</code>了代码之后，如果直接执行<code>git push</code>命令，<code>develop</code>分支将不会被<code>push</code>到远程仓库（但此时<code>git push</code>操作有可能会推送一些代码到远程仓库，这取决于我们本地<code>git config</code>配置中的<code>push.default</code>默认行为，下文将会逐一详解）。  </p>
 <p>因此我们至少需要显式指定将要推送的分支名，例如<code>git push origin develop</code>，才能将本地新分支推送到远程仓库。  </p>
 <p>当我们通过显式指定分支名进行初次<code>push</code>操作后，本地有了新的<code>commit</code>，此时执行<code>git push</code>命令会有什么效果呢？  </p>
@@ -369,7 +359,7 @@
 <p>当我们未指定当前分支的upstream时，通常<code>git pull</code>操作会得到如下的提示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">There is no tracking information <span class="keyword">for</span> the current branch.</span><br><span class="line">Please specify <span class="built_in">which</span> branch you want to merge with.</span><br><span class="line">See git-pull(<span class="number">1</span>) <span class="keyword">for</span> details</span><br><span class="line">    git pull &lt;remote&gt; &lt;branch&gt;</span><br><span class="line">If you wish to <span class="built_in">set</span> tracking information <span class="keyword">for</span> this branch you can <span class="keyword">do</span> so with:</span><br><span class="line">    git branch --set-upstream-to=origin/&lt;branch&gt; new1</span><br></pre></td></tr></table></figure></p>
 <p><code>git pull</code>的默认行为和git push完全不同。当我们执行git pull的时候，实际上是做了<code>git fetch + git merge</code>操作，fetch操作将会更新本地仓库的remote tracking，也就是refs/remotes中的代码，并不会对refs/heads中本地当前的代码造成影响。</p>
 <p>当我们进行pull的第二个行为merge时，对git来说，如果我们没有设定当前分支的upstream，它并不知道我们要合并哪个分支到当前分支，所以我们需要通过下面的代码指定当前分支的upstream：</p>
-<p><code>git branch --set-upstream-to=origin/&lt;branch&gt; develop</code><br>// 或者git push —set-upstream origin develop<br>实际上，如果我们没有指定upstream，git在merge时会访问git config中当前分支(develop)merge的默认配置，我们可以通过配置下面的内容指定某个分支的默认merge操作<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[branch <span class="string">"develop"</span>]</span><br><span class="line">    remote = origin</span><br><span class="line">    merge = refs/heads/develop // [<span class="number">1</span>]为什么不是refs/remotes/develop?</span><br><span class="line">``` </span><br><span class="line">或者通过<span class="built_in">command</span>-line直接设置：</span><br><span class="line">```bash</span><br><span class="line">git config branch.develop.merge refs/heads/develop</span><br></pre></td></tr></table></figure></p>
+<p><code>git branch --set-upstream-to=origin/&lt;branch&gt; develop</code><br>// 或者git push —set-upstream origin develop<br>实际上，如果我们没有指定upstream，git在merge时会访问git config中当前分支(develop)merge的默认配置，我们可以通过配置下面的内容指定某个分支的默认merge操作<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[branch <span class="string">"develop"</span>]</span><br><span class="line">    remote = origin</span><br><span class="line">    merge = refs/heads/develop // [<span class="number">1</span>] 为什么不是refs/remotes/develop?</span><br><span class="line">``` </span><br><span class="line">或者通过<span class="built_in">command</span>-line直接设置：</span><br><span class="line">```bash</span><br><span class="line">git config branch.develop.merge refs/heads/develop</span><br></pre></td></tr></table></figure></p>
 <p>这样当我们在develop分支git pull时，如果没有指定upstream分支，git将根据我们的config文件去merge origin/develop；如果指定了upstream分支，则会忽略config中的merge默认配置。</p>
 <p>以上就是git push和git pull操作的全部默认行为，如有错误，欢迎斧正</p>
 <p>[1] 为什么merge = refs/heads/develop 而不是refs/remotes/develop?<br>因为这里merge指代的是我们想要merge的远程分支，是remote上的refs/heads/develop，文中即是origin上的refs/heads/develop，这和我们在本地直接执行<code>git merge</code>是不同的(本地执行<code>git merge origin/develop</code>则是直接merge refs/remotes/develop)。</p>
