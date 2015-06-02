@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Better Wife , Better Life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.com/"/>
-  <updated>2015-06-02T05:48:59.998Z</updated>
+  <updated>2015-06-02T06:22:29.993Z</updated>
   <id>http://molloc.com/</id>
   
   <author>
@@ -19,11 +19,37 @@
     <link href="http://molloc.com/2015/06/02/php%E8%AE%A1%E7%AE%97%E9%A2%98%E6%B1%87%E6%80%BB/"/>
     <id>http://molloc.com/2015/06/02/php计算题汇总/</id>
     <published>2015-06-02T05:33:39.000Z</published>
-    <updated>2015-06-02T05:48:59.998Z</updated>
+    <updated>2015-06-02T06:22:29.993Z</updated>
     <content type="html"><![CDATA[<h2>回收期(Payback Period)</h2>
 <ul>
 <li>概念: 回收成本所需的时间</li>
 <li>选择的原则: 越短越好</li>
+</ul>
+<h2>投资回报率(BCR)</h2>
+<ul>
+<li>有预期收益除以预期成本所得出的比例(投资一元钱带来几元钱的回报)</li>
+<li>BCR的范围:
+<ul>
+<li>BCR = 1.0时,项目不陪不赚</li>
+<li>BCR &gt; 1.0时,比例越高盈利越大</li>
+<li>BCR = 1.0时,实施该项目会赔钱</li>
+</ul>
+</li>
+</ul>
+<h2>投资利润率(ROI)</h2>
+<ul>
+<li>概念: 利润 = 收益 - 成本 - 税金</li>
+<li>ROI的范围:
+<ul>
+<li>ROI = 1.0时,项目不陪不赚</li>
+<li>ROI &gt; 1.0时,比例越高盈利越大</li>
+<li>ROI = 1.0时,实施该项目会赔钱</li>
+</ul>
+</li>
+</ul>
+<h2>净现值(NPV)</h2>
+<ul>
+<li>概念: NPV = ∑[A/(1+r)^t -原始投入]</li>
 </ul>
 ]]></content>
     <summary type="html">
@@ -32,7 +58,9 @@
 <li>概念: 回收成本所需的时间</li>
 <li>选择的原则: 越短越好</li>
 </ul>
-]]>
+<h2>投资回报率(BCR)</h2>
+<ul>
+<li>有预期收益除以预期成本所得出的比例(投资一元钱带来几元]]>
     </summary>
     
   </entry>
