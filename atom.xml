@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Better Wife , Better Life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.com/"/>
-  <updated>2015-05-29T04:51:32.783Z</updated>
+  <updated>2015-06-02T05:45:59.225Z</updated>
   <id>http://molloc.com/</id>
   
   <author>
@@ -13,6 +13,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[php计算题汇总]]></title>
+    <link href="http://molloc.com/2015/06/02/php%E8%AE%A1%E7%AE%97%E9%A2%98%E6%B1%87%E6%80%BB/"/>
+    <id>http://molloc.com/2015/06/02/php计算题汇总/</id>
+    <published>2015-06-02T05:33:39.000Z</published>
+    <updated>2015-06-02T05:45:59.225Z</updated>
+    <content type="html"><![CDATA[<h2>回收期(Payback Period)</h2>
+<p>概念: 回收成本所需的时间
+选择的原则: 越短越好</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2>回收期(Payback Period)</h2>
+<p>概念: 回收成本所需的时间
+选择的原则: 越短越好</p>
+]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hello Hexo]]></title>
