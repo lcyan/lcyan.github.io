@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://molloc.com/about/index.html</loc>
+    <lastmod>2015-06-05T09:23:13.720Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://molloc.com/2015/06/05/Cars/</loc>
     <lastmod>2015-06-05T05:52:12.112Z</lastmod>
   </url>
