@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Better Wife , Better Life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.com/"/>
-  <updated>2015-06-04T06:16:44.890Z</updated>
+  <updated>2015-06-05T05:52:12.112Z</updated>
   <id>http://molloc.com/</id>
   
   <author>
@@ -13,6 +13,23 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Cars]]></title>
+    <link href="http://molloc.com/2015/06/05/Cars/"/>
+    <id>http://molloc.com/2015/06/05/Cars/</id>
+    <published>2015-06-05T05:52:12.119Z</published>
+    <updated>2015-06-05T05:52:12.112Z</updated>
+    <content type="html"><![CDATA[<p>Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the presentation of the Huracán LP 610-4, Lamborghini offers a new dimension in luxury super sports cars.
+With 122 dealerships worldwide, Automobili Lamborghini is building on a succession of dynamic and elegant super sports cars including the 350GT, Miura, Espada, Countach, Diablo, Murciélago, Reventón Coupe, Reventón Roadster, Aventador and Gallardo.</p>
+<p><img src="http://static.molloc.com/cars/1363048919SWhAHn.jpg" alt="Wallbase - dgnfly (wallbase.cc/wallpaper/1384450)" title="Car002"></p>
+<p>At the  Beijing Motorshow 2014 Automobili Lamborghini is also going to present the Aventador in a highly exclusive and appealing configuration called Nazionale, realized  by Lamborghini Ad Personam, the personalization program that allows clients to create their own made-to-order Lamborghini.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of th]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[pmp计算题汇总]]></title>
@@ -89,19 +106,6 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Cars]]></title>
-    <link href="http://molloc.com/2015/05/29/Cars/"/>
-    <id>http://molloc.com/2015/05/29/Cars/</id>
-    <published>2015-05-29T04:48:11.211Z</published>
-    <updated>2015-05-29T04:48:11.206Z</updated>
-    <content type="html"></content>
-    <summary type="html">
-    
     </summary>
     
   </entry>

@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://molloc.com/2015/06/05/Cars/</loc>
+    <lastmod>2015-06-05T05:52:12.112Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://molloc.com/baidu_verify_LCLL6L1B52.html</loc>
     <lastmod>2015-06-05T05:27:15.000Z</lastmod>
   </url>
@@ -19,11 +24,6 @@
   <url>
     <loc>http://molloc.com/2015/05/29/hello-hexo/</loc>
     <lastmod>2015-05-29T04:51:32.783Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://molloc.com/2015/05/29/Cars/</loc>
-    <lastmod>2015-05-29T04:48:11.206Z</lastmod>
   </url>
   
   <url>
