@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.com/"/>
-  <updated>2015-06-07T07:22:38.055Z</updated>
+  <updated>2015-06-07T07:52:26.431Z</updated>
   <id>http://molloc.com/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Cars]]></title>
+    <link href="http://molloc.com/2015/06/07/Cars/"/>
+    <id>http://molloc.com/2015/06/07/Cars/</id>
+    <published>2015-06-07T07:52:26.438Z</published>
+    <updated>2015-06-07T07:52:26.431Z</updated>
+    <content type="html"><![CDATA[<p>Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the presentation of the Huracán LP 610-4, Lamborghini offers a new dimension in luxury super sports cars.
+With 122 dealerships worldwide, Automobili Lamborghini is building on a succession of dynamic and elegant super sports cars including the 350GT, Miura, Espada, Countach, Diablo, Murciélago, Reventón Coupe, Reventón Roadster, Aventador and Gallardo.</p>
+<p><img src="http://static.molloc.com/cars/1363048919SWhAHn.jpg" alt="Wallbase - dgnfly (wallbase.cc/wallpaper/1384450)" title="Car002"></p>
+<a id="more"></a>
+<p>At the  Beijing Motorshow 2014 Automobili Lamborghini is also going to present the Aventador in a highly exclusive and appealing configuration called Nazionale, realized  by Lamborghini Ad Personam, the personalization program that allows clients to create their own made-to-order Lamborghini.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the presentation of the Huracán LP 610-4, Lamborghini offers a new dimension in luxury super sports cars.
+With 122 dealerships worldwide, Automobili Lamborghini is building on a succession of dynamic and elegant super sports cars including the 350GT, Miura, Espada, Countach, Diablo, Murciélago, Reventón Coupe, Reventón Roadster, Aventador and Gallardo.</p>
+<p><img src="http://static.molloc.com/cars/1363048919SWhAHn.jpg" alt="Wallbase - dgnfly (wallbase.cc/wallpaper/1384450)" title="Car002"></p>]]>
+    
+    </summary>
+    
+      <category term="Cars" scheme="http://molloc.com/tags/Cars/"/>
+    
+      <category term="美图世界" scheme="http://molloc.com/categories/%E7%BE%8E%E5%9B%BE%E4%B8%96%E7%95%8C/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hello Hexo]]></title>
@@ -50,27 +75,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Cars]]></title>
-    <link href="http://molloc.com/2015/06/07/Cars/"/>
-    <id>http://molloc.com/2015/06/07/Cars/</id>
-    <published>2015-06-07T06:45:44.419Z</published>
-    <updated>2015-06-07T06:45:44.409Z</updated>
-    <content type="html"><![CDATA[<p>Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the presentation of the Huracán LP 610-4, Lamborghini offers a new dimension in luxury super sports cars.
-With 122 dealerships worldwide, Automobili Lamborghini is building on a succession of dynamic and elegant super sports cars including the 350GT, Miura, Espada, Countach, Diablo, Murciélago, Reventón Coupe, Reventón Roadster, Aventador and Gallardo.</p>
-<p><img src="http://static.molloc.com/cars/1363048919SWhAHn.jpg" alt="Wallbase - dgnfly (wallbase.cc/wallpaper/1384450)" title="Car002"></p>
-<p>At the  Beijing Motorshow 2014 Automobili Lamborghini is also going to present the Aventador in a highly exclusive and appealing configuration called Nazionale, realized  by Lamborghini Ad Personam, the personalization program that allows clients to create their own made-to-order Lamborghini.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of th]]>
-    </summary>
-    
-      <category term="Cars" scheme="http://molloc.com/tags/Cars/"/>
-    
-      <category term="美图世界" scheme="http://molloc.com/categories/%E7%BE%8E%E5%9B%BE%E4%B8%96%E7%95%8C/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Linux Kernel 4.1 将是下一个长期支持版]]></title>
     <link href="http://molloc.com/2015/06/06/Linux-Kernel-4-1-%E5%B0%86%E6%98%AF%E4%B8%8B%E4%B8%80%E4%B8%AA%E9%95%BF%E6%9C%9F%E6%94%AF%E6%8C%81%E7%89%88/"/>
     <id>http://molloc.com/2015/06/06/Linux-Kernel-4-1-将是下一个长期支持版/</id>
@@ -100,7 +104,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.com/2015/06/02/pmp%E8%AE%A1%E7%AE%97%E9%A2%98%E6%B1%87%E6%80%BB/"/>
     <id>http://molloc.com/2015/06/02/pmp计算题汇总/</id>
     <published>2015-06-02T05:33:39.000Z</published>
-    <updated>2015-06-07T07:23:14.206Z</updated>
+    <updated>2015-06-07T07:53:53.817Z</updated>
     <content type="html"><![CDATA[<h2>回收期(Payback Period)</h2>
 <ul>
 <li>概念: 回收成本所需的时间</li>
@@ -117,6 +121,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 </ul>
 </li>
 </ul>
+<a id="more"></a>
 <h2>投资利润率(ROI)</h2>
 <ul>
 <li>概念: 利润 = 收益 - 成本 - 税金</li>
@@ -141,7 +146,16 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 </ul>
 <h2>投资回报率(BCR)</h2>
 <ul>
-<li>有预期收益除以预期成本所得出的比例(投资一元钱带来几元]]>
+<li>有预期收益除以预期成本所得出的比例(投资一元钱带来几元钱的回报)</li>
+<li>BCR的范围:
+<ul>
+<li>BCR = 1.0时,项目不陪不赚</li>
+<li>BCR &gt; 1.0时,比例越高盈利越大</li>
+<li>BCR = 1.0时,实施该项目会赔钱</li>
+</ul>
+</li>
+</ul>]]>
+    
     </summary>
     
       <category term="pmp" scheme="http://molloc.com/tags/pmp/"/>
@@ -155,7 +169,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.com/2015/05/27/PMP%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/"/>
     <id>http://molloc.com/2015/05/27/PMP考试总结/</id>
     <published>2015-05-27T15:11:32.000Z</published>
-    <updated>2015-06-07T07:23:38.725Z</updated>
+    <updated>2015-06-07T07:53:17.706Z</updated>
     <content type="html"><![CDATA[<ul>
 <li>注意找题干,看清楚问什么</li>
 <li>ROI = 年利润 / 投资额</li>
@@ -167,6 +181,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <li>提前量为负,滞后量为正</li>
 <li>预测型生命周期(计划驱动),适应型生命周期(变更驱动)</li>
 </ul>
+<a id="more"></a>
 <h2>高效通过PMP考试试题</h2>
 <ol>
 <li>
@@ -1469,7 +1484,14 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <li>注意找题干,看清楚问什么</li>
 <li>ROI = 年利润 / 投资额</li>
 <li>风险 = 概率 * 进度影响度</li>
-<li>SIPOC Supplier-供应者,Input-输入,Process-流程,Output-输出,Customer-客]]>
+<li>SIPOC Supplier-供应者,Input-输入,Process-流程,Output-输出,Customer-客户</li>
+<li>属性抽样(结果为合格不合适)</li>
+<li>变量抽样(在连续的量表上标明结果所处的位置,表明合格的程度)</li>
+<li>识别干系人归属于启动过程组</li>
+<li>提前量为负,滞后量为正</li>
+<li>预测型生命周期(计划驱动),适应型生命周期(变更驱动)</li>
+</ul>]]>
+    
     </summary>
     
       <category term="pmp" scheme="http://molloc.com/tags/pmp/"/>
