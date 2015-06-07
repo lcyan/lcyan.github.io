@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.com/"/>
-  <updated>2015-06-07T03:56:15.054Z</updated>
+  <updated>2015-06-07T06:45:44.409Z</updated>
   <id>http://molloc.com/</id>
   
   <author>
@@ -18,8 +18,8 @@
     <title><![CDATA[Cars]]></title>
     <link href="http://molloc.com/2015/06/07/Cars/"/>
     <id>http://molloc.com/2015/06/07/Cars/</id>
-    <published>2015-06-07T03:56:15.060Z</published>
-    <updated>2015-06-07T03:56:15.054Z</updated>
+    <published>2015-06-07T06:45:44.419Z</published>
+    <updated>2015-06-07T06:45:44.409Z</updated>
     <content type="html"><![CDATA[<p>Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the presentation of the Huracán LP 610-4, Lamborghini offers a new dimension in luxury super sports cars.
 With 122 dealerships worldwide, Automobili Lamborghini is building on a succession of dynamic and elegant super sports cars including the 350GT, Miura, Espada, Countach, Diablo, Murciélago, Reventón Coupe, Reventón Roadster, Aventador and Gallardo.</p>
 <p><img src="http://static.molloc.com/cars/1363048919SWhAHn.jpg" alt="Wallbase - dgnfly (wallbase.cc/wallpaper/1384450)" title="Car002"></p>
@@ -31,7 +31,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     
       <category term="Cars" scheme="http://molloc.com/tags/Cars/"/>
     
-      <category term="Photo" scheme="http://molloc.com/categories/Photo/"/>
+      <category term="美图世界" scheme="http://molloc.com/categories/%E7%BE%8E%E5%9B%BE%E4%B8%96%E7%95%8C/"/>
     
   </entry>
   
@@ -40,7 +40,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.com/2015/06/06/Linux-Kernel-4-1-%E5%B0%86%E6%98%AF%E4%B8%8B%E4%B8%80%E4%B8%AA%E9%95%BF%E6%9C%9F%E6%94%AF%E6%8C%81%E7%89%88/"/>
     <id>http://molloc.com/2015/06/06/Linux-Kernel-4-1-将是下一个长期支持版/</id>
     <published>2015-06-06T00:43:07.000Z</published>
-    <updated>2015-06-07T01:09:30.399Z</updated>
+    <updated>2015-06-07T06:48:37.585Z</updated>
     <content type="html"><![CDATA[<p>Linux基金会长期支持计划项目组以及稳定内核分支维护者Greg Kroah-Hartman<a href="http://linux.slashdot.org/story/15/06/04/1341219/linux-kernel-41-will-be-an-lts-release" target="_blank" rel="external">证实</a>，下一个版本Linux Kernel 4.1将是一个长期支持版。长期支持内核针对的是嵌入式设备，嵌入式设备的生命期短更新更快，一般为两年左右，长期支持内核将提供两年的维护更新。</p>
 <p>上一个 长期支持版是Linux 3.18，2014年12月发布，将一直支持到2017年1月。Kernel 4.1预计将在本月发布。</p>
 <p><img src="http://static.molloc.com/img/201506/06081651_tmdK.png" style="display:block;margin:auto"></p>
@@ -55,6 +55,8 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
       <category term="Linux" scheme="http://molloc.com/tags/Linux/"/>
     
       <category term="kernel" scheme="http://molloc.com/tags/kernel/"/>
+    
+      <category term="探索发现" scheme="http://molloc.com/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/"/>
     
   </entry>
   
@@ -1473,7 +1475,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.com/2015/05/25/Nginx-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%80%BB%E7%BB%93/"/>
     <id>http://molloc.com/2015/05/25/Nginx-配置文件总结/</id>
     <published>2015-05-25T04:28:09.000Z</published>
-    <updated>2015-05-28T07:43:02.084Z</updated>
+    <updated>2015-06-07T06:47:50.533Z</updated>
     <content type="html"><![CDATA[<h2>顶级配置</h2>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义 Nginx 运行的用户和用户组</span></span><br><span class="line"><span class="title">user</span> nginx;</span><br><span class="line"></span><br><span class="line"><span class="comment">#进程文件</span></span><br><span class="line"><span class="title">pid</span> /var/run/nginx.pid;</span><br><span class="line"></span><br><span class="line"><span class="comment">#错误日志位置和级别，debug、info、notice、warn、error、crit</span></span><br><span class="line"><span class="title">error_log</span>  /var/log/nginx/error.log <span class="built_in">warn</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#Nginx worker 的进程数，一般可设置为可用的CPU内核数。</span></span><br><span class="line"><span class="title">worker_processes</span> <span class="number">8</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#每个 worker 打开文件描述符的最大数量限制。</span></span><br><span class="line"><span class="comment">#理论值应该是最多打开文件数（系统的值ulimit -n）与 nginx 进程数相除，</span></span><br><span class="line"><span class="comment">#但是 nginx 分配请求并不均匀，所以建议与ulimit -n的值保持一致。</span></span><br><span class="line"><span class="title">worker_rlimit_nofile</span> <span class="number">65535</span>;</span><br></pre></td></tr></table></figure>
 <p>修改系统文件打开数量限制：</p>
@@ -1505,6 +1507,8 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
       <category term="linux" scheme="http://molloc.com/tags/linux/"/>
     
       <category term="nginx" scheme="http://molloc.com/tags/nginx/"/>
+    
+      <category term="工作相关" scheme="http://molloc.com/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
@@ -1590,7 +1594,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.com/2015/05/15/%E9%AB%98%E6%95%88Linux-bash%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%8F%8Aalias%E6%80%BB%E7%BB%93/"/>
     <id>http://molloc.com/2015/05/15/高效Linux-bash快捷键及alias总结/</id>
     <published>2015-05-15T14:33:57.000Z</published>
-    <updated>2015-05-29T03:17:53.090Z</updated>
+    <updated>2015-06-07T06:48:16.212Z</updated>
     <content type="html"><![CDATA[<p>习惯使用编辑的快捷键可以大大提高效率，记忆学习过程要有意识的忽略功能键、方向键和数字小键盘。以下快捷键适用在bash处于默认的Emacs模式下。如果你有 set -o vi ，就处于  vi 模式就不适用了。另外下面的内容并不包含所有快捷键，只是我个人适用频率最高的几种，但相信已经可以大大提高工作效率了：</p>
 <h2>bash shortcut</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + l   <span class="comment"># 清除屏幕，同clear</span></span><br><span class="line">Ctrl + a   <span class="comment"># 将光标定位到命令的开头</span></span><br><span class="line">Ctrl + e   <span class="comment"># 与上一个快捷键相反，将光标定位到命令的结尾</span></span><br><span class="line">Ctrl + u   <span class="comment"># 剪切光标之前的内容，在输错命令或密码</span></span><br><span class="line">Ctrl + k   <span class="comment"># 与上一个快捷键相反，剪切光标之后的内容</span></span><br><span class="line">Ctrl + y   <span class="comment"># 粘贴以上两个快捷键所剪切的内容。Alt+y粘贴更早的内容</span></span><br><span class="line">Ctrl + w   <span class="comment"># 删除光标左边的参数（选项）或内容（实际是以空格为单位向前剪切一个word）</span></span><br><span class="line">Ctrl + /   <span class="comment"># 撤销，同Ctrl+x u</span></span><br><span class="line">Ctrl + f   <span class="comment"># 按字符前移（右向），同→</span></span><br><span class="line">Ctrl + b   <span class="comment"># 按字符后移（左向），同←</span></span><br><span class="line">Alt  + f   <span class="comment"># 单词前移，标点等特殊字符与空格一样分隔单词（右向），同Ctrl+→</span></span><br><span class="line">Alt  + b   <span class="comment"># 单词后移（左向），同Ctrl+←</span></span><br><span class="line">Alt  + d   <span class="comment"># 光标处删除至字尾。可以Ctrl+y粘贴回来</span></span><br><span class="line">Alt  + \   <span class="comment"># 除当前光标前面所有的空白字符</span></span><br><span class="line">Ctrl + d   <span class="comment"># 删除光标处的字符，同Del键。没有命令是表示注销用户</span></span><br><span class="line">Ctrl + h   <span class="comment"># 删除光标前的字符</span></span><br><span class="line">Ctrl + r   <span class="comment"># 逆向搜索命令历史，比history好用</span></span><br><span class="line">Ctrl + g   <span class="comment"># 从历史搜索模式退出，同ESC</span></span><br><span class="line">Ctrl + p   <span class="comment"># 历史中的上一条命令，同↑</span></span><br><span class="line">Ctrl + n   <span class="comment"># 历史中的下一条命令，同↓</span></span><br><span class="line">Alt  + .   <span class="comment"># 同!$，输出上一个命令的最后一个参数（选项or单词）。</span></span><br></pre></td></tr></table></figure>
@@ -1610,6 +1614,8 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
       <category term="bash" scheme="http://molloc.com/tags/bash/"/>
     
       <category term="linux" scheme="http://molloc.com/tags/linux/"/>
+    
+      <category term="工作相关" scheme="http://molloc.com/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
