@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.com/"/>
-  <updated>2015-06-07T06:45:44.409Z</updated>
+  <updated>2015-06-07T07:22:38.055Z</updated>
   <id>http://molloc.com/</id>
   
   <author>
@@ -13,6 +13,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hello Hexo]]></title>
+    <link href="http://molloc.com/2015/06/07/hello-hexo/"/>
+    <id>http://molloc.com/2015/06/07/hello-hexo/</id>
+    <published>2015-06-07T07:22:38.063Z</published>
+    <updated>2015-06-07T07:22:38.055Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2>Quick Start</h2>
+<h3>Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<a id="more"></a>
+### Run server
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3>Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3>Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2>Quick Start</h2>
+<h3>Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a></p>]]>
+    
+    </summary>
+    
+      <category term="探索发现" scheme="http://molloc.com/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Cars]]></title>
@@ -65,7 +100,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.com/2015/06/02/pmp%E8%AE%A1%E7%AE%97%E9%A2%98%E6%B1%87%E6%80%BB/"/>
     <id>http://molloc.com/2015/06/02/pmp计算题汇总/</id>
     <published>2015-06-02T05:33:39.000Z</published>
-    <updated>2015-06-04T06:16:44.890Z</updated>
+    <updated>2015-06-07T07:23:14.206Z</updated>
     <content type="html"><![CDATA[<h2>回收期(Payback Period)</h2>
 <ul>
 <li>概念: 回收成本所需的时间</li>
@@ -109,38 +144,9 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <li>有预期收益除以预期成本所得出的比例(投资一元钱带来几元]]>
     </summary>
     
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hello Hexo]]></title>
-    <link href="http://molloc.com/2015/05/29/hello-hexo/"/>
-    <id>http://molloc.com/2015/05/29/hello-hexo/</id>
-    <published>2015-05-29T04:51:32.789Z</published>
-    <updated>2015-05-29T04:51:32.783Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2>Quick Start</h2>
-<h3>Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<a id="more"></a>
-### Run server
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3>Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3>Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2>Quick Start</h2>
-<h3>Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a></p>]]>
+      <category term="pmp" scheme="http://molloc.com/tags/pmp/"/>
     
-    </summary>
+      <category term="工作相关" scheme="http://molloc.com/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
@@ -149,7 +155,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.com/2015/05/27/PMP%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/"/>
     <id>http://molloc.com/2015/05/27/PMP考试总结/</id>
     <published>2015-05-27T15:11:32.000Z</published>
-    <updated>2015-06-06T12:46:27.258Z</updated>
+    <updated>2015-06-07T07:23:38.725Z</updated>
     <content type="html"><![CDATA[<ul>
 <li>注意找题干,看清楚问什么</li>
 <li>ROI = 年利润 / 投资额</li>
@@ -1468,6 +1474,8 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     
       <category term="pmp" scheme="http://molloc.com/tags/pmp/"/>
     
+      <category term="工作相关" scheme="http://molloc.com/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
+    
   </entry>
   
   <entry>
@@ -1517,7 +1525,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.com/2015/05/22/Git-push%E4%B8%8Epull%E7%9A%84%E9%BB%98%E8%AE%A4%E8%A1%8C%E4%B8%BA/"/>
     <id>http://molloc.com/2015/05/22/Git-push与pull的默认行为/</id>
     <published>2015-05-22T04:20:18.000Z</published>
-    <updated>2015-05-29T04:41:48.089Z</updated>
+    <updated>2015-06-07T07:22:08.322Z</updated>
     <content type="html"><![CDATA[<h2>git push</h2>
 <p>通常对于一个本地的新建分支，例如<code>git checkout -b develop</code>, 在<code>develop</code>分支<code>commit</code>了代码之后，如果直接执行<code>git push</code>命令，<code>develop</code>分支将不会被<code>push</code>到远程仓库（但此时<code>git push</code>操作有可能会推送一些代码到远程仓库，这取决于我们本地<code>git config</code>配置中的<code>push.default</code>默认行为，下文将会逐一详解）。</p>
 <p>因此我们至少需要显式指定将要推送的分支名，例如<code>git push origin develop</code>，才能将本地新分支推送到远程仓库。</p>
@@ -1586,6 +1594,8 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
       <category term="pull" scheme="http://molloc.com/tags/pull/"/>
     
       <category term="push" scheme="http://molloc.com/tags/push/"/>
+    
+      <category term="工作相关" scheme="http://molloc.com/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
