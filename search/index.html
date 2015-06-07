@@ -1,10 +1,10 @@
 
-  <!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
-    <title>标签 : nginx | Robot</title>
+    <title>search | Robot</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Lcyan">
@@ -13,12 +13,13 @@
     
     <meta name="description" content="Better Wife , Better Life">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Robot">
-<meta property="og:url" content="http://molloc.com/tags/nginx/index.html">
+<meta property="og:title" content="search">
+<meta property="og:url" content="http://molloc.com/search/index.html">
 <meta property="og:site_name" content="Robot">
 <meta property="og:description" content="Better Wife , Better Life">
+<meta property="og:updated_time" content="2015-06-07T10:46:48.966Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Robot">
+<meta name="twitter:title" content="search">
 <meta name="twitter:description" content="Better Wife , Better Life">
 
     
@@ -73,30 +74,25 @@
       </header>
       <div id="container">
         
-
-<div class="archive-title" >
-  <h2 class="tag-icon">nginx</h2>
-  
+<div  id="main" class="page">
+  <div id='cse' style='width:100%;text-align:center'>正在加载搜索结果，请稍等。</div>
 </div>
-<div id="main" class="archive-part clearfix">
-  <div id="archive-page">
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/05/25/Nginx-配置文件总结/" title="Nginx 配置文件总结" itemprop="url">
-  
-
-    <time datetime="2015-05-25T04:28:09.000Z" itemprop="datePublished">2015-05-25</time>
-
-
-    <h1 itemprop="name">Nginx 配置文件总结</h1>
-
-  </a>
-</section>
-
-
-  </div>
-</div>
+<script src="http://www.google.com.hk/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+google.load('search', '1', {language : 'zh-CN',style: google.loader.themes.MINIMALIST});
+google.setOnLoadCallback(function(){
+  var customSearchControl = new google.search.CustomSearchControl('002517333976730243026:n-493qm7zbc');
+  customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+  var options = new google.search.DrawOptions();
+  options.setAutoComplete(true);
+  customSearchControl.draw('cse', options);
+  var match = location.search.match(/q=([^&]*)(&|$)/);
+  if(match && match[1]){
+    var search = decodeURIComponent(match[1]); 
+    customSearchControl.execute(search);
+  }
+},true);
+</script>
 
       </div>
       <footer><div id="footer" >
