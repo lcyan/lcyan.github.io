@@ -63,7 +63,7 @@
  					
 						<form class="search" action="http://zhannei.baidu.com/cse/search" target="_blank">
 							<label>Search</label>
-						<input name="s" type="hidden" value= 11470543334999880000 ><input type="text" name="q" size="30" placeholder="搜索"><br>
+						<input name="s" type="hidden" value= 11470543334999879499 ><input type="text" name="q" size="30" placeholder="搜索"><br>
 						</form>
 					
 					</li>
@@ -87,6 +87,19 @@
 
   <section class="post" itemscope itemprop="blogPost">
   
+    <a href="/2015/06/07/Cars/" title="Cars" itemprop="url">
+  
+
+    <time datetime="2015-06-07T03:56:15.060Z" itemprop="datePublished">2015-06-07</time>
+
+
+    <h1 itemprop="name">Cars</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
     <a href="/2015/06/06/Linux-Kernel-4-1-将是下一个长期支持版/" title="Linux Kernel 4.1 将是下一个长期支持版" itemprop="url">
   
 
@@ -94,19 +107,6 @@
 
 
     <h1 itemprop="name">Linux Kernel 4.1 将是下一个长期支持版</h1>
-
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/06/05/Cars/" title="Cars" itemprop="url">
-  
-
-    <time datetime="2015-06-05T05:52:12.119Z" itemprop="datePublished">2015-06-05</time>
-
-
-    <h1 itemprop="name">Cars</h1>
 
   </a>
 </section>
@@ -353,6 +353,35 @@ $(document).ready(function(){
 
 <!-- MathJax Begin -->
 <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 <!-- MathJax End -->
