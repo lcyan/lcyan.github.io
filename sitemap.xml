@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://molloc.com/categories/index.html</loc>
+    <lastmod>2015-06-07T01:13:24.099Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://molloc.com/tags/index.html</loc>
+    <lastmod>2015-06-07T01:12:50.967Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://molloc.com/2015/06/06/Linux-Kernel-4-1-%E5%B0%86%E6%98%AF%E4%B8%8B%E4%B8%80%E4%B8%AA%E9%95%BF%E6%9C%9F%E6%94%AF%E6%8C%81%E7%89%88/</loc>
     <lastmod>2015-06-07T01:09:30.399Z</lastmod>
   </url>
