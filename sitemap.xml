@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://molloc.com/2015/06/06/Linux-Kernel-4-1-%E5%B0%86%E6%98%AF%E4%B8%8B%E4%B8%80%E4%B8%AA%E9%95%BF%E6%9C%9F%E6%94%AF%E6%8C%81%E7%89%88/</loc>
+    <lastmod>2015-06-08T04:24:43.169Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://molloc.com/2015/06/08/Nginx%E7%89%88%E6%9C%AC%E6%97%A0%E7%BC%9D%E5%8D%87%E7%BA%A7/</loc>
     <lastmod>2015-06-08T04:23:29.333Z</lastmod>
   </url>
@@ -9,11 +14,6 @@
   <url>
     <loc>http://molloc.com/search/index.html</loc>
     <lastmod>2015-06-07T10:46:48.966Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://molloc.com/2015/06/06/Linux-Kernel-4-1-%E5%B0%86%E6%98%AF%E4%B8%8B%E4%B8%80%E4%B8%AA%E9%95%BF%E6%9C%9F%E6%94%AF%E6%8C%81%E7%89%88/</loc>
-    <lastmod>2015-06-07T07:54:48.423Z</lastmod>
   </url>
   
   <url>
