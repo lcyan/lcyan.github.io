@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.com/"/>
-  <updated>2015-06-07T07:52:26.431Z</updated>
+  <updated>2015-06-08T04:23:29.333Z</updated>
   <id>http://molloc.com/</id>
   
   <author>
@@ -13,6 +13,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Nginx版本无缝升级]]></title>
+    <link href="http://molloc.com/2015/06/08/Nginx%E7%89%88%E6%9C%AC%E6%97%A0%E7%BC%9D%E5%8D%87%E7%BA%A7/"/>
+    <id>http://molloc.com/2015/06/08/Nginx版本无缝升级/</id>
+    <published>2015-06-08T04:19:42.000Z</published>
+    <updated>2015-06-08T04:23:29.333Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -V     <span class="comment">#查看版本</span></span><br><span class="line">nginx version: nginx/<span class="number">1.4</span>.<span class="number">3</span></span><br><span class="line">built by gcc <span class="number">4.4</span>.<span class="number">7</span> <span class="number">20120313</span> (Red Hat <span class="number">4.4</span>.<span class="number">7</span>-<span class="number">3</span>) (GCC)</span><br><span class="line">TLS SNI support enabled</span><br><span class="line">configure arguments: --prefix=/usr/<span class="built_in">local</span>/nginx --user=www --group=www</span><br><span class="line">                     --with-http_stub_status_module --with-http_ssl_module</span><br><span class="line">                     --with-http_flv_module --with-http_gzip_static_module</span><br><span class="line">                     --with-ld-opt=<span class="string">'-ljemalloc'</span> <span class="comment">#注意这里的编译项</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> lnmp/src</span><br><span class="line"></span><br><span class="line">wget http://nginx.org/download/nginx-<span class="number">1.4</span>.<span class="number">4</span>.tar.gz</span><br><span class="line"></span><br><span class="line">tar xzf nginx-<span class="number">1.4</span>.<span class="number">4</span>.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> nginx-<span class="number">1.4</span>.<span class="number">4</span></span><br><span class="line"></span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/nginx --user=www</span><br><span class="line">                                      --group=www --with-http_stub_status_module</span><br><span class="line">                                      --with-http_ssl_module --with-http_flv_module</span><br><span class="line">                                      --with-http_gzip_static_module --with-ld-opt=<span class="string">'-ljemalloc'</span></span><br><span class="line">make    //注意只make  不要make install</span><br><span class="line"></span><br><span class="line">mv /usr/<span class="built_in">local</span>/nginx/sbin/nginx /usr/<span class="built_in">local</span>/nginx/sbin/nginx$(date +%m%d)    <span class="comment">#备份nginx原文件</span></span><br><span class="line"></span><br><span class="line">cp objs/nginx /usr/<span class="built_in">local</span>/nginx/sbin/nginx     <span class="comment">#复制编译make后的文件覆盖nginx原文件</span></span><br><span class="line"></span><br><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -t     <span class="comment">#检测nginx文件配置</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">kill</span> -USR2 `cat /usr/<span class="built_in">local</span>/nginx/logs/nginx.pid`    <span class="comment">#把nginx.pid改成nginx.pid.oldbin跟着启动新的nginx</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">kill</span> -QUIT `cat /usr/<span class="built_in">local</span>/nginx/logs/nginx.pid.oldbin`   <span class="comment">#退出旧的nignx</span></span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class=]]>
+    </summary>
+    
+      <category term="linux" scheme="http://molloc.com/tags/linux/"/>
+    
+      <category term="nginx" scheme="http://molloc.com/tags/nginx/"/>
+    
+      <category term="探索发现" scheme="http://molloc.com/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Cars]]></title>
