@@ -295,8 +295,8 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <div class="article-content">
         
         <p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start"><a class="header-anchor" href="#quick-start">¶</a>Quick Start</h2>
-<h3 id="create-a-new-post"><a class="header-anchor" href="#create-a-new-post">¶</a>Create a new post</h3>
+<h2 id="quick-start"><a class="header-anchor" href="#quick-start">null</a>Quick Start</h2>
+<h3 id="create-a-new-post"><a class="header-anchor" href="#create-a-new-post">null</a>Create a new post</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a></p>
         
@@ -423,12 +423,12 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 </header>
     <div class="article-content">
         
-        <h2 id="回收期-payback-period"><a class="header-anchor" href="#回收期-payback-period">¶</a>回收期(Payback Period)</h2>
+        <h2 id="回收期-payback-period"><a class="header-anchor" href="#回收期-payback-period">null</a>回收期(Payback Period)</h2>
 <ul>
 <li>概念: 回收成本所需的时间</li>
 <li>选择的原则: 越短越好</li>
 </ul>
-<h2 id="投资回报率-bcr"><a class="header-anchor" href="#投资回报率-bcr">¶</a>投资回报率(BCR)</h2>
+<h2 id="投资回报率-bcr"><a class="header-anchor" href="#投资回报率-bcr">null</a>投资回报率(BCR)</h2>
 <ul>
 <li>有预期收益除以预期成本所得出的比例(投资一元钱带来几元钱的回报)</li>
 <li>BCR的范围:
@@ -577,7 +577,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 </header>
     <div class="article-content">
         
-        <h2 id="顶级配置"><a class="header-anchor" href="#顶级配置">¶</a>顶级配置</h2>
+        <h2 id="顶级配置"><a class="header-anchor" href="#顶级配置">null</a>顶级配置</h2>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义 Nginx 运行的用户和用户组</span></span><br><span class="line"><span class="title">user</span> nginx;</span><br><span class="line"></span><br><span class="line"><span class="comment">#进程文件</span></span><br><span class="line"><span class="title">pid</span> /var/run/nginx.pid;</span><br><span class="line"></span><br><span class="line"><span class="comment">#错误日志位置和级别，debug、info、notice、warn、error、crit</span></span><br><span class="line"><span class="title">error_log</span>  /var/log/nginx/error.log <span class="built_in">warn</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#Nginx worker 的进程数，一般可设置为可用的CPU内核数。</span></span><br><span class="line"><span class="title">worker_processes</span> <span class="number">8</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#每个 worker 打开文件描述符的最大数量限制。</span></span><br><span class="line"><span class="comment">#理论值应该是最多打开文件数（系统的值ulimit -n）与 nginx 进程数相除，</span></span><br><span class="line"><span class="comment">#但是 nginx 分配请求并不均匀，所以建议与ulimit -n的值保持一致。</span></span><br><span class="line"><span class="title">worker_rlimit_nofile</span> <span class="number">65535</span>;</span><br></pre></td></tr></table></figure>
 <p>修改系统文件打开数量限制：</p>
         
@@ -643,7 +643,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 </header>
     <div class="article-content">
         
-        <h2 id="git-push"><a class="header-anchor" href="#git-push">¶</a>git push</h2>
+        <h2 id="git-push"><a class="header-anchor" href="#git-push">null</a>git push</h2>
 <p>通常对于一个本地的新建分支，例如<code>git checkout -b develop</code>, 在<code>develop</code>分支<code>commit</code>了代码之后，如果直接执行<code>git push</code>命令，<code>develop</code>分支将不会被<code>push</code>到远程仓库（但此时<code>git push</code>操作有可能会推送一些代码到远程仓库，这取决于我们本地<code>git config</code>配置中的<code>push.default</code>默认行为，下文将会逐一详解）。</p>
 <p>因此我们至少需要显式指定将要推送的分支名，例如<code>git push origin develop</code>，才能将本地新分支推送到远程仓库。</p>
 <p>当我们通过显式指定分支名进行初次<code>push</code>操作后，本地有了新的<code>commit</code>，此时执行<code>git push</code>命令会有什么效果呢？</p>
@@ -711,7 +711,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <div class="article-content">
         
         <p>习惯使用编辑的快捷键可以大大提高效率，记忆学习过程要有意识的忽略功能键、方向键和数字小键盘。以下快捷键适用在bash处于默认的Emacs模式下。如果你有 set -o vi ，就处于  vi 模式就不适用了。另外下面的内容并不包含所有快捷键，只是我个人适用频率最高的几种，但相信已经可以大大提高工作效率了：</p>
-<h2 id="bash-shortcut"><a class="header-anchor" href="#bash-shortcut">¶</a>bash shortcut</h2>
+<h2 id="bash-shortcut"><a class="header-anchor" href="#bash-shortcut">null</a>bash shortcut</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + l   <span class="comment"># 清除屏幕，同clear</span></span><br><span class="line">Ctrl + a   <span class="comment"># 将光标定位到命令的开头</span></span><br><span class="line">Ctrl + e   <span class="comment"># 与上一个快捷键相反，将光标定位到命令的结尾</span></span><br><span class="line">Ctrl + u   <span class="comment"># 剪切光标之前的内容，在输错命令或密码</span></span><br><span class="line">Ctrl + k   <span class="comment"># 与上一个快捷键相反，剪切光标之后的内容</span></span><br><span class="line">Ctrl + y   <span class="comment"># 粘贴以上两个快捷键所剪切的内容。Alt+y粘贴更早的内容</span></span><br><span class="line">Ctrl + w   <span class="comment"># 删除光标左边的参数（选项）或内容（实际是以空格为单位向前剪切一个word）</span></span><br><span class="line">Ctrl + /   <span class="comment"># 撤销，同Ctrl+x u</span></span><br><span class="line">Ctrl + f   <span class="comment"># 按字符前移（右向），同→</span></span><br><span class="line">Ctrl + b   <span class="comment"># 按字符后移（左向），同←</span></span><br><span class="line">Alt  + f   <span class="comment"># 单词前移，标点等特殊字符与空格一样分隔单词（右向），同Ctrl+→</span></span><br><span class="line">Alt  + b   <span class="comment"># 单词后移（左向），同Ctrl+←</span></span><br><span class="line">Alt  + d   <span class="comment"># 光标处删除至字尾。可以Ctrl+y粘贴回来</span></span><br><span class="line">Alt  + \   <span class="comment"># 除当前光标前面所有的空白字符</span></span><br><span class="line">Ctrl + d   <span class="comment"># 删除光标处的字符，同Del键。没有命令是表示注销用户</span></span><br><span class="line">Ctrl + h   <span class="comment"># 删除光标前的字符</span></span><br><span class="line">Ctrl + r   <span class="comment"># 逆向搜索命令历史，比history好用</span></span><br><span class="line">Ctrl + g   <span class="comment"># 从历史搜索模式退出，同ESC</span></span><br><span class="line">Ctrl + p   <span class="comment"># 历史中的上一条命令，同↑</span></span><br><span class="line">Ctrl + n   <span class="comment"># 历史中的下一条命令，同↓</span></span><br><span class="line">Alt  + .   <span class="comment"># 同!$，输出上一个命令的最后一个参数（选项or单词）。</span></span><br></pre></td></tr></table></figure>
         
         
