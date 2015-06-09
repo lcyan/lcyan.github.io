@@ -11,22 +11,22 @@
     
 
     
-    <meta name="description" content="git push
+    <meta name="description" content="¶git push
 通常对于一个本地的新建分支，例如git checkout -b develop, 在develop分支commit了代码之后，如果直接执行git push命令，develop分支将不会被push到远程仓库（但此时git push操作有可能会推送一些代码到远程仓库，这取决于我们本地git config配置中的push.default默认行为，下文将会逐一详解）。
-因此我们至少需要显">
+因此我们至少需要">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git push与pull的默认行为">
 <meta property="og:url" content="http://molloc.com/2015/05/22/Git-push与pull的默认行为/index.html">
 <meta property="og:site_name" content="Robot">
-<meta property="og:description" content="git push
+<meta property="og:description" content="¶git push
 通常对于一个本地的新建分支，例如git checkout -b develop, 在develop分支commit了代码之后，如果直接执行git push命令，develop分支将不会被push到远程仓库（但此时git push操作有可能会推送一些代码到远程仓库，这取决于我们本地git config配置中的push.default默认行为，下文将会逐一详解）。
-因此我们至少需要显">
+因此我们至少需要">
 <meta property="og:updated_time" content="2015-06-07T07:22:08.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git push与pull的默认行为">
-<meta name="twitter:description" content="git push
+<meta name="twitter:description" content="¶git push
 通常对于一个本地的新建分支，例如git checkout -b develop, 在develop分支commit了代码之后，如果直接执行git push命令，develop分支将不会被push到远程仓库（但此时git push操作有可能会推送一些代码到远程仓库，这取决于我们本地git config配置中的push.default默认行为，下文将会逐一详解）。
-因此我们至少需要显">
+因此我们至少需要">
 
     
     <link rel="alternative" href="/atom.xml" title="Robot" type="application/atom+xml">
@@ -101,11 +101,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">git push</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">push.default 有以下几个可选值：###</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">upstream & downstream</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">git pull</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">refs:</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-push"><span class="toc-number">1.</span> <span class="toc-text">¶git push</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#push-default-有以下几个可选值："><span class="toc-number">1.1.</span> <span class="toc-text">¶push.default 有以下几个可选值：###</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#upstream-downstream"><span class="toc-number">2.</span> <span class="toc-text">¶upstream & downstream</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-pull"><span class="toc-number">3.</span> <span class="toc-text">¶git pull</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#refs"><span class="toc-number">4.</span> <span class="toc-text">¶refs:</span></a></li></ol>
 		
 		</div>
 		
-		<h2>git push</h2>
+		<h2 id="git-push"><a class="header-anchor" href="#git-push">¶</a>git push</h2>
 <p>通常对于一个本地的新建分支，例如<code>git checkout -b develop</code>, 在<code>develop</code>分支<code>commit</code>了代码之后，如果直接执行<code>git push</code>命令，<code>develop</code>分支将不会被<code>push</code>到远程仓库（但此时<code>git push</code>操作有可能会推送一些代码到远程仓库，这取决于我们本地<code>git config</code>配置中的<code>push.default</code>默认行为，下文将会逐一详解）。</p>
 <p>因此我们至少需要显式指定将要推送的分支名，例如<code>git push origin develop</code>，才能将本地新分支推送到远程仓库。</p>
 <p>当我们通过显式指定分支名进行初次<code>push</code>操作后，本地有了新的<code>commit</code>，此时执行<code>git push</code>命令会有什么效果呢？</p>
@@ -120,7 +120,7 @@
 <p>为什么git版本不同会有两种不同的push行为？</p>
 <p>因为在git的全局配置中，有一个push.default属性，其决定了git push操作的默认行为。在Git 2.0之前，这个属性的默认被设为’matching’，2.0之后则被更改为了’simple’。</p>
 <p>我们可以通过<code>git version</code>确定当前的git版本（如果小于2.0，更新是个更好的选择），通过<code>git config --global push.default</code> 'option'改变push.default的默认行为（或者也可直接编辑~/.gitconfig文件）。</p>
-<h3>push.default 有以下几个可选值：###</h3>
+<h3 id="push-default-有以下几个可选值："><a class="header-anchor" href="#push-default-有以下几个可选值：">¶</a>push.default 有以下几个可选值：###</h3>
 <p>nothing, current, upstream, simple, matching</p>
 <p>其用途分别为：</p>
 <ul>
@@ -131,14 +131,14 @@
 <li><code>matching</code> push所有本地和远程两端都存在的同名分支.</li>
 </ul>
 <p>因此如果我们使用了git2.0之前的版本，<code>push.default = matching</code>，<code>git push</code>后则会推送当前分支代码到远程分支，而2.0之后，<code>push.default = simple</code>，如果没有指定当前分支的upstream分支，就会收到上文的fatal提示。</p>
-<h2>upstream &amp; downstream</h2>
+<h2 id="upstream-downstream"><a class="header-anchor" href="#upstream-downstream">¶</a>upstream &amp; downstream</h2>
 <p>说到这里，需要解释一下git中的upstream到底是什么：</p>
 <blockquote>
 <p>git中存在upstream和downstream，简言之，当我们把仓库A中某分支x的代码push到仓库B分支y，此时仓库B的这个分支y就叫做A中x分支的upstream，而x则被称作y的downstream，这是一个相对关系，每一个本地分支都相对地可以有一个远程的upstream分支（注意这个upstream分支可以不同名，但通常我们都会使用同名分支作为upstream）。</p>
 </blockquote>
 <p>初次提交本地分支，例如git push origin develop操作，并不会定义当前本地分支的upstream分支，我们可以通过git push --set-upstream origin develop，关联本地develop分支的upstream分支，另一个更为简洁的方式是初次push时，加入-u参数，例如git push -u origin develop，这个操作在push的同时会指定当前分支的upstream。</p>
 <p>注意<code>push.default = current</code>可以在远程同名分支不存在的情况下自动创建同名分支，有些时候这也是个极其方便的模式，比如初次push你可以直接输入 <code>git push</code> 而不必显示指定远程分支。</p>
-<h2>git pull</h2>
+<h2 id="git-pull"><a class="header-anchor" href="#git-pull">¶</a>git pull</h2>
 <p>弄清楚<code>git push</code>的默认行为后，再来看看<code>git pull</code>。</p>
 <p>当我们未指定当前分支的upstream时，通常<code>git pull</code>操作会得到如下的提示：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">There is no tracking information <span class="keyword">for</span> the current branch.</span><br><span class="line">Please specify <span class="built_in">which</span> branch you want to merge with.</span><br><span class="line">See git-pull(<span class="number">1</span>) <span class="keyword">for</span> details</span><br><span class="line">    git pull &lt;remote&gt; &lt;branch&gt;</span><br><span class="line">If you wish to <span class="built_in">set</span> tracking information <span class="keyword">for</span> this branch you can <span class="keyword">do</span> so with:</span><br><span class="line">    git branch --set-upstream-to=origin/&lt;branch&gt; new1</span><br></pre></td></tr></table></figure>
@@ -151,7 +151,7 @@
 <p>以上就是git push和git pull操作的全部默认行为，如有错误，欢迎斧正</p>
 <p>[1]: 为什么merge = refs/heads/develop 而不是refs/remotes/develop?</p>
 <p>因为这里merge指代的是我们想要merge的远程分支，是remote上的refs/heads/develop，文中即是origin上的refs/heads/develop，这和我们在本地直接执行<code>git merge</code>是不同的(本地执行<code>git merge origin/develop</code>则是直接merge refs/remotes/develop)。</p>
-<h2>refs:</h2>
+<h2 id="refs"><a class="header-anchor" href="#refs">¶</a>refs:</h2>
 <ul>
 <li><a href="http://git-scm.com/book/en/v2/Git-Internals-The-Refspec" target="_blank" rel="external">http://git-scm.com/book/en/v2/Git-Internals-The-Refspec</a></li>
 <li><a href="http://stackoverflow.com/questions/658885/how-do-you-get-git-to-always-pull-from-a-specific-branch" target="_blank" rel="external">http://stackoverflow.com/questions/658885/how-do-you-get-git-to-always-pull-from-a-specific-branch</a></li>
@@ -225,7 +225,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">git push</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">push.default 有以下几个可选值：###</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">upstream & downstream</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">git pull</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">refs:</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-push"><span class="toc-number">1.</span> <span class="toc-text">¶git push</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#push-default-有以下几个可选值："><span class="toc-number">1.1.</span> <span class="toc-text">¶push.default 有以下几个可选值：###</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#upstream-downstream"><span class="toc-number">2.</span> <span class="toc-text">¶upstream & downstream</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-pull"><span class="toc-number">3.</span> <span class="toc-text">¶git pull</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#refs"><span class="toc-number">4.</span> <span class="toc-text">¶refs:</span></a></li></ol>
  
   </div>
 
