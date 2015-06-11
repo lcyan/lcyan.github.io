@@ -80,6 +80,107 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/06/11/切分Tomcat的catalina-out文件-解决日志文件过大的问题/" title="切分Tomcat的catalina.out文件,解决日志文件过大的问题" itemprop="url">切分Tomcat的catalina.out文件,解决日志文件过大的问题</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Lcyan" target="_blank" itemprop="author">Lcyan</a>
+		
+  <p class="article-time">
+    <time datetime="2015-06-11T06:15:55.000Z" itemprop="datePublished"> 发表于 2015-06-11</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>Tomcat 下日志文件 catalina.out 过大，几百兆或几个G，进而造成再也无法写入更多的日志内容，至使 Tomcat 无法处理请求。需然你可以在 $TOMCAT_HOME/logs 目录下看到有 catalina.2012-09-16.log 这样分日期的归档，但是主文件 catalina.out 却一直在膨胀。</p>
+<p>你可以每次手工或定时(crontab/计划任务)清理 catalina.out 文件，或是规划好日志输出(终究也会有满的时候)。再就是有两种较好的解决方案去真正的切分 catalina.out 文件，让 catalina.out 只存有最新的日志。</p>
+<p>Linux 下使用 cronolog 工具来切分 catalina.out</p>
+<ol>
+<li>
+<p>安装cronolog, 以CentOS为例</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install cronolog</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>编辑 bin/catalina.sh 文件</p>
+<ul>
+<li>
+<p>找到下面行并把它用 # 注释掉</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch <span class="string">"<span class="variable">$CATALINA_BASE</span>"</span>/logs/catalina.out</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>在新 Tomcat7 的 bin/catalina.sh 文件要注释的行是</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch <span class="string">"<span class="variable">$CATALINA_OUT</span>"</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>替换下面的行(有两处，不过一般在 -security 中的那一行不需要去关注，不妨两处全替换了)</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"<span class="variable">$CATALINA_BASE</span>"</span>/logs/catalina.out <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br><span class="line">//为</span><br><span class="line"><span class="number">2</span>&gt;&amp;<span class="number">1</span> |/usr/<span class="built_in">local</span>/sbin/cronolog <span class="string">"<span class="variable">$CATALINA_BASE</span>/logs/catalina.%Y-%m-%d.log"</span> &amp;</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>在 Tomcat7 的 bin/catalina.sh 中是需要替换行是</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"<span class="variable">$CATALINA_OUT</span>"</span> <span class="number">2</span>&gt;&amp;<span class="number">1</span> <span class="string">"&amp;"</span></span><br><span class="line">//为</span><br><span class="line"><span class="number">2</span>&gt;&amp;<span class="number">1</span> |/usr/<span class="built_in">local</span>/sbin/cronolog <span class="string">"<span class="variable">$CATALINA_BASE</span>/logs/catalina.%Y-%m-%d.log"</span> &amp;</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>为什么 Tomcat7 后会有所不同，因为在它的 catalina.sh 文件中有如下定义</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CATALINA_OUT=<span class="string">"<span class="variable">$CATALINA_BASE</span>"</span>/logs/catalina.out</span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+</li>
+<li>
+<p>保存 catalina.sh 文件，重启 Tomcat 即可。</p>
+</li>
+</ol>
+<p>以后看到 $TOMCAT_HOME/logs/ 下的就是 catalina-2012-09-16.out, catalina-2012-09-17.out ...... 一系列文件，好像cronolog 又没提供方式来控制归档的日志文件个数。</p>
+<p>而且这样之后，将不会产生 catalina.out 文件了。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/工作相关/">工作相关</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/tomcat/">tomcat</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/06/11/切分Tomcat的catalina-out文件-解决日志文件过大的问题/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/06/11/切分Tomcat的catalina-out文件-解决日志文件过大的问题/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/06/09/面试题之encode-decode/" title="面试题之encode,decode" itemprop="url">面试题之encode,decode</a>
   </h1>
   <p class="article-author">By
@@ -695,72 +796,10 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/05/15/高效Linux-bash快捷键及alias总结/" title="高效Linux bash快捷键及alias总结" itemprop="url">高效Linux bash快捷键及alias总结</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lcyan" target="_blank" itemprop="author">Lcyan</a>
-		
-  <p class="article-time">
-    <time datetime="2015-05-15T14:33:57.000Z" itemprop="datePublished"> 发表于 2015-05-15</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>习惯使用编辑的快捷键可以大大提高效率，记忆学习过程要有意识的忽略功能键、方向键和数字小键盘。以下快捷键适用在bash处于默认的Emacs模式下。如果你有 set -o vi ，就处于  vi 模式就不适用了。另外下面的内容并不包含所有快捷键，只是我个人适用频率最高的几种，但相信已经可以大大提高工作效率了：</p>
-<h2 id="bash-shortcut"><a class="header-anchor" href="#bash-shortcut"></a>bash shortcut</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + l   <span class="comment"># 清除屏幕，同clear</span></span><br><span class="line">Ctrl + a   <span class="comment"># 将光标定位到命令的开头</span></span><br><span class="line">Ctrl + e   <span class="comment"># 与上一个快捷键相反，将光标定位到命令的结尾</span></span><br><span class="line">Ctrl + u   <span class="comment"># 剪切光标之前的内容，在输错命令或密码</span></span><br><span class="line">Ctrl + k   <span class="comment"># 与上一个快捷键相反，剪切光标之后的内容</span></span><br><span class="line">Ctrl + y   <span class="comment"># 粘贴以上两个快捷键所剪切的内容。Alt+y粘贴更早的内容</span></span><br><span class="line">Ctrl + w   <span class="comment"># 删除光标左边的参数（选项）或内容（实际是以空格为单位向前剪切一个word）</span></span><br><span class="line">Ctrl + /   <span class="comment"># 撤销，同Ctrl+x u</span></span><br><span class="line">Ctrl + f   <span class="comment"># 按字符前移（右向），同→</span></span><br><span class="line">Ctrl + b   <span class="comment"># 按字符后移（左向），同←</span></span><br><span class="line">Alt  + f   <span class="comment"># 单词前移，标点等特殊字符与空格一样分隔单词（右向），同Ctrl+→</span></span><br><span class="line">Alt  + b   <span class="comment"># 单词后移（左向），同Ctrl+←</span></span><br><span class="line">Alt  + d   <span class="comment"># 光标处删除至字尾。可以Ctrl+y粘贴回来</span></span><br><span class="line">Alt  + \   <span class="comment"># 除当前光标前面所有的空白字符</span></span><br><span class="line">Ctrl + d   <span class="comment"># 删除光标处的字符，同Del键。没有命令是表示注销用户</span></span><br><span class="line">Ctrl + h   <span class="comment"># 删除光标前的字符</span></span><br><span class="line">Ctrl + r   <span class="comment"># 逆向搜索命令历史，比history好用</span></span><br><span class="line">Ctrl + g   <span class="comment"># 从历史搜索模式退出，同ESC</span></span><br><span class="line">Ctrl + p   <span class="comment"># 历史中的上一条命令，同↑</span></span><br><span class="line">Ctrl + n   <span class="comment"># 历史中的下一条命令，同↓</span></span><br><span class="line">Alt  + .   <span class="comment"># 同!$，输出上一个命令的最后一个参数（选项or单词）。</span></span><br></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/05/15/高效Linux-bash快捷键及alias总结/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/工作相关/">工作相关</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/alias/">alias</a><a href="/tags/bash/">bash</a><a href="/tags/linux/">linux</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/05/15/高效Linux-bash快捷键及alias总结/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/05/15/高效Linux-bash快捷键及alias总结/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
+  <nav id="page-nav" class="clearfix">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
+  </nav>
 
 </div>
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
@@ -775,7 +814,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 		<ul>
 		
 		  
-			<li><a href="/categories/工作相关/" title="工作相关">工作相关<sup>6</sup></a></li>
+			<li><a href="/categories/工作相关/" title="工作相关">工作相关<sup>7</sup></a></li>
 		  
 		
 		  
@@ -793,7 +832,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
   </div>
 
 
@@ -816,6 +855,10 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 		
 			
 				<li><a href="/tags/java/" title="java">java<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tomcat/" title="tomcat">tomcat<sup>1</sup></a></li>
 			
 		
 			
