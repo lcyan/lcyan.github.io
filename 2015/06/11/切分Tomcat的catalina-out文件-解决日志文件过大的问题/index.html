@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="Robot">
 <meta property="og:description" content="Tomcat 下日志文件 catalina.out 过大，几百兆或几个G，进而造成再也无法写入更多的日志内容，至使 Tomcat 无法处理请求。需然你可以在 $TOMCAT_HOME/logs 目录下看到有 catalina.2012-09-16.log 这样分日期的归档，但是主文件 catalina.out 却一直在膨胀。
 你可以每次手工或定时(crontab/计划任务)清理 catalina.">
-<meta property="og:updated_time" content="2015-06-11T06:58:30.847Z">
+<meta property="og:updated_time" content="2015-06-11T07:17:08.150Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="切分Tomcat的catalina.out文件,解决日志文件过大的问题">
 <meta name="twitter:description" content="Tomcat 下日志文件 catalina.out 过大，几百兆或几个G，进而造成再也无法写入更多的日志内容，至使 Tomcat 无法处理请求。需然你可以在 $TOMCAT_HOME/logs 目录下看到有 catalina.2012-09-16.log 这样分日期的归档，但是主文件 catalina.out 却一直在膨胀。
@@ -120,11 +120,11 @@
 <ul>
 <li>替换下面的行(有两处，不过一般在 -security 中的那一行不需要去关注，不妨两处全替换了)</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"<span class="variable">$CATALINA_BASE</span>"</span>/logs/catalina.out <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br><span class="line">//为</span><br><span class="line"><span class="number">2</span>&gt;&amp;<span class="number">1</span> |/usr/<span class="built_in">local</span>/sbin/cronolog <span class="string">"<span class="variable">$CATALINA_BASE</span>/logs/catalina.%Y-%m-%d.log"</span> &amp;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; <span class="string">"<span class="variable">$CATALINA_BASE</span>"</span>/logs/catalina.out <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br><span class="line">//为</span><br><span class="line"><span class="number">2</span>&gt;&amp;<span class="number">1</span> |/usr/<span class="built_in">local</span>/sbin/cronolog <span class="string">"<span class="variable">$CATALINA_BASE</span>/logs/catalina.%Y-%m-%d.log"</span> &amp;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>在 Tomcat7 的 bin/catalina.sh 中是需要替换行是</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"<span class="variable">$CATALINA_OUT</span>"</span> <span class="number">2</span>&gt;&amp;<span class="number">1</span> <span class="string">"&amp;"</span></span><br><span class="line">//为</span><br><span class="line"><span class="number">2</span>&gt;&amp;<span class="number">1</span> |/usr/<span class="built_in">local</span>/sbin/cronolog <span class="string">"<span class="variable">$CATALINA_BASE</span>/logs/catalina.%Y-%m-%d.log"</span> &amp;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; <span class="string">"<span class="variable">$CATALINA_OUT</span>"</span> <span class="number">2</span>&gt;&amp;<span class="number">1</span> <span class="string">"&amp;"</span></span><br><span class="line">//为</span><br><span class="line"><span class="number">2</span>&gt;&amp;<span class="number">1</span> |/usr/<span class="built_in">local</span>/sbin/cronolog <span class="string">"<span class="variable">$CATALINA_BASE</span>/logs/catalina.%Y-%m-%d.log"</span> &amp;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>为什么 Tomcat7 后会有所不同，因为在它的 catalina.sh 文件中有如下定义</li>
 </ul>
