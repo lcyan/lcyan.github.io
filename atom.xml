@@ -3,9 +3,9 @@
   <title><![CDATA[Robot]]></title>
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://molloc.com/"/>
+  <link href="http://molloc.me/"/>
   <updated>2015-06-11T09:38:43.043Z</updated>
-  <id>http://molloc.com/</id>
+  <id>http://molloc.me/</id>
   
   <author>
     <name><![CDATA[Lcyan]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[切分Tomcat的catalina.out文件,解决日志文件过大的问题]]></title>
-    <link href="http://molloc.com/2015/06/11/%E5%88%87%E5%88%86Tomcat%E7%9A%84catalina-out%E6%96%87%E4%BB%B6-%E8%A7%A3%E5%86%B3%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E8%BF%87%E5%A4%A7%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>http://molloc.com/2015/06/11/切分Tomcat的catalina-out文件-解决日志文件过大的问题/</id>
+    <link href="http://molloc.me/2015/06/11/%E5%88%87%E5%88%86Tomcat%E7%9A%84catalina-out%E6%96%87%E4%BB%B6-%E8%A7%A3%E5%86%B3%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E8%BF%87%E5%A4%A7%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://molloc.me/2015/06/11/切分Tomcat的catalina-out文件-解决日志文件过大的问题/</id>
     <published>2015-06-11T06:15:55.000Z</published>
     <updated>2015-06-11T09:38:43.043Z</updated>
     <content type="html"><![CDATA[<p>Tomcat 下日志文件 catalina.out 过大，几百兆或几个G，进而造成再也无法写入更多的日志内容，至使 Tomcat 无法处理请求。需然你可以在 $TOMCAT_HOME/logs 目录下看到有 catalina.2012-09-16.log 这样分日期的归档，但是主文件 catalina.out 却一直在膨胀。</p>
@@ -57,16 +57,16 @@
     
     </summary>
     
-      <category term="tomcat" scheme="http://molloc.com/tags/tomcat/"/>
+      <category term="tomcat" scheme="http://molloc.me/tags/tomcat/"/>
     
-      <category term="工作相关" scheme="http://molloc.com/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
+      <category term="工作相关" scheme="http://molloc.me/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[面试题之encode,decode]]></title>
-    <link href="http://molloc.com/2015/06/09/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8Bencode-decode/"/>
-    <id>http://molloc.com/2015/06/09/面试题之encode-decode/</id>
+    <link href="http://molloc.me/2015/06/09/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8Bencode-decode/"/>
+    <id>http://molloc.me/2015/06/09/面试题之encode-decode/</id>
     <published>2015-06-09T04:14:06.000Z</published>
     <updated>2015-06-09T09:29:23.566Z</updated>
     <content type="html"><![CDATA[<p>用Java语言实现两个函数encode()和decode(),分别实现对字符串的变换和复原,变换函数encode()顺序考察已知字符串的字符,按以下规则逐组生成新字符串:</p>
@@ -97,16 +97,16 @@
     
     </summary>
     
-      <category term="java" scheme="http://molloc.com/tags/java/"/>
+      <category term="java" scheme="http://molloc.me/tags/java/"/>
     
-      <category term="工作相关" scheme="http://molloc.com/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
+      <category term="工作相关" scheme="http://molloc.me/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Nginx版本无缝升级]]></title>
-    <link href="http://molloc.com/2015/06/08/Nginx%E7%89%88%E6%9C%AC%E6%97%A0%E7%BC%9D%E5%8D%87%E7%BA%A7/"/>
-    <id>http://molloc.com/2015/06/08/Nginx版本无缝升级/</id>
+    <link href="http://molloc.me/2015/06/08/Nginx%E7%89%88%E6%9C%AC%E6%97%A0%E7%BC%9D%E5%8D%87%E7%BA%A7/"/>
+    <id>http://molloc.me/2015/06/08/Nginx版本无缝升级/</id>
     <published>2015-06-08T04:19:42.000Z</published>
     <updated>2015-06-08T04:23:29.333Z</updated>
     <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -V     <span class="comment">#查看版本</span></span><br><span class="line">nginx version: nginx/<span class="number">1.4</span>.<span class="number">3</span></span><br><span class="line">built by gcc <span class="number">4.4</span>.<span class="number">7</span> <span class="number">20120313</span> (Red Hat <span class="number">4.4</span>.<span class="number">7</span>-<span class="number">3</span>) (GCC)</span><br><span class="line">TLS SNI support enabled</span><br><span class="line">configure arguments: --prefix=/usr/<span class="built_in">local</span>/nginx --user=www --group=www</span><br><span class="line">                     --with-http_stub_status_module --with-http_ssl_module</span><br><span class="line">                     --with-http_flv_module --with-http_gzip_static_module</span><br><span class="line">                     --with-ld-opt=<span class="string">'-ljemalloc'</span> <span class="comment">#注意这里的编译项</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> lnmp/src</span><br><span class="line"></span><br><span class="line">wget http://nginx.org/download/nginx-<span class="number">1.4</span>.<span class="number">4</span>.tar.gz</span><br><span class="line"></span><br><span class="line">tar xzf nginx-<span class="number">1.4</span>.<span class="number">4</span>.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> nginx-<span class="number">1.4</span>.<span class="number">4</span></span><br><span class="line"></span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/nginx --user=www</span><br><span class="line">                                      --group=www --with-http_stub_status_module</span><br><span class="line">                                      --with-http_ssl_module --with-http_flv_module</span><br><span class="line">                                      --with-http_gzip_static_module --with-ld-opt=<span class="string">'-ljemalloc'</span></span><br><span class="line">make    //注意只make  不要make install</span><br><span class="line"></span><br><span class="line">mv /usr/<span class="built_in">local</span>/nginx/sbin/nginx /usr/<span class="built_in">local</span>/nginx/sbin/nginx$(date +%m%d)    <span class="comment">#备份nginx原文件</span></span><br><span class="line"></span><br><span class="line">cp objs/nginx /usr/<span class="built_in">local</span>/nginx/sbin/nginx     <span class="comment">#复制编译make后的文件覆盖nginx原文件</span></span><br><span class="line"></span><br><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -t     <span class="comment">#检测nginx文件配置</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">kill</span> -USR2 `cat /usr/<span class="built_in">local</span>/nginx/logs/nginx.pid`    <span class="comment">#把nginx.pid改成nginx.pid.oldbin跟着启动新的nginx</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">kill</span> -QUIT `cat /usr/<span class="built_in">local</span>/nginx/logs/nginx.pid.oldbin`   <span class="comment">#退出旧的nignx</span></span><br></pre></td></tr></table></figure>
@@ -115,18 +115,18 @@
     <![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class=]]>
     </summary>
     
-      <category term="linux" scheme="http://molloc.com/tags/linux/"/>
+      <category term="linux" scheme="http://molloc.me/tags/linux/"/>
     
-      <category term="nginx" scheme="http://molloc.com/tags/nginx/"/>
+      <category term="nginx" scheme="http://molloc.me/tags/nginx/"/>
     
-      <category term="探索发现" scheme="http://molloc.com/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/"/>
+      <category term="探索发现" scheme="http://molloc.me/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Cars]]></title>
-    <link href="http://molloc.com/2015/06/07/Cars/"/>
-    <id>http://molloc.com/2015/06/07/Cars/</id>
+    <link href="http://molloc.me/2015/06/07/Cars/"/>
+    <id>http://molloc.me/2015/06/07/Cars/</id>
     <published>2015-06-07T07:52:26.438Z</published>
     <updated>2015-06-07T07:52:26.431Z</updated>
     <content type="html"><![CDATA[<p>Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the presentation of the Huracán LP 610-4, Lamborghini offers a new dimension in luxury super sports cars.
@@ -142,16 +142,16 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     
     </summary>
     
-      <category term="Cars" scheme="http://molloc.com/tags/Cars/"/>
+      <category term="Cars" scheme="http://molloc.me/tags/Cars/"/>
     
-      <category term="美图世界" scheme="http://molloc.com/categories/%E7%BE%8E%E5%9B%BE%E4%B8%96%E7%95%8C/"/>
+      <category term="美图世界" scheme="http://molloc.me/categories/%E7%BE%8E%E5%9B%BE%E4%B8%96%E7%95%8C/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Hello Hexo]]></title>
-    <link href="http://molloc.com/2015/06/07/hello-hexo/"/>
-    <id>http://molloc.com/2015/06/07/hello-hexo/</id>
+    <link href="http://molloc.me/2015/06/07/hello-hexo/"/>
+    <id>http://molloc.me/2015/06/07/hello-hexo/</id>
     <published>2015-06-07T07:22:38.063Z</published>
     <updated>2015-06-07T07:22:38.055Z</updated>
     <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
@@ -179,14 +179,14 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     
     </summary>
     
-      <category term="探索发现" scheme="http://molloc.com/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/"/>
+      <category term="探索发现" scheme="http://molloc.me/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Linux Kernel 4.1 将是下一个长期支持版]]></title>
-    <link href="http://molloc.com/2015/06/06/Linux-Kernel-4-1-%E5%B0%86%E6%98%AF%E4%B8%8B%E4%B8%80%E4%B8%AA%E9%95%BF%E6%9C%9F%E6%94%AF%E6%8C%81%E7%89%88/"/>
-    <id>http://molloc.com/2015/06/06/Linux-Kernel-4-1-将是下一个长期支持版/</id>
+    <link href="http://molloc.me/2015/06/06/Linux-Kernel-4-1-%E5%B0%86%E6%98%AF%E4%B8%8B%E4%B8%80%E4%B8%AA%E9%95%BF%E6%9C%9F%E6%94%AF%E6%8C%81%E7%89%88/"/>
+    <id>http://molloc.me/2015/06/06/Linux-Kernel-4-1-将是下一个长期支持版/</id>
     <published>2015-06-06T00:43:07.000Z</published>
     <updated>2015-06-08T04:24:43.169Z</updated>
     <content type="html"><![CDATA[<p>Linux基金会长期支持计划项目组以及稳定内核分支维护者Greg Kroah-Hartman<a href="http://linux.slashdot.org/story/15/06/04/1341219/linux-kernel-41-will-be-an-lts-release" target="_blank" rel="external">证实</a>，下一个版本Linux Kernel 4.1将是一个长期支持版。长期支持内核针对的是嵌入式设备，嵌入式设备的生命期短更新更快，一般为两年左右，长期支持内核将提供两年的维护更新。</p>
@@ -204,18 +204,18 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     
     </summary>
     
-      <category term="kernel" scheme="http://molloc.com/tags/kernel/"/>
+      <category term="kernel" scheme="http://molloc.me/tags/kernel/"/>
     
-      <category term="linux" scheme="http://molloc.com/tags/linux/"/>
+      <category term="linux" scheme="http://molloc.me/tags/linux/"/>
     
-      <category term="探索发现" scheme="http://molloc.com/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/"/>
+      <category term="探索发现" scheme="http://molloc.me/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[pmp计算题汇总]]></title>
-    <link href="http://molloc.com/2015/06/02/pmp%E8%AE%A1%E7%AE%97%E9%A2%98%E6%B1%87%E6%80%BB/"/>
-    <id>http://molloc.com/2015/06/02/pmp计算题汇总/</id>
+    <link href="http://molloc.me/2015/06/02/pmp%E8%AE%A1%E7%AE%97%E9%A2%98%E6%B1%87%E6%80%BB/"/>
+    <id>http://molloc.me/2015/06/02/pmp计算题汇总/</id>
     <published>2015-06-02T05:33:39.000Z</published>
     <updated>2015-06-07T07:53:53.817Z</updated>
     <content type="html"><![CDATA[<h2 id="回收期-payback-period"><a class="header-anchor" href="#回收期-payback-period"></a>回收期(Payback Period)</h2>
@@ -271,16 +271,16 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     
     </summary>
     
-      <category term="pmp" scheme="http://molloc.com/tags/pmp/"/>
+      <category term="pmp" scheme="http://molloc.me/tags/pmp/"/>
     
-      <category term="工作相关" scheme="http://molloc.com/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
+      <category term="工作相关" scheme="http://molloc.me/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[PMP考试总结]]></title>
-    <link href="http://molloc.com/2015/05/27/PMP%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/"/>
-    <id>http://molloc.com/2015/05/27/PMP考试总结/</id>
+    <link href="http://molloc.me/2015/05/27/PMP%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/"/>
+    <id>http://molloc.me/2015/05/27/PMP考试总结/</id>
     <published>2015-05-27T15:11:32.000Z</published>
     <updated>2015-06-09T09:14:43.254Z</updated>
     <content type="html"><![CDATA[<ul>
@@ -1617,16 +1617,16 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     
     </summary>
     
-      <category term="pmp" scheme="http://molloc.com/tags/pmp/"/>
+      <category term="pmp" scheme="http://molloc.me/tags/pmp/"/>
     
-      <category term="工作相关" scheme="http://molloc.com/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
+      <category term="工作相关" scheme="http://molloc.me/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Nginx 配置文件总结]]></title>
-    <link href="http://molloc.com/2015/05/25/Nginx-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%80%BB%E7%BB%93/"/>
-    <id>http://molloc.com/2015/05/25/Nginx-配置文件总结/</id>
+    <link href="http://molloc.me/2015/05/25/Nginx-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%80%BB%E7%BB%93/"/>
+    <id>http://molloc.me/2015/05/25/Nginx-配置文件总结/</id>
     <published>2015-05-25T04:28:09.000Z</published>
     <updated>2015-06-07T06:47:50.533Z</updated>
     <content type="html"><![CDATA[<h2 id="顶级配置"><a class="header-anchor" href="#顶级配置"></a>顶级配置</h2>
@@ -1657,18 +1657,18 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     
     </summary>
     
-      <category term="linux" scheme="http://molloc.com/tags/linux/"/>
+      <category term="linux" scheme="http://molloc.me/tags/linux/"/>
     
-      <category term="nginx" scheme="http://molloc.com/tags/nginx/"/>
+      <category term="nginx" scheme="http://molloc.me/tags/nginx/"/>
     
-      <category term="工作相关" scheme="http://molloc.com/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
+      <category term="工作相关" scheme="http://molloc.me/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Git push与pull的默认行为]]></title>
-    <link href="http://molloc.com/2015/05/22/Git-push%E4%B8%8Epull%E7%9A%84%E9%BB%98%E8%AE%A4%E8%A1%8C%E4%B8%BA/"/>
-    <id>http://molloc.com/2015/05/22/Git-push与pull的默认行为/</id>
+    <link href="http://molloc.me/2015/05/22/Git-push%E4%B8%8Epull%E7%9A%84%E9%BB%98%E8%AE%A4%E8%A1%8C%E4%B8%BA/"/>
+    <id>http://molloc.me/2015/05/22/Git-push与pull的默认行为/</id>
     <published>2015-05-22T04:20:18.000Z</published>
     <updated>2015-06-07T07:22:08.322Z</updated>
     <content type="html"><![CDATA[<h2 id="git-push"><a class="header-anchor" href="#git-push"></a>git push</h2>
@@ -1734,20 +1734,20 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     
     </summary>
     
-      <category term="git" scheme="http://molloc.com/tags/git/"/>
+      <category term="git" scheme="http://molloc.me/tags/git/"/>
     
-      <category term="pull" scheme="http://molloc.com/tags/pull/"/>
+      <category term="pull" scheme="http://molloc.me/tags/pull/"/>
     
-      <category term="push" scheme="http://molloc.com/tags/push/"/>
+      <category term="push" scheme="http://molloc.me/tags/push/"/>
     
-      <category term="工作相关" scheme="http://molloc.com/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
+      <category term="工作相关" scheme="http://molloc.me/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[高效Linux bash快捷键及alias总结]]></title>
-    <link href="http://molloc.com/2015/05/15/%E9%AB%98%E6%95%88Linux-bash%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%8F%8Aalias%E6%80%BB%E7%BB%93/"/>
-    <id>http://molloc.com/2015/05/15/高效Linux-bash快捷键及alias总结/</id>
+    <link href="http://molloc.me/2015/05/15/%E9%AB%98%E6%95%88Linux-bash%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%8F%8Aalias%E6%80%BB%E7%BB%93/"/>
+    <id>http://molloc.me/2015/05/15/高效Linux-bash快捷键及alias总结/</id>
     <published>2015-05-15T14:33:57.000Z</published>
     <updated>2015-06-07T06:48:16.212Z</updated>
     <content type="html"><![CDATA[<p>习惯使用编辑的快捷键可以大大提高效率，记忆学习过程要有意识的忽略功能键、方向键和数字小键盘。以下快捷键适用在bash处于默认的Emacs模式下。如果你有 set -o vi ，就处于  vi 模式就不适用了。另外下面的内容并不包含所有快捷键，只是我个人适用频率最高的几种，但相信已经可以大大提高工作效率了：</p>
@@ -1764,13 +1764,13 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     
     </summary>
     
-      <category term="alias" scheme="http://molloc.com/tags/alias/"/>
+      <category term="alias" scheme="http://molloc.me/tags/alias/"/>
     
-      <category term="bash" scheme="http://molloc.com/tags/bash/"/>
+      <category term="bash" scheme="http://molloc.me/tags/bash/"/>
     
-      <category term="linux" scheme="http://molloc.com/tags/linux/"/>
+      <category term="linux" scheme="http://molloc.me/tags/linux/"/>
     
-      <category term="工作相关" scheme="http://molloc.com/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
+      <category term="工作相关" scheme="http://molloc.me/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
