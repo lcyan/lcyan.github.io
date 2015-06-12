@@ -80,6 +80,80 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/06/12/Tomcat无法shutdown进程/" title="Tomcat无法shutdown进程" itemprop="url">Tomcat无法shutdown进程</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Lcyan" target="_blank" itemprop="author">Lcyan</a>
+		
+  <p class="article-time">
+    <time datetime="2015-06-12T09:10:16.000Z" itemprop="datePublished"> 发表于 2015-06-12</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>在tomcat部署web项目后，需要时不时的更新下web项目，于是我经常的关闭tomcat然后再启动。偶然间发现了关闭tomcat后仍然有几个tomcat进程在运行</p>
+<h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
+<ul>
+<li>关闭tomcat</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/shutdown.sh</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看进程</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux | grep tomcat</span><br></pre></td></tr></table></figure>
+<p>出现多个如下的进程信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root     <span class="number">44546</span>  <span class="number">0.5</span> <span class="number">20.8</span> <span class="number">3407008</span> <span class="number">796624</span> ?      Sl   Jun11   <span class="number">8</span>:<span class="number">01</span>  \_ /root/fhcs/jdk/jdk1.<span class="number">7.0</span>_65/bin/java -Djava.util.logging.config.file=/root/fhcs/dev/<span class="built_in">test</span>/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Xms1512m -Xmx1512m -XX:PermSize=<span class="number">256</span>M -XX:MaxNewSize=<span class="number">256</span>m -XX:MaxPermSize=<span class="number">256</span>m -Djava.awt.headless=<span class="literal">true</span> -Djava.endorsed.dirs=/root/fhcs/dev/<span class="built_in">test</span>/endorsed -classpath /root/fhcs/dev/<span class="built_in">test</span>/bin/bootstrap.jar:/root/fhcs/dev/<span class="built_in">test</span>/bin/tomcat-juli.jar -Dcatalina.base=/root/fhcs/dev/<span class="built_in">test</span> -Dcatalina.home=/root/fhcs/dev/<span class="built_in">test</span> -Djava.io.tmpdir=/root/fhcs/dev/<span class="built_in">test</span>/temp org.apache.catalina.startup.Bootstrap start</span><br><span class="line">root     <span class="number">47260</span>  <span class="number">0.4</span> <span class="number">20.6</span> <span class="number">3538724</span> <span class="number">789544</span> ?      Sl   Jun11   <span class="number">5</span>:<span class="number">58</span>  \_ /root/fhcs/jdk/jdk1.<span class="number">7.0</span>_65/bin/java -Djava.util.logging.config.file=/root/fhcs/dev/product/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Xms1512m -Xmx1512m -XX:PermSize=<span class="number">256</span>M -XX:MaxNewSize=<span class="number">256</span>m -XX:MaxPermSize=<span class="number">256</span>m -Djava.awt.headless=<span class="literal">true</span> -Djava.endorsed.dirs=/root/fhcs/dev/product/endorsed -classpath /root/fhcs/dev/product/bin/bootstrap.jar:/root/fhcs/dev/product/bin/tomcat-juli.jar -Dcatalina.base=/root/fhcs/dev/product -Dcatalina.home=/root/fhcs/dev/product -Djava.io.tmpdir=/root/fhcs/dev/product/temp org.apache.catalina.startup.Bootstrap start</span><br></pre></td></tr></table></figure>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/工作相关/">工作相关</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/tomcat/">tomcat</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/06/12/Tomcat无法shutdown进程/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/06/12/Tomcat无法shutdown进程/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/06/11/切分Tomcat的catalina-out文件-解决日志文件过大的问题/" title="切分Tomcat的catalina.out文件,解决日志文件过大的问题" itemprop="url">切分Tomcat的catalina.out文件,解决日志文件过大的问题</a>
   </h1>
   <p class="article-author">By
@@ -693,73 +767,6 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/05/22/Git-push与pull的默认行为/" title="Git push与pull的默认行为" itemprop="url">Git push与pull的默认行为</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lcyan" target="_blank" itemprop="author">Lcyan</a>
-		
-  <p class="article-time">
-    <time datetime="2015-05-22T04:20:18.000Z" itemprop="datePublished"> 发表于 2015-05-22</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="git-push"><a class="header-anchor" href="#git-push"></a>git push</h2>
-<p>通常对于一个本地的新建分支，例如<code>git checkout -b develop</code>, 在<code>develop</code>分支<code>commit</code>了代码之后，如果直接执行<code>git push</code>命令，<code>develop</code>分支将不会被<code>push</code>到远程仓库（但此时<code>git push</code>操作有可能会推送一些代码到远程仓库，这取决于我们本地<code>git config</code>配置中的<code>push.default</code>默认行为，下文将会逐一详解）。</p>
-<p>因此我们至少需要显式指定将要推送的分支名，例如<code>git push origin develop</code>，才能将本地新分支推送到远程仓库。</p>
-<p>当我们通过显式指定分支名进行初次<code>push</code>操作后，本地有了新的<code>commit</code>，此时执行<code>git push</code>命令会有什么效果呢？</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/05/22/Git-push与pull的默认行为/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/工作相关/">工作相关</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/git/">git</a><a href="/tags/pull/">pull</a><a href="/tags/push/">push</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/05/22/Git-push与pull的默认行为/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/05/22/Git-push与pull的默认行为/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -778,7 +785,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 		<ul>
 		
 		  
-			<li><a href="/categories/工作相关/" title="工作相关">工作相关<sup>7</sup></a></li>
+			<li><a href="/categories/工作相关/" title="工作相关">工作相关<sup>8</sup></a></li>
 		  
 		
 		  
@@ -796,7 +803,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
   </div>
 
 
@@ -818,11 +825,11 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 			
 		
 			
-				<li><a href="/tags/java/" title="java">java<sup>1</sup></a></li>
+				<li><a href="/tags/tomcat/" title="tomcat">tomcat<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/tomcat/" title="tomcat">tomcat<sup>1</sup></a></li>
+				<li><a href="/tags/java/" title="java">java<sup>1</sup></a></li>
 			
 		
 			

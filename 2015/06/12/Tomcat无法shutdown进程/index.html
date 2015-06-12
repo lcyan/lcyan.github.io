@@ -4,23 +4,56 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Nginx版本无缝升级 | Robot</title>
+    <title>Tomcat无法shutdown进程 | Robot</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Lcyan">
     
 
     
-    <meta name="description" content="1234567891011121314151617181920212223242526272829303132/usr/local/nginx/sbin/nginx -V     #查看版本nginx version: nginx/1.4.3built by gcc 4.4.7 20120313 (Red Hat 4.4.7-3) (GCC)TLS SNI support enabledconfi">
+    <meta name="description" content="在tomcat部署web项目后，需要时不时的更新下web项目，于是我经常的关闭tomcat然后再启动。偶然间发现了关闭tomcat后仍然有几个tomcat进程在运行
+问题描述
+
+关闭tomcat
+
+1/bin/shutdown.sh
+
+查看进程
+
+1ps aux | grep tomcat
+出现多个如下的进程信息
+12root     44546  0.5 20.8 3407008 796624">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginx版本无缝升级">
-<meta property="og:url" content="http://molloc.me/2015/06/08/Nginx版本无缝升级/index.html">
+<meta property="og:title" content="Tomcat无法shutdown进程">
+<meta property="og:url" content="http://molloc.me/2015/06/12/Tomcat无法shutdown进程/index.html">
 <meta property="og:site_name" content="Robot">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132/usr/local/nginx/sbin/nginx -V     #查看版本nginx version: nginx/1.4.3built by gcc 4.4.7 20120313 (Red Hat 4.4.7-3) (GCC)TLS SNI support enabledconfi">
-<meta property="og:updated_time" content="2015-06-08T04:23:29.333Z">
+<meta property="og:description" content="在tomcat部署web项目后，需要时不时的更新下web项目，于是我经常的关闭tomcat然后再启动。偶然间发现了关闭tomcat后仍然有几个tomcat进程在运行
+问题描述
+
+关闭tomcat
+
+1/bin/shutdown.sh
+
+查看进程
+
+1ps aux | grep tomcat
+出现多个如下的进程信息
+12root     44546  0.5 20.8 3407008 796624">
+<meta property="og:updated_time" content="2015-06-12T09:38:44.565Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nginx版本无缝升级">
-<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132/usr/local/nginx/sbin/nginx -V     #查看版本nginx version: nginx/1.4.3built by gcc 4.4.7 20120313 (Red Hat 4.4.7-3) (GCC)TLS SNI support enabledconfi">
+<meta name="twitter:title" content="Tomcat无法shutdown进程">
+<meta name="twitter:description" content="在tomcat部署web项目后，需要时不时的更新下web项目，于是我经常的关闭tomcat然后再启动。偶然间发现了关闭tomcat后仍然有几个tomcat进程在运行
+问题描述
+
+关闭tomcat
+
+1/bin/shutdown.sh
+
+查看进程
+
+1ps aux | grep tomcat
+出现多个如下的进程信息
+12root     44546  0.5 20.8 3407008 796624">
 
     
     <link rel="alternative" href="/atom.xml" title="Robot" type="application/atom+xml">
@@ -79,14 +112,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/06/08/Nginx版本无缝升级/" title="Nginx版本无缝升级" itemprop="url">Nginx版本无缝升级</a>
+      <a href="/2015/06/12/Tomcat无法shutdown进程/" title="Tomcat无法shutdown进程" itemprop="url">Tomcat无法shutdown进程</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Lcyan" target="_blank" itemprop="author">Lcyan</a>
 		
   <p class="article-time">
-    <time datetime="2015-06-08T04:19:42.000Z" itemprop="datePublished"> 发表于 2015-06-08</time>
+    <time datetime="2015-06-12T09:10:16.000Z" itemprop="datePublished"> 发表于 2015-06-12</time>
     
   </p>
 </header>
@@ -95,11 +128,22 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.</span> <span class="toc-text">问题描述</span></a></li></ol>
 		
 		</div>
 		
-		<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -V     <span class="comment">#查看版本</span></span><br><span class="line">nginx version: nginx/<span class="number">1.4</span>.<span class="number">3</span></span><br><span class="line">built by gcc <span class="number">4.4</span>.<span class="number">7</span> <span class="number">20120313</span> (Red Hat <span class="number">4.4</span>.<span class="number">7</span>-<span class="number">3</span>) (GCC)</span><br><span class="line">TLS SNI support enabled</span><br><span class="line">configure arguments: --prefix=/usr/<span class="built_in">local</span>/nginx --user=www --group=www</span><br><span class="line">                     --with-http_stub_status_module --with-http_ssl_module</span><br><span class="line">                     --with-http_flv_module --with-http_gzip_static_module</span><br><span class="line">                     --with-ld-opt=<span class="string">'-ljemalloc'</span> <span class="comment">#注意这里的编译项</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> lnmp/src</span><br><span class="line"></span><br><span class="line">wget http://nginx.org/download/nginx-<span class="number">1.4</span>.<span class="number">4</span>.tar.gz</span><br><span class="line"></span><br><span class="line">tar xzf nginx-<span class="number">1.4</span>.<span class="number">4</span>.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> nginx-<span class="number">1.4</span>.<span class="number">4</span></span><br><span class="line"></span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/nginx --user=www</span><br><span class="line">                                      --group=www --with-http_stub_status_module</span><br><span class="line">                                      --with-http_ssl_module --with-http_flv_module</span><br><span class="line">                                      --with-http_gzip_static_module --with-ld-opt=<span class="string">'-ljemalloc'</span></span><br><span class="line">make    //注意只make  不要make install</span><br><span class="line"></span><br><span class="line">mv /usr/<span class="built_in">local</span>/nginx/sbin/nginx /usr/<span class="built_in">local</span>/nginx/sbin/nginx$(date +%m%d)    <span class="comment">#备份nginx原文件</span></span><br><span class="line"></span><br><span class="line">cp objs/nginx /usr/<span class="built_in">local</span>/nginx/sbin/nginx     <span class="comment">#复制编译make后的文件覆盖nginx原文件</span></span><br><span class="line"></span><br><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -t     <span class="comment">#检测nginx文件配置</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">kill</span> -USR2 `cat /usr/<span class="built_in">local</span>/nginx/logs/nginx.pid`    <span class="comment">#把nginx.pid改成nginx.pid.oldbin跟着启动新的nginx</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">kill</span> -QUIT `cat /usr/<span class="built_in">local</span>/nginx/logs/nginx.pid.oldbin`   <span class="comment">#退出旧的nignx</span></span><br></pre></td></tr></table></figure>
+		<p>在tomcat部署web项目后，需要时不时的更新下web项目，于是我经常的关闭tomcat然后再启动。偶然间发现了关闭tomcat后仍然有几个tomcat进程在运行</p>
+<h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
+<ul>
+<li>关闭tomcat</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/shutdown.sh</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看进程</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux | grep tomcat</span><br></pre></td></tr></table></figure>
+<p>出现多个如下的进程信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root     <span class="number">44546</span>  <span class="number">0.5</span> <span class="number">20.8</span> <span class="number">3407008</span> <span class="number">796624</span> ?      Sl   Jun11   <span class="number">8</span>:<span class="number">01</span>  \_ /root/fhcs/jdk/jdk1.<span class="number">7.0</span>_65/bin/java -Djava.util.logging.config.file=/root/fhcs/dev/<span class="built_in">test</span>/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Xms1512m -Xmx1512m -XX:PermSize=<span class="number">256</span>M -XX:MaxNewSize=<span class="number">256</span>m -XX:MaxPermSize=<span class="number">256</span>m -Djava.awt.headless=<span class="literal">true</span> -Djava.endorsed.dirs=/root/fhcs/dev/<span class="built_in">test</span>/endorsed -classpath /root/fhcs/dev/<span class="built_in">test</span>/bin/bootstrap.jar:/root/fhcs/dev/<span class="built_in">test</span>/bin/tomcat-juli.jar -Dcatalina.base=/root/fhcs/dev/<span class="built_in">test</span> -Dcatalina.home=/root/fhcs/dev/<span class="built_in">test</span> -Djava.io.tmpdir=/root/fhcs/dev/<span class="built_in">test</span>/temp org.apache.catalina.startup.Bootstrap start</span><br><span class="line">root     <span class="number">47260</span>  <span class="number">0.4</span> <span class="number">20.6</span> <span class="number">3538724</span> <span class="number">789544</span> ?      Sl   Jun11   <span class="number">5</span>:<span class="number">58</span>  \_ /root/fhcs/jdk/jdk1.<span class="number">7.0</span>_65/bin/java -Djava.util.logging.config.file=/root/fhcs/dev/product/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Xms1512m -Xmx1512m -XX:PermSize=<span class="number">256</span>M -XX:MaxNewSize=<span class="number">256</span>m -XX:MaxPermSize=<span class="number">256</span>m -Djava.awt.headless=<span class="literal">true</span> -Djava.endorsed.dirs=/root/fhcs/dev/product/endorsed -classpath /root/fhcs/dev/product/bin/bootstrap.jar:/root/fhcs/dev/product/bin/tomcat-juli.jar -Dcatalina.base=/root/fhcs/dev/product -Dcatalina.home=/root/fhcs/dev/product -Djava.io.tmpdir=/root/fhcs/dev/product/temp org.apache.catalina.startup.Bootstrap start</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -107,13 +151,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/探索发现/">探索发现</a>
+  <a class="article-category-link" href="/categories/工作相关/">工作相关</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/linux/">linux</a><a href="/tags/nginx/">nginx</a>
+  <span></span> <a href="/tags/tomcat/">tomcat</a>
   </div>
 
 </div>
@@ -122,7 +166,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://molloc.me/2015/06/08/Nginx版本无缝升级/" data-title="Nginx版本无缝升级 | Robot" data-tsina="2205010230" class="share clearfix">
+	  <div data-url="http://molloc.me/2015/06/12/Tomcat无法shutdown进程/" data-title="Tomcat无法shutdown进程 | Robot" data-tsina="2205010230" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -135,19 +179,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/06/09/面试题之encode-decode/" title="面试题之encode,decode">
-  <strong>上一篇：</strong><br/>
-  <span>
-  面试题之encode,decode</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/06/07/Cars/"  title="Cars">
+<a href="/2015/06/11/切分Tomcat的catalina-out文件-解决日志文件过大的问题/"  title="切分Tomcat的catalina.out文件,解决日志文件过大的问题">
  <strong>下一篇：</strong><br/> 
- <span>Cars
+ <span>切分Tomcat的catalina.out文件,解决日志文件过大的问题
 </span>
 </a>
 </div>
@@ -156,7 +192,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/06/08/Nginx版本无缝升级/" data-title="Nginx版本无缝升级" data-url="http://molloc.me/2015/06/08/Nginx版本无缝升级/"></div>
+	<div class="ds-thread" data-thread-key="2015/06/12/Tomcat无法shutdown进程/" data-title="Tomcat无法shutdown进程" data-url="http://molloc.me/2015/06/12/Tomcat无法shutdown进程/"></div>
 </section>
 
 
@@ -166,7 +202,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.</span> <span class="toc-text">问题描述</span></a></li></ol>
  
   </div>
 
