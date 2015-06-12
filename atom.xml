@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-06-12T10:05:49.012Z</updated>
+  <updated>2015-06-12T15:42:47.415Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -13,6 +13,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[catalina_pid file contains +1 pid number instead of correct pid]]></title>
+    <link href="http://molloc.me/2015/06/12/catalina_pid%20file%20contains%20+1%20pid%20number%20instead%20of%20correct%20pid/"/>
+    <id>http://molloc.me/2015/06/12/catalina_pid file contains +1 pid number instead of correct pid/</id>
+    <published>2015-06-12T15:07:21.000Z</published>
+    <updated>2015-06-12T15:42:47.415Z</updated>
+    <content type="html"><![CDATA[<h2 id="problem-description"><a class="header-anchor" href="#problem-description"></a>Problem description</h2>
+<p>I have recently enabled catalina_pid functionality using environment variable. The PID file got created and contains +1 PID number.</p>
+<p>If the Tomcat's real PID number 5446, the pid file would contain 5447 as PID number.</p>
+<h2 id="issue-tracking"><a class="header-anchor" href="#issue-tracking"></a>Issue tracking</h2>
+<p>My guess is that you have changed the logging to use cronolog and as such the PID being written is actually the logging process and not the catalina process. Check your catalina.sh file If you see something like this</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org.apache.catalina.startup.Bootstrap <span class="string">"<span class="variable">$@</span>"</span> start \</span><br><span class="line"><span class="number">2</span>&gt;&amp;<span class="number">1</span> |/usr/sbin/cronolog <span class="string">"<span class="variable">$CATALINA_BASE</span>/logs/catalina.%Y-%m-%d.log"</span> &amp;</span><br></pre></td></tr></table></figure>
+<p>Then there is your answer</p>
+<h2 id="the-solution"><a class="header-anchor" href="#the-solution"></a>The solution</h2>
+<p>You need to change the block where the pid is assigned which should be just under the line I described</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ ! -z <span class="string">"<span class="variable">$CATALINA_PID</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<p>And this is a bit of a hack but something like this will give you the correct pid.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ ! -z <span class="string">"<span class="variable">$CATALINA_PID</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">	ps aux | grep tomcat | grep <span class="string">'/dev/product'</span> | awk <span class="string">'&#123;print $2&#125;'</span> &gt; <span class="string">"<span class="variable">$CATALINA_PID</span>"</span> <span class="comment">#'/dev/product' is arbitrary</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<h2 id="test"><a class="header-anchor" href="#test"></a>Test</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /root/fhcs/dev/product/bin/CATALINA_PID # =&#62; 56974&#10;ps auxf | grep tomcat | grep &#39;/dev/product/&#39; | awk &#39;&#123;print $2&#125;&#39; # =&#62; 56974</span><br></pre></td></tr></table></figure>
+<p>Tks</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="problem-description"><a class="header-anchor" href="#problem-description"></a>Problem description</h2>
+<p>I have recently enabled ca]]>
+    </summary>
+    
+      <category term="tomcat" scheme="http://molloc.me/tags/tomcat/"/>
+    
+      <category term="工作相关" scheme="http://molloc.me/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Tomcat无法shutdown进程]]></title>
