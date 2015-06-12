@@ -20,11 +20,7 @@
 
 查看进程
 
-1ps aux | grep tomcat
-
-出现多个如下的进程信息
-
-12345678910111213141516root     44546  0">
+1ps aux | grep tomcat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tomcat无法shutdown进程">
 <meta property="og:url" content="http://molloc.me/2015/06/12/Tomcat无法shutdown进程/index.html">
@@ -38,12 +34,8 @@
 
 查看进程
 
-1ps aux | grep tomcat
-
-出现多个如下的进程信息
-
-12345678910111213141516root     44546  0">
-<meta property="og:updated_time" content="2015-06-12T10:02:58.999Z">
+1ps aux | grep tomcat">
+<meta property="og:updated_time" content="2015-06-12T10:05:49.012Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tomcat无法shutdown进程">
 <meta name="twitter:description" content="在tomcat部署web项目后，需要时不时的更新下web项目，于是我经常的关闭tomcat然后再启动。偶然间发现了关闭tomcat后仍然有几个tomcat进程在运行
@@ -55,11 +47,7 @@
 
 查看进程
 
-1ps aux | grep tomcat
-
-出现多个如下的进程信息
-
-12345678910111213141516root     44546  0">
+1ps aux | grep tomcat">
 
     
     <link rel="alternative" href="/atom.xml" title="Robot" type="application/atom+xml">
@@ -148,9 +136,8 @@
 <li>查看进程</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux | grep tomcat</span><br></pre></td></tr></table></figure>
-<ul>
-<li>出现多个如下的进程信息</li>
-</ul>
+<a id="more"></a>
++ 出现多个如下的进程信息
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">root     <span class="number">44546</span>  <span class="number">0.5</span> <span class="number">20.8</span> <span class="number">3407008</span> <span class="number">796624</span> ?      Sl   Jun11   <span class="number">8</span>:<span class="number">01</span>  \_ /root/fhcs/jdk/jdk1.<span class="number">7.0</span>_65/bin/java</span><br><span class="line">\ -Djava.util.logging.config.file=/root/fhcs/dev/<span class="built_in">test</span>/conf/logging.properties</span><br><span class="line">\ -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager</span><br><span class="line">\ -Xms1512m -Xmx1512m -XX:PermSize=<span class="number">256</span>M -XX:MaxNewSize=<span class="number">256</span>m -XX:MaxPermSize=<span class="number">256</span>m</span><br><span class="line">\ -Djava.awt.headless=<span class="literal">true</span> -Djava.endorsed.dirs=/root/fhcs/dev/<span class="built_in">test</span>/endorsed -classpath</span><br><span class="line">\ /root/fhcs/dev/<span class="built_in">test</span>/bin/bootstrap.jar:/root/fhcs/dev/<span class="built_in">test</span>/bin/tomcat-juli.jar</span><br><span class="line">\ -Dcatalina.base=/root/fhcs/dev/<span class="built_in">test</span> -Dcatalina.home=/root/fhcs/dev/<span class="built_in">test</span></span><br><span class="line">\ -Djava.io.tmpdir=/root/fhcs/dev/<span class="built_in">test</span>/temp org.apache.catalina.startup.Bootstrap start</span><br><span class="line">root     <span class="number">47260</span>  <span class="number">0.4</span> <span class="number">20.6</span> <span class="number">3538724</span> <span class="number">789544</span> ?      Sl   Jun11   <span class="number">5</span>:<span class="number">58</span>  \_ /root/fhcs/jdk/jdk1.<span class="number">7.0</span>_65/bin/java</span><br><span class="line">\ -Djava.util.logging.config.file=/root/fhcs/dev/product/conf/logging.properties</span><br><span class="line">\ -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager</span><br><span class="line">\ -Xms1512m -Xmx1512m -XX:PermSize=<span class="number">256</span>M -XX:MaxNewSize=<span class="number">256</span>m -XX:MaxPermSize=<span class="number">256</span>m</span><br><span class="line">\ -Djava.awt.headless=<span class="literal">true</span> -Djava.endorsed.dirs=/root/fhcs/dev/product/endorsed</span><br><span class="line">\ -classpath /root/fhcs/dev/product/bin/bootstrap.jar:/root/fhcs/dev/product/bin/tomcat-juli.jar</span><br><span class="line">\ -Dcatalina.base=/root/fhcs/dev/product -Dcatalina.home=/root/fhcs/dev/product</span><br><span class="line">\ -Djava.io.tmpdir=/root/fhcs/dev/product/temp org.apache.catalina.startup.Bootstrap start</span><br></pre></td></tr></table></figure>
 <h2 id="原因分析"><a class="header-anchor" href="#原因分析"></a>原因分析</h2>
 <p>起初也查找了原因，大概感觉是mysql连接没有关闭，或者是在程序中创建的线程没有销毁。于是在servlet的contextdestroyed上设置变量，通过DriverManager手动卸载mysql驱动，在关闭容器时改变线程的运行条件等，但是仍然不奏效。</p>
