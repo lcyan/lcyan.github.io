@@ -96,22 +96,11 @@
         <h2 id="problem-description"><a class="header-anchor" href="#problem-description"></a>Problem description</h2>
 <p>I have recently enabled catalina_pid functionality using environment variable. The PID file got created and contains +1 PID number.</p>
 <p>If the Tomcat's real PID number 5446, the pid file would contain 5447 as PID number.</p>
-<h2 id="issue-tracking"><a class="header-anchor" href="#issue-tracking"></a>Issue tracking</h2>
-<p>My guess is that you have changed the logging to use cronolog and as such the PID being written is actually the logging process and not the catalina process. Check your catalina.sh file If you see something like this</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org.apache.catalina.startup.Bootstrap <span class="string">"<span class="variable">$@</span>"</span> start \</span><br><span class="line"><span class="number">2</span>&gt;&amp;<span class="number">1</span> |/usr/sbin/cronolog <span class="string">"<span class="variable">$CATALINA_BASE</span>/logs/catalina.%Y-%m-%d.log"</span> &amp;</span><br></pre></td></tr></table></figure>
-<p>Then there is your answer</p>
-<h2 id="the-solution"><a class="header-anchor" href="#the-solution"></a>The solution</h2>
-<p>You need to change the block where the pid is assigned which should be just under the line I described</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ ! -z <span class="string">"<span class="variable">$CATALINA_PID</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
-<p>And this is a bit of a hack but something like this will give you the correct pid.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ ! -z <span class="string">"<span class="variable">$CATALINA_PID</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">	ps aux | grep tomcat | grep <span class="string">'/dev/product'</span> | awk <span class="string">'&#123;print $2&#125;'</span> &gt; <span class="string">"<span class="variable">$CATALINA_PID</span>"</span> <span class="comment">#'/dev/product' is arbitrary</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
-<h2 id="test"><a class="header-anchor" href="#test"></a>Test</h2>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /root/fhcs/dev/product/bin/CATALINA_PID # =&#62; 56974&#10;ps auxf | grep tomcat | grep &#39;/dev/product/&#39; | awk &#39;&#123;print $2&#125;&#39; # =&#62; 56974</span><br></pre></td></tr></table></figure>
-<p>Tks</p>
-
         
         
         <p class="article-more-link">
+          
+            <a href="/2015/06/12/catalina_pid file contains +1 pid number instead of correct pid/#more">Read More</a>
           
        </p>
     </div>
