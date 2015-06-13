@@ -4,23 +4,33 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Nginx版本无缝升级 | Robot</title>
+    <title>crontab定时删除tomcat日志 | Robot</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Lcyan">
     
 
     
-    <meta name="description" content="1234567891011121314151617181920212223242526272829303132/usr/local/nginx/sbin/nginx -V     #查看版本nginx version: nginx/1.4.3built by gcc 4.4.7 20120313 (Red Hat 4.4.7-3) (GCC)TLS SNI support enabledconfi">
+    <meta name="description" content="使用场景
+定时清除生产环境上tomcat日志文件夹的日志,避免占满服务器硬盘.
+
+1234567891011-rw-r--r--. 1 root root   2398 6月  11 15:29 admin.2015-06-11.log-rw-r--r--. 1 root root 249758 6月  11 23:55 catalina.2015-06-11.log-rw-r--r--. 1 r">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginx版本无缝升级">
-<meta property="og:url" content="http://molloc.me/2015/06/08/Nginx版本无缝升级/index.html">
+<meta property="og:title" content="crontab定时删除tomcat日志">
+<meta property="og:url" content="http://molloc.me/2015/06/13/crontab定时删除tomcat日志/index.html">
 <meta property="og:site_name" content="Robot">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132/usr/local/nginx/sbin/nginx -V     #查看版本nginx version: nginx/1.4.3built by gcc 4.4.7 20120313 (Red Hat 4.4.7-3) (GCC)TLS SNI support enabledconfi">
-<meta property="og:updated_time" content="2015-06-08T04:23:29.333Z">
+<meta property="og:description" content="使用场景
+定时清除生产环境上tomcat日志文件夹的日志,避免占满服务器硬盘.
+
+1234567891011-rw-r--r--. 1 root root   2398 6月  11 15:29 admin.2015-06-11.log-rw-r--r--. 1 root root 249758 6月  11 23:55 catalina.2015-06-11.log-rw-r--r--. 1 r">
+<meta property="og:image" content="http://static.molloc.com/img/201506/server_info.png">
+<meta property="og:updated_time" content="2015-06-13T08:28:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nginx版本无缝升级">
-<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132/usr/local/nginx/sbin/nginx -V     #查看版本nginx version: nginx/1.4.3built by gcc 4.4.7 20120313 (Red Hat 4.4.7-3) (GCC)TLS SNI support enabledconfi">
+<meta name="twitter:title" content="crontab定时删除tomcat日志">
+<meta name="twitter:description" content="使用场景
+定时清除生产环境上tomcat日志文件夹的日志,避免占满服务器硬盘.
+
+1234567891011-rw-r--r--. 1 root root   2398 6月  11 15:29 admin.2015-06-11.log-rw-r--r--. 1 root root 249758 6月  11 23:55 catalina.2015-06-11.log-rw-r--r--. 1 r">
 
     
     <link rel="alternative" href="/atom.xml" title="Robot" type="application/atom+xml">
@@ -79,14 +89,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/06/08/Nginx版本无缝升级/" title="Nginx版本无缝升级" itemprop="url">Nginx版本无缝升级</a>
+      <a href="/2015/06/13/crontab定时删除tomcat日志/" title="crontab定时删除tomcat日志" itemprop="url">crontab定时删除tomcat日志</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Lcyan" target="_blank" itemprop="author">Lcyan</a>
 		
   <p class="article-time">
-    <time datetime="2015-06-08T04:19:42.000Z" itemprop="datePublished"> 发表于 2015-06-08</time>
+    <time datetime="2015-06-13T07:34:18.000Z" itemprop="datePublished"> 发表于 2015-06-13</time>
     
   </p>
 </header>
@@ -95,11 +105,24 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用场景"><span class="toc-number">1.</span> <span class="toc-text">使用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决思路"><span class="toc-number">2.</span> <span class="toc-text">解决思路</span></a></li></ol>
 		
 		</div>
 		
-		<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -V     <span class="comment">#查看版本</span></span><br><span class="line">nginx version: nginx/<span class="number">1.4</span>.<span class="number">3</span></span><br><span class="line">built by gcc <span class="number">4.4</span>.<span class="number">7</span> <span class="number">20120313</span> (Red Hat <span class="number">4.4</span>.<span class="number">7</span>-<span class="number">3</span>) (GCC)</span><br><span class="line">TLS SNI support enabled</span><br><span class="line">configure arguments: --prefix=/usr/<span class="built_in">local</span>/nginx --user=www --group=www</span><br><span class="line">                     --with-http_stub_status_module --with-http_ssl_module</span><br><span class="line">                     --with-http_flv_module --with-http_gzip_static_module</span><br><span class="line">                     --with-ld-opt=<span class="string">'-ljemalloc'</span> <span class="comment">#注意这里的编译项</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> lnmp/src</span><br><span class="line"></span><br><span class="line">wget http://nginx.org/download/nginx-<span class="number">1.4</span>.<span class="number">4</span>.tar.gz</span><br><span class="line"></span><br><span class="line">tar xzf nginx-<span class="number">1.4</span>.<span class="number">4</span>.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> nginx-<span class="number">1.4</span>.<span class="number">4</span></span><br><span class="line"></span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/nginx --user=www</span><br><span class="line">                                      --group=www --with-http_stub_status_module</span><br><span class="line">                                      --with-http_ssl_module --with-http_flv_module</span><br><span class="line">                                      --with-http_gzip_static_module --with-ld-opt=<span class="string">'-ljemalloc'</span></span><br><span class="line">make    //注意只make  不要make install</span><br><span class="line"></span><br><span class="line">mv /usr/<span class="built_in">local</span>/nginx/sbin/nginx /usr/<span class="built_in">local</span>/nginx/sbin/nginx$(date +%m%d)    <span class="comment">#备份nginx原文件</span></span><br><span class="line"></span><br><span class="line">cp objs/nginx /usr/<span class="built_in">local</span>/nginx/sbin/nginx     <span class="comment">#复制编译make后的文件覆盖nginx原文件</span></span><br><span class="line"></span><br><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -t     <span class="comment">#检测nginx文件配置</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">kill</span> -USR2 `cat /usr/<span class="built_in">local</span>/nginx/logs/nginx.pid`    <span class="comment">#把nginx.pid改成nginx.pid.oldbin跟着启动新的nginx</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">kill</span> -QUIT `cat /usr/<span class="built_in">local</span>/nginx/logs/nginx.pid.oldbin`   <span class="comment">#退出旧的nignx</span></span><br></pre></td></tr></table></figure>
+		<h2 id="使用场景"><a class="header-anchor" href="#使用场景"></a>使用场景</h2>
+<p>定时清除生产环境上tomcat日志文件夹的日志,避免占满服务器硬盘.
+<img src="http://static.molloc.com/img/201506/server_info.png" style="display:block;margin:auto" alt="server-info" title="server-info"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-rw-r--r--. <span class="number">1</span> root root   <span class="number">2398</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">15</span>:<span class="number">29</span> admin.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root <span class="number">249758</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">23</span>:<span class="number">55</span> catalina.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root <span class="number">373453</span> <span class="number">6</span>月  <span class="number">12</span> <span class="number">23</span>:<span class="number">55</span> catalina.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">12</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root <span class="number">239142</span> <span class="number">6</span>月  <span class="number">13</span> <span class="number">15</span>:<span class="number">30</span> catalina.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">13</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root      <span class="number">0</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">15</span>:<span class="number">26</span> host-manager.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root   <span class="number">2334</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">15</span>:<span class="number">29</span> localhost.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root      <span class="number">0</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">15</span>:<span class="number">26</span> manager.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root <span class="number">114835</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">23</span>:<span class="number">55</span> portal.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root  <span class="number">43149</span> <span class="number">6</span>月  <span class="number">12</span> <span class="number">23</span>:<span class="number">55</span> portal.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">12</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root  <span class="number">26826</span> <span class="number">6</span>月  <span class="number">13</span> <span class="number">15</span>:<span class="number">30</span> portal.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">13</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root      <span class="number">0</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">15</span>:<span class="number">27</span> portal-error.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br></pre></td></tr></table></figure>
+<h2 id="解决思路"><a class="header-anchor" href="#解决思路"></a>解决思路</h2>
+<p>定时清除过时的日志,于是想到了crontab.</p>
+<ul>
+<li>执行<code>crontab -l</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> <span class="number">1</span> * * * <span class="built_in">cd</span> /root/fhcs/dev/product/logs; ./rm_old_logs.sh  &gt; /dev/null <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp; <span class="comment">#每天凌晨1点,清除5天之前的日志</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>rm_old_logs.sh的内容如下</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line"><span class="comment"># 定时删除5天</span></span><br><span class="line"></span><br><span class="line">LogFile=./log.log</span><br><span class="line">OldFile=*.$(date +%Y-%m-%d --date=<span class="string">"5 days ago"</span>).*</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> D <span class="keyword">in</span> `<span class="built_in">echo</span> <span class="variable">$OldFile</span>`</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="operator">-e</span> <span class="string">"<span class="variable">$D</span>"</span> ];<span class="keyword">then</span></span><br><span class="line">        rm <span class="operator">-f</span> <span class="variable">$D</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"[<span class="variable">$(date '+%Y-%m-%d %H:%M:%S')</span>][<span class="variable">$D</span>] Delete Old File success!"</span> &gt;&gt; <span class="variable">$LogFile</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"[<span class="variable">$(date '+%Y-%m-%d %H:%M:%S')</span>][<span class="variable">$D</span>] Delete Old Backup File"</span> &gt;&gt; <span class="variable">$LogFile</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -107,13 +130,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/探索发现/">探索发现</a>
+  <a class="article-category-link" href="/categories/工作相关/">工作相关</a>►<a class="article-category-link" href="/categories/工作相关/学习笔记/">学习笔记</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/linux/">linux</a><a href="/tags/nginx/">nginx</a>
+  <span></span> <a href="/tags/tomcat/">tomcat</a>
   </div>
 
 </div>
@@ -122,7 +145,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://molloc.me/2015/06/08/Nginx版本无缝升级/" data-title="Nginx版本无缝升级 | Robot" data-tsina="2205010230" class="share clearfix">
+	  <div data-url="http://molloc.me/2015/06/13/crontab定时删除tomcat日志/" data-title="crontab定时删除tomcat日志 | Robot" data-tsina="2205010230" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -135,19 +158,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/06/09/面试题之encode-decode/" title="面试题之encode,decode">
-  <strong>上一篇：</strong><br/>
-  <span>
-  面试题之encode,decode</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/06/07/Cars/"  title="Cars">
+<a href="/2015/06/12/catalina_pid file contains +1 pid number instead of correct pid/"  title="catalina_pid file contains +1 pid number instead of correct pid">
  <strong>下一篇：</strong><br/> 
- <span>Cars
+ <span>catalina_pid file contains +1 pid number instead of correct pid
 </span>
 </a>
 </div>
@@ -156,7 +171,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/06/08/Nginx版本无缝升级/" data-title="Nginx版本无缝升级" data-url="http://molloc.me/2015/06/08/Nginx版本无缝升级/"></div>
+	<div class="ds-thread" data-thread-key="2015/06/13/crontab定时删除tomcat日志/" data-title="crontab定时删除tomcat日志" data-url="http://molloc.me/2015/06/13/crontab定时删除tomcat日志/"></div>
 </section>
 
 
@@ -166,7 +181,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用场景"><span class="toc-number">1.</span> <span class="toc-text">使用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决思路"><span class="toc-number">2.</span> <span class="toc-text">解决思路</span></a></li></ol>
  
   </div>
 
