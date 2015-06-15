@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-06-15T09:15:37.652Z</updated>
+  <updated>2015-06-15T15:44:51.206Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://molloc.me/2015/06/15/pmp%E9%AB%98%E6%95%88%E7%AC%94%E8%AE%B0/"/>
     <id>http://molloc.me/2015/06/15/pmp高效笔记/</id>
     <published>2015-06-15T09:10:20.000Z</published>
-    <updated>2015-06-15T09:15:37.652Z</updated>
+    <updated>2015-06-15T15:44:51.206Z</updated>
     <content type="html"><![CDATA[<h2 id="组织相关"><a class="header-anchor" href="#组织相关"></a>组织相关</h2>
 <p>组织就是将两个或两个以上的个体联系起来,以实现一个或一系列共同目标;组织整体价值需要商业价值去体现,商业价值需要战略计划指导和管理,而战略计划目标本身却通过组织治理来管理,并通过项目(项目治理)和运营实现组织战略目标.</p>
 <a id="more"></a>
@@ -41,6 +41,44 @@
 <li>可变成本  随着生产产品的数量增加而变化  eg: 原材料,人员工资</li>
 <li>计划成本  因为选择一个机会而放弃的另一个机会可以获得的利益</li>
 <li>沉没成本  以前花出去的费用,在确定是否继续做项目时不需要考虑   eg: 项目开始前的可行性分析</li>
+</ul>
+<h2 id="挣值管理相关"><a class="header-anchor" href="#挣值管理相关"></a>挣值管理相关</h2>
+<ul>
+<li>SV和SPI最好把进度偏差与关键路径法(CPM)和风险管理一起使用.</li>
+<li>由于SPI测量的是项目总工作量, 所有还需要对关键路径上的绩效进行单独分析,以确认项目是否将比计划完成日期提早或延迟完工.</li>
+<li>把SV,CV(绝对值)转化成效率指标(相对值)SPI,CPI,以便吧项目的成本和进度绩效与任何其他项目做比较.</li>
+<li>CPI是EVM最重要的指标.</li>
+<li>EVM综合考虑项目范围,成本与进度指标.</li>
+<li>$EV = BAC$,标识完工.</li>
+<li>除非成本基准线发生了变化,BAC在整个项目执行期间保持不变.</li>
+<li>关键链法关注缓冲时间偏差,关键路径法CPM关注总浮动时间偏差.</li>
+</ul>
+<h2 id="质量管理相关"><a class="header-anchor" href="#质量管理相关"></a>质量管理相关</h2>
+<ul>
+<li>质量成本.是一致性和非一致性工作的总成本.</li>
+</ul>
+<h2 id="质量管理大师理念"><a class="header-anchor" href="#质量管理大师理念"></a>质量管理大师理念</h2>
+<ul>
+<li>戴明(Deming)
+<ol>
+<li>戴明环(PDCA环-plan,do,check,action)</li>
+<li>持续改进,预防胜于检查.</li>
+<li>85%的质量问题由管理层负责,15%当事人负责.</li>
+</ol>
+</li>
+<li>石川磬(Koaru Ishikawa)
+<ol>
+<li>鱼骨图(石川图). #从根本问题找原因.</li>
+</ol>
+</li>
+<li>朱兰(Juran)
+<ol>
+<li>强调质量是&quot;适合使用&quot;(fitness for use).</li>
+<li>质量与等级的区别与联系.</li>
+<li>质量三部曲: 质量计划,质量控制, 质量改进.</li>
+<li>最早把&quot;帕累托&quot;引入质量管理.</li>
+</ol>
+</li>
 </ul>
 <h2 id="考试相关"><a class="header-anchor" href="#考试相关"></a>考试相关</h2>
 <ul>
@@ -407,7 +445,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/02/pmp%E8%AE%A1%E7%AE%97%E9%A2%98%E6%B1%87%E6%80%BB/"/>
     <id>http://molloc.me/2015/06/02/pmp计算题汇总/</id>
     <published>2015-06-02T05:33:39.000Z</published>
-    <updated>2015-06-15T14:49:10.936Z</updated>
+    <updated>2015-06-15T15:44:51.373Z</updated>
     <content type="html"><![CDATA[<h2 id="回收期-payback-period"><a class="header-anchor" href="#回收期-payback-period"></a>回收期(Payback Period)</h2>
 <ul>
 <li>概念: 回收成本所需的时间</li>
@@ -476,7 +514,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <li>双倍余额递减法(Double declining balance)
 <ul>
 <li>概念: 在不考虑残值的情况下,以平均年限法折旧率(不扣残值)的两倍作为折旧率(特殊情况:最后两年折旧同,需要减残值再除以2)</li>
-<li>公式: $(原值 - 累计折扣) * (2 / 预计的折旧年限)$ ##最后两年: (原值 - 累计折旧 - 残值) / 2</li>
+<li>公式: $(原值 - 累计折扣) * (2 / 预计的折旧年限)$ #最后两年: (原值 - 累计折旧 - 残值) / 2</li>
 </ul>
 </li>
 <li>年数总和法(Sum of the years digit)
