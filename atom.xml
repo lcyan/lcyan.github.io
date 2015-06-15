@@ -407,7 +407,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/02/pmp%E8%AE%A1%E7%AE%97%E9%A2%98%E6%B1%87%E6%80%BB/"/>
     <id>http://molloc.me/2015/06/02/pmp计算题汇总/</id>
     <published>2015-06-02T05:33:39.000Z</published>
-    <updated>2015-06-15T09:03:21.459Z</updated>
+    <updated>2015-06-15T13:00:31.552Z</updated>
     <content type="html"><![CDATA[<h2 id="回收期-payback-period"><a class="header-anchor" href="#回收期-payback-period"></a>回收期(Payback Period)</h2>
 <ul>
 <li>概念: 回收成本所需的时间</li>
@@ -439,6 +439,52 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <h2 id="净现值-npv"><a class="header-anchor" href="#净现值-npv"></a>净现值(NPV)</h2>
 <ul>
 <li>概念: NPV = $∑[A/(1+r)^t -原始投入]$</li>
+<li>现值(Present Value, PV): 将来时点上发生的资金折现后的资金金额</li>
+<li>终值或将来值(Future Value, FV): 与现在等值的将来某时点上的资金金额</li>
+<li>常用的计算公式:
+<ul>
+<li>FV = PV * (1 + R)^n</li>
+<li>PV = FV / (1 + R)^n</li>
+<li>注: R为年利率, (1 + R)^n为复利因子</li>
+</ul>
+</li>
+<li>NPV的范围:
+<ul>
+<li>NPV &gt;= 0 项目可接受</li>
+<li>NPV &lt; 0 项目不可接受</li>
+<li>NPV越大越好,抵御风险能力强</li>
+</ul>
+</li>
+</ul>
+<h2 id="内部收益率-irr"><a class="header-anchor" href="#内部收益率-irr"></a>内部收益率(IRR)</h2>
+<ul>
+<li>内容: 在净现值NPV = 零时的贴现率(贴现率最低可接受的最低投资回报率)</li>
+<li>IRR的范围:
+<ul>
+<li>IRR &gt;= 行业收益率,项目可接受</li>
+<li>IRR &lt; 行业收益率, 项目不可接受</li>
+</ul>
+</li>
+</ul>
+<h2 id="直线法-平均年限法-straight-line"><a class="header-anchor" href="#直线法-平均年限法-straight-line"></a>直线法,平均年限法(Straight line)</h2>
+<ul>
+<li>概念: 将折旧均匀地分摊到各期(一般以年记)的一种方法</li>
+<li>公式: (原值 - 残值) / 使用年限</li>
+</ul>
+<h2 id="双倍折旧法"><a class="header-anchor" href="#双倍折旧法"></a>双倍折旧法</h2>
+<ul>
+<li>双倍余额递减法(Double declining balance)
+<ul>
+<li>概念: 在不考虑残值的情况下,以平均年限法折旧率(不扣残值)的两倍作为折旧率(特殊情况:最后两年折旧同,需要减残值再除以2)</li>
+<li>公式: (原值 - 累计折扣) * (2 / 预计的折旧年限) ##最后两年: (原值 - 累计折旧 - 残值) / 2</li>
+</ul>
+</li>
+<li>年数总和法(Sum of the years digit)
+<ul>
+<li>概念: 原值减去残值后的净额乘以一个逐年递减的分数计算每年的折旧额</li>
+<li>公式: (原值 - 残值) * (尚可使用年数 / 年数序列总和)</li>
+</ul>
+</li>
 </ul>
 ]]></content>
     <summary type="html">
