@@ -407,7 +407,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/02/pmp%E8%AE%A1%E7%AE%97%E9%A2%98%E6%B1%87%E6%80%BB/"/>
     <id>http://molloc.me/2015/06/02/pmp计算题汇总/</id>
     <published>2015-06-02T05:33:39.000Z</published>
-    <updated>2015-06-15T14:46:51.709Z</updated>
+    <updated>2015-06-15T14:49:10.936Z</updated>
     <content type="html"><![CDATA[<h2 id="回收期-payback-period"><a class="header-anchor" href="#回收期-payback-period"></a>回收期(Payback Period)</h2>
 <ul>
 <li>概念: 回收成本所需的时间</li>
@@ -469,20 +469,20 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <h2 id="直线法-平均年限法-straight-line"><a class="header-anchor" href="#直线法-平均年限法-straight-line"></a>直线法,平均年限法(Straight line)</h2>
 <ul>
 <li>概念: 将折旧均匀地分摊到各期(一般以年记)的一种方法</li>
-<li>公式: (原值 - 残值) / 使用年限</li>
+<li>公式: $(原值 - 残值) / 使用年限$</li>
 </ul>
 <h2 id="双倍折旧法"><a class="header-anchor" href="#双倍折旧法"></a>双倍折旧法</h2>
 <ul>
 <li>双倍余额递减法(Double declining balance)
 <ul>
 <li>概念: 在不考虑残值的情况下,以平均年限法折旧率(不扣残值)的两倍作为折旧率(特殊情况:最后两年折旧同,需要减残值再除以2)</li>
-<li>公式: (原值 - 累计折扣) * (2 / 预计的折旧年限) ##最后两年: (原值 - 累计折旧 - 残值) / 2</li>
+<li>公式: $(原值 - 累计折扣) * (2 / 预计的折旧年限)$ ##最后两年: (原值 - 累计折旧 - 残值) / 2</li>
 </ul>
 </li>
 <li>年数总和法(Sum of the years digit)
 <ul>
 <li>概念: 原值减去残值后的净额乘以一个逐年递减的分数计算每年的折旧额</li>
-<li>公式: (原值 - 残值) * (尚可使用年数 / 年数序列总和)</li>
+<li>公式: $(原值 - 残值) * (尚可使用年数 / 年数序列总和)$</li>
 </ul>
 </li>
 </ul>
@@ -491,7 +491,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <li>计划价值(Planned Value,PV)
 <ul>
 <li>概念: 是为某活动或工作分解结构组成部分的预定工作进度而分配且经批准的预算</li>
-<li>公式: PV = 计划要完成的工作量 * 预算单价</li>
+<li>公式: $PV = 计划要完成的工作量 * 预算单价$</li>
 </ul>
 </li>
 <li>BAC和PMB
@@ -503,13 +503,13 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <li>实际成本(Actual Cost, AC)
 <ul>
 <li>概念: 是为完成活动或工作分解结构组成部分的工作,而实际发生并记录在案的总成本</li>
-<li>公式: AC = 实际已完成的工作量 * 实际单价</li>
+<li>公式: $AC = 实际已完成的工作量 * 实际单价$</li>
 </ul>
 </li>
 <li>挣值(Earned value, EV)
 <ul>
 <li>概念: 是项目活动或工作分解结构组成部分的已完成工作的价值,用分配给该工作的预算来标识.</li>
-<li>公式: EV = 实际已完成的工作量 * 预算单价</li>
+<li>公式: $EV = 实际已完成的工作量 * 预算单价$</li>
 </ul>
 </li>
 <li>进度绩效指数
@@ -542,16 +542,16 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 </li>
 <li>完工估算(Estimate At Completion, EAC)
 <ul>
-<li>情景 -&gt; 通用 -&gt; 公式: EAC = AC + ETC;</li>
-<li>情景 -&gt; 典型 -&gt; 公式: EAC = BAC / CPI; #假设项目将按截至目前的情况(目前的累计CPI继续实施)</li>
+<li>情景 -&gt; 通用 -&gt; 公式: $EAC = AC + ETC$</li>
+<li>情景 -&gt; 典型 -&gt; 公式: $EAC = BAC / CPI$ #假设项目将按截至目前的情况(目前的累计CPI继续实施)</li>
 </ul>
 </li>
 <li>完工尚需估算(Estimate To completion ETC)
 <ul>
 <li>公式
 <ul>
-<li>ETC = (BAC - EV) / (累计CPI * 累计SPI) #SPI*CPI可称为关键比率(CR)</li>
-<li>EAC = AC + 自下而上的ETC</li>
+<li>$ETC = (BAC - EV) / (累计CPI * 累计SPI)$ #SPI*CPI可称为关键比率(CR)</li>
+<li>$EAC = AC + 自下而上的ETC$</li>
 </ul>
 </li>
 </ul>
