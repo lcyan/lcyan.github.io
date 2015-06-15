@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://molloc.me/googlef67cd87f2db215f5.html</loc>
-    <lastmod>2015-06-15T03:32:27.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://molloc.me/2015/06/13/%E9%80%9A%E8%BF%87crontab%E6%B7%BB%E5%8A%A0%E5%AE%9A%E6%97%B6%E5%88%A0%E9%99%A4tomcat%E6%97%A5%E5%BF%97%E4%BB%BB%E5%8A%A1/</loc>
     <lastmod>2015-06-13T09:18:06.534Z</lastmod>
   </url>
@@ -97,12 +92,12 @@
   </url>
   
   <url>
-    <loc>http://molloc.me/categories/index.html</loc>
+    <loc>http://molloc.me/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html</loc>
     <lastmod>2015-06-07T01:13:24.099Z</lastmod>
   </url>
   
   <url>
-    <loc>http://molloc.me/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html</loc>
+    <loc>http://molloc.me/categories/index.html</loc>
     <lastmod>2015-06-07T01:13:24.099Z</lastmod>
   </url>
   
