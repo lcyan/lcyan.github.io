@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-06-15T09:14:40.354Z</updated>
+  <updated>2015-06-15T09:15:37.652Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://molloc.me/2015/06/15/pmp%E9%AB%98%E6%95%88%E7%AC%94%E8%AE%B0/"/>
     <id>http://molloc.me/2015/06/15/pmp高效笔记/</id>
     <published>2015-06-15T09:10:20.000Z</published>
-    <updated>2015-06-15T09:14:40.354Z</updated>
+    <updated>2015-06-15T09:15:37.652Z</updated>
     <content type="html"><![CDATA[<h2 id="组织相关"><a class="header-anchor" href="#组织相关"></a>组织相关</h2>
 <p>组织就是将两个或两个以上的个体联系起来,以实现一个或一系列共同目标;组织整体价值需要商业价值去体现,商业价值需要战略计划指导和管理,而战略计划目标本身却通过组织治理来管理,并通过项目(项目治理)和运营实现组织战略目标.</p>
 <a id="more"></a>
@@ -77,6 +77,8 @@
     </summary>
     
       <category term="pmp" scheme="http://molloc.me/tags/pmp/"/>
+    
+      <category term="学习笔记" scheme="http://molloc.me/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
