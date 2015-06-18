@@ -79,11 +79,11 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/18/Guava-%E6%98%AF%E4%B8%AA%E9%A3%8E%E7%81%AB%E8%BD%AE%E4%B9%8B%E5%87%BD-3-%E8%A1%A8%E5%A4%84%E7%90%86/"/>
     <id>http://molloc.me/2015/06/18/Guava-是个风火轮之函-3-表处理/</id>
     <published>2015-06-18T06:56:46.000Z</published>
-    <updated>2015-06-18T07:09:16.000Z</updated>
+    <updated>2015-06-18T07:11:23.000Z</updated>
     <content type="html"><![CDATA[<p>早先学习 Scheme 的时候，就已经对 Lisp 那行云流水般的表处理手段一见倾心。后来使用 Python 做数据处理时，语言内置的高阶函数更是得心应手。工作之后开始使用 Java，一开始的时候仿佛回到了石器时代。</p>
 <p>直到后来我找到了 Guava，才终于又可以使用熟悉的方式去操纵集合。</p>
 <p>函数式风格的表处理让开发者从底层的迭代处理中解放出来，从更加抽象的层面来思考问题。然而，Guava 仅仅实现了 map、filter 者两个高阶函数，并没有实现 reduce。</p>
-<p>映射</p>
+<h2 id="映射"><a class="header-anchor" href="#映射"></a>映射</h2>
 <p>表处理中有这样一个操作，将某个函数分别应用到集合的每个元素上，将返回值集合以列表返回，这个操作一般命名为 map，实现为一个高阶函数。</p>
 <p>在 Guava 中，提供同样操作的方法是一个静态函数，Collections2#transform。按照 map 函数的约定俗成，第一个参数是被操作集合，第二个参数是操作函数，返回值是结果集合。也许是出于避免函数名和变量名冲突的考虑，Guava 没有像其他语言那样使用 map 作为函数名，而是使用了 transform。（想想我们写的生产代码里面有多少个哈希表以 map 命名，回去面壁……）</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Function&lt;Integer, Integer&gt; square = <span class="keyword">new</span> Function&lt;Integer, Integer&gt;() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">apply</span><span class="params">(Integer input)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> input * input;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Collections2.transform(Lists.newArrayList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>), square);<span class="comment">//[1, 4, 9]</span></span><br></pre></td></tr></table></figure>
@@ -99,8 +99,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <p>(reduce + [1 2 3])
 可惜的是，Guava 并没有实现折叠操作。早在 2009 年的时候就有人在 Guava 的 issue[1] 中提出，为 可迭代的集合增加一个 fold 方法，issue 讨论中大家也是贴出了各自的实现。然而，最后在 15 年 4 月 11 日这个 issue 被关闭了，Guava 的维护者决定不再向 Guava 添加函数式编程的特性，因为 Java 8 出来了。</p>
 <p>虽然 Guava 的很多特性都在 Java 8 中得到了实现，但是并不是所有的开发者都能用上 Java 8。对于我们这些不得不使用 Java 7 甚至 Java 6 的开发者来说，Guava 就是帮助我们提升开发效率的神器。</p>
-<h1>源码分析</h1>
-<h2 id="collections2-transform"><a class="header-anchor" href="#collections2-transform"></a>Collections2.transform</h2>
+<h2 id="源码分析-collections2-transform"><a class="header-anchor" href="#源码分析-collections2-transform"></a>源码分析 Collections2.transform</h2>
 <p>使用代理模式来实现延迟求值是 Guava 的惯用技法，transform 函数也不例外。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;F, T&gt; <span class="function">Collection&lt;T&gt; <span class="title">transform</span><span class="params">(Collection&lt;F&gt; fromCollection,</span><br><span class="line">    Function&lt;? <span class="keyword">super</span> F, T&gt; function)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> TransformedCollection&lt;F, T&gt;(fromCollection, function);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>TransformedCollection 就是代理类，把传入的被操作集合和操作函数代理了起来，直到必要的时候才调用操作函数获取结果元素。</p>
