@@ -79,31 +79,45 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/24/PMP-ITTO/"/>
     <id>http://molloc.me/2015/06/24/PMP-ITTO/</id>
     <published>2015-06-24T01:34:27.000Z</published>
-    <updated>2015-06-24T04:33:50.531Z</updated>
+    <updated>2015-06-24T04:42:16.684Z</updated>
     <content type="html"><![CDATA[<h2 id="项目整合管理"><a class="header-anchor" href="#项目整合管理"></a>项目整合管理</h2>
 <h3 id="制定项目章程"><a class="header-anchor" href="#制定项目章程"></a>制定项目章程</h3>
-<ul>
-<li>输入
-<ol>
-<li>项目工作说明书</li>
-<li>商业论证</li>
-<li>协议</li>
-<li>组织过程资产</li>
-<li>事业环境因素</li>
-</ol>
-</li>
-<li>工具与技术
-<ol>
-<li>专家判断</li>
-<li>引导技术</li>
-</ol>
-</li>
-<li>输出
-<ol>
-<li>项目章程</li>
-</ol>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>输入</th>
+<th>工具与技术</th>
+<th>输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 项目工作说明书</td>
+<td>1. 专家判断</td>
+<td>1. 项目章程</td>
+</tr>
+<tr>
+<td>2. 商业论证</td>
+<td>2. 引导技术</td>
+<td></td>
+</tr>
+<tr>
+<td>3. 协议</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4. 组织过程资产</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5. 事业环境因素</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="制定项目管理计划"><a class="header-anchor" href="#制定项目管理计划"></a>制定项目管理计划</h3>
 <ul>
 <li>输入
