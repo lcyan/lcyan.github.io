@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-06-24T01:35:23.000Z</updated>
+  <updated>2015-06-24T06:46:11.000Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Cars]]></title>
+    <link href="http://molloc.me/2015/06/24/Cars/"/>
+    <id>http://molloc.me/2015/06/24/Cars/</id>
+    <published>2015-06-24T06:46:37.908Z</published>
+    <updated>2015-06-24T06:46:11.000Z</updated>
+    <content type="html"><![CDATA[<p>Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the presentation of the Huracán LP 610-4, Lamborghini offers a new dimension in luxury super sports cars.
+With 122 dealerships worldwide, Automobili Lamborghini is building on a succession of dynamic and elegant super sports cars including the 350GT, Miura, Espada, Countach, Diablo, Murciélago, Reventón Coupe, Reventón Roadster, Aventador and Gallardo.</p>
+<p><img src="http://static.molloc.com/cars/1363048919SWhAHn.jpg" alt="Wallbase - dgnfly (wallbase.cc/wallpaper/1384450)" title="Car002"></p>
+<a id="more"></a>
+<p>At the  Beijing Motorshow 2014 Automobili Lamborghini is also going to present the Aventador in a highly exclusive and appealing configuration called Nazionale, realized  by Lamborghini Ad Personam, the personalization program that allows clients to create their own made-to-order Lamborghini.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the presentation of the Huracán LP 610-4, Lamborghini offers a new dimension in luxury super sports cars.
+With 122 dealerships worldwide, Automobili Lamborghini is building on a succession of dynamic and elegant super sports cars including the 350GT, Miura, Espada, Countach, Diablo, Murciélago, Reventón Coupe, Reventón Roadster, Aventador and Gallardo.</p>
+<p><img src="http://static.molloc.com/cars/1363048919SWhAHn.jpg" alt="Wallbase - dgnfly (wallbase.cc/wallpaper/1384450)" title="Car002"></p>]]>
+    
+    </summary>
+    
+      <category term="Cars" scheme="http://molloc.me/tags/Cars/"/>
+    
+      <category term="美图世界" scheme="http://molloc.me/categories/%E7%BE%8E%E5%9B%BE%E4%B8%96%E7%95%8C/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hello Hexo]]></title>
@@ -46,31 +71,6 @@
     </summary>
     
       <category term="探索发现" scheme="http://molloc.me/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Cars]]></title>
-    <link href="http://molloc.me/2015/06/24/Cars/"/>
-    <id>http://molloc.me/2015/06/24/Cars/</id>
-    <published>2015-06-24T02:12:14.456Z</published>
-    <updated>2015-06-24T01:35:21.000Z</updated>
-    <content type="html"><![CDATA[<p>Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the presentation of the Huracán LP 610-4, Lamborghini offers a new dimension in luxury super sports cars.
-With 122 dealerships worldwide, Automobili Lamborghini is building on a succession of dynamic and elegant super sports cars including the 350GT, Miura, Espada, Countach, Diablo, Murciélago, Reventón Coupe, Reventón Roadster, Aventador and Gallardo.</p>
-<p><img src="http://static.molloc.com/cars/1363048919SWhAHn.jpg" alt="Wallbase - dgnfly (wallbase.cc/wallpaper/1384450)" title="Car002"></p>
-<a id="more"></a>
-<p>At the  Beijing Motorshow 2014 Automobili Lamborghini is also going to present the Aventador in a highly exclusive and appealing configuration called Nazionale, realized  by Lamborghini Ad Personam, the personalization program that allows clients to create their own made-to-order Lamborghini.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the presentation of the Huracán LP 610-4, Lamborghini offers a new dimension in luxury super sports cars.
-With 122 dealerships worldwide, Automobili Lamborghini is building on a succession of dynamic and elegant super sports cars including the 350GT, Miura, Espada, Countach, Diablo, Murciélago, Reventón Coupe, Reventón Roadster, Aventador and Gallardo.</p>
-<p><img src="http://static.molloc.com/cars/1363048919SWhAHn.jpg" alt="Wallbase - dgnfly (wallbase.cc/wallpaper/1384450)" title="Car002"></p>]]>
-    
-    </summary>
-    
-      <category term="Cars" scheme="http://molloc.me/tags/Cars/"/>
-    
-      <category term="美图世界" scheme="http://molloc.me/categories/%E7%BE%8E%E5%9B%BE%E4%B8%96%E7%95%8C/"/>
     
   </entry>
   
@@ -979,9 +979,10 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/18/Guava-%E6%98%AF%E4%B8%AA%E9%A3%8E%E7%81%AB%E8%BD%AE%E4%B9%8B%E5%87%BD-3-%E8%A1%A8%E5%A4%84%E7%90%86/"/>
     <id>http://molloc.me/2015/06/18/Guava-是个风火轮之函-3-表处理/</id>
     <published>2015-06-18T06:56:46.000Z</published>
-    <updated>2015-06-24T01:35:28.000Z</updated>
+    <updated>2015-06-24T06:46:29.000Z</updated>
     <content type="html"><![CDATA[<p>早先学习 Scheme 的时候，就已经对 Lisp 那行云流水般的表处理手段一见倾心。后来使用 Python 做数据处理时，语言内置的高阶函数更是得心应手。工作之后开始使用 Java，一开始的时候仿佛回到了石器时代。</p>
 <p>直到后来我找到了 Guava，才终于又可以使用熟悉的方式去操纵集合。</p>
+<a id="more"></a>
 <p>函数式风格的表处理让开发者从底层的迭代处理中解放出来，从更加抽象的层面来思考问题。然而，Guava 仅仅实现了 map、filter 者两个高阶函数，并没有实现 reduce。</p>
 <h2 id="映射"><a class="header-anchor" href="#映射"></a>映射</h2>
 <p>表处理中有这样一个操作，将某个函数分别应用到集合的每个元素上，将返回值集合以列表返回，这个操作一般命名为 map，实现为一个高阶函数。</p>
@@ -1014,7 +1015,8 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 ]]></content>
     <summary type="html">
     <![CDATA[<p>早先学习 Scheme 的时候，就已经对 Lisp 那行云流水般的表处理手段一见倾心。后来使用 Python 做数据处理时，语言内置的高阶函数更是得心应手。工作之后开始使用 Java，一开始的时候仿佛回到了石器时代。</p>
-<p>直到后来我找到了 Guava，才终于又可以]]>
+<p>直到后来我找到了 Guava，才终于又可以使用熟悉的方式去操纵集合。</p>]]>
+    
     </summary>
     
       <category term="java" scheme="http://molloc.me/tags/java/"/>

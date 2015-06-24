@@ -13,21 +13,18 @@
 
     
     <meta name="description" content="早先学习 Scheme 的时候，就已经对 Lisp 那行云流水般的表处理手段一见倾心。后来使用 Python 做数据处理时，语言内置的高阶函数更是得心应手。工作之后开始使用 Java，一开始的时候仿佛回到了石器时代。
-直到后来我找到了 Guava，才终于又可以使用熟悉的方式去操纵集合。
-函数式风格的表处理让开发者从底层的迭代处理中解放出来，从更加抽象的层面来思考问题。然而，Guava 仅仅实现了">
+直到后来我找到了 Guava，才终于又可以使用熟悉的方式去操纵集合。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Guava 是个风火轮之函(3)-表处理">
 <meta property="og:url" content="http://molloc.me/2015/06/18/Guava-是个风火轮之函-3-表处理/index.html">
 <meta property="og:site_name" content="Robot">
 <meta property="og:description" content="早先学习 Scheme 的时候，就已经对 Lisp 那行云流水般的表处理手段一见倾心。后来使用 Python 做数据处理时，语言内置的高阶函数更是得心应手。工作之后开始使用 Java，一开始的时候仿佛回到了石器时代。
-直到后来我找到了 Guava，才终于又可以使用熟悉的方式去操纵集合。
-函数式风格的表处理让开发者从底层的迭代处理中解放出来，从更加抽象的层面来思考问题。然而，Guava 仅仅实现了">
-<meta property="og:updated_time" content="2015-06-24T01:35:28.000Z">
+直到后来我找到了 Guava，才终于又可以使用熟悉的方式去操纵集合。">
+<meta property="og:updated_time" content="2015-06-24T06:46:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Guava 是个风火轮之函(3)-表处理">
 <meta name="twitter:description" content="早先学习 Scheme 的时候，就已经对 Lisp 那行云流水般的表处理手段一见倾心。后来使用 Python 做数据处理时，语言内置的高阶函数更是得心应手。工作之后开始使用 Java，一开始的时候仿佛回到了石器时代。
-直到后来我找到了 Guava，才终于又可以使用熟悉的方式去操纵集合。
-函数式风格的表处理让开发者从底层的迭代处理中解放出来，从更加抽象的层面来思考问题。然而，Guava 仅仅实现了">
+直到后来我找到了 Guava，才终于又可以使用熟悉的方式去操纵集合。">
 
     
     <link rel="alternative" href="/atom.xml" title="Robot" type="application/atom+xml">
@@ -108,6 +105,7 @@
 		
 		<p>早先学习 Scheme 的时候，就已经对 Lisp 那行云流水般的表处理手段一见倾心。后来使用 Python 做数据处理时，语言内置的高阶函数更是得心应手。工作之后开始使用 Java，一开始的时候仿佛回到了石器时代。</p>
 <p>直到后来我找到了 Guava，才终于又可以使用熟悉的方式去操纵集合。</p>
+<a id="more"></a>
 <p>函数式风格的表处理让开发者从底层的迭代处理中解放出来，从更加抽象的层面来思考问题。然而，Guava 仅仅实现了 map、filter 者两个高阶函数，并没有实现 reduce。</p>
 <h2 id="映射"><a class="header-anchor" href="#映射"></a>映射</h2>
 <p>表处理中有这样一个操作，将某个函数分别应用到集合的每个元素上，将返回值集合以列表返回，这个操作一般命名为 map，实现为一个高阶函数。</p>
