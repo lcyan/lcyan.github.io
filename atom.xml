@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-06-25T05:12:49.112Z</updated>
+  <updated>2015-06-25T05:13:33.738Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,13 +19,14 @@
     <link href="http://molloc.me/2015/06/25/CentOS-6-%E6%90%AD%E5%BB%BA-FTP-%E6%9C%8D%E5%8A%A1%E8%AE%B0%E5%BD%95/"/>
     <id>http://molloc.me/2015/06/25/CentOS-6-搭建-FTP-服务记录/</id>
     <published>2015-06-25T01:09:32.000Z</published>
-    <updated>2015-06-25T05:12:49.112Z</updated>
+    <updated>2015-06-25T05:13:33.738Z</updated>
     <content type="html"><![CDATA[<h2 id="关于-vsftp"><a class="header-anchor" href="#关于-vsftp"></a>关于 VSFTP</h2>
 <p>在 Linux 下搭建 FTP 服务器一般会使用 vsftpd。vsftpd 的前两个字母代表 &quot;very secure&quot; 。</p>
 <p><a href="https://security.appspot.com/vsftpd.html" target="_blank" rel="external">项目官网</a></p>
 <h2 id="安装-vsftp"><a class="header-anchor" href="#安装-vsftp"></a>安装 VSFTP</h2>
 <p>使用 yum 安装 vsftpd：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install vsftpd</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>如果需要连接其他 FTP 服务器，则可以安装 FTP 客户端。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install ftp</span><br></pre></td></tr></table></figure>
 <h2 id="添加用户"><a class="header-anchor" href="#添加用户"></a>添加用户</h2>
@@ -56,7 +57,12 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="关于-vsftp"><a class="header-anchor" href="#关于-vsftp"></a>关于 VSFTP</h2>
-<p>在 Linux 下搭建 FTP 服务器一般会使用 vsftpd。vsftpd 的前两个字母代表 &quot;very ]]>
+<p>在 Linux 下搭建 FTP 服务器一般会使用 vsftpd。vsftpd 的前两个字母代表 &quot;very secure&quot; 。</p>
+<p><a href="https://security.appspot.com/vsftpd.html">项目官网</a></p>
+<h2 id="安装-vsftp"><a class="header-anchor" href="#安装-vsftp"></a>安装 VSFTP</h2>
+<p>使用 yum 安装 vsftpd：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install vsftpd</span><br></pre></td></tr></table></figure>]]>
+    
     </summary>
     
       <category term="linux" scheme="http://molloc.me/tags/linux/"/>
