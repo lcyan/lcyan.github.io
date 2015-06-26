@@ -138,7 +138,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/24/PMP-ITTO/"/>
     <id>http://molloc.me/2015/06/24/PMP-ITTO/</id>
     <published>2015-06-24T01:34:27.000Z</published>
-    <updated>2015-06-25T01:09:02.000Z</updated>
+    <updated>2015-06-26T01:49:39.000Z</updated>
     <content type="html"><![CDATA[<h2 id="项目整合管理"><a class="header-anchor" href="#项目整合管理"></a>项目整合管理</h2>
 <h3 id="制定项目章程"><a class="header-anchor" href="#制定项目章程"></a>制定项目章程</h3>
 <ul>
@@ -608,10 +608,10 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <li>进度网络分析</li>
 <li>关键路径法</li>
 <li>关键链法</li>
-<li>资源优化技术</li>
-<li>建模技术</li>
+<li>资源优化技术(<em>资源平衡,资源平衡</em>)</li>
+<li>建模技术(<em>假设情景分析,模拟(通常使用三点估算)</em>)</li>
 <li>提前量与滞后量</li>
-<li>进度压缩</li>
+<li>进度压缩(<em>快速跟进,赶工</em>)</li>
 <li>进度计划编制工具</li>
 </ol>
 </li>
@@ -1541,7 +1541,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/15/pmp%E9%AB%98%E6%95%88%E7%AC%94%E8%AE%B0/"/>
     <id>http://molloc.me/2015/06/15/pmp高效笔记/</id>
     <published>2015-06-15T09:10:20.000Z</published>
-    <updated>2015-06-25T14:58:47.000Z</updated>
+    <updated>2015-06-26T02:10:43.000Z</updated>
     <content type="html"><![CDATA[<h2 id="组织相关"><a class="header-anchor" href="#组织相关"></a>组织相关</h2>
 <p>组织就是将两个或两个以上的个体联系起来,以实现一个或一系列共同目标;组织整体价值需要商业价值去体现,商业价值需要战略计划指导和管理,而战略计划目标本身却通过组织治理来管理,并通过项目(项目治理)和运营实现组织战略目标.</p>
 <a id="more"></a>
@@ -1559,10 +1559,10 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <ul>
 <li>直接成本  可以从项目上直接找出出处    eg: 原材料,技术人员工资,外包</li>
 <li>间接成本  无法直接追溯至某个具体项目的成本.    eg: 税金,保安费用,管理费用</li>
-<li>固定成本  不会随着产品生成数量而变化   eg: 设备费,场地租赁</li>
-<li>可变成本  随着生产产品的数量增加而变化  eg: 原材料,人员工资</li>
+<li>固定成本  不会随着产品生成数量而变化.  eg: 设备费,场地租赁</li>
+<li>可变成本  随着生产产品的数量增加而变化. eg: 原材料,人员工资</li>
 <li>计划成本  因为选择一个机会而放弃的另一个机会可以获得的利益</li>
-<li>沉没成本  以前花出去的费用,在确定是否继续做项目时不需要考虑   eg: 项目开始前的可行性分析</li>
+<li>沉没成本  以前花出去的费用,在确定是否继续做项目时不需要考虑.  eg: 项目开始前的可行性分析</li>
 </ul>
 <h2 id="挣值管理相关"><a class="header-anchor" href="#挣值管理相关"></a>挣值管理相关</h2>
 <ul>
@@ -1626,14 +1626,14 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <li>风险管理计划不会针对具体风险有具体应对措施,具体风险应对信息归属风险登记册管理.</li>
 <li>概率影响矩阵是过程定性分析风险非常重要的工具,是提供风险排序的依据和标准.</li>
 <li>所有识别的风险需要进行定性风险,但不是所有的风险都需要进行定量风险分析.</li>
-<li>反复模拟通常采用蒙特卡洛技术,对于成本风险分析,需要使用成本估算进行模拟.</li>
+<li>反复模拟通常采用蒙特卡洛技术,对于成本风险分析,需要使用成本估算进行模拟.对于进度风险分析,需要使用进度网络图和持续时间估算进行模拟.</li>
 <li>次生风险,弹回计划,残余风险都是在采取应对措施后而产生的不同现象.</li>
 <li>应急计划,应急储备和应急应对策略都可能需要指定触发条件.</li>
 <li>应急计划针对所有已知的未知的风险,而应急应对策略针对某些特定事件.</li>
 <li>实施应急计划或权变措施可能导致变更请求.</li>
 <li>风险评估属于定性风险分析工具,而风险<strong>再</strong>评估属于监控风险的工具.</li>
 <li>风险再评估偏重在风险本身的分析,而风险审计偏重在风险应对措施的有效性.</li>
-<li>实施应急计划步骤为: 更新风险登记册(不再是<strong>风险</strong>, 而是<strong>问题</strong>) - 启动变更并 通过整体变更控制 - 执行.</li>
+<li>实施应急计划步骤为: 更新风险登记册(不再是<strong>风险</strong>, 而是<strong>问题</strong>) - 启动变更并通过整体变更控制 - 执行.</li>
 <li>权变措施允许立即执行,在归档记录信息.</li>
 </ul>
 <h2 id="常见的风险术语"><a class="header-anchor" href="#常见的风险术语"></a>常见的风险术语</h2>
@@ -1641,15 +1641,18 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <li>应对措施
 <ul>
 <li>概念: 已知风险(已知-已知)是指已经识别并分析过的风险,从而可对这些风险规划应对措施.</li>
-<li>备注: 应对<strong>已知-已知</strong>风险.
-*应急计划</li>
+<li>备注: 应对<strong>已知-已知</strong>风险.</li>
+</ul>
+</li>
+<li>应急计划
+<ul>
 <li>概念: 具体的未知风险(已知-未知),无法主动进行管理,项目团队应该为未知风险创建应急计划.可能需要制订应急计划的触发器</li>
 <li>备注; 应对<strong>已知-未知</strong>风险.</li>
 </ul>
 </li>
 <li>应急应对策略
 <ul>
-<li>概念: 可以针对某些特定事件,专门设计一些应对措施.有在某些预定条件发生时才能实施的应对计划,如果确信风险的发生会有充分的预警信号,就应该制定应急应对策略.如未实现阶段性里程碑,或获得供应商更高度的重视.</li>
+<li>概念: 可以针对某些特定事件,专门设计一些应对措施.只在某些预定条件发生时才能实施的应对计划,如果确信风险的发生会有充分的预警信号,就应该制定应急应对策略.如未实现阶段性里程碑,或获得供应商更高度的重视.</li>
 <li>备注: 针对某些特定事件,充分的预警信号,属应急计划</li>
 </ul>
 </li>
@@ -1709,7 +1712,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <li>用于考察各种情况,&quot;如果X出现了,情况Y会怎样?&quot;这样的问题进行分析</li>
 <li>果(强调的是Y)</li>
 <li>强调的是假设情景模拟下产生的结果</li>
-<li>制定进度计划和进度控制的工具与即时</li>
+<li>制定进度计划和进度控制的工具与技术</li>
 </ul>
 </li>
 </ul>
@@ -1805,8 +1808,8 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <ul>
 <li>马斯洛(Maslow)需求层次理论(五个层级从低到高)
 <ol>
-<li>生理需求: 吃饭,穿衣,住宅,医疗</li>
-<li>安全需求: 劳动安全,职业安全,生活文档,希望免于灾难</li>
+<li>生理需求: 吃饭,穿衣,住宅</li>
+<li>安全需求: 劳动安全,职业安全,生活稳当,医疗,希望免于灾难</li>
 <li>社交需求: 得到家庭,团队,朋友,同事的关怀爱护理解</li>
 <li>尊重需要: 自我尊重,自我评价以及尊重比人</li>
 <li>自我实现: 充分地,全神贯注地体验生活</li>
@@ -1814,7 +1817,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 </li>
 <li>弗鲁姆期望理论
 <ul>
-<li>E(期望值) = P(期望概率) * V(目标价值)</li>
+<li>$E(期望值) = P(期望概率) * V(目标价值)$</li>
 </ul>
 </li>
 <li>麦克利兰成就理论
@@ -1879,7 +1882,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <ol>
 <li>合作/解决问题(Collaborating/Problem Solve)
 <ul>
-<li>概念: 综合考虑不同的观点,引导各方达成公司和承若</li>
+<li>概念: 综合考虑不同的观点,引导各方达成共识和承若</li>
 <li>案例:
 <ol>
 <li>面对永久解决问题方案</li>
@@ -1979,14 +1982,14 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 </li>
 <li>石川磬(Koaru Ishikawa)
 <ol>
-<li>鱼骨图(石川图). #从根本问题找原因.</li>
+<li>鱼骨图(石川图). #从根本问题找原因,不包括应对措施.注意区别根本原因分析工具.</li>
 </ol>
 </li>
 <li>朱兰(Juran)
 <ol>
 <li>强调质量是&quot;适合使用&quot;(fitness for use).</li>
 <li>质量与等级的区别与联系.</li>
-<li>质量三部曲: 质量计划,质量控制, 质量改进.</li>
+<li>质量三部曲: 质量计划, 质量控制, 质量改进.</li>
 <li>最早把&quot;帕累托&quot;引入质量管理.</li>
 </ol>
 </li>
@@ -2012,7 +2015,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <li>在结束和项目阶段获得客户或发起人的最终验收(形式上),对可交付成果的实质性验收是在项目监控过程组中确认范围过程完成.</li>
 <li>引导式研讨会有利于形成一致意见,而德尔菲是旨在取得一致意见.</li>
 <li>引导式研讨会的几个代表技术(JAD,QFD,用户故事)</li>
-<li>产品分析需要重点掌握子技术(价值分析).公式:V(价值) = F(Function功能)/C(Cost成本).</li>
+<li>产品分析需要重点掌握子技术(价值分析).公式: $V(价值) = F(Function功能)/C(Cost成本)$.</li>
 <li>备选方案生成(横向思维:是指通过不合理逻辑方式寻求解决问题方法,摆脱已有知识和旧的经验约束,代表最好和最坏的过程)</li>
 <li>用极端革新的方式就属于横向思维.eg: 乔布斯革新性的移除了iPod按键等.</li>
 <li>赶工费率 = 每个可赶工关键活动的成本和时间区间的比值.</li>
