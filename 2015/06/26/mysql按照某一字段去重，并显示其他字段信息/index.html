@@ -5,33 +5,47 @@
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="oxwWO_yZe21RAWOe9W6x1uUtSckxKC_eFEYqRbB88lY" />
   
-    <title>Cars | Robot</title>
+    <title>mysql按照某一字段去重，并显示其他字段信息 | Robot</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Lcyan">
     
 
     
-    <meta name="description" content="Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the present">
+    <meta name="description" content="问题概述
+按照sql中的某一列值去重，还要显示其他字段的信息。
+解决思路
+使用
+1select distinct name, sorce from table
+结果发现去重不起作用，因为MYSQL认为要sorce和name同时重复才会去除。
+Google一番，反复试验最终解决办法如下：
+1select * from table group by name
+这样就会去重，默认会取出来每个分组的第一行">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cars">
-<meta property="og:url" content="http://molloc.me/2015/06/24/Cars/index.html">
+<meta property="og:title" content="mysql按照某一字段去重，并显示其他字段信息">
+<meta property="og:url" content="http://molloc.me/2015/06/26/mysql按照某一字段去重，并显示其他字段信息/index.html">
 <meta property="og:site_name" content="Robot">
-<meta property="og:description" content="Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the present">
-<meta property="og:image" content="http://static.molloc.com/cars/13630489258S9jPW.jpg">
-<meta property="og:image" content="http://static.molloc.com/cars/1363048932EG8eIB.jpg">
-<meta property="og:image" content="http://static.molloc.com/cars/1363048929tLVtTQ.jpg">
-<meta property="og:image" content="http://static.molloc.com/cars/1363048930Pvmvna.jpg">
-<meta property="og:image" content="http://static.molloc.com/cars/1363048923G273Jn.jpg">
-<meta property="og:image" content="http://static.molloc.com/cars/1363048927J3mfHJ.jpg">
-<meta property="og:image" content="http://static.molloc.com/cars/1363048919SWhAHn.jpg">
-<meta property="og:image" content="http://static.molloc.com/cars/1363048921m63wa5.jpg">
-<meta property="og:image" content="http://static.molloc.com/cars/1363048914tc3Spj.jpg">
-<meta property="og:image" content="http://static.molloc.com/cars/1363048916AcJITb.jpg">
-<meta property="og:updated_time" content="2015-06-24T06:46:11.000Z">
+<meta property="og:description" content="问题概述
+按照sql中的某一列值去重，还要显示其他字段的信息。
+解决思路
+使用
+1select distinct name, sorce from table
+结果发现去重不起作用，因为MYSQL认为要sorce和name同时重复才会去除。
+Google一番，反复试验最终解决办法如下：
+1select * from table group by name
+这样就会去重，默认会取出来每个分组的第一行">
+<meta property="og:updated_time" content="2015-06-26T03:06:40.788Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cars">
-<meta name="twitter:description" content="Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the present">
+<meta name="twitter:title" content="mysql按照某一字段去重，并显示其他字段信息">
+<meta name="twitter:description" content="问题概述
+按照sql中的某一列值去重，还要显示其他字段的信息。
+解决思路
+使用
+1select distinct name, sorce from table
+结果发现去重不起作用，因为MYSQL认为要sorce和name同时重复才会去除。
+Google一番，反复试验最终解决办法如下：
+1select * from table group by name
+这样就会去重，默认会取出来每个分组的第一行">
 
     
     <link rel="alternative" href="/atom.xml" title="Robot" type="application/atom+xml">
@@ -84,52 +98,20 @@
 </div>
     </header>
     <div id="container">
-      <div id="main" class="photo" itemscope itemprop="blogPost">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      
-        <img src="http://static.molloc.com/cars/13630489258S9jPW.jpg">
-      
-        <img src="http://static.molloc.com/cars/1363048932EG8eIB.jpg">
-      
-        <img src="http://static.molloc.com/cars/1363048929tLVtTQ.jpg">
-      
-        <img src="http://static.molloc.com/cars/1363048930Pvmvna.jpg">
-      
-        <img src="http://static.molloc.com/cars/1363048923G273Jn.jpg">
-      
-        <img src="http://static.molloc.com/cars/1363048927J3mfHJ.jpg">
-      
-        <img src="http://static.molloc.com/cars/1363048919SWhAHn.jpg">
-      
-        <img src="http://static.molloc.com/cars/1363048921m63wa5.jpg">
-      
-        <img src="http://static.molloc.com/cars/1363048914tc3Spj.jpg">
-      
-        <img src="http://static.molloc.com/cars/1363048916AcJITb.jpg">
-      
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
+      <div id="main" class="post" itemscope itemprop="blogPost">
   
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/06/24/Cars/" title="Cars" itemprop="url">Cars</a>
+      <a href="/2015/06/26/mysql按照某一字段去重，并显示其他字段信息/" title="mysql按照某一字段去重，并显示其他字段信息" itemprop="url">mysql按照某一字段去重，并显示其他字段信息</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Lcyan" target="_blank" itemprop="author">Lcyan</a>
 		
   <p class="article-time">
-    <time datetime="2015-06-24T06:46:37.908Z" itemprop="datePublished"> 发表于 2015-06-24</time>
+    <time datetime="2015-06-26T03:04:38.000Z" itemprop="datePublished"> 发表于 2015-06-26</time>
     
   </p>
 </header>
@@ -138,15 +120,21 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题概述"><span class="toc-number">1.</span> <span class="toc-text">问题概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决思路"><span class="toc-number">2.</span> <span class="toc-text">解决思路</span></a></li></ol>
 		
 		</div>
 		
-		<p>Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the presentation of the Huracán LP 610-4, Lamborghini offers a new dimension in luxury super sports cars.
-With 122 dealerships worldwide, Automobili Lamborghini is building on a succession of dynamic and elegant super sports cars including the 350GT, Miura, Espada, Countach, Diablo, Murciélago, Reventón Coupe, Reventón Roadster, Aventador and Gallardo.</p>
-<p><img src="http://static.molloc.com/cars/1363048919SWhAHn.jpg" alt="Wallbase - dgnfly (wallbase.cc/wallpaper/1384450)" title="Car002"></p>
-<a id="more"></a>
-<p>At the  Beijing Motorshow 2014 Automobili Lamborghini is also going to present the Aventador in a highly exclusive and appealing configuration called Nazionale, realized  by Lamborghini Ad Personam, the personalization program that allows clients to create their own made-to-order Lamborghini.</p>
+		<h2 id="问题概述"><a class="header-anchor" href="#问题概述"></a>问题概述</h2>
+<p>按照sql中的某一列值去重，还要显示其他字段的信息。</p>
+<h2 id="解决思路"><a class="header-anchor" href="#解决思路"></a>解决思路</h2>
+<p>使用</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> <span class="keyword">distinct</span> name, sorce <span class="keyword">from</span> <span class="keyword">table</span></span></span><br></pre></td></tr></table></figure>
+<p>结果发现去重不起作用，因为MYSQL认为要sorce和name同时重复才会去除。</p>
+<p>Google一番，反复试验最终解决办法如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">group</span> <span class="keyword">by</span> name</span></span><br></pre></td></tr></table></figure>
+<p>这样就会去重，默认会取出来每个分组的第一行数据。</p>
+<p>如果SQL语句还有limit,order by等条件，必须放在group by后面。这样就达到了既去重，又能够输出更多字段信息的目的.</p>
+<p>记录之，以备忘，给大家提供帮助。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -154,13 +142,13 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/美图世界/">美图世界</a>
+  <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Cars/">Cars</a>
+  <span></span> <a href="/tags/mysql/">mysql</a>
   </div>
 
 </div>
@@ -169,7 +157,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://molloc.me/2015/06/24/Cars/" data-title="Cars | Robot" data-tsina="2205010230" class="share clearfix">
+	  <div data-url="http://molloc.me/2015/06/26/mysql按照某一字段去重，并显示其他字段信息/" data-title="mysql按照某一字段去重，并显示其他字段信息 | Robot" data-tsina="2205010230" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -182,17 +170,9 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/06/25/CentOS-6-搭建-FTP-服务记录/" title="CentOS 6 搭建 FTP 服务记录">
-  <strong>上一篇：</strong><br/>
-  <span>
-  CentOS 6 搭建 FTP 服务记录</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/06/24/hello-hexo/"  title="Hello Hexo">
+<a href="/2015/06/26/hello-hexo/"  title="Hello Hexo">
  <strong>下一篇：</strong><br/> 
  <span>Hello Hexo
 </span>
@@ -203,7 +183,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/06/24/Cars/" data-title="Cars" data-url="http://molloc.me/2015/06/24/Cars/"></div>
+	<div class="ds-thread" data-thread-key="2015/06/26/mysql按照某一字段去重，并显示其他字段信息/" data-title="mysql按照某一字段去重，并显示其他字段信息" data-url="http://molloc.me/2015/06/26/mysql按照某一字段去重，并显示其他字段信息/"></div>
 </section>
 
 
@@ -213,7 +193,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题概述"><span class="toc-number">1.</span> <span class="toc-text">问题概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决思路"><span class="toc-number">2.</span> <span class="toc-text">解决思路</span></a></li></ol>
  
   </div>
 
@@ -227,7 +207,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 		<ul>
 		
 		  
-			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>1</sup></a></li>
+			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>2</sup></a></li>
 		  
 		
 		  
@@ -249,7 +229,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
   </div>
 
 
@@ -263,11 +243,11 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 			
 		
 			
-				<li><a href="/tags/pmp/" title="pmp">pmp<sup>4</sup></a></li>
+				<li><a href="/tags/tomcat/" title="tomcat">tomcat<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/tomcat/" title="tomcat">tomcat<sup>4</sup></a></li>
+				<li><a href="/tags/pmp/" title="pmp">pmp<sup>4</sup></a></li>
 			
 		
 			
@@ -279,11 +259,15 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 			
 		
 			
-				<li><a href="/tags/alias/" title="alias">alias<sup>1</sup></a></li>
+				<li><a href="/tags/Cars/" title="Cars">Cars<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/bash/" title="bash">bash<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/alias/" title="alias">alias<sup>1</sup></a></li>
 			
 		
 			
@@ -303,7 +287,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 			
 		
 			
-				<li><a href="/tags/Cars/" title="Cars">Cars<sup>1</sup></a></li>
+				<li><a href="/tags/mysql/" title="mysql">mysql<sup>1</sup></a></li>
 			
 		
 		</ul>

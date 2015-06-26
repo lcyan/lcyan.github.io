@@ -81,6 +81,71 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/06/11/切分Tomcat的catalina-out文件-解决日志文件过大的问题/" title="切分Tomcat的catalina.out文件,解决日志文件过大的问题" itemprop="url">切分Tomcat的catalina.out文件,解决日志文件过大的问题</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Lcyan" target="_blank" itemprop="author">Lcyan</a>
+		
+  <p class="article-time">
+    <time datetime="2015-06-11T06:15:55.000Z" itemprop="datePublished"> 发表于 2015-06-11</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>Tomcat 下日志文件 catalina.out 过大，几百兆或几个G，进而造成再也无法写入更多的日志内容，至使 Tomcat 无法处理请求。需然你可以在 $TOMCAT_HOME/logs 目录下看到有 catalina.2012-09-16.log 这样分日期的归档，但是主文件 catalina.out 却一直在膨胀。</p>
+<p>你可以每次手工或定时(crontab/计划任务)清理 catalina.out 文件，或是规划好日志输出(终究也会有满的时候)。再就是有两种较好的解决方案去真正的切分 catalina.out 文件，让 catalina.out 只存有最新的日志。</p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2015/06/11/切分Tomcat的catalina-out文件-解决日志文件过大的问题/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/工作相关/">工作相关</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/tomcat/">tomcat</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/06/11/切分Tomcat的catalina-out文件-解决日志文件过大的问题/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/06/11/切分Tomcat的catalina-out文件-解决日志文件过大的问题/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/06/09/面试题之encode-decode/" title="面试题之encode,decode" itemprop="url">面试题之encode,decode</a>
   </h1>
   <p class="article-author">By
@@ -648,7 +713,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>1</sup></a></li>
+			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>2</sup></a></li>
 		  
 		
 		  
@@ -670,7 +735,7 @@
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
   </div>
 
 
@@ -684,11 +749,11 @@
 			
 		
 			
-				<li><a href="/tags/pmp/" title="pmp">pmp<sup>4</sup></a></li>
+				<li><a href="/tags/tomcat/" title="tomcat">tomcat<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/tomcat/" title="tomcat">tomcat<sup>4</sup></a></li>
+				<li><a href="/tags/pmp/" title="pmp">pmp<sup>4</sup></a></li>
 			
 		
 			
@@ -700,11 +765,15 @@
 			
 		
 			
-				<li><a href="/tags/alias/" title="alias">alias<sup>1</sup></a></li>
+				<li><a href="/tags/Cars/" title="Cars">Cars<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/bash/" title="bash">bash<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/alias/" title="alias">alias<sup>1</sup></a></li>
 			
 		
 			
@@ -724,7 +793,7 @@
 			
 		
 			
-				<li><a href="/tags/Cars/" title="Cars">Cars<sup>1</sup></a></li>
+				<li><a href="/tags/mysql/" title="mysql">mysql<sup>1</sup></a></li>
 			
 		
 		</ul>

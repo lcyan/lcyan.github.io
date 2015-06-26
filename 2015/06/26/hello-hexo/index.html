@@ -5,38 +5,26 @@
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="oxwWO_yZe21RAWOe9W6x1uUtSckxKC_eFEYqRbB88lY" />
   
-    <title>CentOS 6 搭建 FTP 服务记录 | Robot</title>
+    <title>Hello Hexo | Robot</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Lcyan">
     
 
     
-    <meta name="description" content="关于 VSFTP
-在 Linux 下搭建 FTP 服务器一般会使用 vsftpd。vsftpd 的前两个字母代表 &amp;quot;very secure&amp;quot; 。
-项目官网
-安装 VSFTP
-使用 yum 安装 vsftpd：
-1sudo yum install vsftpd">
+    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS 6 搭建 FTP 服务记录">
-<meta property="og:url" content="http://molloc.me/2015/06/25/CentOS-6-搭建-FTP-服务记录/index.html">
+<meta property="og:title" content="Hello Hexo">
+<meta property="og:url" content="http://molloc.me/2015/06/26/hello-hexo/index.html">
 <meta property="og:site_name" content="Robot">
-<meta property="og:description" content="关于 VSFTP
-在 Linux 下搭建 FTP 服务器一般会使用 vsftpd。vsftpd 的前两个字母代表 &amp;quot;very secure&amp;quot; 。
-项目官网
-安装 VSFTP
-使用 yum 安装 vsftpd：
-1sudo yum install vsftpd">
+<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick">
 <meta property="og:updated_time" content="2015-06-26T01:13:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS 6 搭建 FTP 服务记录">
-<meta name="twitter:description" content="关于 VSFTP
-在 Linux 下搭建 FTP 服务器一般会使用 vsftpd。vsftpd 的前两个字母代表 &amp;quot;very secure&amp;quot; 。
-项目官网
-安装 VSFTP
-使用 yum 安装 vsftpd：
-1sudo yum install vsftpd">
+<meta name="twitter:title" content="Hello Hexo">
+<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick">
 
     
     <link rel="alternative" href="/atom.xml" title="Robot" type="application/atom+xml">
@@ -95,14 +83,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/06/25/CentOS-6-搭建-FTP-服务记录/" title="CentOS 6 搭建 FTP 服务记录" itemprop="url">CentOS 6 搭建 FTP 服务记录</a>
+      <a href="/2015/06/26/hello-hexo/" title="Hello Hexo" itemprop="url">Hello Hexo</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Lcyan" target="_blank" itemprop="author">Lcyan</a>
 		
   <p class="article-time">
-    <time datetime="2015-06-25T01:09:32.000Z" itemprop="datePublished"> 发表于 2015-06-25</time>
+    <time datetime="2015-06-26T02:12:47.954Z" itemprop="datePublished"> 发表于 2015-06-26</time>
     
   </p>
 </header>
@@ -111,46 +99,25 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于-vsftp"><span class="toc-number">1.</span> <span class="toc-text">关于 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-vsftp"><span class="toc-number">2.</span> <span class="toc-text">安装 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加用户"><span class="toc-number">3.</span> <span class="toc-text">添加用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-vsftp"><span class="toc-number">4.</span> <span class="toc-text">配置 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连接测试"><span class="toc-number">5.</span> <span class="toc-text">连接测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#quick-start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#generate-static-files"><span class="toc-number">1.2.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#deploy-to-remote-sites"><span class="toc-number">1.3.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<h2 id="关于-vsftp"><a class="header-anchor" href="#关于-vsftp"></a>关于 VSFTP</h2>
-<p>在 Linux 下搭建 FTP 服务器一般会使用 vsftpd。vsftpd 的前两个字母代表 &quot;very secure&quot; 。</p>
-<p><a href="https://security.appspot.com/vsftpd.html" target="_blank" rel="external">项目官网</a></p>
-<h2 id="安装-vsftp"><a class="header-anchor" href="#安装-vsftp"></a>安装 VSFTP</h2>
-<p>使用 yum 安装 vsftpd：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install vsftpd</span><br></pre></td></tr></table></figure>
+		<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="quick-start"><a class="header-anchor" href="#quick-start"></a>Quick Start</h2>
+<h3 id="create-a-new-post"><a class="header-anchor" href="#create-a-new-post"></a>Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <a id="more"></a>
-<p>如果需要连接其他 FTP 服务器，则可以安装 FTP 客户端。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install ftp</span><br></pre></td></tr></table></figure>
-<h2 id="添加用户"><a class="header-anchor" href="#添加用户"></a>添加用户</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adduser userftp</span><br><span class="line">passwd userftp</span><br></pre></td></tr></table></figure>
-<p>禁止用户的 ssh 登录权限，只允许 FTP 访问:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod <span class="operator">-s</span> /sbin/nologin userftp</span><br></pre></td></tr></table></figure>
-<h2 id="配置-vsftp"><a class="header-anchor" href="#配置-vsftp"></a>配置 VSFTP</h2>
-<p>打开配置文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/vsftpd/vsftpd.conf</span><br></pre></td></tr></table></figure>
-<p>关闭匿名访问：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">anonymous_<span class="built_in">enable</span>=NO</span><br></pre></td></tr></table></figure>
-<p>去掉 local_enable 的注释，修改为开启：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">local</span>_<span class="built_in">enable</span>=YES</span><br></pre></td></tr></table></figure>
-<p>限制用户仅能访问自己的主目录：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chroot_<span class="built_in">local</span>_user=YES</span><br></pre></td></tr></table></figure>
-<p>设置用户的主目录：(不设置时，默认为用户的家目录/home/userftp)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">local</span>_root=/data/<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<p>重启服务：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service vsftpd restart</span><br></pre></td></tr></table></figure>
-<p>设置开机自启动：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig vsftpd on</span><br></pre></td></tr></table></figure>
-<h2 id="连接测试"><a class="header-anchor" href="#连接测试"></a>连接测试</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ftp userftp@<span class="number">112.126</span>.<span class="number">74.124</span></span><br><span class="line"></span><br><span class="line">ftp&gt; <span class="built_in">pwd</span></span><br><span class="line">Remote directory: /home/userftp</span><br><span class="line"></span><br><span class="line">ftp&gt; quit</span><br><span class="line"><span class="number">221</span> Goodbye.</span><br></pre></td></tr></table></figure>
-<h2 id="参考"><a class="header-anchor" href="#参考"></a>参考</h2>
-<ol>
-<li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-vsftpd-on-centos-6--2" target="_blank" rel="external">how-to-set-up-vsftpd-on-centos-6--2</a></li>
-<li><a href="http://koulitsu.blog.51cto.com/7355117/1221441" target="_blank" rel="external">koulitsu</a></li>
-</ol>
-<p><a href="http://segmentfault.com/a/1190000002926477" target="_blank" rel="external">原文地址</a></p>
+### Run server
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="generate-static-files"><a class="header-anchor" href="#generate-static-files"></a>Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="deploy-to-remote-sites"><a class="header-anchor" href="#deploy-to-remote-sites"></a>Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -162,18 +129,13 @@
 </div>
 
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/linux/">linux</a>
-  </div>
-
 </div>
 
 
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://molloc.me/2015/06/25/CentOS-6-搭建-FTP-服务记录/" data-title="CentOS 6 搭建 FTP 服务记录 | Robot" data-tsina="2205010230" class="share clearfix">
+	  <div data-url="http://molloc.me/2015/06/26/hello-hexo/" data-title="Hello Hexo | Robot" data-tsina="2205010230" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -187,18 +149,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/06/26/Cars/" title="Cars">
+ <a href="/2015/06/26/mysql按照某一字段去重，并显示其他字段信息/" title="mysql按照某一字段去重，并显示其他字段信息">
   <strong>上一篇：</strong><br/>
   <span>
-  Cars</span>
+  mysql按照某一字段去重，并显示其他字段信息</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/06/24/PMP-ITTO/"  title="PMP-ITTO">
+<a href="/2015/06/26/Cars/"  title="Cars">
  <strong>下一篇：</strong><br/> 
- <span>PMP-ITTO
+ <span>Cars
 </span>
 </a>
 </div>
@@ -207,7 +169,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/06/25/CentOS-6-搭建-FTP-服务记录/" data-title="CentOS 6 搭建 FTP 服务记录" data-url="http://molloc.me/2015/06/25/CentOS-6-搭建-FTP-服务记录/"></div>
+	<div class="ds-thread" data-thread-key="2015/06/26/hello-hexo/" data-title="Hello Hexo" data-url="http://molloc.me/2015/06/26/hello-hexo/"></div>
 </section>
 
 
@@ -217,7 +179,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于-vsftp"><span class="toc-number">1.</span> <span class="toc-text">关于 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-vsftp"><span class="toc-number">2.</span> <span class="toc-text">安装 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加用户"><span class="toc-number">3.</span> <span class="toc-text">添加用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-vsftp"><span class="toc-number">4.</span> <span class="toc-text">配置 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连接测试"><span class="toc-number">5.</span> <span class="toc-text">连接测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#quick-start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#generate-static-files"><span class="toc-number">1.2.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#deploy-to-remote-sites"><span class="toc-number">1.3.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
  
   </div>
 
