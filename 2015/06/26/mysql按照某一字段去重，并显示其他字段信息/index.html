@@ -13,39 +13,18 @@
 
     
     <meta name="description" content="问题概述
-按照sql中的某一列值去重，还要显示其他字段的信息。
-解决思路
-使用
-1select distinct name, sorce from table
-结果发现去重不起作用，因为MYSQL认为要sorce和name同时重复才会去除。
-Google一番，反复试验最终解决办法如下：
-1select * from table group by name
-这样就会去重，默认会取出来每个分组的第一行">
+按照sql中的某一列值去重，还要显示其他字段的信息。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql按照某一字段去重，并显示其他字段信息">
 <meta property="og:url" content="http://molloc.me/2015/06/26/mysql按照某一字段去重，并显示其他字段信息/index.html">
 <meta property="og:site_name" content="Robot">
 <meta property="og:description" content="问题概述
-按照sql中的某一列值去重，还要显示其他字段的信息。
-解决思路
-使用
-1select distinct name, sorce from table
-结果发现去重不起作用，因为MYSQL认为要sorce和name同时重复才会去除。
-Google一番，反复试验最终解决办法如下：
-1select * from table group by name
-这样就会去重，默认会取出来每个分组的第一行">
-<meta property="og:updated_time" content="2015-06-26T03:06:40.788Z">
+按照sql中的某一列值去重，还要显示其他字段的信息。">
+<meta property="og:updated_time" content="2015-06-26T03:07:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql按照某一字段去重，并显示其他字段信息">
 <meta name="twitter:description" content="问题概述
-按照sql中的某一列值去重，还要显示其他字段的信息。
-解决思路
-使用
-1select distinct name, sorce from table
-结果发现去重不起作用，因为MYSQL认为要sorce和name同时重复才会去除。
-Google一番，反复试验最终解决办法如下：
-1select * from table group by name
-这样就会去重，默认会取出来每个分组的第一行">
+按照sql中的某一列值去重，还要显示其他字段的信息。">
 
     
     <link rel="alternative" href="/atom.xml" title="Robot" type="application/atom+xml">
@@ -126,6 +105,7 @@ Google一番，反复试验最终解决办法如下：
 		
 		<h2 id="问题概述"><a class="header-anchor" href="#问题概述"></a>问题概述</h2>
 <p>按照sql中的某一列值去重，还要显示其他字段的信息。</p>
+<a id="more"></a>
 <h2 id="解决思路"><a class="header-anchor" href="#解决思路"></a>解决思路</h2>
 <p>使用</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> <span class="keyword">distinct</span> name, sorce <span class="keyword">from</span> <span class="keyword">table</span></span></span><br></pre></td></tr></table></figure>

@@ -96,19 +96,11 @@
         
         <h2 id="问题概述"><a class="header-anchor" href="#问题概述"></a>问题概述</h2>
 <p>按照sql中的某一列值去重，还要显示其他字段的信息。</p>
-<h2 id="解决思路"><a class="header-anchor" href="#解决思路"></a>解决思路</h2>
-<p>使用</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> <span class="keyword">distinct</span> name, sorce <span class="keyword">from</span> <span class="keyword">table</span></span></span><br></pre></td></tr></table></figure>
-<p>结果发现去重不起作用，因为MYSQL认为要sorce和name同时重复才会去除。</p>
-<p>Google一番，反复试验最终解决办法如下：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">group</span> <span class="keyword">by</span> name</span></span><br></pre></td></tr></table></figure>
-<p>这样就会去重，默认会取出来每个分组的第一行数据。</p>
-<p>如果SQL语句还有limit,order by等条件，必须放在group by后面。这样就达到了既去重，又能够输出更多字段信息的目的.</p>
-<p>记录之，以备忘，给大家提供帮助。</p>
-
         
         
         <p class="article-more-link">
+          
+            <a href="/2015/06/26/mysql按照某一字段去重，并显示其他字段信息/#more">Read More</a>
           
        </p>
     </div>

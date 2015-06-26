@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-06-26T03:06:40.788Z</updated>
+  <updated>2015-06-26T03:07:39.000Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,9 +19,10 @@
     <link href="http://molloc.me/2015/06/26/mysql%E6%8C%89%E7%85%A7%E6%9F%90%E4%B8%80%E5%AD%97%E6%AE%B5%E5%8E%BB%E9%87%8D%EF%BC%8C%E5%B9%B6%E6%98%BE%E7%A4%BA%E5%85%B6%E4%BB%96%E5%AD%97%E6%AE%B5%E4%BF%A1%E6%81%AF/"/>
     <id>http://molloc.me/2015/06/26/mysql按照某一字段去重，并显示其他字段信息/</id>
     <published>2015-06-26T03:04:38.000Z</published>
-    <updated>2015-06-26T03:06:40.788Z</updated>
+    <updated>2015-06-26T03:07:39.000Z</updated>
     <content type="html"><![CDATA[<h2 id="问题概述"><a class="header-anchor" href="#问题概述"></a>问题概述</h2>
 <p>按照sql中的某一列值去重，还要显示其他字段的信息。</p>
+<a id="more"></a>
 <h2 id="解决思路"><a class="header-anchor" href="#解决思路"></a>解决思路</h2>
 <p>使用</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> <span class="keyword">distinct</span> name, sorce <span class="keyword">from</span> <span class="keyword">table</span></span></span><br></pre></td></tr></table></figure>
@@ -34,8 +35,8 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="问题概述"><a class="header-anchor" href="#问题概述"></a>问题概述</h2>
-<p>按照sql中的某一列值去重，还要显示其他字段的信息。</p>
-<h2 id="解决思路"><a class="header-anchor" h]]>
+<p>按照sql中的某一列值去重，还要显示其他字段的信息。</p>]]>
+    
     </summary>
     
       <category term="mysql" scheme="http://molloc.me/tags/mysql/"/>
@@ -168,7 +169,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/24/PMP-ITTO/"/>
     <id>http://molloc.me/2015/06/24/PMP-ITTO/</id>
     <published>2015-06-24T01:34:27.000Z</published>
-    <updated>2015-06-26T02:17:02.412Z</updated>
+    <updated>2015-06-26T05:05:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="项目整合管理"><a class="header-anchor" href="#项目整合管理"></a>项目整合管理</h2>
 <h3 id="制定项目章程"><a class="header-anchor" href="#制定项目章程"></a>制定项目章程</h3>
 <ul>
@@ -277,8 +278,8 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <h3 id="实施整体变更控制"><a class="header-anchor" href="#实施整体变更控制"></a>实施整体变更控制</h3>
 <ul>
 <li>输入
-1.项目管理计划
-<ol start="2">
+<ol>
+<li>项目管理计划</li>
 <li>工作绩效报告</li>
 <li>变更请求</li>
 <li>事业环境因素</li>
@@ -635,7 +636,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <li>活动持续时间估算</li>
 <li>项目范围说明书</li>
 <li>风险登记册</li>
-<li>项目人员分派(<em>组件项目团队输出</em>)</li>
+<li>项目人员分派(<em>组建项目团队输出</em>)</li>
 <li>资源分解结构</li>
 <li>事业环境因素</li>
 <li>组织过程资产</li>
@@ -952,7 +953,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <li>工具与技术
 <ol>
 <li>预分派</li>
-<li>谈判(大部分情况下与职能经理谈判)</li>
+<li>谈判(<em>大部分情况下与职能经理谈判</em>)</li>
 <li>招募</li>
 <li>虚拟办公</li>
 <li>多标准决策分析(<em>对团队成员进行打分(可用性,成本,经验,能力,知识,技能,态度,国际因素)</em>)</li>
@@ -1192,7 +1193,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 </ol>
 </li>
 </ul>
-<h3 id="实施定量分析分析"><a class="header-anchor" href="#实施定量分析分析"></a>实施定量分析分析</h3>
+<h3 id="实施定量风险分析"><a class="header-anchor" href="#实施定量风险分析"></a>实施定量风险分析</h3>
 <ul>
 <li>输入
 <ol>
@@ -1485,7 +1486,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 <li>工具与技术
 <ol>
 <li>信息管理系统</li>
-<li>自己判断</li>
+<li>专家判断</li>
 <li>会议</li>
 </ol>
 </li>
@@ -1579,7 +1580,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/15/pmp%E9%AB%98%E6%95%88%E7%AC%94%E8%AE%B0/"/>
     <id>http://molloc.me/2015/06/15/pmp高效笔记/</id>
     <published>2015-06-15T09:10:20.000Z</published>
-    <updated>2015-06-26T02:10:43.000Z</updated>
+    <updated>2015-06-26T05:05:31.000Z</updated>
     <content type="html"><![CDATA[<h2 id="组织相关"><a class="header-anchor" href="#组织相关"></a>组织相关</h2>
 <p>组织就是将两个或两个以上的个体联系起来,以实现一个或一系列共同目标;组织整体价值需要商业价值去体现,商业价值需要战略计划指导和管理,而战略计划目标本身却通过组织治理来管理,并通过项目(项目治理)和运营实现组织战略目标.</p>
 <a id="more"></a>
@@ -1942,7 +1943,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 </li>
 <li>缓和/包容
 <ul>
-<li>概念: 强调一致,弱化分歧,为为维持和谐管理而退让一步.</li>
+<li>概念: 强调一致,弱化分歧,为维持和谐管理而退让一步.</li>
 <li>案例: 各让一步以求同存异</li>
 </ul>
 </li>
