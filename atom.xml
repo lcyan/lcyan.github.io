@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-06-28T07:42:27.000Z</updated>
+  <updated>2015-06-28T07:45:12.538Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,9 +19,10 @@
     <link href="http://molloc.me/2015/06/28/Redis%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/"/>
     <id>http://molloc.me/2015/06/28/Redis使用入门/</id>
     <published>2015-06-28T07:31:23.000Z</published>
-    <updated>2015-06-28T07:42:27.000Z</updated>
-    <content type="html"><![CDATA[<p>##Redis Introduction</p>
+    <updated>2015-06-28T07:45:12.538Z</updated>
+    <content type="html"><![CDATA[<h2 id="redis-introduction"><a class="header-anchor" href="#redis-introduction"></a>Redis Introduction</h2>
 <p>Redis是一个用C语言实现的key-value store. 除了最基础的基于字符串的键值对，Redis可以是更加复杂的数据结构，所以redis也常被称为是一个data structure server(数据结构服务器)</p>
+<a id="more"></a>
 <h2 id="redis支持的数据结构列表"><a class="header-anchor" href="#redis支持的数据结构列表"></a>Redis支持的数据结构列表:</h2>
 <ul>
 <li>String(字符串)</li>
@@ -116,12 +117,15 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">6379</span>&gt; hset user:<span class="number">1001</span> name <span class="string">"jane"</span></span><br><span class="line">(<span class="built_in">integer</span>) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">6379</span>&gt; hset user:<span class="number">1001</span> email <span class="string">"jane@gamil.com"</span></span><br><span class="line">(<span class="built_in">integer</span>) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">6379</span>&gt; hgetall user:<span class="number">1001</span></span><br><span class="line"><span class="number">1</span>) <span class="string">"name"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"jane"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"email"</span></span><br><span class="line"><span class="number">4</span>) <span class="string">"jane@gamil.com"</span></span><br><span class="line"><span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">6379</span>&gt; hmset user:<span class="number">1000</span> username andrewliu birthday <span class="number">2015</span> verfield <span class="number">1</span></span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">6379</span>&gt; hget user:<span class="number">1000</span> username</span><br><span class="line"><span class="string">"andrewliu"</span></span><br><span class="line"><span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">6379</span>&gt; hgetall user:<span class="number">1000</span></span><br><span class="line"><span class="number">1</span>) <span class="string">"username"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"andrewliu"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"birthday"</span></span><br><span class="line"><span class="number">4</span>) <span class="string">"2015"</span></span><br><span class="line"><span class="number">5</span>) <span class="string">"verfield"</span></span><br><span class="line"><span class="number">6</span>) <span class="string">"1"</span></span><br><span class="line"><span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">6379</span>&gt; hmget user:<span class="number">1000</span> username birthday</span><br><span class="line"><span class="number">1</span>) <span class="string">"andrewliu"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"2015"</span></span><br></pre></td></tr></table></figure>
 <h2 id="reference"><a class="header-anchor" href="#reference"></a>Reference</h2>
-<p><a href="http://redisbook.com/" target="_blank" rel="external">Redis 设计与实现</a>
-<a href="http://redis.io/topics/data-types-intro" target="_blank" rel="external">An introduction to Redis data types and abstractions</a></p>
+<ul>
+<li><a href="http://redisbook.com/" target="_blank" rel="external">Redis 设计与实现</a></li>
+<li><a href="http://redis.io/topics/data-types-intro" target="_blank" rel="external">An introduction to Redis data types and abstractions</a></li>
+</ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>##Redis Introduction</p>
-<p>Redis是一个用C语言实现的key-value store. 除了最基础的基于字符串的键值对，Redis可以是更加复杂的数据结构，所以redis也常被称为是一个data structure server(数据结构服务]]>
+    <![CDATA[<h2 id="redis-introduction"><a class="header-anchor" href="#redis-introduction"></a>Redis Introduction</h2>
+<p>Redis是一个用C语言实现的key-value store. 除了最基础的基于字符串的键值对，Redis可以是更加复杂的数据结构，所以redis也常被称为是一个data structure server(数据结构服务器)</p>]]>
+    
     </summary>
     
       <category term="Redis" scheme="http://molloc.me/tags/Redis/"/>
