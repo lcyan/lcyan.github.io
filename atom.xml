@@ -79,16 +79,16 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/29/awk%E5%9F%BA%E7%A1%80/"/>
     <id>http://molloc.me/2015/06/29/awk基础/</id>
     <published>2015-06-29T10:14:14.000Z</published>
-    <updated>2015-06-29T10:20:19.255Z</updated>
+    <updated>2015-06-29T10:21:46.795Z</updated>
     <content type="html"><![CDATA[<h2 id="awk简介"><a class="header-anchor" href="#awk简介"></a>awk简介</h2>
-<p>awk: 中文意思是报告生成器 能够根据我们输入的信息，将信息格式化以后显示，将定义好的信息以比较美观（直观）的方式显示出来出现比较早，继而出现了new awk（nawk）在windows上实现，gawk, awk实现在linux上。awk是一种编程语言，用于在linux/unix下对文本和数据进行处理。数据可以来自标准输入、一个或多个文件，或其它命令的输出。它支持用户自定义函数和动态正则表达式等先进功能，是linux/unix下的一个强大编程工具。它在命令行中使用，但更多是作为脚本来使用。awk的处理文本和数据的方式是这样的，它逐行扫描文件，从第一行到最后一行，寻找匹配的特定模式的行，并在这些行上进行你想要的操作。如果没有指定处理动作，则把匹配的行显示到标准输出(屏幕)，如果没有指定模式，则所有被操作所指定的行都被处理。awk分别代表其作者姓氏的第一个字母，分别是Alfred Aho、Brian Kernighan、Peter Weinberger。gawk是awk的GNU版本，它提供了Bell实验室和GNU的一些扩展。下面就对awk进行介绍。</p>
+<p><code>awk</code> : 中文意思是报告生成器 能够根据我们输入的信息，将信息格式化以后显示，将定义好的信息以比较美观（直观）的方式显示出来出现比较早，继而出现了new awk（nawk）在windows上实现，gawk, awk实现在linux上。awk是一种编程语言，用于在linux/unix下对文本和数据进行处理。数据可以来自标准输入、一个或多个文件，或其它命令的输出。它支持用户自定义函数和动态正则表达式等先进功能，是linux/unix下的一个强大编程工具。它在命令行中使用，但更多是作为脚本来使用。awk的处理文本和数据的方式是这样的，它逐行扫描文件，从第一行到最后一行，寻找匹配的特定模式的行，并在这些行上进行你想要的操作。如果没有指定处理动作，则把匹配的行显示到标准输出(屏幕)，如果没有指定模式，则所有被操作所指定的行都被处理。awk分别代表其作者姓氏的第一个字母，分别是Alfred Aho、Brian Kernighan、Peter Weinberger。gawk是awk的GNU版本，它提供了Bell实验室和GNU的一些扩展。下面就对awk进行介绍。</p>
 <a id="more"></a>
 <h2 id="awk使用的基本格式"><a class="header-anchor" href="#awk使用的基本格式"></a>awk使用的基本格式</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">awk [options] <span class="string">'script'</span> file1 file2, …</span><br><span class="line"></span><br><span class="line">awk [options] <span class="string">'PATTERN &#123; action &#125;'</span> file1 file2, <span class="comment"># 细化了上面的组合</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> <span class="comment">#输出, </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span> <span class="comment">#打印</span></span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="awk简介"><a class="header-anchor" href="#awk简介"></a>awk简介</h2>
-<p>awk: 中文意思是报告生成器 能够根据我们输入的信息，将信息格式化以后显示，将定义好的信息以比较美观（直观）的方式显示出来出现比较早，继而出现了new awk（nawk）在windows上实现，gawk, awk实现在linux上。awk是一种编程语言，用于在linux/unix下对文本和数据进行处理。数据可以来自标准输入、一个或多个文件，或其它命令的输出。它支持用户自定义函数和动态正则表达式等先进功能，是linux/unix下的一个强大编程工具。它在命令行中使用，但更多是作为脚本来使用。awk的处理文本和数据的方式是这样的，它逐行扫描文件，从第一行到最后一行，寻找匹配的特定模式的行，并在这些行上进行你想要的操作。如果没有指定处理动作，则把匹配的行显示到标准输出(屏幕)，如果没有指定模式，则所有被操作所指定的行都被处理。awk分别代表其作者姓氏的第一个字母，分别是Alfred Aho、Brian Kernighan、Peter Weinberger。gawk是awk的GNU版本，它提供了Bell实验室和GNU的一些扩展。下面就对awk进行介绍。</p>]]>
+<p><code>awk</code> : 中文意思是报告生成器 能够根据我们输入的信息，将信息格式化以后显示，将定义好的信息以比较美观（直观）的方式显示出来出现比较早，继而出现了new awk（nawk）在windows上实现，gawk, awk实现在linux上。awk是一种编程语言，用于在linux/unix下对文本和数据进行处理。数据可以来自标准输入、一个或多个文件，或其它命令的输出。它支持用户自定义函数和动态正则表达式等先进功能，是linux/unix下的一个强大编程工具。它在命令行中使用，但更多是作为脚本来使用。awk的处理文本和数据的方式是这样的，它逐行扫描文件，从第一行到最后一行，寻找匹配的特定模式的行，并在这些行上进行你想要的操作。如果没有指定处理动作，则把匹配的行显示到标准输出(屏幕)，如果没有指定模式，则所有被操作所指定的行都被处理。awk分别代表其作者姓氏的第一个字母，分别是Alfred Aho、Brian Kernighan、Peter Weinberger。gawk是awk的GNU版本，它提供了Bell实验室和GNU的一些扩展。下面就对awk进行介绍。</p>]]>
     
     </summary>
     
