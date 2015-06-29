@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-06-28T07:47:28.174Z</updated>
+  <updated>2015-06-28T07:42:34.000Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -15,11 +15,95 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Hello Hexo]]></title>
+    <link href="http://molloc.me/2015/06/29/hello-hexo/"/>
+    <id>http://molloc.me/2015/06/29/hello-hexo/</id>
+    <published>2015-06-29T10:14:22.403Z</published>
+    <updated>2015-06-28T07:42:34.000Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="quick-start"><a class="header-anchor" href="#quick-start"></a>Quick Start</h2>
+<h3 id="create-a-new-post"><a class="header-anchor" href="#create-a-new-post"></a>Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<a id="more"></a>
+### Run server
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="generate-static-files"><a class="header-anchor" href="#generate-static-files"></a>Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="deploy-to-remote-sites"><a class="header-anchor" href="#deploy-to-remote-sites"></a>Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start"><a class="header-anchor" href="#quick-start"></a>Quick Start</h2>
+<h3 id="create-a-new-post"><a class="header-anchor" href="#create-a-new-post"></a>Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a></p>]]>
+    
+    </summary>
+    
+      <category term="探索发现" scheme="http://molloc.me/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Cars]]></title>
+    <link href="http://molloc.me/2015/06/29/Cars/"/>
+    <id>http://molloc.me/2015/06/29/Cars/</id>
+    <published>2015-06-29T10:14:22.049Z</published>
+    <updated>2015-06-28T07:42:34.000Z</updated>
+    <content type="html"><![CDATA[<p>Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the presentation of the Huracán LP 610-4, Lamborghini offers a new dimension in luxury super sports cars.
+With 122 dealerships worldwide, Automobili Lamborghini is building on a succession of dynamic and elegant super sports cars including the 350GT, Miura, Espada, Countach, Diablo, Murciélago, Reventón Coupe, Reventón Roadster, Aventador and Gallardo.</p>
+<p><img src="http://static.molloc.com/cars/1363048919SWhAHn.jpg" alt="Wallbase - dgnfly (wallbase.cc/wallpaper/1384450)" title="Car002"></p>
+<a id="more"></a>
+<p>At the  Beijing Motorshow 2014 Automobili Lamborghini is also going to present the Aventador in a highly exclusive and appealing configuration called Nazionale, realized  by Lamborghini Ad Personam, the personalization program that allows clients to create their own made-to-order Lamborghini.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the presentation of the Huracán LP 610-4, Lamborghini offers a new dimension in luxury super sports cars.
+With 122 dealerships worldwide, Automobili Lamborghini is building on a succession of dynamic and elegant super sports cars including the 350GT, Miura, Espada, Countach, Diablo, Murciélago, Reventón Coupe, Reventón Roadster, Aventador and Gallardo.</p>
+<p><img src="http://static.molloc.com/cars/1363048919SWhAHn.jpg" alt="Wallbase - dgnfly (wallbase.cc/wallpaper/1384450)" title="Car002"></p>]]>
+    
+    </summary>
+    
+      <category term="Cars" scheme="http://molloc.me/tags/Cars/"/>
+    
+      <category term="美图世界" scheme="http://molloc.me/categories/%E7%BE%8E%E5%9B%BE%E4%B8%96%E7%95%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[awk基础]]></title>
+    <link href="http://molloc.me/2015/06/29/awk%E5%9F%BA%E7%A1%80/"/>
+    <id>http://molloc.me/2015/06/29/awk基础/</id>
+    <published>2015-06-29T10:14:14.000Z</published>
+    <updated>2015-06-29T10:20:19.255Z</updated>
+    <content type="html"><![CDATA[<h2 id="awk简介"><a class="header-anchor" href="#awk简介"></a>awk简介</h2>
+<p>awk: 中文意思是报告生成器 能够根据我们输入的信息，将信息格式化以后显示，将定义好的信息以比较美观（直观）的方式显示出来出现比较早，继而出现了new awk（nawk）在windows上实现，gawk, awk实现在linux上。awk是一种编程语言，用于在linux/unix下对文本和数据进行处理。数据可以来自标准输入、一个或多个文件，或其它命令的输出。它支持用户自定义函数和动态正则表达式等先进功能，是linux/unix下的一个强大编程工具。它在命令行中使用，但更多是作为脚本来使用。awk的处理文本和数据的方式是这样的，它逐行扫描文件，从第一行到最后一行，寻找匹配的特定模式的行，并在这些行上进行你想要的操作。如果没有指定处理动作，则把匹配的行显示到标准输出(屏幕)，如果没有指定模式，则所有被操作所指定的行都被处理。awk分别代表其作者姓氏的第一个字母，分别是Alfred Aho、Brian Kernighan、Peter Weinberger。gawk是awk的GNU版本，它提供了Bell实验室和GNU的一些扩展。下面就对awk进行介绍。</p>
+<a id="more"></a>
+<h2 id="awk使用的基本格式"><a class="header-anchor" href="#awk使用的基本格式"></a>awk使用的基本格式</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">awk [options] <span class="string">'script'</span> file1 file2, …</span><br><span class="line"></span><br><span class="line">awk [options] <span class="string">'PATTERN &#123; action &#125;'</span> file1 file2, <span class="comment"># 细化了上面的组合</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> <span class="comment">#输出, </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span> <span class="comment">#打印</span></span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="awk简介"><a class="header-anchor" href="#awk简介"></a>awk简介</h2>
+<p>awk: 中文意思是报告生成器 能够根据我们输入的信息，将信息格式化以后显示，将定义好的信息以比较美观（直观）的方式显示出来出现比较早，继而出现了new awk（nawk）在windows上实现，gawk, awk实现在linux上。awk是一种编程语言，用于在linux/unix下对文本和数据进行处理。数据可以来自标准输入、一个或多个文件，或其它命令的输出。它支持用户自定义函数和动态正则表达式等先进功能，是linux/unix下的一个强大编程工具。它在命令行中使用，但更多是作为脚本来使用。awk的处理文本和数据的方式是这样的，它逐行扫描文件，从第一行到最后一行，寻找匹配的特定模式的行，并在这些行上进行你想要的操作。如果没有指定处理动作，则把匹配的行显示到标准输出(屏幕)，如果没有指定模式，则所有被操作所指定的行都被处理。awk分别代表其作者姓氏的第一个字母，分别是Alfred Aho、Brian Kernighan、Peter Weinberger。gawk是awk的GNU版本，它提供了Bell实验室和GNU的一些扩展。下面就对awk进行介绍。</p>]]>
+    
+    </summary>
+    
+      <category term="linux" scheme="http://molloc.me/tags/linux/"/>
+    
+      <category term="学习笔记" scheme="http://molloc.me/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Redis使用入门]]></title>
     <link href="http://molloc.me/2015/06/28/Redis%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/"/>
     <id>http://molloc.me/2015/06/28/Redis使用入门/</id>
     <published>2015-06-28T07:31:23.000Z</published>
-    <updated>2015-06-28T07:47:28.174Z</updated>
+    <updated>2015-06-28T08:04:30.905Z</updated>
     <content type="html"><![CDATA[<h2 id="redis-introduction"><a class="header-anchor" href="#redis-introduction"></a>Redis Introduction</h2>
 <p>Redis是一个用C语言实现的key-value store. 除了最基础的基于字符串的键值对，Redis可以是更加复杂的数据结构，所以redis也常被称为是一个data structure server(数据结构服务器)</p>
 <a id="more"></a>
@@ -140,7 +224,7 @@
     <link href="http://molloc.me/2015/06/26/mysql%E6%8C%89%E7%85%A7%E6%9F%90%E4%B8%80%E5%AD%97%E6%AE%B5%E5%8E%BB%E9%87%8D%EF%BC%8C%E5%B9%B6%E6%98%BE%E7%A4%BA%E5%85%B6%E4%BB%96%E5%AD%97%E6%AE%B5%E4%BF%A1%E6%81%AF/"/>
     <id>http://molloc.me/2015/06/26/mysql按照某一字段去重，并显示其他字段信息/</id>
     <published>2015-06-26T03:04:38.000Z</published>
-    <updated>2015-06-26T03:07:39.000Z</updated>
+    <updated>2015-06-28T07:42:35.000Z</updated>
     <content type="html"><![CDATA[<h2 id="问题概述"><a class="header-anchor" href="#问题概述"></a>问题概述</h2>
 <p>按照sql中的某一列值去重，还要显示其他字段的信息。</p>
 <a id="more"></a>
@@ -167,71 +251,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Hello Hexo]]></title>
-    <link href="http://molloc.me/2015/06/26/hello-hexo/"/>
-    <id>http://molloc.me/2015/06/26/hello-hexo/</id>
-    <published>2015-06-26T02:12:47.954Z</published>
-    <updated>2015-06-26T01:13:23.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="quick-start"><a class="header-anchor" href="#quick-start"></a>Quick Start</h2>
-<h3 id="create-a-new-post"><a class="header-anchor" href="#create-a-new-post"></a>Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<a id="more"></a>
-### Run server
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="generate-static-files"><a class="header-anchor" href="#generate-static-files"></a>Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="header-anchor" href="#deploy-to-remote-sites"></a>Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start"><a class="header-anchor" href="#quick-start"></a>Quick Start</h2>
-<h3 id="create-a-new-post"><a class="header-anchor" href="#create-a-new-post"></a>Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a></p>]]>
-    
-    </summary>
-    
-      <category term="探索发现" scheme="http://molloc.me/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Cars]]></title>
-    <link href="http://molloc.me/2015/06/26/Cars/"/>
-    <id>http://molloc.me/2015/06/26/Cars/</id>
-    <published>2015-06-26T02:12:47.366Z</published>
-    <updated>2015-06-26T01:13:22.000Z</updated>
-    <content type="html"><![CDATA[<p>Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the presentation of the Huracán LP 610-4, Lamborghini offers a new dimension in luxury super sports cars.
-With 122 dealerships worldwide, Automobili Lamborghini is building on a succession of dynamic and elegant super sports cars including the 350GT, Miura, Espada, Countach, Diablo, Murciélago, Reventón Coupe, Reventón Roadster, Aventador and Gallardo.</p>
-<p><img src="http://static.molloc.com/cars/1363048919SWhAHn.jpg" alt="Wallbase - dgnfly (wallbase.cc/wallpaper/1384450)" title="Car002"></p>
-<a id="more"></a>
-<p>At the  Beijing Motorshow 2014 Automobili Lamborghini is also going to present the Aventador in a highly exclusive and appealing configuration called Nazionale, realized  by Lamborghini Ad Personam, the personalization program that allows clients to create their own made-to-order Lamborghini.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northeastern Italy. There it manufactures some of the world’s most sought-after super sports cars. With the presentation of the Huracán LP 610-4, Lamborghini offers a new dimension in luxury super sports cars.
-With 122 dealerships worldwide, Automobili Lamborghini is building on a succession of dynamic and elegant super sports cars including the 350GT, Miura, Espada, Countach, Diablo, Murciélago, Reventón Coupe, Reventón Roadster, Aventador and Gallardo.</p>
-<p><img src="http://static.molloc.com/cars/1363048919SWhAHn.jpg" alt="Wallbase - dgnfly (wallbase.cc/wallpaper/1384450)" title="Car002"></p>]]>
-    
-    </summary>
-    
-      <category term="Cars" scheme="http://molloc.me/tags/Cars/"/>
-    
-      <category term="美图世界" scheme="http://molloc.me/categories/%E7%BE%8E%E5%9B%BE%E4%B8%96%E7%95%8C/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[CentOS 6 搭建 FTP 服务记录]]></title>
     <link href="http://molloc.me/2015/06/25/CentOS-6-%E6%90%AD%E5%BB%BA-FTP-%E6%9C%8D%E5%8A%A1%E8%AE%B0%E5%BD%95/"/>
     <id>http://molloc.me/2015/06/25/CentOS-6-搭建-FTP-服务记录/</id>
     <published>2015-06-25T01:09:32.000Z</published>
-    <updated>2015-06-26T01:13:23.000Z</updated>
+    <updated>2015-06-28T07:42:34.000Z</updated>
     <content type="html"><![CDATA[<h2 id="关于-vsftp"><a class="header-anchor" href="#关于-vsftp"></a>关于 VSFTP</h2>
 <p>在 Linux 下搭建 FTP 服务器一般会使用 vsftpd。vsftpd 的前两个字母代表 &quot;very secure&quot; 。</p>
 <p><a href="https://security.appspot.com/vsftpd.html" target="_blank" rel="external">项目官网</a></p>
@@ -290,7 +314,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/24/PMP-ITTO/"/>
     <id>http://molloc.me/2015/06/24/PMP-ITTO/</id>
     <published>2015-06-24T01:34:27.000Z</published>
-    <updated>2015-06-26T05:05:10.000Z</updated>
+    <updated>2015-06-28T07:42:34.000Z</updated>
     <content type="html"><![CDATA[<h2 id="项目整合管理"><a class="header-anchor" href="#项目整合管理"></a>项目整合管理</h2>
 <h3 id="制定项目章程"><a class="header-anchor" href="#制定项目章程"></a>制定项目章程</h3>
 <ul>
@@ -1650,7 +1674,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/18/Guava-%E6%98%AF%E4%B8%AA%E9%A3%8E%E7%81%AB%E8%BD%AE%E4%B9%8B%E5%87%BD-3-%E8%A1%A8%E5%A4%84%E7%90%86/"/>
     <id>http://molloc.me/2015/06/18/Guava-是个风火轮之函-3-表处理/</id>
     <published>2015-06-18T06:56:46.000Z</published>
-    <updated>2015-06-26T01:13:23.000Z</updated>
+    <updated>2015-06-28T07:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>早先学习 Scheme 的时候，就已经对 Lisp 那行云流水般的表处理手段一见倾心。后来使用 Python 做数据处理时，语言内置的高阶函数更是得心应手。工作之后开始使用 Java，一开始的时候仿佛回到了石器时代。</p>
 <p>直到后来我找到了 Guava，才终于又可以使用熟悉的方式去操纵集合。</p>
 <a id="more"></a>
@@ -1701,7 +1725,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/15/pmp%E9%AB%98%E6%95%88%E7%AC%94%E8%AE%B0/"/>
     <id>http://molloc.me/2015/06/15/pmp高效笔记/</id>
     <published>2015-06-15T09:10:20.000Z</published>
-    <updated>2015-06-26T05:05:31.000Z</updated>
+    <updated>2015-06-28T07:42:35.000Z</updated>
     <content type="html"><![CDATA[<h2 id="组织相关"><a class="header-anchor" href="#组织相关"></a>组织相关</h2>
 <p>组织就是将两个或两个以上的个体联系起来,以实现一个或一系列共同目标;组织整体价值需要商业价值去体现,商业价值需要战略计划指导和管理,而战略计划目标本身却通过组织治理来管理,并通过项目(项目治理)和运营实现组织战略目标.</p>
 <a id="more"></a>
@@ -2199,7 +2223,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/13/%E9%80%9A%E8%BF%87crontab%E6%B7%BB%E5%8A%A0%E5%AE%9A%E6%97%B6%E5%88%A0%E9%99%A4tomcat%E6%97%A5%E5%BF%97%E4%BB%BB%E5%8A%A1/"/>
     <id>http://molloc.me/2015/06/13/通过crontab添加定时删除tomcat日志任务/</id>
     <published>2015-06-13T07:34:18.000Z</published>
-    <updated>2015-06-26T01:13:28.000Z</updated>
+    <updated>2015-06-28T07:42:35.000Z</updated>
     <content type="html"><![CDATA[<h2 id="使用场景"><a class="header-anchor" href="#使用场景"></a>使用场景</h2>
 <p><strong>定时清除生产环境上tomcat日志文件夹的日志,避免占满服务器硬盘.</strong>
 <img src="http://static.molloc.com/img/201506/server_info.png" style="display:block;margin:auto" alt="server-info" title="server-info"></p>
@@ -2235,7 +2259,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/12/catalina_pid%20file%20contains%20+1%20pid%20number%20instead%20of%20correct%20pid/"/>
     <id>http://molloc.me/2015/06/12/catalina_pid file contains +1 pid number instead of correct pid/</id>
     <published>2015-06-12T15:07:21.000Z</published>
-    <updated>2015-06-26T01:13:22.000Z</updated>
+    <updated>2015-06-28T07:42:34.000Z</updated>
     <content type="html"><![CDATA[<h2 id="problem-description"><a class="header-anchor" href="#problem-description"></a>Problem description</h2>
 <p>I have recently enabled catalina_pid functionality using environment variable. The PID file got created and contains +1 PID number.</p>
 <p>If the Tomcat's real PID number 5446, the pid file would contain 5447 as PID number.</p>
@@ -2273,7 +2297,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/12/Tomcat%E6%97%A0%E6%B3%95shutdown%E8%BF%9B%E7%A8%8B/"/>
     <id>http://molloc.me/2015/06/12/Tomcat无法shutdown进程/</id>
     <published>2015-06-12T09:10:16.000Z</published>
-    <updated>2015-06-26T01:13:28.000Z</updated>
+    <updated>2015-06-28T07:42:35.000Z</updated>
     <content type="html"><![CDATA[<p>在tomcat部署web项目后，需要时不时的更新下web项目，于是我经常的关闭tomcat然后再启动。偶然间发现了关闭tomcat后仍然有几个tomcat进程在运行</p>
 <h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
 <ul>
@@ -2321,7 +2345,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/11/%E5%88%87%E5%88%86Tomcat%E7%9A%84catalina-out%E6%96%87%E4%BB%B6-%E8%A7%A3%E5%86%B3%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E8%BF%87%E5%A4%A7%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://molloc.me/2015/06/11/切分Tomcat的catalina-out文件-解决日志文件过大的问题/</id>
     <published>2015-06-11T06:15:55.000Z</published>
-    <updated>2015-06-26T01:13:28.000Z</updated>
+    <updated>2015-06-28T07:42:35.000Z</updated>
     <content type="html"><![CDATA[<p>Tomcat 下日志文件 catalina.out 过大，几百兆或几个G，进而造成再也无法写入更多的日志内容，至使 Tomcat 无法处理请求。需然你可以在 $TOMCAT_HOME/logs 目录下看到有 catalina.2012-09-16.log 这样分日期的归档，但是主文件 catalina.out 却一直在膨胀。</p>
 <p>你可以每次手工或定时(crontab/计划任务)清理 catalina.out 文件，或是规划好日志输出(终究也会有满的时候)。再就是有两种较好的解决方案去真正的切分 catalina.out 文件，让 catalina.out 只存有最新的日志。</p>
 <a id="more"></a>
@@ -2370,7 +2394,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/09/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8Bencode-decode/"/>
     <id>http://molloc.me/2015/06/09/面试题之encode-decode/</id>
     <published>2015-06-09T04:14:06.000Z</published>
-    <updated>2015-06-26T01:13:28.000Z</updated>
+    <updated>2015-06-28T07:42:35.000Z</updated>
     <content type="html"><![CDATA[<p>用Java语言实现两个函数encode()和decode(),分别实现对字符串的变换和复原,变换函数encode()顺序考察已知字符串的字符,按以下规则逐组生成新字符串:</p>
 <ol>
 <li>若已知字符串的当前字符不是大于0的数字字符,则复制该字符于新字符串中.</li>
@@ -2410,7 +2434,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/08/Nginx%E7%89%88%E6%9C%AC%E6%97%A0%E7%BC%9D%E5%8D%87%E7%BA%A7/"/>
     <id>http://molloc.me/2015/06/08/Nginx版本无缝升级/</id>
     <published>2015-06-08T04:19:42.000Z</published>
-    <updated>2015-06-26T01:13:24.000Z</updated>
+    <updated>2015-06-28T07:42:34.000Z</updated>
     <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -V     <span class="comment">#查看版本</span></span><br><span class="line">nginx version: nginx/<span class="number">1.4</span>.<span class="number">3</span></span><br><span class="line">built by gcc <span class="number">4.4</span>.<span class="number">7</span> <span class="number">20120313</span> (Red Hat <span class="number">4.4</span>.<span class="number">7</span>-<span class="number">3</span>) (GCC)</span><br><span class="line">TLS SNI support enabled</span><br><span class="line">configure arguments: --prefix=/usr/<span class="built_in">local</span>/nginx --user=www --group=www</span><br><span class="line">                     --with-http_stub_status_module --with-http_ssl_module</span><br><span class="line">                     --with-http_flv_module --with-http_gzip_static_module</span><br><span class="line">                     --with-ld-opt=<span class="string">'-ljemalloc'</span> <span class="comment">#注意这里的编译项</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> lnmp/src</span><br><span class="line"></span><br><span class="line">wget http://nginx.org/download/nginx-<span class="number">1.4</span>.<span class="number">4</span>.tar.gz</span><br><span class="line"></span><br><span class="line">tar xzf nginx-<span class="number">1.4</span>.<span class="number">4</span>.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> nginx-<span class="number">1.4</span>.<span class="number">4</span></span><br><span class="line"></span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/nginx --user=www</span><br><span class="line">                                      --group=www --with-http_stub_status_module</span><br><span class="line">                                      --with-http_ssl_module --with-http_flv_module</span><br><span class="line">                                      --with-http_gzip_static_module --with-ld-opt=<span class="string">'-ljemalloc'</span></span><br><span class="line">make    //注意只make  不要make install</span><br><span class="line"></span><br><span class="line">mv /usr/<span class="built_in">local</span>/nginx/sbin/nginx /usr/<span class="built_in">local</span>/nginx/sbin/nginx$(date +%m%d)    <span class="comment">#备份nginx原文件</span></span><br><span class="line"></span><br><span class="line">cp objs/nginx /usr/<span class="built_in">local</span>/nginx/sbin/nginx     <span class="comment">#复制编译make后的文件覆盖nginx原文件</span></span><br><span class="line"></span><br><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -t     <span class="comment">#检测nginx文件配置</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">kill</span> -USR2 `cat /usr/<span class="built_in">local</span>/nginx/logs/nginx.pid`    <span class="comment">#把nginx.pid改成nginx.pid.oldbin跟着启动新的nginx</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">kill</span> -QUIT `cat /usr/<span class="built_in">local</span>/nginx/logs/nginx.pid.oldbin`   <span class="comment">#退出旧的nignx</span></span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
@@ -2430,7 +2454,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/06/Linux-Kernel-4-1-%E5%B0%86%E6%98%AF%E4%B8%8B%E4%B8%80%E4%B8%AA%E9%95%BF%E6%9C%9F%E6%94%AF%E6%8C%81%E7%89%88/"/>
     <id>http://molloc.me/2015/06/06/Linux-Kernel-4-1-将是下一个长期支持版/</id>
     <published>2015-06-06T00:43:07.000Z</published>
-    <updated>2015-06-26T01:13:24.000Z</updated>
+    <updated>2015-06-28T07:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>Linux基金会长期支持计划项目组以及稳定内核分支维护者Greg Kroah-Hartman<a href="http://linux.slashdot.org/story/15/06/04/1341219/linux-kernel-41-will-be-an-lts-release" target="_blank" rel="external">证实</a>，下一个版本Linux Kernel 4.1将是一个长期支持版。长期支持内核针对的是嵌入式设备，嵌入式设备的生命期短更新更快，一般为两年左右，长期支持内核将提供两年的维护更新。</p>
 <p>上一个 长期支持版是Linux 3.18，2014年12月发布，将一直支持到2017年1月。Kernel 4.1预计将在本月发布。</p>
 <p><img src="http://static.molloc.com/img/201506/06081651_tmdK.png" style="display:block;margin:auto"></p>
@@ -2459,7 +2483,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/06/02/pmp%E8%AE%A1%E7%AE%97%E9%A2%98%E6%B1%87%E6%80%BB/"/>
     <id>http://molloc.me/2015/06/02/pmp计算题汇总/</id>
     <published>2015-06-02T05:33:39.000Z</published>
-    <updated>2015-06-26T05:09:16.000Z</updated>
+    <updated>2015-06-28T07:42:35.000Z</updated>
     <content type="html"><![CDATA[<h2 id="回收期-payback-period"><a class="header-anchor" href="#回收期-payback-period"></a>回收期(Payback Period)</h2>
 <ul>
 <li>概念: 回收成本所需的时间</li>
@@ -2660,7 +2684,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/05/27/PMP%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/"/>
     <id>http://molloc.me/2015/05/27/PMP考试总结/</id>
     <published>2015-05-27T15:11:32.000Z</published>
-    <updated>2015-06-26T01:13:28.000Z</updated>
+    <updated>2015-06-28T07:42:35.000Z</updated>
     <content type="html"><![CDATA[<h2 id="高效通过pmp考试试题"><a class="header-anchor" href="#高效通过pmp考试试题"></a>高效通过PMP考试试题</h2>
 <ol>
 <li>
@@ -3989,7 +4013,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/05/25/Nginx-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%80%BB%E7%BB%93/"/>
     <id>http://molloc.me/2015/05/25/Nginx-配置文件总结/</id>
     <published>2015-05-25T04:28:09.000Z</published>
-    <updated>2015-06-26T01:13:24.000Z</updated>
+    <updated>2015-06-28T07:42:34.000Z</updated>
     <content type="html"><![CDATA[<h2 id="顶级配置"><a class="header-anchor" href="#顶级配置"></a>顶级配置</h2>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义 Nginx 运行的用户和用户组</span></span><br><span class="line"><span class="title">user</span> nginx;</span><br><span class="line"></span><br><span class="line"><span class="comment">#进程文件</span></span><br><span class="line"><span class="title">pid</span> /var/run/nginx.pid;</span><br><span class="line"></span><br><span class="line"><span class="comment">#错误日志位置和级别，debug、info、notice、warn、error、crit</span></span><br><span class="line"><span class="title">error_log</span>  /var/log/nginx/error.log <span class="built_in">warn</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#Nginx worker 的进程数，一般可设置为可用的CPU内核数。</span></span><br><span class="line"><span class="title">worker_processes</span> <span class="number">8</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#每个 worker 打开文件描述符的最大数量限制。</span></span><br><span class="line"><span class="comment">#理论值应该是最多打开文件数（系统的值ulimit -n）与 nginx 进程数相除，</span></span><br><span class="line"><span class="comment">#但是 nginx 分配请求并不均匀，所以建议与ulimit -n的值保持一致。</span></span><br><span class="line"><span class="title">worker_rlimit_nofile</span> <span class="number">65535</span>;</span><br></pre></td></tr></table></figure>
 <p>修改系统文件打开数量限制：</p>
@@ -4031,7 +4055,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
     <link href="http://molloc.me/2015/05/22/Git-push%E4%B8%8Epull%E7%9A%84%E9%BB%98%E8%AE%A4%E8%A1%8C%E4%B8%BA/"/>
     <id>http://molloc.me/2015/05/22/Git-push与pull的默认行为/</id>
     <published>2015-05-22T04:20:18.000Z</published>
-    <updated>2015-06-26T01:13:23.000Z</updated>
+    <updated>2015-06-28T07:42:34.000Z</updated>
     <content type="html"><![CDATA[<h2 id="git-push"><a class="header-anchor" href="#git-push"></a>git push</h2>
 <p>通常对于一个本地的新建分支，例如<code>git checkout -b develop</code>, 在<code>develop</code>分支<code>commit</code>了代码之后，如果直接执行<code>git push</code>命令，<code>develop</code>分支将不会被<code>push</code>到远程仓库（但此时<code>git push</code>操作有可能会推送一些代码到远程仓库，这取决于我们本地<code>git config</code>配置中的<code>push.default</code>默认行为，下文将会逐一详解）。</p>
 <p>因此我们至少需要显式指定将要推送的分支名，例如<code>git push origin develop</code>，才能将本地新分支推送到远程仓库。</p>
@@ -4100,36 +4124,6 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
       <category term="pull" scheme="http://molloc.me/tags/pull/"/>
     
       <category term="push" scheme="http://molloc.me/tags/push/"/>
-    
-      <category term="工作相关" scheme="http://molloc.me/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[高效Linux bash快捷键及alias总结]]></title>
-    <link href="http://molloc.me/2015/05/15/%E9%AB%98%E6%95%88Linux-bash%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%8F%8Aalias%E6%80%BB%E7%BB%93/"/>
-    <id>http://molloc.me/2015/05/15/高效Linux-bash快捷键及alias总结/</id>
-    <published>2015-05-15T14:33:57.000Z</published>
-    <updated>2015-06-26T01:13:28.000Z</updated>
-    <content type="html"><![CDATA[<p>习惯使用编辑的快捷键可以大大提高效率，记忆学习过程要有意识的忽略功能键、方向键和数字小键盘。以下快捷键适用在bash处于默认的Emacs模式下。如果你有 set -o vi ，就处于  vi 模式就不适用了。另外下面的内容并不包含所有快捷键，只是我个人适用频率最高的几种，但相信已经可以大大提高工作效率了：</p>
-<h2 id="bash-shortcut"><a class="header-anchor" href="#bash-shortcut"></a>bash shortcut</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + l   <span class="comment"># 清除屏幕，同clear</span></span><br><span class="line">Ctrl + a   <span class="comment"># 将光标定位到命令的开头</span></span><br><span class="line">Ctrl + e   <span class="comment"># 与上一个快捷键相反，将光标定位到命令的结尾</span></span><br><span class="line">Ctrl + u   <span class="comment"># 剪切光标之前的内容，在输错命令或密码</span></span><br><span class="line">Ctrl + k   <span class="comment"># 与上一个快捷键相反，剪切光标之后的内容</span></span><br><span class="line">Ctrl + y   <span class="comment"># 粘贴以上两个快捷键所剪切的内容。Alt+y粘贴更早的内容</span></span><br><span class="line">Ctrl + w   <span class="comment"># 删除光标左边的参数（选项）或内容（实际是以空格为单位向前剪切一个word）</span></span><br><span class="line">Ctrl + /   <span class="comment"># 撤销，同Ctrl+x u</span></span><br><span class="line">Ctrl + f   <span class="comment"># 按字符前移（右向），同→</span></span><br><span class="line">Ctrl + b   <span class="comment"># 按字符后移（左向），同←</span></span><br><span class="line">Alt  + f   <span class="comment"># 单词前移，标点等特殊字符与空格一样分隔单词（右向），同Ctrl+→</span></span><br><span class="line">Alt  + b   <span class="comment"># 单词后移（左向），同Ctrl+←</span></span><br><span class="line">Alt  + d   <span class="comment"># 光标处删除至字尾。可以Ctrl+y粘贴回来</span></span><br><span class="line">Alt  + \   <span class="comment"># 除当前光标前面所有的空白字符</span></span><br><span class="line">Ctrl + d   <span class="comment"># 删除光标处的字符，同Del键。没有命令是表示注销用户</span></span><br><span class="line">Ctrl + h   <span class="comment"># 删除光标前的字符</span></span><br><span class="line">Ctrl + r   <span class="comment"># 逆向搜索命令历史，比history好用</span></span><br><span class="line">Ctrl + g   <span class="comment"># 从历史搜索模式退出，同ESC</span></span><br><span class="line">Ctrl + p   <span class="comment"># 历史中的上一条命令，同↑</span></span><br><span class="line">Ctrl + n   <span class="comment"># 历史中的下一条命令，同↓</span></span><br><span class="line">Alt  + .   <span class="comment"># 同!$，输出上一个命令的最后一个参数（选项or单词）。</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="常用alias"><a class="header-anchor" href="#常用alias"></a>常用alias</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> wl=<span class="string">'ll | wc -l'</span></span><br><span class="line"><span class="built_in">alias</span> l=<span class="string">'ls -l'</span></span><br><span class="line"><span class="built_in">alias</span> lh=<span class="string">'ls -lh'</span></span><br><span class="line"><span class="built_in">alias</span> grep=<span class="string">'grep -i --color'</span> <span class="comment">#用颜色标识，更醒目；忽略大小写</span></span><br><span class="line"><span class="built_in">alias</span> vi=vim</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入目录并列出文件</span></span><br><span class="line"><span class="function"><span class="title">cdl</span></span>() &#123; <span class="built_in">cd</span> <span class="string">"<span class="variable">$@</span>"</span> &amp;&amp; <span class="built_in">pwd</span> ; ls -al; &#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> ..=<span class="string">"cdl .."</span></span><br><span class="line"><span class="built_in">alias</span> ...=<span class="string">"cd ../.."</span>   <span class="comment"># 快速进入上上层目录</span></span><br><span class="line"><span class="built_in">alias</span> .<span class="number">3</span>=<span class="string">"cd ../../.."</span></span><br><span class="line"><span class="built_in">alias</span> cd..=<span class="string">'cdl ..'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># alias cp="cp -iv"      # interactive, verbose</span></span><br><span class="line"><span class="built_in">alias</span> rm=<span class="string">"rm -i"</span>      <span class="comment"># interactive</span></span><br><span class="line"><span class="comment"># alias mv="mv -iv"       # interactive, verbose</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> psg=<span class="string">'ps aux | grep -v grep | grep -i --color'</span> <span class="comment"># 查看进程信息</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> hg=<span class="string">'history|grep'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> c=<span class="string">'clear'</span>  <span class="comment"># 快速清屏</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> netp=<span class="string">'netstat -tulanp'</span>  <span class="comment"># 查看服务器端口连接信息</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> lvim=<span class="string">"vim -c \"normal '0\""</span>  <span class="comment"># 编辑vim最近打开的文件</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> tf=<span class="string">'tail -f '</span>  <span class="comment"># 快速查看文件末尾输出</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自动在文件末尾加上 .bak-日期 来备份文件，如 bu nginx.conf</span></span><br><span class="line"><span class="function"><span class="title">bak</span></span>() &#123; cp <span class="string">"<span class="variable">$@</span>"</span> <span class="string">"<span class="variable">$@</span>.bak"</span>-`date +%y%m%d`; <span class="built_in">echo</span> <span class="string">"`date +%Y-%m-%d` backed up <span class="variable">$PWD</span>/<span class="variable">$@</span>"</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 级联创建目录并进入，如 mcd a/b/c</span></span><br><span class="line"><span class="function"><span class="title">mcd</span></span>() &#123; mkdir -p <span class="variable">$1</span> &amp;&amp; <span class="built_in">cd</span> <span class="variable">$1</span> &amp;&amp; <span class="built_in">pwd</span> ; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看去掉#注释和空行的配置文件，如 nocomm /etc/squid/squid.conf</span></span><br><span class="line"><span class="built_in">alias</span> nocomm=<span class="string">'grep -Ev '</span>\<span class="string">''</span>^(<span class="comment">#|$)'\'''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 快速根据进程号pid杀死进程，如 psid tomcat， 然后 kill9 两个tab键提示要kill的进程号</span></span><br><span class="line"><span class="built_in">alias</span> <span class="built_in">kill</span>9=<span class="string">'kill -9'</span>;</span><br><span class="line"><span class="function"><span class="title">psid</span></span>() &#123;</span><br><span class="line">  [[ ! -n <span class="variable">$&#123;1&#125;</span> ]] &amp;&amp; <span class="built_in">return</span>;   <span class="comment"># bail if no argument</span></span><br><span class="line">  pro=<span class="string">"[<span class="variable">$&#123;1:0:1&#125;</span>]<span class="variable">$&#123;1:1&#125;</span>"</span>;      <span class="comment"># process-name –&gt; [p]rocess-name (makes grep better)</span></span><br><span class="line">  ps axo pid,user,<span class="built_in">command</span> | grep -v grep |grep -i --color <span class="variable">$&#123;pro&#125;</span>;   <span class="comment"># show matching processes</span></span><br><span class="line">  pids=<span class="string">"<span class="variable">$(ps axo pid,user,command | grep -v grep | grep -i $&#123;pro&#125; | awk '&#123;print $1&#125;')</span>"</span>;   <span class="comment"># get pids</span></span><br><span class="line">  complete -W <span class="string">"<span class="variable">$&#123;pids&#125;</span>"</span> <span class="built_in">kill</span>9     <span class="comment"># make a completion list for kk</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压所有归档文件工具</span></span><br><span class="line"><span class="keyword">function</span> extract &#123;</span><br><span class="line"> <span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$1</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="comment"># display usage if no parameters given</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Usage: extract &lt;path/file_name&gt;.&lt;zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz&gt;"</span></span><br><span class="line"> <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="operator">-f</span> <span class="variable">$1</span> ] ; <span class="keyword">then</span></span><br><span class="line">        <span class="comment"># NAME=$&#123;1%.*&#125;</span></span><br><span class="line">        <span class="comment"># mkdir $NAME &amp;&amp; cd $NAME</span></span><br><span class="line">        <span class="keyword">case</span> <span class="variable">$1</span> <span class="keyword">in</span></span><br><span class="line">          *.tar.bz2)   tar xvjf <span class="variable">$1</span>    ;;</span><br><span class="line">          *.tar.gz)    tar xvzf <span class="variable">$1</span>    ;;</span><br><span class="line">          *.tar.xz)    tar xvJf <span class="variable">$1</span>    ;;</span><br><span class="line">          *.lzma)      unlzma <span class="variable">$1</span>      ;;</span><br><span class="line">          *.bz2)       bunzip2 <span class="variable">$1</span>     ;;</span><br><span class="line">          *.rar)       unrar x -ad <span class="variable">$1</span> ;;</span><br><span class="line">          *.gz)        gunzip <span class="variable">$1</span>      ;;</span><br><span class="line">          *.tar)       tar xvf <span class="variable">$1</span>     ;;</span><br><span class="line">          *.tbz2)      tar xvjf <span class="variable">$1</span>    ;;</span><br><span class="line">          *.tgz)       tar xvzf <span class="variable">$1</span>    ;;</span><br><span class="line">          *.zip)       unzip <span class="variable">$1</span>       ;;</span><br><span class="line">          *.Z)         uncompress <span class="variable">$1</span>  ;;</span><br><span class="line">          *.<span class="number">7</span>z)        <span class="number">7</span>z x <span class="variable">$1</span>        ;;</span><br><span class="line">          *.xz)        unxz <span class="variable">$1</span>        ;;</span><br><span class="line">          *.exe)       cabextract <span class="variable">$1</span>  ;;</span><br><span class="line">          *)           <span class="built_in">echo</span> <span class="string">"extract: '<span class="variable">$1</span>' - unknown archive method"</span> ;;</span><br><span class="line">        <span class="keyword">esac</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"<span class="variable">$1</span> - file does not exist"</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>习惯使用编辑的快捷键可以大大提高效率，记忆学习过程要有意识的忽略功能键、方向键和数字小键盘。以下快捷键适用在bash处于默认的Emacs模式下。如果你有 set -o vi ，就处于  vi 模式就不适用了。另外下面的内容并不包含所有快捷键，只是我个人适用频率最高的几种，但相信已经可以大大提高工作效率了：</p>
-<h2 id="bash-shortcut"><a class="header-anchor" href="#bash-shortcut"></a>bash shortcut</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + l   <span class="comment"># 清除屏幕，同clear</span></span><br><span class="line">Ctrl + a   <span class="comment"># 将光标定位到命令的开头</span></span><br><span class="line">Ctrl + e   <span class="comment"># 与上一个快捷键相反，将光标定位到命令的结尾</span></span><br><span class="line">Ctrl + u   <span class="comment"># 剪切光标之前的内容，在输错命令或密码</span></span><br><span class="line">Ctrl + k   <span class="comment"># 与上一个快捷键相反，剪切光标之后的内容</span></span><br><span class="line">Ctrl + y   <span class="comment"># 粘贴以上两个快捷键所剪切的内容。Alt+y粘贴更早的内容</span></span><br><span class="line">Ctrl + w   <span class="comment"># 删除光标左边的参数（选项）或内容（实际是以空格为单位向前剪切一个word）</span></span><br><span class="line">Ctrl + /   <span class="comment"># 撤销，同Ctrl+x u</span></span><br><span class="line">Ctrl + f   <span class="comment"># 按字符前移（右向），同→</span></span><br><span class="line">Ctrl + b   <span class="comment"># 按字符后移（左向），同←</span></span><br><span class="line">Alt  + f   <span class="comment"># 单词前移，标点等特殊字符与空格一样分隔单词（右向），同Ctrl+→</span></span><br><span class="line">Alt  + b   <span class="comment"># 单词后移（左向），同Ctrl+←</span></span><br><span class="line">Alt  + d   <span class="comment"># 光标处删除至字尾。可以Ctrl+y粘贴回来</span></span><br><span class="line">Alt  + \   <span class="comment"># 除当前光标前面所有的空白字符</span></span><br><span class="line">Ctrl + d   <span class="comment"># 删除光标处的字符，同Del键。没有命令是表示注销用户</span></span><br><span class="line">Ctrl + h   <span class="comment"># 删除光标前的字符</span></span><br><span class="line">Ctrl + r   <span class="comment"># 逆向搜索命令历史，比history好用</span></span><br><span class="line">Ctrl + g   <span class="comment"># 从历史搜索模式退出，同ESC</span></span><br><span class="line">Ctrl + p   <span class="comment"># 历史中的上一条命令，同↑</span></span><br><span class="line">Ctrl + n   <span class="comment"># 历史中的下一条命令，同↓</span></span><br><span class="line">Alt  + .   <span class="comment"># 同!$，输出上一个命令的最后一个参数（选项or单词）。</span></span><br></pre></td></tr></table></figure>]]>
-    
-    </summary>
-    
-      <category term="alias" scheme="http://molloc.me/tags/alias/"/>
-    
-      <category term="bash" scheme="http://molloc.me/tags/bash/"/>
-    
-      <category term="linux" scheme="http://molloc.me/tags/linux/"/>
     
       <category term="工作相关" scheme="http://molloc.me/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
     
