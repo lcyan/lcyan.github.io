@@ -5,38 +5,56 @@
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="oxwWO_yZe21RAWOe9W6x1uUtSckxKC_eFEYqRbB88lY" />
   
-    <title>CentOS 6 搭建 FTP 服务记录 | Robot</title>
+    <title>ZY-2015.08.20 | Robot</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Lcyan">
     
 
     
-    <meta name="description" content="关于 VSFTP
-在 Linux 下搭建 FTP 服务器一般会使用 vsftpd。vsftpd 的前两个字母代表 &amp;quot;very secure&amp;quot; 。
-项目官网
-安装 VSFTP
-使用 yum 安装 vsftpd：
-1sudo yum install vsftpd">
+    <meta name="description" content="date
+date - print or set the system date and time
+SYNOPSIS
+
+date [OPTION]... [+FORMAT]
+date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
+
+OPTION
+
+-d DATESTR, --date=DATESTR 显示时间描述的字符串,而不是“现在”
+
+e.g.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS 6 搭建 FTP 服务记录">
-<meta property="og:url" content="http://molloc.me/2015/06/25/CentOS-6-搭建-FTP-服务记录/index.html">
+<meta property="og:title" content="ZY-2015.08.20">
+<meta property="og:url" content="http://molloc.me/2015/08/20/ZY-2015-08-20/index.html">
 <meta property="og:site_name" content="Robot">
-<meta property="og:description" content="关于 VSFTP
-在 Linux 下搭建 FTP 服务器一般会使用 vsftpd。vsftpd 的前两个字母代表 &amp;quot;very secure&amp;quot; 。
-项目官网
-安装 VSFTP
-使用 yum 安装 vsftpd：
-1sudo yum install vsftpd">
-<meta property="og:updated_time" content="2015-06-28T07:42:34.000Z">
+<meta property="og:description" content="date
+date - print or set the system date and time
+SYNOPSIS
+
+date [OPTION]... [+FORMAT]
+date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
+
+OPTION
+
+-d DATESTR, --date=DATESTR 显示时间描述的字符串,而不是“现在”
+
+e.g.">
+<meta property="og:updated_time" content="2015-08-20T16:10:14.319Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS 6 搭建 FTP 服务记录">
-<meta name="twitter:description" content="关于 VSFTP
-在 Linux 下搭建 FTP 服务器一般会使用 vsftpd。vsftpd 的前两个字母代表 &amp;quot;very secure&amp;quot; 。
-项目官网
-安装 VSFTP
-使用 yum 安装 vsftpd：
-1sudo yum install vsftpd">
+<meta name="twitter:title" content="ZY-2015.08.20">
+<meta name="twitter:description" content="date
+date - print or set the system date and time
+SYNOPSIS
+
+date [OPTION]... [+FORMAT]
+date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
+
+OPTION
+
+-d DATESTR, --date=DATESTR 显示时间描述的字符串,而不是“现在”
+
+e.g.">
 
     
     <link rel="alternative" href="/atom.xml" title="Robot" type="application/atom+xml">
@@ -95,14 +113,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/06/25/CentOS-6-搭建-FTP-服务记录/" title="CentOS 6 搭建 FTP 服务记录" itemprop="url">CentOS 6 搭建 FTP 服务记录</a>
+      <a href="/2015/08/20/ZY-2015-08-20/" title="ZY-2015.08.20" itemprop="url">ZY-2015.08.20</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Lcyan" target="_blank" itemprop="author">Lcyan</a>
 		
   <p class="article-time">
-    <time datetime="2015-06-25T01:09:32.000Z" itemprop="datePublished"> 发表于 2015-06-25</time>
+    <time datetime="2015-08-20T14:32:07.000Z" itemprop="datePublished"> 发表于 2015-08-20</time>
     
   </p>
 </header>
@@ -111,61 +129,76 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于-vsftp"><span class="toc-number">1.</span> <span class="toc-text">关于 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-vsftp"><span class="toc-number">2.</span> <span class="toc-text">安装 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加用户"><span class="toc-number">3.</span> <span class="toc-text">添加用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-vsftp"><span class="toc-number">4.</span> <span class="toc-text">配置 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连接测试"><span class="toc-number">5.</span> <span class="toc-text">连接测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#date"><span class="toc-number">1.</span> <span class="toc-text">date</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="关于-vsftp"><a class="header-anchor" href="#关于-vsftp"></a>关于 VSFTP</h2>
-<p>在 Linux 下搭建 FTP 服务器一般会使用 vsftpd。vsftpd 的前两个字母代表 &quot;very secure&quot; 。</p>
-<p><a href="https://security.appspot.com/vsftpd.html" target="_blank" rel="external">项目官网</a></p>
-<h2 id="安装-vsftp"><a class="header-anchor" href="#安装-vsftp"></a>安装 VSFTP</h2>
-<p>使用 yum 安装 vsftpd：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install vsftpd</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>如果需要连接其他 FTP 服务器，则可以安装 FTP 客户端。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install ftp</span><br></pre></td></tr></table></figure>
-<h2 id="添加用户"><a class="header-anchor" href="#添加用户"></a>添加用户</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adduser userftp</span><br><span class="line">passwd userftp</span><br></pre></td></tr></table></figure>
-<p>禁止用户的 ssh 登录权限，只允许 FTP 访问:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod <span class="operator">-s</span> /sbin/nologin userftp</span><br></pre></td></tr></table></figure>
-<h2 id="配置-vsftp"><a class="header-anchor" href="#配置-vsftp"></a>配置 VSFTP</h2>
-<p>打开配置文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/vsftpd/vsftpd.conf</span><br></pre></td></tr></table></figure>
-<p>关闭匿名访问：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">anonymous_<span class="built_in">enable</span>=NO</span><br></pre></td></tr></table></figure>
-<p>去掉 local_enable 的注释，修改为开启：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">local</span>_<span class="built_in">enable</span>=YES</span><br></pre></td></tr></table></figure>
-<p>限制用户仅能访问自己的主目录：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chroot_<span class="built_in">local</span>_user=YES</span><br></pre></td></tr></table></figure>
-<p>设置用户的主目录：(不设置时，默认为用户的家目录/home/userftp)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">local</span>_root=/data/<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<p>重启服务：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service vsftpd restart</span><br></pre></td></tr></table></figure>
-<p>设置开机自启动：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig vsftpd on</span><br></pre></td></tr></table></figure>
-<h2 id="连接测试"><a class="header-anchor" href="#连接测试"></a>连接测试</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ftp userftp@<span class="number">112.126</span>.<span class="number">74.124</span></span><br><span class="line"></span><br><span class="line">ftp&gt; <span class="built_in">pwd</span></span><br><span class="line">Remote directory: /home/userftp</span><br><span class="line"></span><br><span class="line">ftp&gt; quit</span><br><span class="line"><span class="number">221</span> Goodbye.</span><br></pre></td></tr></table></figure>
-<h2 id="参考"><a class="header-anchor" href="#参考"></a>参考</h2>
-<ol>
-<li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-vsftpd-on-centos-6--2" target="_blank" rel="external">how-to-set-up-vsftpd-on-centos-6--2</a></li>
-<li><a href="http://koulitsu.blog.51cto.com/7355117/1221441" target="_blank" rel="external">koulitsu</a></li>
-</ol>
-<p><a href="http://segmentfault.com/a/1190000002926477" target="_blank" rel="external">原文地址</a></p>
+		<h2 id="date"><a class="header-anchor" href="#date"></a>date</h2>
+<p>date - print or set the system date and time</p>
+<p>SYNOPSIS</p>
+<ul>
+<li>date [OPTION]... [+FORMAT]</li>
+<li>date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]</li>
+</ul>
+<p>OPTION</p>
+<ul>
+<li>-d DATESTR, --date=DATESTR 显示时间描述的字符串,而不是“现在”
+<ul>
+<li>e.g. date -d &quot;2015-05-04&quot;</li>
+<li>e.g. date --date=&quot;2015-05-04&quot;</li>
+<li>e.g. date -d &quot;2 days ago&quot;</li>
+</ul>
+</li>
+<li>-s DATESTR, --set=DATESTR 设置时间描述的字符串
+<ul>
+<li>e.g. date -s &quot;2015-05-04&quot;</li>
+<li>e.g. date --set=&quot;2015-05-04&quot;</li>
+<li>e.g. date -s &quot;2 days ago&quot;</li>
+</ul>
+</li>
+<li>-u, --utc, --universal 输出或者设置协调的通用时间
+<ul>
+<li>e.g. date -u</li>
+<li>e.g. date --utc</li>
+<li>e.g. date --universal</li>
+</ul>
+</li>
+</ul>
+<p>FORMAT</p>
+<ul>
+<li>'%a' 简短的星期名(e.g. date '+%a' -&gt; Sun)</li>
+<li>'%A' 星期的全称(e.g. date '+%A' -&gt; Sunday)</li>
+<li>'%b' 月份的简称(e.g. date '+%b' -&gt; Jan)</li>
+<li>'%B' 月份的全称(e.g. date '+%B' -&gt; January)</li>
+<li>'%c' 显示时间和日期(e.g. date '+%c' -&gt; Thu 20 Aug 2015 11:43:39 PM CST)</li>
+<li>'%C' 显示世纪,像%Y省略了后两位数字(e.g. date '+%C' -&gt; 20)</li>
+<li>'%d' 每月的第几天(e.g. date '+%d' -&gt; 20)</li>
+<li>'%D' 显示日期,想'%m/%d/%y'(e.g. date '+%d' -&gt; 08/20/15)</li>
+<li>'%e' 月份中的天数,用空格填充(e.g. date '+%e' -&gt; ' 5')</li>
+<li>'%F' 年月日,像%Y-%m-%d(e.g. date '+%F' -&gt; 2015-08-20)</li>
+<li>'%g' 年份的后两位(e.g. date '+%g' -&gt; 15)</li>
+<li>'%G' 使用基于周的年(e.g. date '+%G' -&gt; 2015)</li>
+<li>'%h' 参考 %b</li>
+<li>'%H' 24小时制(0..23)(e.g. date '+%G' -&gt; 23)</li>
+<li>'%I' 12小时制(1..12)(e.g. date '+%I' -&gt; 12)</li>
+<li>'%j' 一年中的天数(001..366)(e.g. date '+%j' -&gt; 233)</li>
+<li>'%k' 参考%H</li>
+<li>'%l' 参考%I</li>
+<li>'%m' 显示月份(01..12)(e.g. date '+%m' -&gt; 08)</li>
+<li>'%M' 显示分钟数(00-59)(e.g. date '+%M' -&gt; 04)</li>
+<li>'%A' 星期的全称(e.g. Sunday)</li>
+<li>'%A' 星期的全称(e.g. Sunday)</li>
+<li>'%A' 星期的全称(e.g. Sunday)</li>
+<li>'%A' 星期的全称(e.g. Sunday)</li>
+<li>'%A' 星期的全称(e.g. Sunday)</li>
+<li>'%A' 星期的全称(e.g. Sunday)</li>
+<li>'%A' 星期的全称(e.g. Sunday)</li>
+</ul>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/探索发现/">探索发现</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/linux/">linux</a>
-  </div>
 
 </div>
 
@@ -173,7 +206,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://molloc.me/2015/06/25/CentOS-6-搭建-FTP-服务记录/" data-title="CentOS 6 搭建 FTP 服务记录 | Robot" data-tsina="2205010230" class="share clearfix">
+	  <div data-url="http://molloc.me/2015/08/20/ZY-2015-08-20/" data-title="ZY-2015.08.20 | Robot" data-tsina="2205010230" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -186,19 +219,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/06/26/mysql按照某一字段去重，并显示其他字段信息/" title="mysql按照某一字段去重，并显示其他字段信息">
-  <strong>上一篇：</strong><br/>
-  <span>
-  mysql按照某一字段去重，并显示其他字段信息</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/06/24/PMP-ITTO/"  title="PMP-ITTO">
+<a href="/2015/06/29/hello-hexo/"  title="Hello Hexo">
  <strong>下一篇：</strong><br/> 
- <span>PMP-ITTO
+ <span>Hello Hexo
 </span>
 </a>
 </div>
@@ -207,7 +232,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/06/25/CentOS-6-搭建-FTP-服务记录/" data-title="CentOS 6 搭建 FTP 服务记录" data-url="http://molloc.me/2015/06/25/CentOS-6-搭建-FTP-服务记录/"></div>
+	<div class="ds-thread" data-thread-key="2015/08/20/ZY-2015-08-20/" data-title="ZY-2015.08.20" data-url="http://molloc.me/2015/08/20/ZY-2015-08-20/"></div>
 </section>
 
 
@@ -217,7 +242,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于-vsftp"><span class="toc-number">1.</span> <span class="toc-text">关于 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-vsftp"><span class="toc-number">2.</span> <span class="toc-text">安装 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加用户"><span class="toc-number">3.</span> <span class="toc-text">添加用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-vsftp"><span class="toc-number">4.</span> <span class="toc-text">配置 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连接测试"><span class="toc-number">5.</span> <span class="toc-text">连接测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#date"><span class="toc-number">1.</span> <span class="toc-text">date</span></a></li></ol>
  
   </div>
 
