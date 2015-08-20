@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-08-20T16:10:14.319Z</updated>
+  <updated>2015-08-20T16:13:30.301Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,9 +19,11 @@
     <link href="http://molloc.me/2015/08/20/ZY-2015-08-20/"/>
     <id>http://molloc.me/2015/08/20/ZY-2015-08-20/</id>
     <published>2015-08-20T14:32:07.000Z</published>
-    <updated>2015-08-20T16:10:14.319Z</updated>
+    <updated>2015-08-20T16:13:30.301Z</updated>
     <content type="html"><![CDATA[<h2 id="date"><a class="header-anchor" href="#date"></a>date</h2>
-<p>date - print or set the system date and time</p>
+<ul>
+<li>date - print or set the system date and time *</li>
+</ul>
 <p>SYNOPSIS</p>
 <ul>
 <li>date [OPTION]... [+FORMAT]</li>
@@ -84,11 +86,15 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="date"><a class="header-anchor" href="#date"></a>date</h2>
-<p>date - print or set the system date and time</p>
-<p>SYNOPSIS</p>
 <ul>
-<]]>
+<li>date - print or set the system date and time *</li>
+</ul>
+<p>SYNO]]>
     </summary>
+    
+      <category term="linux" scheme="http://molloc.me/tags/linux/"/>
+    
+      <category term="作业" scheme="http://molloc.me/categories/%E4%BD%9C%E4%B8%9A/"/>
     
   </entry>
   
