@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-08-20T16:13:30.301Z</updated>
+  <updated>2015-08-20T16:14:55.029Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,17 +19,15 @@
     <link href="http://molloc.me/2015/08/20/ZY-2015-08-20/"/>
     <id>http://molloc.me/2015/08/20/ZY-2015-08-20/</id>
     <published>2015-08-20T14:32:07.000Z</published>
-    <updated>2015-08-20T16:13:30.301Z</updated>
+    <updated>2015-08-20T16:14:55.029Z</updated>
     <content type="html"><![CDATA[<h2 id="date"><a class="header-anchor" href="#date"></a>date</h2>
-<ul>
-<li>date - print or set the system date and time *</li>
-</ul>
-<p>SYNOPSIS</p>
+<p><strong>date - print or set the system date and time</strong></p>
+<p><strong>SYNOPSIS</strong></p>
 <ul>
 <li>date [OPTION]... [+FORMAT]</li>
 <li>date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]</li>
 </ul>
-<p>OPTION</p>
+<p><strong>OPTION</strong></p>
 <ul>
 <li>-d DATESTR, --date=DATESTR 显示时间描述的字符串,而不是“现在”
 <ul>
@@ -53,7 +51,7 @@
 </ul>
 </li>
 </ul>
-<p>FORMAT</p>
+<p><strong>FORMAT</strong></p>
 <ul>
 <li>'%a' 简短的星期名(e.g. date '+%a' -&gt; Sun)</li>
 <li>'%A' 星期的全称(e.g. date '+%A' -&gt; Sunday)</li>
@@ -86,10 +84,8 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="date"><a class="header-anchor" href="#date"></a>date</h2>
-<ul>
-<li>date - print or set the system date and time *</li>
-</ul>
-<p>SYNO]]>
+<p><strong>date - print or set the system date and time</strong></p>
+<p><s]]>
     </summary>
     
       <category term="linux" scheme="http://molloc.me/tags/linux/"/>
