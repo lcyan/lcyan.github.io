@@ -96,65 +96,7 @@
         
         <h2 id="date"><a class="header-anchor" href="#date"></a>date</h2>
 <p><strong>date - print or set the system date and time</strong></p>
-<p><strong>SYNOPSIS</strong></p>
-<ul>
-<li>date [OPTION]... [+FORMAT]</li>
-<li>date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]</li>
-</ul>
-<p><strong>OPTION</strong></p>
-<ul>
-<li>-d DATESTR, --date=DATESTR 显示时间描述的字符串,而不是“现在”
-<ul>
-<li>e.g. date -d &quot;2015-05-04&quot;</li>
-<li>e.g. date --date=&quot;2015-05-04&quot;</li>
-<li>e.g. date -d &quot;2 days ago&quot;</li>
-</ul>
-</li>
-<li>-s DATESTR, --set=DATESTR 设置时间描述的字符串
-<ul>
-<li>e.g. date -s &quot;2015-05-04&quot;</li>
-<li>e.g. date --set=&quot;2015-05-04&quot;</li>
-<li>e.g. date -s &quot;2 days ago&quot;</li>
-</ul>
-</li>
-<li>-u, --utc, --universal 输出或者设置协调的通用时间
-<ul>
-<li>e.g. date -u</li>
-<li>e.g. date --utc</li>
-<li>e.g. date --universal</li>
-</ul>
-</li>
-</ul>
-<p><strong>FORMAT</strong></p>
-<ul>
-<li>'%a' 简短的星期名(e.g. date '+%a' -&gt; Sun)</li>
-<li>'%A' 星期的全称(e.g. date '+%A' -&gt; Sunday)</li>
-<li>'%b' 月份的简称(e.g. date '+%b' -&gt; Jan)</li>
-<li>'%B' 月份的全称(e.g. date '+%B' -&gt; January)</li>
-<li>'%c' 显示时间和日期(e.g. date '+%c' -&gt; Thu 20 Aug 2015 11:43:39 PM CST)</li>
-<li>'%C' 显示世纪,像%Y省略了后两位数字(e.g. date '+%C' -&gt; 20)</li>
-<li>'%d' 每月的第几天(e.g. date '+%d' -&gt; 20)</li>
-<li>'%D' 显示日期,想'%m/%d/%y'(e.g. date '+%d' -&gt; 08/20/15)</li>
-<li>'%e' 月份中的天数,用空格填充(e.g. date '+%e' -&gt; ' 5')</li>
-<li>'%F' 年月日,像%Y-%m-%d(e.g. date '+%F' -&gt; 2015-08-20)</li>
-<li>'%g' 年份的后两位(e.g. date '+%g' -&gt; 15)</li>
-<li>'%G' 使用基于周的年(e.g. date '+%G' -&gt; 2015)</li>
-<li>'%h' 参考 %b</li>
-<li>'%H' 24小时制(0..23)(e.g. date '+%G' -&gt; 23)</li>
-<li>'%I' 12小时制(1..12)(e.g. date '+%I' -&gt; 12)</li>
-<li>'%j' 一年中的天数(001..366)(e.g. date '+%j' -&gt; 233)</li>
-<li>'%k' 参考%H</li>
-<li>'%l' 参考%I</li>
-<li>'%m' 显示月份(01..12)(e.g. date '+%m' -&gt; 08)</li>
-<li>'%M' 显示分钟数(00-59)(e.g. date '+%M' -&gt; 04)</li>
-<li>'%A' 星期的全称(e.g. Sunday)</li>
-<li>'%A' 星期的全称(e.g. Sunday)</li>
-<li>'%A' 星期的全称(e.g. Sunday)</li>
-<li>'%A' 星期的全称(e.g. Sunday)</li>
-<li>'%A' 星期的全称(e.g. Sunday)</li>
-<li>'%A' 星期的全称(e.g. Sunday)</li>
-<li>'%A' 星期的全称(e.g. Sunday)</li>
-</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br><span class="line">date [OPTION]... [+FORMAT]</span><br><span class="line">date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]</span><br><span class="line"></span><br><span class="line"><span class="comment">#OPTION</span></span><br><span class="line"> <span class="operator">-d</span> DATESTR, --date=DATESTR 显示时间描述的字符串,而不是“现在”</span><br><span class="line">	-&gt;	date <span class="operator">-d</span> <span class="string">"2015-05-04"</span> //</span><br><span class="line">	-&gt;	date --date=<span class="string">"2015-05-04"</span> //</span><br><span class="line">	-&gt;	date <span class="operator">-d</span> <span class="string">"2 days ago"</span> //</span><br><span class="line"> <span class="operator">-s</span> DATESTR, --set=DATESTR 设置时间描述的字符串</span><br><span class="line">	-&gt; 	date <span class="operator">-s</span> <span class="string">"2015-05-04"</span></span><br><span class="line">	-&gt; 	date --set=<span class="string">"2015-05-04"</span></span><br><span class="line">	-&gt; 	date <span class="operator">-s</span> <span class="string">"2 days ago"</span></span><br><span class="line"> -u, --utc, --universal 输出或者设置协调的通用时间</span><br><span class="line">	-&gt;  date -u</span><br><span class="line">	-&gt;  date --utc</span><br><span class="line">	-&gt;  date --universal</span><br><span class="line"><span class="comment">#FORMAT</span></span><br><span class="line">+ <span class="string">'%a'</span> 简短的星期名(e.g. date <span class="string">'+%a'</span> -&gt; Sun)</span><br><span class="line">+ <span class="string">'%A'</span> 星期的全称(e.g. date <span class="string">'+%A'</span> -&gt; Sunday)</span><br><span class="line">+ <span class="string">'%b'</span> 月份的简称(e.g. date <span class="string">'+%b'</span> -&gt; Jan)</span><br><span class="line">+ <span class="string">'%B'</span> 月份的全称(e.g. date <span class="string">'+%B'</span> -&gt; January)</span><br><span class="line">+ <span class="string">'%c'</span> 显示时间和日期(e.g. date <span class="string">'+%c'</span> -&gt; Thu <span class="number">20</span> Aug <span class="number">2015</span> <span class="number">11</span>:<span class="number">43</span>:<span class="number">39</span> PM CST)</span><br><span class="line">+ <span class="string">'%C'</span> 显示世纪,像%Y省略了后两位数字(e.g. date <span class="string">'+%C'</span> -&gt; <span class="number">20</span>)</span><br><span class="line">+ <span class="string">'%d'</span> 每月的第几天(e.g. date <span class="string">'+%d'</span> -&gt; <span class="number">20</span>)</span><br><span class="line">+ <span class="string">'%D'</span> 显示日期,想<span class="string">'%m/%d/%y'</span>(e.g. date <span class="string">'+%d'</span> -&gt; <span class="number">08</span>/<span class="number">20</span>/<span class="number">15</span>)</span><br><span class="line">+ <span class="string">'%e'</span> 月份中的天数,用空格填充(e.g. date <span class="string">'+%e'</span> -&gt; <span class="string">' 5'</span>)</span><br><span class="line">+ <span class="string">'%F'</span> 年月日,像%Y-%m-%d(e.g. date <span class="string">'+%F'</span> -&gt; <span class="number">2015</span>-<span class="number">08</span>-<span class="number">20</span>)</span><br><span class="line">+ <span class="string">'%g'</span> 年份的后两位(e.g. date <span class="string">'+%g'</span> -&gt; <span class="number">15</span>)</span><br><span class="line">+ <span class="string">'%G'</span> 使用基于周的年(e.g. date <span class="string">'+%G'</span> -&gt; <span class="number">2015</span>)</span><br><span class="line">+ <span class="string">'%h'</span> 参考 %b</span><br><span class="line">+ <span class="string">'%H'</span> <span class="number">24</span>小时制(<span class="number">0</span>..<span class="number">23</span>)(e.g. date <span class="string">'+%G'</span> -&gt; <span class="number">23</span>)</span><br><span class="line">+ <span class="string">'%I'</span> <span class="number">12</span>小时制(<span class="number">1</span>..<span class="number">12</span>)(e.g. date <span class="string">'+%I'</span> -&gt; <span class="number">12</span>)</span><br><span class="line">+ <span class="string">'%j'</span> 一年中的天数(<span class="number">001</span>..<span class="number">366</span>)(e.g. date <span class="string">'+%j'</span> -&gt; <span class="number">233</span>)</span><br><span class="line">+ <span class="string">'%k'</span> 参考%H</span><br><span class="line">+ <span class="string">'%l'</span> 参考%I</span><br><span class="line">+ <span class="string">'%m'</span> 显示月份(<span class="number">01</span>..<span class="number">12</span>)(e.g. date <span class="string">'+%m'</span> -&gt; <span class="number">08</span>)</span><br><span class="line">+ <span class="string">'%M'</span> 显示分钟数(<span class="number">00</span>-<span class="number">59</span>)(e.g. date <span class="string">'+%M'</span> -&gt; <span class="number">04</span>)</span><br><span class="line">+ <span class="string">'%A'</span> 星期的全称(e.g. Sunday)</span><br><span class="line">+ <span class="string">'%A'</span> 星期的全称(e.g. Sunday)</span><br><span class="line">+ <span class="string">'%A'</span> 星期的全称(e.g. Sunday)</span><br><span class="line">+ <span class="string">'%A'</span> 星期的全称(e.g. Sunday)</span><br><span class="line">+ <span class="string">'%A'</span> 星期的全称(e.g. Sunday)</span><br><span class="line">+ <span class="string">'%A'</span> 星期的全称(e.g. Sunday)</span><br><span class="line">+ <span class="string">'%A'</span> 星期的全称(e.g. Sunday)</span><br></pre></td></tr></table></figure>
 
         
         
