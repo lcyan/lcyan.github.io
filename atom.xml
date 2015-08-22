@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-08-22T06:23:30.563Z</updated>
+  <updated>2015-08-22T06:24:26.395Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://molloc.me/2015/08/20/ZY-2015-08-20/"/>
     <id>http://molloc.me/2015/08/20/ZY-2015-08-20/</id>
     <published>2015-08-20T14:32:07.000Z</published>
-    <updated>2015-08-22T06:23:30.563Z</updated>
-    <content type="html"><![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em>
-<em>涉及到的命令有,date,clock,hwclock,cal,ls,cd,pwd,tty,whereis,which,stat,echo,shutdown,halt,reboot,poweroff,who,w,whoami</em></p>
+    <updated>2015-08-22T06:24:26.395Z</updated>
+    <content type="html"><![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
+<p><em>涉及到的命令有,date,clock,hwclock,cal,ls,cd,pwd,tty,whereis,which,stat,echo,shutdown,halt,reboot,poweroff,who,w,whoami</em></p>
 <a id="more"></a>
 <h2 id="date"><a class="header-anchor" href="#date"></a>date</h2>
 <p><strong>date - print or set the system date and time</strong></p>
@@ -80,8 +80,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## SYNOPSIS</span></span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em>
-<em>涉及到的命令有,date,clock,hwclock,cal,ls,cd,pwd,tty,whereis,which,stat,echo,shutdown,halt,reboot,poweroff,who,w,whoami</em></p>]]>
+    <![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
+<p><em>涉及到的命令有,date,clock,hwclock,cal,ls,cd,pwd,tty,whereis,which,stat,echo,shutdown,halt,reboot,poweroff,who,w,whoami</em></p>]]>
     
     </summary>
     
