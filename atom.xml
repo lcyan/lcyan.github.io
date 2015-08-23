@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-08-22T06:25:35.690Z</updated>
+  <updated>2015-08-23T15:56:27.256Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -13,6 +13,85 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[ZY-2015-08-23]]></title>
+    <link href="http://molloc.me/2015/08/23/ZY-2015-08-23/"/>
+    <id>http://molloc.me/2015/08/23/ZY-2015-08-23/</id>
+    <published>2015-08-23T14:33:37.000Z</published>
+    <updated>2015-08-23T15:56:27.256Z</updated>
+    <content type="html"><![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
+<p><em>涉及到的命令有,cat, tac, file, history, tree, more, less, tail, head, touch, cp, mv, rm, glob(7),tr,tee, wc, cut, sort, uniq</em></p>
+<a id="more"></a>
+<h2 id="cat"><a class="header-anchor" href="#cat"></a>cat</h2>
+<p><strong>date - 连接文件（S），或标准输入，到标准输出。</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br><span class="line">cat [OPTION]... [FILE]...</span><br><span class="line"></span><br><span class="line"><span class="comment">## -A, --show-all 等价于 -vET</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -b, --number-nonblank 跟-n类似,只不过对于空白行不编号</span></span><br><span class="line">$ cat -b /etc/passwd</span><br><span class="line">--&gt;  <span class="number">1</span>	this is a test.</span><br><span class="line"></span><br><span class="line">     <span class="number">2</span>	onew</span><br><span class="line">     <span class="number">3</span>	tow.</span><br><span class="line"></span><br><span class="line"><span class="comment">## -e 等价于 -vE</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -E 显示结束符,显示$在每行的结尾</span></span><br><span class="line">$ cat -E /etc/passwd</span><br><span class="line">--&gt; root:x:<span class="number">0</span>:<span class="number">0</span>:root:/root:/bin/bash$</span><br><span class="line">	bin:x:<span class="number">1</span>:<span class="number">1</span>:bin:/bin:/sbin/nologin$</span><br><span class="line">	daemon:x:<span class="number">2</span>:<span class="number">2</span>:daemon:/sbin:/sbin/nologin$</span><br><span class="line">	adm:x:<span class="number">3</span>:<span class="number">4</span>:adm:/var/adm:/sbin/nologin$</span><br><span class="line">	lp:x:<span class="number">4</span>:<span class="number">7</span>:lp:/var/spool/lpd:/sbin/nologin$</span><br><span class="line">	sync:x:<span class="number">5</span>:<span class="number">0</span>:sync:/sbin:/bin/sync$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -n 显示行号</span></span><br><span class="line">$ cat -n</span><br><span class="line">--&gt;  <span class="number">1</span>	This is my new life.</span><br><span class="line">     <span class="number">2</span></span><br><span class="line">     <span class="number">3</span>	one line.</span><br><span class="line">     <span class="number">4</span>	The other line.</span><br><span class="line"></span><br><span class="line"><span class="comment">## -s, --squeeze-blank 压制显现重复的空白行,连续的空白行输出一行</span></span><br><span class="line">$ cat <span class="operator">-s</span> <span class="built_in">test</span></span><br><span class="line">--&gt; This is my new life.</span><br><span class="line"></span><br><span class="line">	one line.</span><br><span class="line">	The other line.</span><br><span class="line"></span><br><span class="line"><span class="comment">## -t 参考 -vT</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -T, --show-tabs TAB显示为^I</span></span><br><span class="line">$ cat -T <span class="built_in">test</span></span><br><span class="line">--&gt;	This is my new life.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	one^I line.</span><br><span class="line">	^Itab line.</span><br><span class="line">	The other line.</span><br><span class="line"></span><br><span class="line"><span class="comment">## -v, --show-nonprinting  显示非打印字符 use ^ and M- notation, except for LFD and TAB</span></span><br><span class="line">$ cat -v <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<h2 id="tac"><a class="header-anchor" href="#tac"></a>tac</h2>
+<p><strong>tac - 将每个指定文件按行倒置并写到标准输出。如果不指定文件，或文件为&quot;-&quot;，则从标准输入读取数据,不常用</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br><span class="line">tac [OPTION]... [FILE]...</span><br><span class="line"></span><br><span class="line"><span class="comment">## -b, --before 在行前而非行尾添加分隔标志</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -r, --regex 将分隔标志视作正则表达式来解析</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -s, --separator=字符串  使用指定字符串代替换行作为分隔标志</span></span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+<h2 id="file"><a class="header-anchor" href="#file"></a>file</h2>
+<p><strong>file - 检查文件的类型</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br><span class="line">file [-bchikLNnprsvz0] [--apple] [--mime-encoding] [--mime-type] [<span class="operator">-e</span> testname] [-F separator] [<span class="operator">-f</span> namefile] [-m magicfiles] file ...</span><br><span class="line">file -C [-m magicfiles]</span><br><span class="line">file [--help]</span><br><span class="line"></span><br><span class="line">@@OPTIONS</span><br><span class="line"><span class="comment">## -b --brief 简短模式, 不输出文件名</span></span><br><span class="line">$ file -b <span class="built_in">test</span></span><br><span class="line">--&gt; ASCII English text</span><br><span class="line"></span><br><span class="line"><span class="comment">## 待续...</span></span><br></pre></td></tr></table></figure>
+<h2 id="history"><a class="header-anchor" href="#history"></a>history</h2>
+<p><strong>history - 显示或操纵历史列表。</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br><span class="line"><span class="built_in">history</span> [-c] [<span class="operator">-d</span> offset] [n]</span><br><span class="line"><span class="built_in">history</span> -anrw [filename]</span><br><span class="line"><span class="built_in">history</span> -ps arg [arg...]</span><br><span class="line"></span><br><span class="line"><span class="comment">## -c 清空历史记录</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -a: 当缓冲区中的历史手动追加文件；</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## n 数字,要列出最近的 n 笔命令列表</span></span><br><span class="line">$ <span class="built_in">history</span> <span class="number">4</span></span><br><span class="line">--&gt; <span class="number">849</span>  <span class="built_in">history</span> -n</span><br><span class="line">    <span class="number">850</span>  <span class="built_in">history</span></span><br><span class="line">    <span class="number">851</span>  <span class="built_in">history</span> -n</span><br><span class="line">    <span class="number">852</span>  <span class="built_in">history</span> <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## -r 将 histfiles 的内容读到目前这个 shell 的 history 记忆中</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -w 将目前的 history 记忆内容写入 histfiles</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -d #: 删除历史中指定的命令</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 执行history列表中命令的方法</span></span><br><span class="line"><span class="comment">## 调用过去执行过的命令：</span></span><br><span class="line"><span class="comment">## 				!#：调用历史中的第#条命令；</span></span><br><span class="line"><span class="comment">## 				!!: 重复执行上一条命令</span></span><br><span class="line"><span class="comment">## 				!string：调用历史中最近一个以string开头的命令；</span></span><br><span class="line"><span class="comment">##</span></span><br><span class="line"><span class="comment">## 			调用过去执行过的命令的最后一个参数：</span></span><br><span class="line"><span class="comment">## 				!$:</span></span><br><span class="line"><span class="comment">## 				ESC, .</span></span><br><span class="line"><span class="comment">## 				Alt+.</span></span><br></pre></td></tr></table></figure>
+<h2 id="tree"><a class="header-anchor" href="#tree"></a>tree</h2>
+<p><strong>tree - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date"><a class="header-anchor" href="#date"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v2"><a class="header-anchor" href="#date-v2"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v3"><a class="header-anchor" href="#date-v3"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v4"><a class="header-anchor" href="#date-v4"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v5"><a class="header-anchor" href="#date-v5"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v6"><a class="header-anchor" href="#date-v6"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v7"><a class="header-anchor" href="#date-v7"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v8"><a class="header-anchor" href="#date-v8"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v9"><a class="header-anchor" href="#date-v9"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v10"><a class="header-anchor" href="#date-v10"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v11"><a class="header-anchor" href="#date-v11"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v12"><a class="header-anchor" href="#date-v12"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v13"><a class="header-anchor" href="#date-v13"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v14"><a class="header-anchor" href="#date-v14"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
+<p><em>涉及到的命令有,cat, tac, file, history, tree, more, less, tail, head, touch, cp, mv, rm, glob(7),tr,tee, wc, cut, sort, uniq</em></p>]]>
+    
+    </summary>
+    
+      <category term="linux" scheme="http://molloc.me/tags/linux/"/>
+    
+      <category term="作业" scheme="http://molloc.me/categories/%E4%BD%9C%E4%B8%9A/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[ZY-2015.08.20]]></title>
@@ -4220,85 +4299,6 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
       <category term="linux" scheme="http://molloc.me/tags/linux/"/>
     
       <category term="nginx" scheme="http://molloc.me/tags/nginx/"/>
-    
-      <category term="工作相关" scheme="http://molloc.me/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Git push与pull的默认行为]]></title>
-    <link href="http://molloc.me/2015/05/22/Git-push%E4%B8%8Epull%E7%9A%84%E9%BB%98%E8%AE%A4%E8%A1%8C%E4%B8%BA/"/>
-    <id>http://molloc.me/2015/05/22/Git-push与pull的默认行为/</id>
-    <published>2015-05-22T04:20:18.000Z</published>
-    <updated>2015-06-28T07:42:34.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="git-push"><a class="header-anchor" href="#git-push"></a>git push</h2>
-<p>通常对于一个本地的新建分支，例如<code>git checkout -b develop</code>, 在<code>develop</code>分支<code>commit</code>了代码之后，如果直接执行<code>git push</code>命令，<code>develop</code>分支将不会被<code>push</code>到远程仓库（但此时<code>git push</code>操作有可能会推送一些代码到远程仓库，这取决于我们本地<code>git config</code>配置中的<code>push.default</code>默认行为，下文将会逐一详解）。</p>
-<p>因此我们至少需要显式指定将要推送的分支名，例如<code>git push origin develop</code>，才能将本地新分支推送到远程仓库。</p>
-<p>当我们通过显式指定分支名进行初次<code>push</code>操作后，本地有了新的<code>commit</code>，此时执行<code>git push</code>命令会有什么效果呢？</p>
-<a id="more"></a>
-<p>如果你未曾改动过<code>git config</code>中的<code>push.default</code>属性，根据我们使用的git不同版本（Git 2.0之前或之后），<br>
-<code>git push</code>通常会有两种截然不同的行为:</p>
-<ol>
-<li>develop分支中本地新增的commit被push到远程仓库</li>
-<li>push失败，并收到git如下的警告</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fatal: The current branch new has no upstream branch.</span><br><span class="line">To push the current branch and <span class="built_in">set</span> the remote as upstream, use</span><br><span class="line">    git push --set-upstream origin develop</span><br></pre></td></tr></table></figure>
-<p>为什么git版本不同会有两种不同的push行为？</p>
-<p>因为在git的全局配置中，有一个push.default属性，其决定了git push操作的默认行为。在Git 2.0之前，这个属性的默认被设为’matching’，2.0之后则被更改为了’simple’。</p>
-<p>我们可以通过<code>git version</code>确定当前的git版本（如果小于2.0，更新是个更好的选择），通过<code>git config --global push.default</code> 'option'改变push.default的默认行为（或者也可直接编辑~/.gitconfig文件）。</p>
-<h3 id="push-default-有以下几个可选值："><a class="header-anchor" href="#push-default-有以下几个可选值："></a>push.default 有以下几个可选值：###</h3>
-<p>nothing, current, upstream, simple, matching</p>
-<p>其用途分别为：</p>
-<ul>
-<li><code>nothing</code>  push操作无效，除非显式指定远程分支，例如git push origin develop（我觉得。。。可以给那些不愿学git的同事配上此项）。</li>
-<li><code>current</code>  push当前分支到远程同名分支，如果远程同名分支不存在则自动创建同名分支。</li>
-<li><code>upstream</code> push当前分支到它的upstream分支上（这一项其实用于经常从本地分支push/pull到同一远程仓库的情景，这种模式叫做central workflow）。</li>
-<li><code>simple</code>   simple和upstream是相似的，只有一点不同，simple必须保证本地分支和它的远程upstream分支同名，否则会拒绝push操作。</li>
-<li><code>matching</code> push所有本地和远程两端都存在的同名分支.</li>
-</ul>
-<p>因此如果我们使用了git2.0之前的版本，<code>push.default = matching</code>，<code>git push</code>后则会推送当前分支代码到远程分支，而2.0之后，<code>push.default = simple</code>，如果没有指定当前分支的upstream分支，就会收到上文的fatal提示。</p>
-<h2 id="upstream-downstream"><a class="header-anchor" href="#upstream-downstream"></a>upstream &amp; downstream</h2>
-<p>说到这里，需要解释一下git中的upstream到底是什么：</p>
-<blockquote>
-<p>git中存在upstream和downstream，简言之，当我们把仓库A中某分支x的代码push到仓库B分支y，此时仓库B的这个分支y就叫做A中x分支的upstream，而x则被称作y的downstream，这是一个相对关系，每一个本地分支都相对地可以有一个远程的upstream分支（注意这个upstream分支可以不同名，但通常我们都会使用同名分支作为upstream）。</p>
-</blockquote>
-<p>初次提交本地分支，例如git push origin develop操作，并不会定义当前本地分支的upstream分支，我们可以通过git push --set-upstream origin develop，关联本地develop分支的upstream分支，另一个更为简洁的方式是初次push时，加入-u参数，例如git push -u origin develop，这个操作在push的同时会指定当前分支的upstream。</p>
-<p>注意<code>push.default = current</code>可以在远程同名分支不存在的情况下自动创建同名分支，有些时候这也是个极其方便的模式，比如初次push你可以直接输入 <code>git push</code> 而不必显示指定远程分支。</p>
-<h2 id="git-pull"><a class="header-anchor" href="#git-pull"></a>git pull</h2>
-<p>弄清楚<code>git push</code>的默认行为后，再来看看<code>git pull</code>。</p>
-<p>当我们未指定当前分支的upstream时，通常<code>git pull</code>操作会得到如下的提示：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">There is no tracking information <span class="keyword">for</span> the current branch.</span><br><span class="line">Please specify <span class="built_in">which</span> branch you want to merge with.</span><br><span class="line">See git-pull(<span class="number">1</span>) <span class="keyword">for</span> details</span><br><span class="line">    git pull &lt;remote&gt; &lt;branch&gt;</span><br><span class="line">If you wish to <span class="built_in">set</span> tracking information <span class="keyword">for</span> this branch you can <span class="keyword">do</span> so with:</span><br><span class="line">    git branch --set-upstream-to=origin/&lt;branch&gt; new1</span><br></pre></td></tr></table></figure>
-<p><code>git pull</code>的默认行为和git push完全不同。当我们执行git pull的时候，实际上是做了<code>git fetch + git merge</code>操作，fetch操作将会更新本地仓库的remote tracking，也就是refs/remotes中的代码，并不会对refs/heads中本地当前的代码造成影响。</p>
-<p>当我们进行pull的第二个行为merge时，对git来说，如果我们没有设定当前分支的upstream，它并不知道我们要合并哪个分支到当前分支，所以我们需要通过下面的代码指定当前分支的upstream：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch --set-upstream-to=origin/&lt;branch&gt; develop</span><br><span class="line">// 或者git push --set-upstream origin develop</span><br></pre></td></tr></table></figure>
-<p>实际上，如果我们没有指定upstream，git在merge时会访问git config中当前分支(develop)merge的默认配置，我们可以通过配置下面的内容指定某个分支的默认merge操作</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[branch <span class="string">"develop"</span>]</span><br><span class="line">    remote = origin</span><br><span class="line">    merge = refs/heads/develop //[<span class="number">1</span>] 为什么不是refs/remotes/develop?</span><br><span class="line"></span><br><span class="line">或者通过<span class="built_in">command</span>-line直接设置：</span><br><span class="line"></span><br><span class="line">git config branch.develop.merge refs/heads/develop</span><br></pre></td></tr></table></figure>
-<p>这样当我们在develop分支git pull时，如果没有指定upstream分支，git将根据我们的config文件去merge origin/develop；如果指定了upstream分支，则会忽略config中的merge默认配置。</p>
-<p>以上就是git push和git pull操作的全部默认行为，如有错误，欢迎斧正</p>
-<p>[1]: 为什么merge = refs/heads/develop 而不是refs/remotes/develop?</p>
-<p>因为这里merge指代的是我们想要merge的远程分支，是remote上的refs/heads/develop，文中即是origin上的refs/heads/develop，这和我们在本地直接执行<code>git merge</code>是不同的(本地执行<code>git merge origin/develop</code>则是直接merge refs/remotes/develop)。</p>
-<h2 id="refs"><a class="header-anchor" href="#refs"></a>refs:</h2>
-<ul>
-<li><a href="http://git-scm.com/book/en/v2/Git-Internals-The-Refspec" target="_blank" rel="external">http://git-scm.com/book/en/v2/Git-Internals-The-Refspec</a></li>
-<li><a href="http://stackoverflow.com/questions/658885/how-do-you-get-git-to-always-pull-from-a-specific-branch" target="_blank" rel="external">http://stackoverflow.com/questions/658885/how-do-you-get-git-to-always-pull-from-a-specific-branch</a></li>
-<li><a href="http://stackoverflow.com/questions/17096311/why-do-i-need-to-explicitly-push-a-new-branch" target="_blank" rel="external">http://stackoverflow.com/questions/17096311/why-do-i-need-to-explicitly-push-a-new-branch</a></li>
-<li><a href="http://www.gitguys.com/topics/the-configuration-file-branch-section/" target="_blank" rel="external">http://www.gitguys.com/topics/the-configuration-file-branch-section/</a></li>
-</ul>
-<p>原文地址: http://segmentfault.com/a/1190000002783245?utm_source=tuicool</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="git-push"><a class="header-anchor" href="#git-push"></a>git push</h2>
-<p>通常对于一个本地的新建分支，例如<code>git checkout -b develop</code>, 在<code>develop</code>分支<code>commit</code>了代码之后，如果直接执行<code>git push</code>命令，<code>develop</code>分支将不会被<code>push</code>到远程仓库（但此时<code>git push</code>操作有可能会推送一些代码到远程仓库，这取决于我们本地<code>git config</code>配置中的<code>push.default</code>默认行为，下文将会逐一详解）。</p>
-<p>因此我们至少需要显式指定将要推送的分支名，例如<code>git push origin develop</code>，才能将本地新分支推送到远程仓库。</p>
-<p>当我们通过显式指定分支名进行初次<code>push</code>操作后，本地有了新的<code>commit</code>，此时执行<code>git push</code>命令会有什么效果呢？</p>]]>
-    
-    </summary>
-    
-      <category term="git" scheme="http://molloc.me/tags/git/"/>
-    
-      <category term="pull" scheme="http://molloc.me/tags/pull/"/>
-    
-      <category term="push" scheme="http://molloc.me/tags/push/"/>
     
       <category term="工作相关" scheme="http://molloc.me/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
     

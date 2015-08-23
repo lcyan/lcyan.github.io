@@ -1,0 +1,620 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="oxwWO_yZe21RAWOe9W6x1uUtSckxKC_eFEYqRbB88lY" />
+  
+    <title>ZY-2015-08-23 | Robot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Lcyan">
+    
+
+    
+    <meta name="description" content="文中 --&amp;gt; 为开头的为命令行的输出.
+涉及到的命令有,cat, tac, file, history, tree, more, less, tail, head, touch, cp, mv, rm, glob(7),tr,tee, wc, cut, sort, uniq">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ZY-2015-08-23">
+<meta property="og:url" content="http://molloc.me/2015/08/23/ZY-2015-08-23/index.html">
+<meta property="og:site_name" content="Robot">
+<meta property="og:description" content="文中 --&amp;gt; 为开头的为命令行的输出.
+涉及到的命令有,cat, tac, file, history, tree, more, less, tail, head, touch, cp, mv, rm, glob(7),tr,tee, wc, cut, sort, uniq">
+<meta property="og:updated_time" content="2015-08-23T15:56:27.256Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ZY-2015-08-23">
+<meta name="twitter:description" content="文中 --&amp;gt; 为开头的为命令行的输出.
+涉及到的命令有,cat, tac, file, history, tree, more, less, tail, head, touch, cp, mv, rm, glob(7),tr,tee, wc, cut, sort, uniq">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Robot" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo_v3.png" alt="Robot" title="Robot"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Robot">Robot</a></h1>
+				<h2 class="blog-motto">Code First！Code Review！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" autocomplete="off" name="q" maxlength="20" placeholder="搜索" />
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/08/23/ZY-2015-08-23/" title="ZY-2015-08-23" itemprop="url">ZY-2015-08-23</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Lcyan" target="_blank" itemprop="author">Lcyan</a>
+		
+  <p class="article-time">
+    <time datetime="2015-08-23T14:33:37.000Z" itemprop="datePublished"> 发表于 2015-08-23</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#cat"><span class="toc-number">1.</span> <span class="toc-text">cat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tac"><span class="toc-number">2.</span> <span class="toc-text">tac</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#file"><span class="toc-number">3.</span> <span class="toc-text">file</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#history"><span class="toc-number">4.</span> <span class="toc-text">history</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tree"><span class="toc-number">5.</span> <span class="toc-text">tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date"><span class="toc-number">6.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v2"><span class="toc-number">7.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v3"><span class="toc-number">8.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v4"><span class="toc-number">9.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v5"><span class="toc-number">10.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v6"><span class="toc-number">11.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v7"><span class="toc-number">12.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v8"><span class="toc-number">13.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v9"><span class="toc-number">14.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v10"><span class="toc-number">15.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v11"><span class="toc-number">16.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v12"><span class="toc-number">17.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v13"><span class="toc-number">18.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v14"><span class="toc-number">19.</span> <span class="toc-text">date</span></a></li></ol>
+		
+		</div>
+		
+		<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
+<p><em>涉及到的命令有,cat, tac, file, history, tree, more, less, tail, head, touch, cp, mv, rm, glob(7),tr,tee, wc, cut, sort, uniq</em></p>
+<a id="more"></a>
+<h2 id="cat"><a class="header-anchor" href="#cat"></a>cat</h2>
+<p><strong>date - 连接文件（S），或标准输入，到标准输出。</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br><span class="line">cat [OPTION]... [FILE]...</span><br><span class="line"></span><br><span class="line"><span class="comment">## -A, --show-all 等价于 -vET</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -b, --number-nonblank 跟-n类似,只不过对于空白行不编号</span></span><br><span class="line">$ cat -b /etc/passwd</span><br><span class="line">--&gt;  <span class="number">1</span>	this is a test.</span><br><span class="line"></span><br><span class="line">     <span class="number">2</span>	onew</span><br><span class="line">     <span class="number">3</span>	tow.</span><br><span class="line"></span><br><span class="line"><span class="comment">## -e 等价于 -vE</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -E 显示结束符,显示$在每行的结尾</span></span><br><span class="line">$ cat -E /etc/passwd</span><br><span class="line">--&gt; root:x:<span class="number">0</span>:<span class="number">0</span>:root:/root:/bin/bash$</span><br><span class="line">	bin:x:<span class="number">1</span>:<span class="number">1</span>:bin:/bin:/sbin/nologin$</span><br><span class="line">	daemon:x:<span class="number">2</span>:<span class="number">2</span>:daemon:/sbin:/sbin/nologin$</span><br><span class="line">	adm:x:<span class="number">3</span>:<span class="number">4</span>:adm:/var/adm:/sbin/nologin$</span><br><span class="line">	lp:x:<span class="number">4</span>:<span class="number">7</span>:lp:/var/spool/lpd:/sbin/nologin$</span><br><span class="line">	sync:x:<span class="number">5</span>:<span class="number">0</span>:sync:/sbin:/bin/sync$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -n 显示行号</span></span><br><span class="line">$ cat -n</span><br><span class="line">--&gt;  <span class="number">1</span>	This is my new life.</span><br><span class="line">     <span class="number">2</span></span><br><span class="line">     <span class="number">3</span>	one line.</span><br><span class="line">     <span class="number">4</span>	The other line.</span><br><span class="line"></span><br><span class="line"><span class="comment">## -s, --squeeze-blank 压制显现重复的空白行,连续的空白行输出一行</span></span><br><span class="line">$ cat <span class="operator">-s</span> <span class="built_in">test</span></span><br><span class="line">--&gt; This is my new life.</span><br><span class="line"></span><br><span class="line">	one line.</span><br><span class="line">	The other line.</span><br><span class="line"></span><br><span class="line"><span class="comment">## -t 参考 -vT</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -T, --show-tabs TAB显示为^I</span></span><br><span class="line">$ cat -T <span class="built_in">test</span></span><br><span class="line">--&gt;	This is my new life.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	one^I line.</span><br><span class="line">	^Itab line.</span><br><span class="line">	The other line.</span><br><span class="line"></span><br><span class="line"><span class="comment">## -v, --show-nonprinting  显示非打印字符 use ^ and M- notation, except for LFD and TAB</span></span><br><span class="line">$ cat -v <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<h2 id="tac"><a class="header-anchor" href="#tac"></a>tac</h2>
+<p><strong>tac - 将每个指定文件按行倒置并写到标准输出。如果不指定文件，或文件为&quot;-&quot;，则从标准输入读取数据,不常用</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br><span class="line">tac [OPTION]... [FILE]...</span><br><span class="line"></span><br><span class="line"><span class="comment">## -b, --before 在行前而非行尾添加分隔标志</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -r, --regex 将分隔标志视作正则表达式来解析</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -s, --separator=字符串  使用指定字符串代替换行作为分隔标志</span></span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+<h2 id="file"><a class="header-anchor" href="#file"></a>file</h2>
+<p><strong>file - 检查文件的类型</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br><span class="line">file [-bchikLNnprsvz0] [--apple] [--mime-encoding] [--mime-type] [<span class="operator">-e</span> testname] [-F separator] [<span class="operator">-f</span> namefile] [-m magicfiles] file ...</span><br><span class="line">file -C [-m magicfiles]</span><br><span class="line">file [--help]</span><br><span class="line"></span><br><span class="line">@@OPTIONS</span><br><span class="line"><span class="comment">## -b --brief 简短模式, 不输出文件名</span></span><br><span class="line">$ file -b <span class="built_in">test</span></span><br><span class="line">--&gt; ASCII English text</span><br><span class="line"></span><br><span class="line"><span class="comment">## 待续...</span></span><br></pre></td></tr></table></figure>
+<h2 id="history"><a class="header-anchor" href="#history"></a>history</h2>
+<p><strong>history - 显示或操纵历史列表。</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br><span class="line"><span class="built_in">history</span> [-c] [<span class="operator">-d</span> offset] [n]</span><br><span class="line"><span class="built_in">history</span> -anrw [filename]</span><br><span class="line"><span class="built_in">history</span> -ps arg [arg...]</span><br><span class="line"></span><br><span class="line"><span class="comment">## -c 清空历史记录</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -a: 当缓冲区中的历史手动追加文件；</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## n 数字,要列出最近的 n 笔命令列表</span></span><br><span class="line">$ <span class="built_in">history</span> <span class="number">4</span></span><br><span class="line">--&gt; <span class="number">849</span>  <span class="built_in">history</span> -n</span><br><span class="line">    <span class="number">850</span>  <span class="built_in">history</span></span><br><span class="line">    <span class="number">851</span>  <span class="built_in">history</span> -n</span><br><span class="line">    <span class="number">852</span>  <span class="built_in">history</span> <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## -r 将 histfiles 的内容读到目前这个 shell 的 history 记忆中</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -w 将目前的 history 记忆内容写入 histfiles</span></span><br><span class="line">$</span><br><span class="line"></span><br><span class="line"><span class="comment">## -d #: 删除历史中指定的命令</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 执行history列表中命令的方法</span></span><br><span class="line"><span class="comment">## 调用过去执行过的命令：</span></span><br><span class="line"><span class="comment">## 				!#：调用历史中的第#条命令；</span></span><br><span class="line"><span class="comment">## 				!!: 重复执行上一条命令</span></span><br><span class="line"><span class="comment">## 				!string：调用历史中最近一个以string开头的命令；</span></span><br><span class="line"><span class="comment">##</span></span><br><span class="line"><span class="comment">## 			调用过去执行过的命令的最后一个参数：</span></span><br><span class="line"><span class="comment">## 				!$:</span></span><br><span class="line"><span class="comment">## 				ESC, .</span></span><br><span class="line"><span class="comment">## 				Alt+.</span></span><br></pre></td></tr></table></figure>
+<h2 id="tree"><a class="header-anchor" href="#tree"></a>tree</h2>
+<p><strong>tree - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date"><a class="header-anchor" href="#date"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v2"><a class="header-anchor" href="#date-v2"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v3"><a class="header-anchor" href="#date-v3"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v4"><a class="header-anchor" href="#date-v4"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v5"><a class="header-anchor" href="#date-v5"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v6"><a class="header-anchor" href="#date-v6"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v7"><a class="header-anchor" href="#date-v7"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v8"><a class="header-anchor" href="#date-v8"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v9"><a class="header-anchor" href="#date-v9"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v10"><a class="header-anchor" href="#date-v10"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v11"><a class="header-anchor" href="#date-v11"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v12"><a class="header-anchor" href="#date-v12"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v13"><a class="header-anchor" href="#date-v13"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+<h2 id="date-v14"><a class="header-anchor" href="#date-v14"></a>date</h2>
+<p><strong>date - print or set the system date and time</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br></pre></td></tr></table></figure>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/作业/">作业</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/linux/">linux</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://molloc.me/2015/08/23/ZY-2015-08-23/" data-title="ZY-2015-08-23 | Robot" data-tsina="2205010230" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/08/20/ZY-2015-08-20/"  title="ZY-2015.08.20">
+ <strong>下一篇：</strong><br/> 
+ <span>ZY-2015.08.20
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/08/23/ZY-2015-08-23/" data-title="ZY-2015-08-23" data-url="http://molloc.me/2015/08/23/ZY-2015-08-23/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#cat"><span class="toc-number">1.</span> <span class="toc-text">cat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tac"><span class="toc-number">2.</span> <span class="toc-text">tac</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#file"><span class="toc-number">3.</span> <span class="toc-text">file</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#history"><span class="toc-number">4.</span> <span class="toc-text">history</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tree"><span class="toc-number">5.</span> <span class="toc-text">tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date"><span class="toc-number">6.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v2"><span class="toc-number">7.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v3"><span class="toc-number">8.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v4"><span class="toc-number">9.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v5"><span class="toc-number">10.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v6"><span class="toc-number">11.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v7"><span class="toc-number">12.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v8"><span class="toc-number">13.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v9"><span class="toc-number">14.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v10"><span class="toc-number">15.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v11"><span class="toc-number">16.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v12"><span class="toc-number">17.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v13"><span class="toc-number">18.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date-v14"><span class="toc-number">19.</span> <span class="toc-text">date</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/作业/" title="作业">作业<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/工作相关/" title="工作相关">工作相关<sup>11</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/探索发现/" title="探索发现">探索发现<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/美图世界/" title="美图世界">美图世界<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">归档</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
+  </div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/linux/" title="linux">linux<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/pmp/" title="pmp">pmp<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tomcat/" title="tomcat">tomcat<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/nginx/" title="nginx">nginx<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/alias/" title="alias">alias<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/mysql/" title="mysql">mysql<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Redis/" title="Redis">Redis<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/bash/" title="bash">bash<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/kernel/" title="kernel">kernel<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/java/" title="java">java<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/push/" title="push">push<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/pull/" title="pull">pull<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Cars/" title="Cars">Cars<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.molloc.com" target="_blank" title="Code First">Code First</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2205010230&verifier=98069e91&dpc=1"></iframe>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2205010230" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/lcyan" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		<a href="https://www.zhihu.com/people/lcyan" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		
+		<a href="mailto:290236573@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="Lcyan">Lcyan</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <!-- <script src="/js/jquery-2.0.3.min.js"></script> -->
+<!-- <script src="/js/jquery.imagesloaded.min.js"></script> -->
+<script src="http://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery.imagesloaded/2.1.0/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+        getSize();
+        if (myWidth >= 1024) {
+          c.click();
+        }
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"molloc"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
+
