@@ -23,11 +23,13 @@
 
 1egrep &apos;bash$&apos; /etc/passwd
 
+
 显示/etc/passwd文件中的两位数或三位数
 
 1egrep &apos;\&amp;lt;[[:digit:]]&amp;#123;2,3&amp;#125;\&amp;gt;&apos; /etc/passwd
 
-显示netstat -">
+
+显示netstat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ZY-2015-08-27">
 <meta property="og:url" content="http://molloc.me/2015/08/30/ZY-2015-08-27/index.html">
@@ -43,12 +45,21 @@
 
 1egrep &apos;bash$&apos; /etc/passwd
 
+
 显示/etc/passwd文件中的两位数或三位数
 
 1egrep &apos;\&amp;lt;[[:digit:]]&amp;#123;2,3&amp;#125;\&amp;gt;&apos; /etc/passwd
 
-显示netstat -">
-<meta property="og:updated_time" content="2015-08-29T17:19:07.071Z">
+
+显示netstat">
+<meta property="og:image" content="http://static.molloc.com/linux/imgs/ZY-2015-08-27/1.png">
+<meta property="og:image" content="http://static.molloc.com/linux/imgs/ZY-2015-08-27/2.png">
+<meta property="og:image" content="http://static.molloc.com/linux/imgs/ZY-2015-08-27/3.png">
+<meta property="og:image" content="http://static.molloc.com/linux/imgs/ZY-2015-08-27/4.png">
+<meta property="og:image" content="http://static.molloc.com/linux/imgs/ZY-2015-08-27/5.png">
+<meta property="og:image" content="http://static.molloc.com/linux/imgs/ZY-2015-08-27/6.png">
+<meta property="og:image" content="http://static.molloc.com/linux/imgs/ZY-2015-08-27/8.png">
+<meta property="og:updated_time" content="2015-08-29T23:57:32.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZY-2015-08-27">
 <meta name="twitter:description" content="总结本此课程中所涉及命令的使用方法及相关示例展示；
@@ -62,11 +73,13 @@
 
 1egrep &apos;bash$&apos; /etc/passwd
 
+
 显示/etc/passwd文件中的两位数或三位数
 
 1egrep &apos;\&amp;lt;[[:digit:]]&amp;#123;2,3&amp;#125;\&amp;gt;&apos; /etc/passwd
 
-显示netstat -">
+
+显示netstat">
 
     
     <link rel="alternative" href="/atom.xml" title="Robot" type="application/atom+xml">
@@ -157,26 +170,32 @@
 </li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'bash$'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/1.png" alt="command" title="1.png"></p>
 <ul>
 <li>显示/etc/passwd文件中的两位数或三位数</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'\&lt;[[:digit:]]&#123;2,3&#125;\&gt;'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/2.png" alt="command" title="2.png"></p>
 <ul>
 <li>显示<code>netstat -tan</code>命令结果中以'LISTEN'后跟0个、1个或者多个空白字符结尾的行</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -nat | egrep <span class="string">'\&lt;LISTEN[[:blank:]]*'</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/3.png" alt="command" title="3.png"></p>
 <ul>
 <li>添加用户bash、testbash、basher以及nologin用户（nologin用户的shell为/sbin/nologin）；而后找出/etc/                  passwd文件中用户名与其shell名相同的行</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'^([[:alnum:]]*):.*\1$'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'^([[:alnum:]]*\&gt;).*\1$'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/4.png" alt="command" title="4.png"></p>
 <ul>
 <li>显示当前系统上root、centos或者user1用户的默认shell和UID （请事先创建这些用户，若不存在）</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'^(centos|user1|root)'</span> /etc/passwd | cut <span class="operator">-d</span>: <span class="operator">-f</span>3,<span class="number">7</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/5.png" alt="command" title="5.png"></p>
 <ul>
 <li>找出/etc/rc.d/init.d/functions文件中某单词（单词中间可以存在下划线）后面跟着一组小括号的行</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'([[:alpha:]]|_)+\(\)'</span> /etc/rc.d/init.d/<span class="built_in">functions</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/6.png" alt="command" title="6.png"></p>
 <ul>
 <li>使用echo输出一个路径，而后egrep找出其路径基名；进一步的使用egrep取出其目录名</li>
 </ul>
@@ -185,6 +204,7 @@
 <li>找出ifconfig命令执行结果中1-255之间的数字</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig | egrep <span class="string">'\&lt;(1?[1-9]&#123;1,2&#125;|2[0-5]&#123;2&#125;)\&gt;'</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/8.png" alt="command" title="8.png"></p>
   
 	</div>
 		<footer class="article-footer clearfix">
