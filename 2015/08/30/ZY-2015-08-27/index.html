@@ -5,38 +5,41 @@
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="oxwWO_yZe21RAWOe9W6x1uUtSckxKC_eFEYqRbB88lY" />
   
-    <title>CentOS 6 搭建 FTP 服务记录 | Robot</title>
+    <title>ZY-2015-08-27 | Robot</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Lcyan">
     
 
     
-    <meta name="description" content="关于 VSFTP
-在 Linux 下搭建 FTP 服务器一般会使用 vsftpd。vsftpd 的前两个字母代表 &amp;quot;very secure&amp;quot; 。
-项目官网
-安装 VSFTP
-使用 yum 安装 vsftpd：
-1sudo yum install vsftpd">
+    <meta name="description" content="总结本此课程中所涉及命令的使用方法及相关示例展示；
+总结基本正则表达式及扩展正则表达式
+显示/etc/passwd文件中以bash结尾的行
+1egrep &apos;bash$&apos; /etc/passwd
+显示/etc/passwd文件中的两位数或三位数
+1egrep &apos;\&amp;lt;[[:digit:]]&amp;#123;2,3&amp;#125;\&amp;gt;&apos; /etc/passwd
+显示netstat -tan命令结果中以">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS 6 搭建 FTP 服务记录">
-<meta property="og:url" content="http://molloc.me/2015/06/25/CentOS-6-搭建-FTP-服务记录/index.html">
+<meta property="og:title" content="ZY-2015-08-27">
+<meta property="og:url" content="http://molloc.me/2015/08/30/ZY-2015-08-27/index.html">
 <meta property="og:site_name" content="Robot">
-<meta property="og:description" content="关于 VSFTP
-在 Linux 下搭建 FTP 服务器一般会使用 vsftpd。vsftpd 的前两个字母代表 &amp;quot;very secure&amp;quot; 。
-项目官网
-安装 VSFTP
-使用 yum 安装 vsftpd：
-1sudo yum install vsftpd">
-<meta property="og:updated_time" content="2015-06-28T07:42:34.000Z">
+<meta property="og:description" content="总结本此课程中所涉及命令的使用方法及相关示例展示；
+总结基本正则表达式及扩展正则表达式
+显示/etc/passwd文件中以bash结尾的行
+1egrep &apos;bash$&apos; /etc/passwd
+显示/etc/passwd文件中的两位数或三位数
+1egrep &apos;\&amp;lt;[[:digit:]]&amp;#123;2,3&amp;#125;\&amp;gt;&apos; /etc/passwd
+显示netstat -tan命令结果中以">
+<meta property="og:updated_time" content="2015-08-29T17:13:26.208Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS 6 搭建 FTP 服务记录">
-<meta name="twitter:description" content="关于 VSFTP
-在 Linux 下搭建 FTP 服务器一般会使用 vsftpd。vsftpd 的前两个字母代表 &amp;quot;very secure&amp;quot; 。
-项目官网
-安装 VSFTP
-使用 yum 安装 vsftpd：
-1sudo yum install vsftpd">
+<meta name="twitter:title" content="ZY-2015-08-27">
+<meta name="twitter:description" content="总结本此课程中所涉及命令的使用方法及相关示例展示；
+总结基本正则表达式及扩展正则表达式
+显示/etc/passwd文件中以bash结尾的行
+1egrep &apos;bash$&apos; /etc/passwd
+显示/etc/passwd文件中的两位数或三位数
+1egrep &apos;\&amp;lt;[[:digit:]]&amp;#123;2,3&amp;#125;\&amp;gt;&apos; /etc/passwd
+显示netstat -tan命令结果中以">
 
     
     <link rel="alternative" href="/atom.xml" title="Robot" type="application/atom+xml">
@@ -95,14 +98,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/06/25/CentOS-6-搭建-FTP-服务记录/" title="CentOS 6 搭建 FTP 服务记录" itemprop="url">CentOS 6 搭建 FTP 服务记录</a>
+      <a href="/2015/08/30/ZY-2015-08-27/" title="ZY-2015-08-27" itemprop="url">ZY-2015-08-27</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Lcyan" target="_blank" itemprop="author">Lcyan</a>
 		
   <p class="article-time">
-    <time datetime="2015-06-25T01:09:32.000Z" itemprop="datePublished"> 发表于 2015-06-25</time>
+    <time datetime="2015-08-29T16:00:33.000Z" itemprop="datePublished"> 发表于 2015-08-30</time>
     
   </p>
 </header>
@@ -111,46 +114,26 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于-vsftp"><span class="toc-number">1.</span> <span class="toc-text">关于 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-vsftp"><span class="toc-number">2.</span> <span class="toc-text">安装 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加用户"><span class="toc-number">3.</span> <span class="toc-text">添加用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-vsftp"><span class="toc-number">4.</span> <span class="toc-text">配置 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连接测试"><span class="toc-number">5.</span> <span class="toc-text">连接测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#总结本此课程中所涉及命令的使用方法及相关示例展示；"><span class="toc-number">1.</span> <span class="toc-text">总结本此课程中所涉及命令的使用方法及相关示例展示；</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结基本正则表达式及扩展正则表达式"><span class="toc-number">2.</span> <span class="toc-text">总结基本正则表达式及扩展正则表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示-etc-passwd文件中以bash结尾的行"><span class="toc-number">3.</span> <span class="toc-text">显示/etc/passwd文件中以bash结尾的行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示-etc-passwd文件中的两位数或三位数"><span class="toc-number">4.</span> <span class="toc-text">显示/etc/passwd文件中的两位数或三位数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示netstat-tan命令结果中以-listen-后跟0个-1个或者多个空白字符结尾的行"><span class="toc-number">5.</span> <span class="toc-text">显示netstat -tan命令结果中以'LISTEN'后跟0个、1个或者多个空白字符结尾的行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加用户bash-testbash-basher以及nologin用户-nologin用户的shell为-sbin-nologin-；而后找出-etc-passwd文件中用户名与其shell名相同的行"><span class="toc-number">6.</span> <span class="toc-text">添加用户bash、testbash、basher以及nologin用户（nologin用户的shell为/sbin/nologin）；而后找出/etc/                 passwd文件中用户名与其shell名相同的行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示当前系统上root-centos或者user1用户的默认shell和uid-请事先创建这些用户-若不存在"><span class="toc-number">7.</span> <span class="toc-text">显示当前系统上root、centos或者user1用户的默认shell和UID （请事先创建这些用户，若不存在）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#找出-etc-rc-d-init-d-functions文件中某单词-单词中间可以存在下划线-后面跟着一组小括号的行"><span class="toc-number">8.</span> <span class="toc-text">找出/etc/rc.d/init.d/functions文件中某单词（单词中间可以存在下划线）后面跟着一组小括号的行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用echo输出一个路径-而后egrep找出其路径基名；进一步的使用egrep取出其目录名"><span class="toc-number">9.</span> <span class="toc-text">使用echo输出一个路径，而后egrep找出其路径基名；进一步的使用egrep取出其目录名</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="关于-vsftp"><a class="header-anchor" href="#关于-vsftp"></a>关于 VSFTP</h2>
-<p>在 Linux 下搭建 FTP 服务器一般会使用 vsftpd。vsftpd 的前两个字母代表 &quot;very secure&quot; 。</p>
-<p><a href="https://security.appspot.com/vsftpd.html" target="_blank" rel="external">项目官网</a></p>
-<h2 id="安装-vsftp"><a class="header-anchor" href="#安装-vsftp"></a>安装 VSFTP</h2>
-<p>使用 yum 安装 vsftpd：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install vsftpd</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>如果需要连接其他 FTP 服务器，则可以安装 FTP 客户端。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install ftp</span><br></pre></td></tr></table></figure>
-<h2 id="添加用户"><a class="header-anchor" href="#添加用户"></a>添加用户</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adduser userftp</span><br><span class="line">passwd userftp</span><br></pre></td></tr></table></figure>
-<p>禁止用户的 ssh 登录权限，只允许 FTP 访问:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod <span class="operator">-s</span> /sbin/nologin userftp</span><br></pre></td></tr></table></figure>
-<h2 id="配置-vsftp"><a class="header-anchor" href="#配置-vsftp"></a>配置 VSFTP</h2>
-<p>打开配置文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/vsftpd/vsftpd.conf</span><br></pre></td></tr></table></figure>
-<p>关闭匿名访问：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">anonymous_<span class="built_in">enable</span>=NO</span><br></pre></td></tr></table></figure>
-<p>去掉 local_enable 的注释，修改为开启：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">local</span>_<span class="built_in">enable</span>=YES</span><br></pre></td></tr></table></figure>
-<p>限制用户仅能访问自己的主目录：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chroot_<span class="built_in">local</span>_user=YES</span><br></pre></td></tr></table></figure>
-<p>设置用户的主目录：(不设置时，默认为用户的家目录/home/userftp)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">local</span>_root=/data/<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<p>重启服务：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service vsftpd restart</span><br></pre></td></tr></table></figure>
-<p>设置开机自启动：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig vsftpd on</span><br></pre></td></tr></table></figure>
-<h2 id="连接测试"><a class="header-anchor" href="#连接测试"></a>连接测试</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ftp userftp@<span class="number">112.126</span>.<span class="number">74.124</span></span><br><span class="line"></span><br><span class="line">ftp&gt; <span class="built_in">pwd</span></span><br><span class="line">Remote directory: /home/userftp</span><br><span class="line"></span><br><span class="line">ftp&gt; quit</span><br><span class="line"><span class="number">221</span> Goodbye.</span><br></pre></td></tr></table></figure>
-<h2 id="参考"><a class="header-anchor" href="#参考"></a>参考</h2>
-<ol>
-<li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-vsftpd-on-centos-6--2" target="_blank" rel="external">how-to-set-up-vsftpd-on-centos-6--2</a></li>
-<li><a href="http://koulitsu.blog.51cto.com/7355117/1221441" target="_blank" rel="external">koulitsu</a></li>
-</ol>
-<p><a href="http://segmentfault.com/a/1190000002926477" target="_blank" rel="external">原文地址</a></p>
+		<h2 id="总结本此课程中所涉及命令的使用方法及相关示例展示；"><a class="header-anchor" href="#总结本此课程中所涉及命令的使用方法及相关示例展示；"></a>总结本此课程中所涉及命令的使用方法及相关示例展示；</h2>
+<h2 id="总结基本正则表达式及扩展正则表达式"><a class="header-anchor" href="#总结基本正则表达式及扩展正则表达式"></a>总结基本正则表达式及扩展正则表达式</h2>
+<h2 id="显示-etc-passwd文件中以bash结尾的行"><a class="header-anchor" href="#显示-etc-passwd文件中以bash结尾的行"></a>显示/etc/passwd文件中以bash结尾的行</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'bash$'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+<h2 id="显示-etc-passwd文件中的两位数或三位数"><a class="header-anchor" href="#显示-etc-passwd文件中的两位数或三位数"></a>显示/etc/passwd文件中的两位数或三位数</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'\&lt;[[:digit:]]&#123;2,3&#125;\&gt;'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+<h2 id="显示netstat-tan命令结果中以-listen-后跟0个-1个或者多个空白字符结尾的行"><a class="header-anchor" href="#显示netstat-tan命令结果中以-listen-后跟0个-1个或者多个空白字符结尾的行"></a>显示<code>netstat -tan</code>命令结果中以'LISTEN'后跟0个、1个或者多个空白字符结尾的行</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -nat | egrep <span class="string">'\&lt;LISTEN[[:blank:]]*'</span></span><br></pre></td></tr></table></figure>
+<h2 id="添加用户bash-testbash-basher以及nologin用户-nologin用户的shell为-sbin-nologin-；而后找出-etc-passwd文件中用户名与其shell名相同的行"><a class="header-anchor" href="#添加用户bash-testbash-basher以及nologin用户-nologin用户的shell为-sbin-nologin-；而后找出-etc-passwd文件中用户名与其shell名相同的行"></a>添加用户bash、testbash、basher以及nologin用户（nologin用户的shell为/sbin/nologin）；而后找出/etc/                 passwd文件中用户名与其shell名相同的行</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'^([[:alnum:]]*):.*\1$'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+<h2 id="显示当前系统上root-centos或者user1用户的默认shell和uid-请事先创建这些用户-若不存在"><a class="header-anchor" href="#显示当前系统上root-centos或者user1用户的默认shell和uid-请事先创建这些用户-若不存在"></a>显示当前系统上root、centos或者user1用户的默认shell和UID （请事先创建这些用户，若不存在）</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'^(centos|user1|root)'</span> /etc/passwd | cut <span class="operator">-d</span>: <span class="operator">-f</span>3,<span class="number">7</span></span><br></pre></td></tr></table></figure>
+<h2 id="找出-etc-rc-d-init-d-functions文件中某单词-单词中间可以存在下划线-后面跟着一组小括号的行"><a class="header-anchor" href="#找出-etc-rc-d-init-d-functions文件中某单词-单词中间可以存在下划线-后面跟着一组小括号的行"></a>找出/etc/rc.d/init.d/functions文件中某单词（单词中间可以存在下划线）后面跟着一组小括号的行</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'([[:alpha:]]|_)+\(\)'</span> /etc/rc.d/init.d/<span class="built_in">functions</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用echo输出一个路径-而后egrep找出其路径基名；进一步的使用egrep取出其目录名"><a class="header-anchor" href="#使用echo输出一个路径-而后egrep找出其路径基名；进一步的使用egrep取出其目录名"></a>使用echo输出一个路径，而后egrep找出其路径基名；进一步的使用egrep取出其目录名</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"><span class="comment">## 找出ifconfig命令执行结果中1-255之间的数字</span></span><br><span class="line">```bash</span><br><span class="line">ifconfig | egrep <span class="string">'\&lt;(1?[1-9]&#123;1,2&#125;|2[0-5]&#123;2&#125;)\&gt;'</span></span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -158,7 +141,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/探索发现/">探索发现</a>
+  <a class="article-category-link" href="/categories/作业/">作业</a>
 </div>
 
 
@@ -173,7 +156,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://molloc.me/2015/06/25/CentOS-6-搭建-FTP-服务记录/" data-title="CentOS 6 搭建 FTP 服务记录 | Robot" data-tsina="2205010230" class="share clearfix">
+	  <div data-url="http://molloc.me/2015/08/30/ZY-2015-08-27/" data-title="ZY-2015-08-27 | Robot" data-tsina="2205010230" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -186,19 +169,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/06/26/mysql按照某一字段去重，并显示其他字段信息/" title="mysql按照某一字段去重，并显示其他字段信息">
-  <strong>上一篇：</strong><br/>
-  <span>
-  mysql按照某一字段去重，并显示其他字段信息</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/06/24/PMP-ITTO/"  title="PMP-ITTO">
+<a href="/2015/08/25/ZY-2015-08-25/"  title="ZY-2015-08-25">
  <strong>下一篇：</strong><br/> 
- <span>PMP-ITTO
+ <span>ZY-2015-08-25
 </span>
 </a>
 </div>
@@ -207,7 +182,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/06/25/CentOS-6-搭建-FTP-服务记录/" data-title="CentOS 6 搭建 FTP 服务记录" data-url="http://molloc.me/2015/06/25/CentOS-6-搭建-FTP-服务记录/"></div>
+	<div class="ds-thread" data-thread-key="2015/08/30/ZY-2015-08-27/" data-title="ZY-2015-08-27" data-url="http://molloc.me/2015/08/30/ZY-2015-08-27/"></div>
 </section>
 
 
@@ -217,7 +192,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于-vsftp"><span class="toc-number">1.</span> <span class="toc-text">关于 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-vsftp"><span class="toc-number">2.</span> <span class="toc-text">安装 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加用户"><span class="toc-number">3.</span> <span class="toc-text">添加用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-vsftp"><span class="toc-number">4.</span> <span class="toc-text">配置 VSFTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连接测试"><span class="toc-number">5.</span> <span class="toc-text">连接测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#总结本此课程中所涉及命令的使用方法及相关示例展示；"><span class="toc-number">1.</span> <span class="toc-text">总结本此课程中所涉及命令的使用方法及相关示例展示；</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结基本正则表达式及扩展正则表达式"><span class="toc-number">2.</span> <span class="toc-text">总结基本正则表达式及扩展正则表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示-etc-passwd文件中以bash结尾的行"><span class="toc-number">3.</span> <span class="toc-text">显示/etc/passwd文件中以bash结尾的行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示-etc-passwd文件中的两位数或三位数"><span class="toc-number">4.</span> <span class="toc-text">显示/etc/passwd文件中的两位数或三位数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示netstat-tan命令结果中以-listen-后跟0个-1个或者多个空白字符结尾的行"><span class="toc-number">5.</span> <span class="toc-text">显示netstat -tan命令结果中以'LISTEN'后跟0个、1个或者多个空白字符结尾的行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加用户bash-testbash-basher以及nologin用户-nologin用户的shell为-sbin-nologin-；而后找出-etc-passwd文件中用户名与其shell名相同的行"><span class="toc-number">6.</span> <span class="toc-text">添加用户bash、testbash、basher以及nologin用户（nologin用户的shell为/sbin/nologin）；而后找出/etc/                 passwd文件中用户名与其shell名相同的行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示当前系统上root-centos或者user1用户的默认shell和uid-请事先创建这些用户-若不存在"><span class="toc-number">7.</span> <span class="toc-text">显示当前系统上root、centos或者user1用户的默认shell和UID （请事先创建这些用户，若不存在）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#找出-etc-rc-d-init-d-functions文件中某单词-单词中间可以存在下划线-后面跟着一组小括号的行"><span class="toc-number">8.</span> <span class="toc-text">找出/etc/rc.d/init.d/functions文件中某单词（单词中间可以存在下划线）后面跟着一组小括号的行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用echo输出一个路径-而后egrep找出其路径基名；进一步的使用egrep取出其目录名"><span class="toc-number">9.</span> <span class="toc-text">使用echo输出一个路径，而后egrep找出其路径基名；进一步的使用egrep取出其目录名</span></a></li></ol>
  
   </div>
 
