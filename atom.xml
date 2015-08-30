@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-08-30T14:51:55.000Z</updated>
+  <updated>2015-08-30T14:54:09.158Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://molloc.me/2015/08/30/ZY-2015-08-27/"/>
     <id>http://molloc.me/2015/08/30/ZY-2015-08-27/</id>
     <published>2015-08-29T16:00:33.000Z</published>
-    <updated>2015-08-30T14:51:55.000Z</updated>
+    <updated>2015-08-30T14:54:09.158Z</updated>
     <content type="html"><![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
 <p><em>本文涉及的命令有: chmod, chown, chgrp, umask, grep, egrep</em></p>
 <a id="more"></a>
@@ -82,7 +82,7 @@ rwx, rwx, rwx</p>
 <h3 id="操作实践-v4"><a class="header-anchor" href="#操作实践-v4"></a>操作实践</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输出匹配到的行数</span></span><br><span class="line">$ grep <span class="string">'bash\&gt;'</span> /etc/passwd -c</span><br><span class="line">--&gt; <span class="number">6</span></span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="总结基本正则表达式及扩展正则表达式"><a class="header-anchor" href="#总结基本正则表达式及扩展正则表达式"></a>总结基本正则表达式及扩展正则表达式</h2>
+<h2 id="基本正则表达式"><a class="header-anchor" href="#基本正则表达式"></a>基本正则表达式</h2>
 <h3 id="字符匹配"><a class="header-anchor" href="#字符匹配"></a>字符匹配</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">.: 			<span class="comment"># 匹配任意单个字符；</span></span><br><span class="line">[]：		<span class="comment"># 匹配指定范围内的任意单个字符；</span></span><br><span class="line">[^]：		<span class="comment"># 匹配指定范围内的任意单个字符；</span></span><br><span class="line">[:lower:]   <span class="comment"># 小写字符</span></span><br><span class="line">[:upper:]   <span class="comment"># 大写字符</span></span><br><span class="line">[:alnum:]   <span class="comment"># 文字数字字符</span></span><br><span class="line">[:digit:]   <span class="comment"># 数字字符</span></span><br><span class="line">[:space:]   <span class="comment"># 所有空白字符（新行，空格，制表符)</span></span><br><span class="line">[:blank:]   <span class="comment"># 空格或制表符</span></span><br><span class="line">[:punct:]   <span class="comment"># 标点符号</span></span><br><span class="line">[:alpha:]   <span class="comment"># 文字字符</span></span><br><span class="line">[:blank:]   <span class="comment"># 空格或制表符</span></span><br><span class="line">[:cntrl:]   <span class="comment"># 控制字符</span></span><br><span class="line">[:graph:]   <span class="comment"># 非空字符（非空格、控制字符）</span></span><br><span class="line">[:<span class="built_in">print</span>:]   <span class="comment"># 非空字符（包括空格）</span></span><br><span class="line">[:xdigit:]  <span class="comment"># 十六进制数字（0-9，a-f，A-F）</span></span><br></pre></td></tr></table></figure>
 <h3 id="次数匹配"><a class="header-anchor" href="#次数匹配"></a>次数匹配</h3>
