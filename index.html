@@ -120,16 +120,155 @@ rwx, rwx, rwx</p>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[\+|-]mode</span><br><span class="line">	u\+r,</span><br><span class="line">		\+x</span><br><span class="line">		\+w</span><br></pre></td></tr></table></figure>
 <h3 id="操作实践"><a class="header-anchor" href="#操作实践"></a>操作实践</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br><span class="line">chmod [OPTION]... MODE[,MODE]... FILE...</span><br><span class="line">chmod [OPTION]... OCTAL-MODE FILE...</span><br><span class="line">chmod [OPTION]... --reference=RFILE FILE...</span><br><span class="line"></span><br><span class="line">$ chmod u=r file <span class="comment">#会覆盖掉已有的权限</span></span><br><span class="line">--&gt; -r--rwxrwx <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">29</span> <span class="number">15</span>:<span class="number">12</span> file</span><br><span class="line"></span><br><span class="line">$ chmod u+wx file</span><br><span class="line">--&gt; -rwxrwxrwx <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">29</span> <span class="number">15</span>:<span class="number">12</span> file</span><br><span class="line"></span><br><span class="line">$ ll</span><br><span class="line">-rw-rw-rw- <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> a</span><br><span class="line">-rw-r--r-- <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> b</span><br><span class="line"></span><br><span class="line"><span class="comment">## 参考文件a的权限修改b的权限</span></span><br><span class="line">$ chmod --reference=a b</span><br><span class="line">$ ll</span><br><span class="line">--&gt; -rw-rw-rw- <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> a</span><br><span class="line">	-rw-rw-rw- <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> b</span><br><span class="line"></span><br><span class="line">$ chmod u-r,g-w c</span><br><span class="line">--&gt; --w-r--rw- <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> c</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#eg:复制/etc/skel目录为/home/tuser1,要求/home/tuser1及其内部文件的属组和其它用户均没有任何访问权限.</span></span><br><span class="line">$ cp -R /etc/skel/ /home/tuser1/</span><br><span class="line">$ chmod go= -R /home/tuser1</span><br><span class="line">$ ll <span class="operator">-a</span> tuser1/</span><br><span class="line">--&gt; drwx------  <span class="number">4</span> root root <span class="number">4096</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .</span><br><span class="line">	drwxr-xr-x. <span class="number">7</span> root root <span class="number">4096</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> ..</span><br><span class="line">	-rw-------  <span class="number">1</span> root root   <span class="number">18</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .bash_<span class="built_in">logout</span></span><br><span class="line">	-rw-------  <span class="number">1</span> root root  <span class="number">176</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .bash_profile</span><br><span class="line">	-rw-------  <span class="number">1</span> root root  <span class="number">124</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .bashrc</span><br><span class="line">	drwx------  <span class="number">2</span> root root <span class="number">4096</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .gnome2</span><br><span class="line">	drwx------  <span class="number">4</span> root root <span class="number">4096</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .mozilla</span><br></pre></td></tr></table></figure>
-<hr>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br><span class="line">chmod [OPTION]... MODE[,MODE]... FILE...</span><br><span class="line">chmod [OPTION]... OCTAL-MODE FILE...</span><br><span class="line">chmod [OPTION]... --reference=RFILE FILE...</span><br><span class="line"></span><br><span class="line">$ chmod u=r file <span class="comment">#会覆盖掉已有的权限</span></span><br><span class="line">--&gt; -r--rwxrwx <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">29</span> <span class="number">15</span>:<span class="number">12</span> file</span><br><span class="line"></span><br><span class="line">$ chmod u+wx file</span><br><span class="line">--&gt; -rwxrwxrwx <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">29</span> <span class="number">15</span>:<span class="number">12</span> file</span><br><span class="line"></span><br><span class="line">$ ll</span><br><span class="line">-rw-rw-rw- <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> a</span><br><span class="line">-rw-r--r-- <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> b</span><br><span class="line"></span><br><span class="line"><span class="comment">## 参考文件a的权限修改b的权限</span></span><br><span class="line">$ chmod --reference=a b</span><br><span class="line">$ ll</span><br><span class="line">--&gt; -rw-rw-rw- <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> a</span><br><span class="line">	-rw-rw-rw- <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> b</span><br><span class="line"></span><br><span class="line">$ chmod u-r,g-w c</span><br><span class="line">--&gt; --w-r--rw- <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> c</span><br><span class="line"></span><br><span class="line"><span class="comment">#eg:复制/etc/skel目录为/home/tuser1,要求/home/tuser1及其内部文件的属组和其它用户均没有任何访问权限.</span></span><br><span class="line">$ cp -R /etc/skel/ /home/tuser1/</span><br><span class="line">$ chmod go= -R /home/tuser1</span><br><span class="line">$ ll <span class="operator">-a</span> tuser1/</span><br><span class="line">--&gt; drwx------  <span class="number">4</span> root root <span class="number">4096</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .</span><br><span class="line">	drwxr-xr-x. <span class="number">7</span> root root <span class="number">4096</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> ..</span><br><span class="line">	-rw-------  <span class="number">1</span> root root   <span class="number">18</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .bash_<span class="built_in">logout</span></span><br><span class="line">	-rw-------  <span class="number">1</span> root root  <span class="number">176</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .bash_profile</span><br><span class="line">	-rw-------  <span class="number">1</span> root root  <span class="number">124</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .bashrc</span><br><span class="line">	drwx------  <span class="number">2</span> root root <span class="number">4096</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .gnome2</span><br><span class="line">	drwx------  <span class="number">4</span> root root <span class="number">4096</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .mozilla</span><br></pre></td></tr></table></figure>
+<h2 id="chown"><a class="header-anchor" href="#chown"></a>chown</h2>
+<p><strong>chown - 修改文件的属主或属组</strong></p>
+<h3 id="基本用法-v2"><a class="header-anchor" href="#基本用法-v2"></a>基本用法</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br><span class="line">chown [OPTION]... [OWNER][:[GROUP]] FILE...</span><br><span class="line">chown [OPTION]... --reference=RFILE FILE...</span><br><span class="line"></span><br><span class="line">-R, --recursive <span class="comment"># 递归操纵文件或目录</span></span><br><span class="line"></span><br><span class="line">USER <span class="comment"># 只改属主</span></span><br><span class="line">USER:GROUP(USER.GROUP) <span class="comment"># 同时修改属主,属主</span></span><br></pre></td></tr></table></figure>
+<h3 id="操作实践-v2"><a class="header-anchor" href="#操作实践-v2"></a>操作实践</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改b文件的属主为gentoo</span></span><br><span class="line">$ chown gentoo b</span><br><span class="line">$ ll b</span><br><span class="line">--&gt; -rw-rw-rw- <span class="number">1</span> gentoo root <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改b文件的属主,属组为centos</span></span><br><span class="line">$ chown centos:centos b</span><br><span class="line">$ ll</span><br><span class="line">--&gt; -rw-rw-rw- <span class="number">1</span> centos centos <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 参照文件b的属主,属主为a设置</span></span><br><span class="line">$ ll a</span><br><span class="line">--&gt; -rw-rw-rw- <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> a</span><br><span class="line">$ chown --reference=b a</span><br><span class="line">$ ll a b</span><br><span class="line">--&gt; -rw-rw-rw- <span class="number">1</span> centos centos <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> a</span><br><span class="line">	-rw-rw-rw- <span class="number">1</span> centos centos <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> b</span><br></pre></td></tr></table></figure>
+<h2 id="chgrp"><a class="header-anchor" href="#chgrp"></a>chgrp</h2>
+<p><strong>chgrp - 修改组</strong></p>
+<h3 id="基本用法-v3"><a class="header-anchor" href="#基本用法-v3"></a>基本用法</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br><span class="line">chgrp [OPTION]... GROUP FILE...</span><br><span class="line">chgrp [OPTION]... --reference=RFILE FILE...</span><br><span class="line"></span><br><span class="line">-R, --recursive <span class="comment"># 递归操纵文件或目录</span></span><br></pre></td></tr></table></figure>
+<h2 id="umask"><a class="header-anchor" href="#umask"></a>umask</h2>
+<p><strong>umask - 设定和显示遮罩码</strong></p>
+<h3 id="操作实践-v3"><a class="header-anchor" href="#操作实践-v3"></a>操作实践</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示遮罩码</span></span><br><span class="line">$ <span class="built_in">umask</span></span><br><span class="line">--&gt; <span class="number">0022</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置遮罩码, 仅对当前shell进程有效</span></span><br><span class="line">$ <span class="built_in">umask</span> <span class="number">0002</span></span><br><span class="line">$ <span class="built_in">umask</span></span><br><span class="line">--&gt; <span class="number">0002</span></span><br></pre></td></tr></table></figure>
+<h2 id="grep"><a class="header-anchor" href="#grep"></a>grep</h2>
 <ul>
-<li>总结基本正则表达式及扩展正则表达式</li>
+<li>Linux文本处理三剑客：
+<ol>
+<li>grep: 文本过滤工具；</li>
+<li>sed：文本编辑器(行)；stream editor</li>
+<li>awk：文本报告生成器；Linux上awk的实现为gawk</li>
+</ol>
+</li>
+<li>作用: 文本搜索工具,根据用户制定的'模式(pattern)'逐行去搜索目标文本,打印匹配到的行.</li>
+<li>模式: 有正则表达式的元字符及文本字符所编写的过滤条件.</li>
+<li>元字符: 字符不表示其字面的意义,而用于表示通配或控制功能.</li>
+<li>BRE: 基本正则表达式</li>
+<li>ERE: 扩展正则表达式</li>
 </ul>
+<h3 id="基本用法-v4"><a class="header-anchor" href="#基本用法-v4"></a>基本用法</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## SYNOPSIS</span></span><br><span class="line">grep [OPTIONS] PATTERN [FILE...]</span><br><span class="line">grep [OPTIONS] [<span class="operator">-e</span> PATTERN | <span class="operator">-f</span> FILE] [FILE...]</span><br><span class="line"></span><br><span class="line">--color=auto <span class="comment"># 对匹配到的行做高亮显示</span></span><br><span class="line">-v, --invert-match <span class="comment">#显示模式匹配不到的行</span></span><br><span class="line">-i, --ignore-case <span class="comment"># 忽略字符大小写</span></span><br><span class="line">-q, --quiet, --silent <span class="comment"># 静默模式, 不输出到标准输出</span></span><br><span class="line">-E, --extended-regexp <span class="comment"># 解释模式问扩展的正则表达式</span></span><br><span class="line">-P, --perl-regexp <span class="comment"># 解释模式作为一个Perl的正则表达式。这是高度的实验和grep -P可以警告未实现的功能。</span></span><br><span class="line">-c, --count <span class="comment"># 输出匹配到的行数</span></span><br></pre></td></tr></table></figure>
+<h3 id="操作实践-v4"><a class="header-anchor" href="#操作实践-v4"></a>操作实践</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输出匹配到的行数</span></span><br><span class="line">$ grep <span class="string">'bash\&gt;'</span> /etc/passwd -c</span><br><span class="line">--&gt; <span class="number">6</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="总结基本正则表达式及扩展正则表达式"><a class="header-anchor" href="#总结基本正则表达式及扩展正则表达式"></a>总结基本正则表达式及扩展正则表达式</h2>
+<h3 id="字符匹配"><a class="header-anchor" href="#字符匹配"></a>字符匹配</h3>
+<p>.:          匹配任意单个字符；
+[]：     匹配指定范围内的任意单个字符；
+[^]：        匹配指定范围内的任意单个字符；
+[:lower:]   小写字符
+[:upper:]   大写字符
+[:alnum:]   文字数字字符
+[:digit:]   数字字符
+[:space:]   所有空白字符（新行，空格，制表符)
+[:blank:]   空格或制表符
+[:punct:]   标点符号
+[:alpha:]   文字字符
+[:blank:]   空格或制表符
+[:cntrl:]   控制字符
+[:graph:]   非空字符（非空格、控制字符）
+[:print:]   非空字符（包括空格）
+[:xdigit:]  十六进制数字（0-9，a-f，A-F）</p>
+<h3 id="次数匹配"><a class="header-anchor" href="#次数匹配"></a>次数匹配</h3>
+<p>?      0到1次</p>
+<ul>
+<li>
+<pre><code> 0到多次
+</code></pre>
+</li>
+</ul>
+<ul>
+<li>
+<pre><code> 1到多次
+</code></pre>
+</li>
+</ul>
+<p>{n}    匹配n次
+{n,}   至少匹配n次
+{,m}   最多m次
+{n,m}  最少n次,最多m次
+.*     匹配任意长度的任意字符</p>
+<h3 id="位置锚定："><a class="header-anchor" href="#位置锚定："></a>位置锚定：</h3>
+<p>^: 行首锚定；用于模式的最左侧；
+$: 行尾锚定；用于模式的最右侧；(用单引号)
+&lt;, \b: 词首锚定；用于表示单词的模式的左侧；
+&gt;, \b：词尾锚定；用于表示单词的模式的右侧；
+^$: 空白行</p>
+<h3 id="分组："><a class="header-anchor" href="#分组："></a>分组：()</h3>
+<p>分组的小括号中的模式匹配到的内容,会在执行过程中被正则表达式引擎记录下来,并保存在内置变量中,这些变量分别是\1,\2...</p>
+<p>\1: 从左侧起,第一个左括号,以及与之配对的右括号中间的模式所匹配到的内容.</p>
+<p>\2: ...</p>
+<p>向后引用: 使用变量引用前面的分组括号中的模式所匹配到的字符.</p>
+<h2 id="扩展的正则表达式"><a class="header-anchor" href="#扩展的正则表达式"></a>扩展的正则表达式</h2>
+<h3 id="grep家庭有三个命令："><a class="header-anchor" href="#grep家庭有三个命令："></a>grep家庭有三个命令：</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="comment">#基本正则表达式</span></span><br><span class="line">	-E <span class="comment">#扩展正则表达式</span></span><br><span class="line">	-F <span class="comment">#不支持正则表达式</span></span><br><span class="line">egrep <span class="comment">#扩展正则表达式</span></span><br><span class="line">fgrep <span class="comment">#不支持正则表达式</span></span><br></pre></td></tr></table></figure>
+<h3 id="字符匹配："><a class="header-anchor" href="#字符匹配："></a>字符匹配：</h3>
+<p>.: 任意单个字符
+[]:
+[^]:</p>
+<h3 id="次数匹配："><a class="header-anchor" href="#次数匹配："></a>次数匹配：</h3>
+<ul>
+<li></li>
+</ul>
+<p>?: 0次或1次；
++: 1次以上；
+{m}: 精确匹配m次；
+{m,n}: 至少m次，至多n次；</p>
+<h3 id="位置锚定"><a class="header-anchor" href="#位置锚定"></a>位置锚定</h3>
+<p>^: 行首锚定；用于模式的最左侧；
+$: 行尾锚定；用于模式的最右侧；(用单引号)
+&lt;, \b: 词首锚定；用于表示单词的模式的左侧；
+&gt;, \b：词尾锚定；用于表示单词的模式的右侧；
+^$: 空白行</p>
+<h3 id="或者"><a class="header-anchor" href="#或者"></a>或者</h3>
+<p>(a|b)wk # awk或者bwk</p>
+<ul>
+<li>显示/etc/passwd文件中以bash结尾的行</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'bash$'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/1.png" alt="command" title="1.png"></p>
+<ul>
+<li>显示/etc/passwd文件中的两位数或三位数</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'\&lt;[[:digit:]]&#123;2,3&#125;\&gt;'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/2.png" alt="command" title="2.png"></p>
+<ul>
+<li>显示<code>netstat -tan</code>命令结果中以'LISTEN'后跟0个、1个或者多个空白字符结尾的行</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -nat | egrep <span class="string">'\&lt;LISTEN[[:blank:]]*'</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/3.png" alt="command" title="3.png"></p>
+<ul>
+<li>添加用户bash、testbash、basher以及nologin用户（nologin用户的shell为/sbin/nologin）；而后找出/etc/                  passwd文件中用户名与其shell名相同的行</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'^([[:alnum:]]*\&gt;).*\1$'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/4.png" alt="command" title="4.png"></p>
+<ul>
+<li>显示当前系统上root、centos或者user1用户的默认shell和UID （请事先创建这些用户，若不存在）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'^(centos|user1|root)'</span> /etc/passwd | cut <span class="operator">-d</span>: <span class="operator">-f</span>3,<span class="number">7</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/5.png" alt="command" title="5.png"></p>
+<ul>
+<li>找出/etc/rc.d/init.d/functions文件中某单词（单词中间可以存在下划线）后面跟着一组小括号的行</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'([[:alpha:]]|_)+\(\)'</span> /etc/rc.d/init.d/<span class="built_in">functions</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/6.png" alt="command" title="6.png"></p>
+<ul>
+<li>使用echo输出一个路径，而后egrep找出其路径基名；进一步的使用egrep取出其目录名</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'/usr/local/bin/'</span> | egrep <span class="string">'\&lt;[[:alnum:]]*([[:alnum:]]|/)$'</span> -o</span><br></pre></td></tr></table></figure>
+<ul>
+<li>找出ifconfig命令执行结果中1-255之间的数字</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig | egrep <span class="string">'\&lt;(1?[1-9]&#123;1,2&#125;|2[0-5]&#123;2&#125;)\&gt;'</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/8.png" alt="command" title="8.png"></p>
+
         
         
         <p class="article-more-link">
-          
-            <a href="/2015/08/30/ZY-2015-08-27/#more">Read More</a>
           
        </p>
     </div>
