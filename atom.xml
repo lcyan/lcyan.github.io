@@ -162,7 +162,7 @@ rwx, rwx, rwx</p>
     <link href="http://molloc.me/2015/08/25/ZY-2015-08-25/"/>
     <id>http://molloc.me/2015/08/25/ZY-2015-08-25/</id>
     <published>2015-08-25T15:39:11.000Z</published>
-    <updated>2015-08-30T16:02:01.444Z</updated>
+    <updated>2015-08-30T16:02:51.368Z</updated>
     <content type="html"><![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
 <p><em>用户和组管理的相关命令,useradd、usermod、passwd、userdel groupadd、groupmod、gpasswd、groupdel chage、chsh、chfn id、su</em></p>
 <a id="more"></a>
@@ -196,8 +196,8 @@ rwx, rwx, rwx</p>
 </li>
 </ol>
 <h2 id="linux用户和组的相关配置文件"><a class="header-anchor" href="#linux用户和组的相关配置文件"></a>Linux用户和组的相关配置文件</h2>
-<h3 id="etc-passwd-用户名-uid-基本信息等"><a class="header-anchor" href="#etc-passwd-用户名-uid-基本信息等"></a>/etc/passwd  # 用户名,UID,基本信息等.</h3>
-<p><code>cat /etc/passwd</code></p>
+<h3 id="etc-passwd"><a class="header-anchor" href="#etc-passwd"></a>/etc/passwd</h3>
+<p>用户名,UID,基本信息等.</p>
 <p>name:password:UID:GID:GECOS:directory:shell</p>
 <p>登录名:x:UID:GID:comment:主目录:用户默认shell</p>
 <h3 id="etc-shadow"><a class="header-anchor" href="#etc-shadow"></a>/etc/shadow</h3>
