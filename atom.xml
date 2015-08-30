@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-08-30T14:41:14.119Z</updated>
+  <updated>2015-08-30T14:42:16.257Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,9 +19,10 @@
     <link href="http://molloc.me/2015/08/30/ZY-2015-08-27/"/>
     <id>http://molloc.me/2015/08/30/ZY-2015-08-27/</id>
     <published>2015-08-29T16:00:33.000Z</published>
-    <updated>2015-08-30T14:41:14.119Z</updated>
+    <updated>2015-08-30T14:42:16.257Z</updated>
     <content type="html"><![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em>
 <em>本文涉及的命令有: chmod, chown, chgrp, umask, grep, egrep</em></p>
+<a id="more"></a>
 <h2 id="linux文件系统的权限"><a class="header-anchor" href="#linux文件系统的权限"></a>Linux文件系统的权限</h2>
 <p>属主(owner, u), 属组(group, g), 其他用户(other, o):
 rwx, rwx, rwx</p>
@@ -194,8 +195,8 @@ $: 行尾锚定；用于模式的最右侧；(用单引号)
 ]]></content>
     <summary type="html">
     <![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em>
-<em>本文涉及的命令有: chmod, chown, chgrp, umask, grep, egrep</em></p>
-<h2 id="linux文件系统的权限"><a clas]]>
+<em>本文涉及的命令有: chmod, chown, chgrp, umask, grep, egrep</em></p>]]>
+    
     </summary>
     
       <category term="linux" scheme="http://molloc.me/tags/linux/"/>
