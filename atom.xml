@@ -162,7 +162,7 @@ rwx, rwx, rwx</p>
     <link href="http://molloc.me/2015/08/25/ZY-2015-08-25/"/>
     <id>http://molloc.me/2015/08/25/ZY-2015-08-25/</id>
     <published>2015-08-25T15:39:11.000Z</published>
-    <updated>2015-08-30T15:58:05.878Z</updated>
+    <updated>2015-08-30T16:02:01.444Z</updated>
     <content type="html"><![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
 <p><em>用户和组管理的相关命令,useradd、usermod、passwd、userdel groupadd、groupmod、gpasswd、groupdel chage、chsh、chfn id、su</em></p>
 <a id="more"></a>
@@ -200,8 +200,8 @@ rwx, rwx, rwx</p>
 <p><code>cat /etc/passwd</code></p>
 <p>name:password:UID:GID:GECOS:directory:shell</p>
 <p>登录名:x:UID:GID:comment:主目录:用户默认shell</p>
-<h3 id="etc-shadow-用户密码及相关属性"><a class="header-anchor" href="#etc-shadow-用户密码及相关属性"></a>/etc/shadow  # 用户密码及相关属性</h3>
-<p><code>cat /etc/shadow</code></p>
+<h3 id="etc-shadow"><a class="header-anchor" href="#etc-shadow"></a>/etc/shadow</h3>
+<p>用户密码及相关属性</p>
 <p>login name:encrypted password:date of last password change:minimum password age:maximum password age:password warning period:password inactivity period:account expiration date:reserved field</p>
 <ol>
 <li>login name: 登录名</li>
@@ -223,11 +223,12 @@ rwx, rwx, rwx</p>
 <li>雪崩效应：初始条件的微小改变,导致结果的巨大改变.</li>
 <li>定长输出：</li>
 </ul>
-<h3 id="etc-group-组名-gid-组内包含的用户"><a class="header-anchor" href="#etc-group-组名-gid-组内包含的用户"></a>/etc/group   # 组名,GID,组内包含的用户.</h3>
-<p><code>cat /etc/group</code></p>
+<h3 id="etc-group"><a class="header-anchor" href="#etc-group"></a>/etc/group</h3>
+<p>组名,GID,组内包含的用户.</p>
 <p>group_name:password:GID:user_list</p>
 <p>组名:组密码:以此组为附加组的用户</p>
-<h3 id="etc-gshadow-组的密码及相关属性"><a class="header-anchor" href="#etc-gshadow-组的密码及相关属性"></a>/etc/gshadow # 组的密码及相关属性</h3>
+<h3 id="etc-gshadow"><a class="header-anchor" href="#etc-gshadow"></a>/etc/gshadow</h3>
+<p>组的密码及相关属性</p>
 <h2 id="密码的复杂性策略"><a class="header-anchor" href="#密码的复杂性策略"></a>密码的复杂性策略</h2>
 <ul>
 <li>使用数字、小写字母、大写字母、特殊字符四类中至少三类；</li>
