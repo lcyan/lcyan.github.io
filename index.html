@@ -94,57 +94,48 @@
 </header>
     <div class="article-content">
         
-        <ul>
+        <p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em>
+<em>本文涉及的命令有: chmod, chown, chgrp, umask, grep, egrep</em></p>
+<h2 id="linux文件系统的权限"><a class="header-anchor" href="#linux文件系统的权限"></a>Linux文件系统的权限</h2>
+<p>属主(owner, u), 属组(group, g), 其他用户(other, o):
+rwx, rwx, rwx</p>
+<p>对应当前资源,每类账户都通过三位权限限定.(000-111: 0-7)</p>
+<h2 id="权限管理相关命令"><a class="header-anchor" href="#权限管理相关命令"></a>权限管理相关命令</h2>
+<ul>
+<li>权限管理 chmod</li>
+<li>所属关系管理: chown, chgrp</li>
+<li>文件遮罩码: umask</li>
+</ul>
+<h2 id="chmod"><a class="header-anchor" href="#chmod"></a>chmod</h2>
+<p><strong>chmod - 修改文件的权限</strong></p>
+<p>基本用法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-R: recursive <span class="comment">#递归修改权限</span></span><br></pre></td></tr></table></figure>
+<p>二种用法:</p>
+<ol>
 <li>
-<p>总结本此课程中所涉及命令的使用方法及相关示例展示；</p>
+<p>操作指定类别用户的权限
+=model
+=rx, =r, =
+ug=rx, go=, a=</p>
 </li>
 <li>
-<p>总结基本正则表达式及扩展正则表达式</p>
+<p>操作某类用户的某位或某些位权限<code>+|-</code>
+[+|-]mode
+u+r,
++x
++w</p>
 </li>
-<li>
-<p>显示/etc/passwd文件中以bash结尾的行</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'bash$'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
-<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/1.png" alt="command" title="1.png"></p>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SYNOPSIS</span></span><br><span class="line">chmod [OPTION]... MODE[,MODE]... FILE...</span><br><span class="line">chmod [OPTION]... OCTAL-MODE FILE...</span><br><span class="line">chmod [OPTION]... --reference=RFILE FILE...</span><br><span class="line"></span><br><span class="line">$ chmod u=r file <span class="comment">#会覆盖掉已有的权限</span></span><br><span class="line">--&gt; -r--rwxrwx <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">29</span> <span class="number">15</span>:<span class="number">12</span> file</span><br><span class="line"></span><br><span class="line">$ chmod u+wx file</span><br><span class="line">--&gt; -rwxrwxrwx <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">29</span> <span class="number">15</span>:<span class="number">12</span> file</span><br><span class="line"></span><br><span class="line">$ ll</span><br><span class="line">-rw-rw-rw- <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> a</span><br><span class="line">-rw-r--r-- <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> b</span><br><span class="line"></span><br><span class="line"><span class="comment">## 参考文件a的权限修改b的权限</span></span><br><span class="line">$ chmod --reference=a b</span><br><span class="line">$ ll</span><br><span class="line">--&gt; -rw-rw-rw- <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> a</span><br><span class="line">	-rw-rw-rw- <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> b</span><br><span class="line"></span><br><span class="line">$ chmod u-r,g-w c</span><br><span class="line">--&gt; --w-r--rw- <span class="number">1</span> root root <span class="number">0</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">37</span> c</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#eg:复制/etc/skel目录为/home/tuser1,要求/home/tuser1及其内部文件的属组和其它用户均没有任何访问权限.</span></span><br><span class="line">$ cp -R /etc/skel/ /home/tuser1/</span><br><span class="line">$ chmod go= -R /home/tuser1</span><br><span class="line">$ ll <span class="operator">-a</span> tuser1/</span><br><span class="line">--&gt; drwx------  <span class="number">4</span> root root <span class="number">4096</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .</span><br><span class="line">	drwxr-xr-x. <span class="number">7</span> root root <span class="number">4096</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> ..</span><br><span class="line">	-rw-------  <span class="number">1</span> root root   <span class="number">18</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .bash_<span class="built_in">logout</span></span><br><span class="line">	-rw-------  <span class="number">1</span> root root  <span class="number">176</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .bash_profile</span><br><span class="line">	-rw-------  <span class="number">1</span> root root  <span class="number">124</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .bashrc</span><br><span class="line">	drwx------  <span class="number">2</span> root root <span class="number">4096</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .gnome2</span><br><span class="line">	drwx------  <span class="number">4</span> root root <span class="number">4096</span> Nov <span class="number">30</span> <span class="number">13</span>:<span class="number">34</span> .mozilla</span><br></pre></td></tr></table></figure>
+<hr>
 <ul>
-<li>显示/etc/passwd文件中的两位数或三位数</li>
+<li>总结基本正则表达式及扩展正则表达式</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'\&lt;[[:digit:]]&#123;2,3&#125;\&gt;'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
-<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/2.png" alt="command" title="2.png"></p>
-<ul>
-<li>显示<code>netstat -tan</code>命令结果中以'LISTEN'后跟0个、1个或者多个空白字符结尾的行</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -nat | egrep <span class="string">'\&lt;LISTEN[[:blank:]]*'</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/3.png" alt="command" title="3.png"></p>
-<ul>
-<li>添加用户bash、testbash、basher以及nologin用户（nologin用户的shell为/sbin/nologin）；而后找出/etc/                  passwd文件中用户名与其shell名相同的行</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'^([[:alnum:]]*\&gt;).*\1$'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
-<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/4.png" alt="command" title="4.png"></p>
-<ul>
-<li>显示当前系统上root、centos或者user1用户的默认shell和UID （请事先创建这些用户，若不存在）</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'^(centos|user1|root)'</span> /etc/passwd | cut <span class="operator">-d</span>: <span class="operator">-f</span>3,<span class="number">7</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/5.png" alt="command" title="5.png"></p>
-<ul>
-<li>找出/etc/rc.d/init.d/functions文件中某单词（单词中间可以存在下划线）后面跟着一组小括号的行</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">'([[:alpha:]]|_)+\(\)'</span> /etc/rc.d/init.d/<span class="built_in">functions</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/6.png" alt="command" title="6.png"></p>
-<ul>
-<li>使用echo输出一个路径，而后egrep找出其路径基名；进一步的使用egrep取出其目录名</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep ...</span><br></pre></td></tr></table></figure>
-<ul>
-<li>找出ifconfig命令执行结果中1-255之间的数字</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig | egrep <span class="string">'\&lt;(1?[1-9]&#123;1,2&#125;|2[0-5]&#123;2&#125;)\&gt;'</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-08-27/8.png" alt="command" title="8.png"></p>
-
         
         
         <p class="article-more-link">
+          
+            <a href="/2015/08/30/ZY-2015-08-27/#more">Read More</a>
           
        </p>
     </div>
