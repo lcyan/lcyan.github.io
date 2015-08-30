@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-08-30T14:43:25.009Z</updated>
+  <updated>2015-08-30T14:51:55.000Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://molloc.me/2015/08/30/ZY-2015-08-27/"/>
     <id>http://molloc.me/2015/08/30/ZY-2015-08-27/</id>
     <published>2015-08-29T16:00:33.000Z</published>
-    <updated>2015-08-30T14:43:25.009Z</updated>
+    <updated>2015-08-30T14:51:55.000Z</updated>
     <content type="html"><![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
 <p><em>本文涉及的命令有: chmod, chown, chgrp, umask, grep, egrep</em></p>
 <a id="more"></a>
@@ -64,7 +64,7 @@ rwx, rwx, rwx</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示遮罩码</span></span><br><span class="line">$ <span class="built_in">umask</span></span><br><span class="line">--&gt; <span class="number">0022</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置遮罩码, 仅对当前shell进程有效</span></span><br><span class="line">$ <span class="built_in">umask</span> <span class="number">0002</span></span><br><span class="line">$ <span class="built_in">umask</span></span><br><span class="line">--&gt; <span class="number">0002</span></span><br></pre></td></tr></table></figure>
 <h2 id="grep"><a class="header-anchor" href="#grep"></a>grep</h2>
 <ul>
-<li>Linux文本处理三剑客：
+<li>Linux文本处理三剑客
 <ol>
 <li>grep: 文本过滤工具；</li>
 <li>sed：文本编辑器(行)；stream editor</li>
@@ -84,47 +84,11 @@ rwx, rwx, rwx</p>
 <hr>
 <h2 id="总结基本正则表达式及扩展正则表达式"><a class="header-anchor" href="#总结基本正则表达式及扩展正则表达式"></a>总结基本正则表达式及扩展正则表达式</h2>
 <h3 id="字符匹配"><a class="header-anchor" href="#字符匹配"></a>字符匹配</h3>
-<p>.:          匹配任意单个字符；
-[]：     匹配指定范围内的任意单个字符；
-[^]：        匹配指定范围内的任意单个字符；
-[:lower:]   小写字符
-[:upper:]   大写字符
-[:alnum:]   文字数字字符
-[:digit:]   数字字符
-[:space:]   所有空白字符（新行，空格，制表符)
-[:blank:]   空格或制表符
-[:punct:]   标点符号
-[:alpha:]   文字字符
-[:blank:]   空格或制表符
-[:cntrl:]   控制字符
-[:graph:]   非空字符（非空格、控制字符）
-[:print:]   非空字符（包括空格）
-[:xdigit:]  十六进制数字（0-9，a-f，A-F）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">.: 			<span class="comment"># 匹配任意单个字符；</span></span><br><span class="line">[]：		<span class="comment"># 匹配指定范围内的任意单个字符；</span></span><br><span class="line">[^]：		<span class="comment"># 匹配指定范围内的任意单个字符；</span></span><br><span class="line">[:lower:]   <span class="comment"># 小写字符</span></span><br><span class="line">[:upper:]   <span class="comment"># 大写字符</span></span><br><span class="line">[:alnum:]   <span class="comment"># 文字数字字符</span></span><br><span class="line">[:digit:]   <span class="comment"># 数字字符</span></span><br><span class="line">[:space:]   <span class="comment"># 所有空白字符（新行，空格，制表符)</span></span><br><span class="line">[:blank:]   <span class="comment"># 空格或制表符</span></span><br><span class="line">[:punct:]   <span class="comment"># 标点符号</span></span><br><span class="line">[:alpha:]   <span class="comment"># 文字字符</span></span><br><span class="line">[:blank:]   <span class="comment"># 空格或制表符</span></span><br><span class="line">[:cntrl:]   <span class="comment"># 控制字符</span></span><br><span class="line">[:graph:]   <span class="comment"># 非空字符（非空格、控制字符）</span></span><br><span class="line">[:<span class="built_in">print</span>:]   <span class="comment"># 非空字符（包括空格）</span></span><br><span class="line">[:xdigit:]  <span class="comment"># 十六进制数字（0-9，a-f，A-F）</span></span><br></pre></td></tr></table></figure>
 <h3 id="次数匹配"><a class="header-anchor" href="#次数匹配"></a>次数匹配</h3>
-<p>?      0到1次</p>
-<ul>
-<li>
-<pre><code> 0到多次
-</code></pre>
-</li>
-</ul>
-<ul>
-<li>
-<pre><code> 1到多次
-</code></pre>
-</li>
-</ul>
-<p>{n}    匹配n次
-{n,}   至少匹配n次
-{,m}   最多m次
-{n,m}  最少n次,最多m次
-.*     匹配任意长度的任意字符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">?      <span class="comment"># 0到1次</span></span><br><span class="line">*      <span class="comment"># 0到多次</span></span><br><span class="line">+      <span class="comment"># 1到多次</span></span><br><span class="line">&#123;n&#125;    <span class="comment"># 匹配n次</span></span><br><span class="line">&#123;n,&#125;   <span class="comment"># 至少匹配n次</span></span><br><span class="line">&#123;,m&#125;   <span class="comment"># 最多m次</span></span><br><span class="line">&#123;n,m&#125;  <span class="comment"># 最少n次,最多m次</span></span><br><span class="line">.* 	   <span class="comment"># 匹配任意长度的任意字符</span></span><br></pre></td></tr></table></figure>
 <h3 id="位置锚定："><a class="header-anchor" href="#位置锚定："></a>位置锚定：</h3>
-<p>^: 行首锚定；用于模式的最左侧；
-$: 行尾锚定；用于模式的最右侧；(用单引号)
-&lt;, \b: 词首锚定；用于表示单词的模式的左侧；
-&gt;, \b：词尾锚定；用于表示单词的模式的右侧；
-^$: 空白行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">^: 			<span class="comment"># 行首锚定；用于模式的最左侧；</span></span><br><span class="line">$: 			<span class="comment"># 行尾锚定；用于模式的最右侧；(用单引号)</span></span><br><span class="line">\&lt;, \b: 	<span class="comment"># 词首锚定；用于表示单词的模式的左侧；</span></span><br><span class="line">\&gt;, \b：	<span class="comment"># 词尾锚定；用于表示单词的模式的右侧；</span></span><br><span class="line">^$: 		<span class="comment"># 空白行</span></span><br></pre></td></tr></table></figure>
 <h3 id="分组："><a class="header-anchor" href="#分组："></a>分组：()</h3>
 <p>分组的小括号中的模式匹配到的内容,会在执行过程中被正则表达式引擎记录下来,并保存在内置变量中,这些变量分别是\1,\2...</p>
 <p>\1: 从左侧起,第一个左括号,以及与之配对的右括号中间的模式所匹配到的内容.</p>
@@ -134,25 +98,13 @@ $: 行尾锚定；用于模式的最右侧；(用单引号)
 <h3 id="grep家庭有三个命令："><a class="header-anchor" href="#grep家庭有三个命令："></a>grep家庭有三个命令：</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="comment">#基本正则表达式</span></span><br><span class="line">	-E <span class="comment">#扩展正则表达式</span></span><br><span class="line">	-F <span class="comment">#不支持正则表达式</span></span><br><span class="line">egrep <span class="comment">#扩展正则表达式</span></span><br><span class="line">fgrep <span class="comment">#不支持正则表达式</span></span><br></pre></td></tr></table></figure>
 <h3 id="字符匹配："><a class="header-anchor" href="#字符匹配："></a>字符匹配：</h3>
-<p>.: 任意单个字符
-[]:
-[^]:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">. 	<span class="comment"># 任意单个字符</span></span><br><span class="line">[]</span><br><span class="line">[^]</span><br></pre></td></tr></table></figure>
 <h3 id="次数匹配："><a class="header-anchor" href="#次数匹配："></a>次数匹配：</h3>
-<ul>
-<li></li>
-</ul>
-<p>?: 0次或1次；
-+: 1次以上；
-{m}: 精确匹配m次；
-{m,n}: 至少m次，至多n次；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*</span><br><span class="line">?: 		<span class="comment"># 0次或1次；</span></span><br><span class="line">+: 		<span class="comment"># 1次以上；</span></span><br><span class="line">&#123;m&#125;: 	<span class="comment"># 精确匹配m次；</span></span><br><span class="line">&#123;m,n&#125;:  <span class="comment"># 至少m次，至多n次；</span></span><br></pre></td></tr></table></figure>
 <h3 id="位置锚定"><a class="header-anchor" href="#位置锚定"></a>位置锚定</h3>
-<p>^: 行首锚定；用于模式的最左侧；
-$: 行尾锚定；用于模式的最右侧；(用单引号)
-&lt;, \b: 词首锚定；用于表示单词的模式的左侧；
-&gt;, \b：词尾锚定；用于表示单词的模式的右侧；
-^$: 空白行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">^: 		<span class="comment"># 行首锚定；用于模式的最左侧；</span></span><br><span class="line">$: 		<span class="comment"># 行尾锚定；用于模式的最右侧；(用单引号)</span></span><br><span class="line">\&lt;, \b: <span class="comment"># 词首锚定；用于表示单词的模式的左侧；</span></span><br><span class="line">\&gt;, \b：<span class="comment"># 词尾锚定；用于表示单词的模式的右侧；</span></span><br><span class="line">^$: 	<span class="comment"># 空白行</span></span><br></pre></td></tr></table></figure>
 <h3 id="或者"><a class="header-anchor" href="#或者"></a>或者</h3>
-<p>(a|b)wk # awk或者bwk</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a|b)wk <span class="comment"># awk或者bwk</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>显示/etc/passwd文件中以bash结尾的行</li>
 </ul>
@@ -210,7 +162,7 @@ $: 行尾锚定；用于模式的最右侧；(用单引号)
     <link href="http://molloc.me/2015/08/25/ZY-2015-08-25/"/>
     <id>http://molloc.me/2015/08/25/ZY-2015-08-25/</id>
     <published>2015-08-25T15:39:11.000Z</published>
-    <updated>2015-08-30T14:44:54.628Z</updated>
+    <updated>2015-08-30T14:52:01.752Z</updated>
     <content type="html"><![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
 <p><em>用户和组管理的相关命令,useradd、usermod、passwd、userdel groupadd、groupmod、gpasswd、groupdel chage、chsh、chfn id、su</em></p>
 <a id="more"></a>
