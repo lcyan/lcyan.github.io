@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-08-30T14:54:09.158Z</updated>
+  <updated>2015-09-09T15:58:57.775Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -13,6 +13,79 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[ZY-2015-09-05]]></title>
+    <link href="http://molloc.me/2015/09/09/ZY-2015-09-05/"/>
+    <id>http://molloc.me/2015/09/09/ZY-2015-09-05/</id>
+    <published>2015-09-09T14:18:46.000Z</published>
+    <updated>2015-09-09T15:58:57.775Z</updated>
+    <content type="html"><![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
+<h2 id="linux上的任务计划"><a class="header-anchor" href="#linux上的任务计划"></a>Linux上的任务计划</h2>
+<h3 id="任务计划"><a class="header-anchor" href="#任务计划"></a>任务计划</h3>
+<ul>
+<li>在未来时间点一次性执行某任务: <code>at, batch</code></li>
+<li>周期性执行某任务: <code>crontab</code></li>
+</ul>
+<h3 id="电子邮件服务"><a class="header-anchor" href="#电子邮件服务"></a>电子邮件服务</h3>
+<ul>
+<li>smtp: Simple Mail Transfer Protocol</li>
+<li>POP3: Post Office Protocol - Version 3</li>
+<li>imap4: Internet Message Access Protocol 4 交互式数据消息访问协议第四个版本</li>
+</ul>
+<p>linux中mail的存放路径<code>/var/sool/mail/USERNAME</code></p>
+<a id="more"></a>
+<h2 id="邮件相关概念"><a class="header-anchor" href="#邮件相关概念"></a>邮件相关概念</h2>
+<ul>
+<li>邮件用户代理（MUA，Mail User Agent）(mail,mailx)</li>
+<li>邮件传送代理（MTA，Mail Transport Agent）(sendmail)</li>
+<li>邮件分发代理（MDA，Mail Deliver Agent）</li>
+<li>通俗的说MUA就是用户使用的客户端，而MTA则是真正发送邮件的发送进程，MUA编写的邮件最终也交由MTA发送至目标端。</li>
+<li>mail和mailx即为负责查看、编写邮件和向MTA发送邮件的MUA。mailx是mail的功能加强版。</li>
+<li>sendmail即为负责邮件在网络上传输的MTA，将邮件从一个MTA传送至另一个MTA。</li>
+</ul>
+<h2 id="mailx"><a class="header-anchor" href="#mailx"></a>mailx</h2>
+<p><strong>mailx - 发送和接收 Internet 邮件</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## SYNOPSIS</span></span><br><span class="line">mailx [-BDdEFintv~] [<span class="operator">-s</span> subject] [<span class="operator">-a</span> attachment ] [-c cc-addr] [-b bcc-addr] [-r from-addr] [-h hops] [-A account] to-addr</span><br><span class="line">      . . .</span><br><span class="line">mailx [-BDdeEHiInNRv~] [-T name] [-A account] [-S variable[=value]] <span class="operator">-f</span> [name]</span><br><span class="line">mailx [-BDdeE<span class="keyword">in</span>NRv~] [-A account] [-S variable[=value]] [-u user]</span><br><span class="line"></span><br><span class="line"><span class="comment">## -s subject //指定邮件的主题,有空格需要引号引起来</span></span><br><span class="line">$ mailx <span class="operator">-s</span> <span class="string">'hello mailx'</span> root@localhost <span class="comment"># 进入交互式收发邮件接口</span></span><br><span class="line">hello new world.</span><br><span class="line">...</span><br><span class="line"><span class="comment">#CTRL+D (保存退出)</span></span><br><span class="line"></span><br><span class="line">$ mailx</span><br><span class="line">--&gt; Heirloom Mail version <span class="number">12.5</span> <span class="number">7</span>/<span class="number">5</span>/<span class="number">10</span>.  Type ? <span class="keyword">for</span> help.</span><br><span class="line">	<span class="string">"/var/spool/mail/root"</span>: <span class="number">3</span> messages <span class="number">1</span> new <span class="number">2</span> unread</span><br><span class="line">	 U  <span class="number">1</span> user@localhost.local  Wed Aug <span class="number">19</span> <span class="number">23</span>:<span class="number">07</span> <span class="number">709</span>/<span class="number">52085</span> <span class="string">"[abrt] full crash report"</span></span><br><span class="line">	    <span class="number">2</span> root                  Wed Sep  <span class="number">9</span> <span class="number">22</span>:<span class="number">55</span>  <span class="number">19</span>/<span class="number">619</span>   <span class="string">"hello mailx"</span></span><br><span class="line">	&gt;N  <span class="number">3</span> root                  Wed Sep  <span class="number">9</span> <span class="number">23</span>:<span class="number">01</span>  <span class="number">18</span>/<span class="number">629</span>   <span class="string">"hello mailx"</span></span><br><span class="line">&amp;(此处键入编号查看邮件内容)</span><br><span class="line">&amp;(输入quit退出)</span><br><span class="line"></span><br><span class="line">$ mailx <span class="operator">-s</span> <span class="string">'hello mailx'</span> root@localhost &lt; cat /PATH/FROM/SOMEFILE</span><br><span class="line">$ COMMAND | mailx <span class="operator">-s</span> <span class="string">'hello mailx'</span> root@localhost</span><br></pre></td></tr></table></figure>
+<h2 id="at"><a class="header-anchor" href="#at"></a>at</h2>
+<p><strong>at - 在一个指定的时间执行一个指定任务，只能执行一次，且需要开启atd进程,支持使用作业队列,默认使用a队列</strong></p>
+<ul>
+<li>at 在一个指定的时间执行COMMAND</li>
+<li>atq &lt;==&gt; at -l 列出用户未执行的job,只有超级用户可以查看所有用户的job.其他用户只能查看自己的Job.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## SYNOPSIS</span></span><br><span class="line">at [OPTION]... TIME</span><br><span class="line"></span><br><span class="line"><span class="comment">## 常用参数</span></span><br><span class="line">-m 当指定的任务被完成之后，将给用户发送邮件，即使没有标准输出</span><br><span class="line">-I atq的别名</span><br><span class="line"><span class="operator">-d</span> atrm的别名</span><br><span class="line">-v 显示任务将被执行的时间</span><br><span class="line">-c 打印任务的内容到标准输出</span><br><span class="line">-V 显示版本信息</span><br><span class="line">-q&lt;列队&gt; 使用指定的列队</span><br><span class="line"><span class="operator">-f</span>&lt;文件&gt; 从指定文件读入任务而不是从标准输入读入</span><br><span class="line">-t&lt;时间参数&gt; 以时间参数的形式提交要运行的任务</span><br><span class="line"></span><br><span class="line"><span class="comment">## 操作实践</span></span><br><span class="line">$ at now+<span class="number">3</span>minutes</span><br><span class="line">at&gt; cat /etc/passwd</span><br><span class="line">&lt;CTRL+D&gt;</span><br><span class="line"></span><br><span class="line">$ atq</span><br><span class="line">--&gt; <span class="number">1</span>	Thu Sep <span class="number">10</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> <span class="number">2015</span> a centos</span><br><span class="line">	<span class="number">2</span>	Wed Sep  <span class="number">9</span> <span class="number">23</span>:<span class="number">38</span>:<span class="number">00</span> <span class="number">2015</span> a admin</span><br><span class="line"></span><br><span class="line"><span class="comment">#1 三天后的下午 5 点钟执行 /bin/ls</span></span><br><span class="line">$ at <span class="number">5</span>pm + <span class="number">3</span>days</span><br><span class="line">at&gt; /bin/ls</span><br><span class="line">&lt;CTRL+D&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#2 明天17点钟，输出时间到指定文件内</span></span><br><span class="line">$ at <span class="number">17</span>:<span class="number">00</span> tomorrow</span><br><span class="line">at&gt; date &gt; /tmp/date.log</span><br><span class="line">&lt;CTRL+D&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#3 计划任务设定后，在没有执行之前我们可以用atq命令来查看系统没有执行工作任务</span></span><br><span class="line">$ atq</span><br><span class="line">--&gt; <span class="number">1</span>	Thu Sep <span class="number">10</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> <span class="number">2015</span> a centos</span><br><span class="line">	<span class="number">3</span>	Thu Sep <span class="number">10</span> <span class="number">12</span>:<span class="number">00</span>:<span class="number">00</span> <span class="number">2015</span> a root</span><br><span class="line">	<span class="number">4</span>	Thu Sep <span class="number">10</span> <span class="number">16</span>:<span class="number">00</span>:<span class="number">00</span> <span class="number">2015</span> a root</span><br><span class="line">	<span class="number">5</span>	Thu Sep <span class="number">10</span> <span class="number">17</span>:<span class="number">00</span>:<span class="number">00</span> <span class="number">2015</span> a root</span><br><span class="line"></span><br><span class="line"><span class="comment">#4 删除已经设置的任务</span></span><br><span class="line">$ atrm <span class="number">5</span></span><br><span class="line">$ atq</span><br><span class="line">--&gt; <span class="number">1</span>	Thu Sep <span class="number">10</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> <span class="number">2015</span> a centos</span><br><span class="line">		<span class="number">3</span>	Thu Sep <span class="number">10</span> <span class="number">12</span>:<span class="number">00</span>:<span class="number">00</span> <span class="number">2015</span> a root</span><br><span class="line">		<span class="number">4</span>	Thu Sep <span class="number">10</span> <span class="number">16</span>:<span class="number">00</span>:<span class="number">00</span> <span class="number">2015</span> a root</span><br><span class="line"></span><br><span class="line"><span class="comment">#5 显示已经设置的任务内容</span></span><br><span class="line">$ at -c <span class="number">1</span></span><br><span class="line">--&gt; <span class="comment">#!/bin/sh</span></span><br><span class="line">	<span class="comment"># atrun uid=1001 gid=1001</span></span><br><span class="line">	<span class="comment"># mail centos 0</span></span><br><span class="line">	<span class="built_in">umask</span> <span class="number">2</span></span><br><span class="line">	XDG_SESSION_ID=<span class="number">14</span>; <span class="built_in">export</span> XDG_SESSION_ID</span><br><span class="line">	HOSTNAME=kernel; <span class="built_in">export</span> HOSTNAME</span><br><span class="line">	SHELL=/bin/bash; <span class="built_in">export</span> SHELL</span><br><span class="line">	HISTSIZE=<span class="number">1000</span>; <span class="built_in">export</span> HISTSIZE</span><br><span class="line">	...</span><br><span class="line">	cat ~/.bashrc</span><br><span class="line">	marcinDELIMITER2ccbf31a</span><br></pre></td></tr></table></figure>
+<h2 id="at允许使用一套相当复杂的指定时间的方法-他能够接受在当天的hh-mm-小时-分钟-式的时间指定-假如该时间已过去-那么就放在第二天执行-当然也能够使用midnight-深夜-noon-中午-teatime-饮茶时间-一般是下午4点-等比较模糊的-词语来指定时间-用户还能够采用12小时计时制-即在时间后面加上am-上午-或pm-下午-来说明是上午还是下午-也能够指定命令执行的具体日期-指定格式为month-day-月-日-或mm-dd-yy-月-日-年-或dd-mm-yy-日-月-年-指定的日期必须跟在指定时间的后面-上面介绍的都是绝对计时法-其实还能够使用相对计时法-这对于安排不久就要执行的命令是很有好处的-指定格式为：now-count-time-units-now就是当前时间-time-units是时间单位-这里能够是minutes-分钟-hours-小时-days-天-weeks-星期-count是时间的数量-究竟是几天-还是几小时-等等-更有一种计时方法就是直接使用today-今天-tomorrow-明天-来指定完成命令的时间"><a class="header-anchor" href="#at允许使用一套相当复杂的指定时间的方法-他能够接受在当天的hh-mm-小时-分钟-式的时间指定-假如该时间已过去-那么就放在第二天执行-当然也能够使用midnight-深夜-noon-中午-teatime-饮茶时间-一般是下午4点-等比较模糊的-词语来指定时间-用户还能够采用12小时计时制-即在时间后面加上am-上午-或pm-下午-来说明是上午还是下午-也能够指定命令执行的具体日期-指定格式为month-day-月-日-或mm-dd-yy-月-日-年-或dd-mm-yy-日-月-年-指定的日期必须跟在指定时间的后面-上面介绍的都是绝对计时法-其实还能够使用相对计时法-这对于安排不久就要执行的命令是很有好处的-指定格式为：now-count-time-units-now就是当前时间-time-units是时间单位-这里能够是minutes-分钟-hours-小时-days-天-weeks-星期-count是时间的数量-究竟是几天-还是几小时-等等-更有一种计时方法就是直接使用today-今天-tomorrow-明天-来指定完成命令的时间"></a>at允许使用一套相当复杂的指定时间的方法。他能够接受在当天的hh:mm（小时:分钟）式的时间指定。假如该时间已过去，那么就放在第二天执行。当然也能够使用midnight（深夜），noon（中午），teatime（饮茶时间，一般是下午4点）等比较模糊的 词语来指定时间。用户还能够采用12小时计时制，即在时间后面加上AM（上午）或PM（下午）来说明是上午还是下午。 也能够指定命令执行的具体日期，指定格式为month day（月 日）或mm/dd/yy（月/日/年）或dd.mm.yy（日.月.年）。指定的日期必须跟在指定时间的后面。 上面介绍的都是绝对计时法，其实还能够使用相对计时法，这对于安排不久就要执行的命令是很有好处的。指定格式为：now + count time-units ，now就是当前时间，time-units是时间单位，这里能够是minutes（分钟）、hours（小时）、days（天）、weeks（星期）。count是时间的数量，究竟是几天，还是几小时，等等。 更有一种计时方法就是直接使用today（今天）、tomorrow（明天）来指定完成命令的时间。</h2>
+<p>既然是计划任务，那么应该会有任务执行的方式，并且将这些任务排进行程表中。那么产生计划任务的方式是怎么进行的? 事实上，我们使用 at 这个命令来产生所要运行的计划任务，并将这个计划任务以文字档的方式写入 /var/spool/at/ 目录内，该工作便能等待 atd 这个服务的取用与运行了。就这么简单。
+不过，并不是所有的人都可以进行 at 计划任务。为什么? 因为系统安全的原因。很多主机被所谓的攻击破解后，最常发现的就是他们的系统当中多了很多的黑客程序， 这些程序非常可能运用一些计划任务来运行或搜集你的系统运行信息,并定时的发送给黑客。 所以，除非是你认可的帐号，否则先不要让他们使用 at 命令。那怎么达到使用 at 的可控呢?
+我们可以利用 /etc/at.allow 与 /etc/at.deny 这两个文件来进行 at 的使用限制。加上这两个文件后， at 的工作情况是这样的：
+先找寻 /etc/at.allow 这个文件，写在这个文件中的使用者才能使用 at ，没有在这个文件中的使用者则不能使用 at (即使没有写在 at.deny 当中);
+如果 /etc/at.allow 不存在，就寻找 /etc/at.deny 这个文件，若写在这个 at.deny 的使用者则不能使用 at ，而没有在这个 at.deny 文件中的使用者，就可以使用 at 命令了。
+如果两个文件都不存在，那么只有 root 可以使用 at 这个命令。
+透过这个说明，我们知道 /etc/at.allow 是管理较为严格的方式，而 /etc/at.deny 则较为松散 (因为帐号没有在该文件中，就能够运行 at 了)。在一般的 distributions 当中，由于假设系统上的所有用户都是可信任的， 因此系统通常会保留一个空的 /etc/at.deny 文件，意思是允许所有人使用 at 命令的意思 (您可以自行检查一下该文件)。 不过，万一你不希望有某些使用者使用 at 的话，将那个使用者的帐号写入 /etc/at.deny 即可！ 一个帐号写一行。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
+<h2 id="linux上的任务计划"><a class="header-anchor" href="#linux上的任务计划"></a>Linux上的任务计划</h2>
+<h3 id="任务计划"><a class="header-anchor" href="#任务计划"></a>任务计划</h3>
+<ul>
+<li>在未来时间点一次性执行某任务: <code>at, batch</code></li>
+<li>周期性执行某任务: <code>crontab</code></li>
+</ul>
+<h3 id="电子邮件服务"><a class="header-anchor" href="#电子邮件服务"></a>电子邮件服务</h3>
+<ul>
+<li>smtp: Simple Mail Transfer Protocol</li>
+<li>POP3: Post Office Protocol - Version 3</li>
+<li>imap4: Internet Message Access Protocol 4 交互式数据消息访问协议第四个版本</li>
+</ul>
+<p>linux中mail的存放路径<code>/var/sool/mail/USERNAME</code></p>]]>
+    
+    </summary>
+    
+      <category term="linux" scheme="http://molloc.me/tags/linux/"/>
+    
+      <category term="作业" scheme="http://molloc.me/categories/%E4%BD%9C%E4%B8%9A/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[ZY-2015-08-27]]></title>
@@ -3001,207 +3074,6 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
       <category term="linux" scheme="http://molloc.me/tags/linux/"/>
     
       <category term="探索发现" scheme="http://molloc.me/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[pmp计算题汇总]]></title>
-    <link href="http://molloc.me/2015/06/02/pmp%E8%AE%A1%E7%AE%97%E9%A2%98%E6%B1%87%E6%80%BB/"/>
-    <id>http://molloc.me/2015/06/02/pmp计算题汇总/</id>
-    <published>2015-06-02T05:33:39.000Z</published>
-    <updated>2015-06-28T07:42:35.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="回收期-payback-period"><a class="header-anchor" href="#回收期-payback-period"></a>回收期(Payback Period)</h2>
-<ul>
-<li>概念: 回收成本所需的时间</li>
-<li>选择的原则: 越短越好</li>
-</ul>
-<h2 id="投资回报率-bcr"><a class="header-anchor" href="#投资回报率-bcr"></a>投资回报率(BCR)</h2>
-<ul>
-<li>用预期收益除以预期成本所得出的比例(投资一元钱带来几元钱的回报)</li>
-<li>BCR的范围:
-<ul>
-<li>BCR = 1.0时,项目不陪不赚</li>
-<li>BCR &gt; 1.0时,比例越高盈利越大</li>
-<li>BCR = 1.0时,实施该项目会赔钱</li>
-</ul>
-</li>
-</ul>
-<a id="more"></a>
-<h2 id="投资利润率-roi"><a class="header-anchor" href="#投资利润率-roi"></a>投资利润率(ROI)</h2>
-<ul>
-<li>概念: 利润 = 收益 - 成本 - 税金</li>
-<li>ROI的范围:
-<ul>
-<li>ROI = 1.0时,项目不陪不赚</li>
-<li>ROI &gt; 1.0时,比例越高盈利越大</li>
-<li>ROI = 1.0时,实施该项目会赔钱</li>
-</ul>
-</li>
-</ul>
-<h2 id="净现值-npv"><a class="header-anchor" href="#净现值-npv"></a>净现值(NPV)</h2>
-<ul>
-<li>概念: $NPV = ∑[A/(1+r)^t -原始投入]$</li>
-<li>现值(Present Value, PV): 将来时点上发生的资金折现后的资金金额</li>
-<li>终值或将来值(Future Value, FV): 与现在等值的将来某时点上的资金金额</li>
-<li>常用的计算公式:
-<ul>
-<li>$FV = PV * (1 + R)^n$</li>
-<li>$PV = FV / (1 + R)^n$</li>
-<li>注: R为年利率, $(1 + R)^n$为复利因子</li>
-</ul>
-</li>
-<li>NPV的范围:
-<ul>
-<li>NPV &gt;= 0 项目可接受</li>
-<li>NPV &lt; 0 项目不可接受</li>
-<li>NPV越大越好,抵御风险能力强</li>
-</ul>
-</li>
-</ul>
-<h2 id="内部收益率-irr"><a class="header-anchor" href="#内部收益率-irr"></a>内部收益率(IRR)</h2>
-<ul>
-<li>内容: 在净现值NPV = 零时的贴现率(贴现率最低可接受的最低投资回报率)</li>
-<li>IRR的范围:
-<ul>
-<li>IRR &gt;= 行业收益率,项目可接受</li>
-<li>IRR &lt; 行业收益率, 项目不可接受</li>
-</ul>
-</li>
-</ul>
-<h2 id="直线法-平均年限法-straight-line"><a class="header-anchor" href="#直线法-平均年限法-straight-line"></a>直线法,平均年限法(Straight line)</h2>
-<ul>
-<li>概念: 将折旧均匀地分摊到各期(一般以年记)的一种方法</li>
-<li>公式: $(原值 - 残值) / 使用年限$</li>
-</ul>
-<h2 id="双倍折旧法"><a class="header-anchor" href="#双倍折旧法"></a>双倍折旧法</h2>
-<ul>
-<li>双倍余额递减法(Double declining balance)
-<ul>
-<li>概念: 在不考虑残值的情况下,以平均年限法折旧率(不扣残值)的两倍作为折旧率(特殊情况:最后两年折旧同,需要减残值再除以2)</li>
-<li>公式: $(原值 - 累计折扣) * (2 / 预计的折旧年限)$ #最后两年: (原值 - 累计折旧 - 残值) / 2</li>
-</ul>
-</li>
-<li>年数总和法(Sum of the years digit)
-<ul>
-<li>概念: 原值减去残值后的净额乘以一个逐年递减的分数计算每年的折旧额</li>
-<li>公式: $(原值 - 残值) * (尚可使用年数 / 年数序列总和)$</li>
-</ul>
-</li>
-</ul>
-<h2 id="挣值管理"><a class="header-anchor" href="#挣值管理"></a>挣值管理</h2>
-<ul>
-<li>计划价值(Planned Value,PV)
-<ul>
-<li>概念: 是为某活动或工作分解结构组成部分的预定工作进度而分配且经批准的预算</li>
-<li>公式: $PV = 计划要完成的工作量 * 预算单价$</li>
-</ul>
-</li>
-<li>BAC和PMB
-<ul>
-<li>概念: PV的总和有时被称为绩效测量基准(PMB),项目的总计划价值又被称为完工预算(BAC)</li>
-<li>公式: $∑EV = ∑PV = BAC = PMB$</li>
-</ul>
-</li>
-<li>实际成本(Actual Cost, AC)
-<ul>
-<li>概念: 是为完成活动或工作分解结构组成部分的工作,而实际发生并记录在案的总成本</li>
-<li>公式: $AC = 实际已完成的工作量 * 实际单价$</li>
-</ul>
-</li>
-<li>挣值(Earned value, EV)
-<ul>
-<li>概念: 是项目活动或工作分解结构组成部分的已完成工作的价值,用分配给该工作的预算来标识.</li>
-<li>公式: $EV = 实际已完成的工作量 * 预算单价$</li>
-</ul>
-</li>
-<li>进度绩效指数
-<ul>
-<li>进度偏差(Schedule Variance, SV)
-<ul>
-<li>公式: $SV = EV - PV$</li>
-</ul>
-</li>
-<li>进度绩效指数(Schedule Performance Index, SPI)
-<ul>
-<li>公式: $SPI = EV / PV$</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>成本绩效指数
-<ul>
-<li>成本偏差(Cost Variance, CV)
-<ul>
-<li>公式: $CV = EV - AC$</li>
-</ul>
-</li>
-<li>成本绩效指数(Cost Performance Index, CPI)
-<ul>
-<li>公式: $CPI = EV / AC$</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>完工估算(Estimate At Completion, EAC)
-<ul>
-<li>情景 -&gt; 通用 -&gt; 公式: $EAC = AC + ETC$</li>
-<li>情景 -&gt; 典型 -&gt; 公式: $EAC = BAC / CPI$ #假设项目将按截至目前的情况(目前的累计CPI继续实施)</li>
-</ul>
-</li>
-<li>完工尚需估算(Estimate To completion ETC)
-<ul>
-<li>公式
-<ul>
-<li>$ETC = (BAC - EV) / (累计CPI * 累计SPI)$ #SPI*CPI可称为关键比率(CR)</li>
-<li>$EAC = AC + 自下而上的ETC$</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>完工偏差(Variance At Completion, VAC)
-<ul>
-<li>公式: VAC = BAC - EAC</li>
-</ul>
-</li>
-<li>完工尚需绩效指数
-<ul>
-<li>公式
-<ul>
-<li>$TCPI = (BAC - EV) / (BAC - AC)$</li>
-<li>$TCPI = (BAC - EV) / (EAC - AC)$</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="总价加激励费用合同-fix-price-incentive-fee-contracts-fpif"><a class="header-anchor" href="#总价加激励费用合同-fix-price-incentive-fee-contracts-fpif"></a>总价加激励费用合同(Fix Price Incentive Fee Contracts FPIF)</h2>
-<ul>
-<li>计算公式为: 合同总价 = 实际成本 + 目标利润 + (目标成本 - 实际成本) * 卖方分享比率.</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="回收期-payback-period"><a class="header-anchor" href="#回收期-payback-period"></a>回收期(Payback Period)</h2>
-<ul>
-<li>概念: 回收成本所需的时间</li>
-<li>选择的原则: 越短越好</li>
-</ul>
-<h2 id="投资回报率-bcr"><a class="header-anchor" href="#投资回报率-bcr"></a>投资回报率(BCR)</h2>
-<ul>
-<li>用预期收益除以预期成本所得出的比例(投资一元钱带来几元钱的回报)</li>
-<li>BCR的范围:
-<ul>
-<li>BCR = 1.0时,项目不陪不赚</li>
-<li>BCR &gt; 1.0时,比例越高盈利越大</li>
-<li>BCR = 1.0时,实施该项目会赔钱</li>
-</ul>
-</li>
-</ul>]]>
-    
-    </summary>
-    
-      <category term="pmp" scheme="http://molloc.me/tags/pmp/"/>
-    
-      <category term="工作相关" scheme="http://molloc.me/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
