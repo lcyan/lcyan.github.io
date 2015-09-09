@@ -106,6 +106,12 @@
 <li>smtp: Simple Mail Transfer Protocol</li>
 <li>POP3: Post Office Protocol - Version 3</li>
 <li>imap4: Internet Message Access Protocol 4 交互式数据消息访问协议第四个版本</li>
+<li>邮件用户代理（MUA，Mail User Agent）(mail,mailx)</li>
+<li>邮件传送代理（MTA，Mail Transport Agent）(sendmail)</li>
+<li>邮件分发代理（MDA，Mail Deliver Agent）</li>
+<li>通俗的说MUA就是用户使用的客户端，而MTA则是真正发送邮件的发送进程，MUA编写的邮件最终也交由MTA发送至目标端。</li>
+<li>mail和mailx即为负责查看、编写邮件和向MTA发送邮件的MUA。mailx是mail的功能加强版。</li>
+<li>sendmail即为负责邮件在网络上传输的MTA，将邮件从一个MTA传送至另一个MTA。</li>
 </ul>
 <p>linux中mail的存放路径<code>/var/sool/mail/USERNAME</code></p>
         

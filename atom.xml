@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-09-09T16:09:53.192Z</updated>
+  <updated>2015-09-09T16:12:59.938Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://molloc.me/2015/09/09/ZY-2015-09-05/"/>
     <id>http://molloc.me/2015/09/09/ZY-2015-09-05/</id>
     <published>2015-09-09T14:18:46.000Z</published>
-    <updated>2015-09-09T16:09:53.192Z</updated>
+    <updated>2015-09-09T16:12:59.938Z</updated>
     <content type="html"><![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
 <h2 id="linux上的任务计划"><a class="header-anchor" href="#linux上的任务计划"></a>Linux上的任务计划</h2>
 <h3 id="任务计划"><a class="header-anchor" href="#任务计划"></a>任务计划</h3>
@@ -32,11 +32,6 @@
 <li>smtp: Simple Mail Transfer Protocol</li>
 <li>POP3: Post Office Protocol - Version 3</li>
 <li>imap4: Internet Message Access Protocol 4 交互式数据消息访问协议第四个版本</li>
-</ul>
-<p>linux中mail的存放路径<code>/var/sool/mail/USERNAME</code></p>
-<a id="more"></a>
-<h2 id="邮件相关概念"><a class="header-anchor" href="#邮件相关概念"></a>邮件相关概念</h2>
-<ul>
 <li>邮件用户代理（MUA，Mail User Agent）(mail,mailx)</li>
 <li>邮件传送代理（MTA，Mail Transport Agent）(sendmail)</li>
 <li>邮件分发代理（MDA，Mail Deliver Agent）</li>
@@ -44,6 +39,8 @@
 <li>mail和mailx即为负责查看、编写邮件和向MTA发送邮件的MUA。mailx是mail的功能加强版。</li>
 <li>sendmail即为负责邮件在网络上传输的MTA，将邮件从一个MTA传送至另一个MTA。</li>
 </ul>
+<p>linux中mail的存放路径<code>/var/sool/mail/USERNAME</code></p>
+<a id="more"></a>
 <h2 id="相关命令"><a class="header-anchor" href="#相关命令"></a>相关命令</h2>
 <h3 id="mailx"><a class="header-anchor" href="#mailx"></a>mailx</h3>
 <p><strong>mailx - 发送和接收 Internet 邮件</strong></p>
@@ -83,6 +80,12 @@
 <li>smtp: Simple Mail Transfer Protocol</li>
 <li>POP3: Post Office Protocol - Version 3</li>
 <li>imap4: Internet Message Access Protocol 4 交互式数据消息访问协议第四个版本</li>
+<li>邮件用户代理（MUA，Mail User Agent）(mail,mailx)</li>
+<li>邮件传送代理（MTA，Mail Transport Agent）(sendmail)</li>
+<li>邮件分发代理（MDA，Mail Deliver Agent）</li>
+<li>通俗的说MUA就是用户使用的客户端，而MTA则是真正发送邮件的发送进程，MUA编写的邮件最终也交由MTA发送至目标端。</li>
+<li>mail和mailx即为负责查看、编写邮件和向MTA发送邮件的MUA。mailx是mail的功能加强版。</li>
+<li>sendmail即为负责邮件在网络上传输的MTA，将邮件从一个MTA传送至另一个MTA。</li>
 </ul>
 <p>linux中mail的存放路径<code>/var/sool/mail/USERNAME</code></p>]]>
     
