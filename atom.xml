@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-09-09T16:12:59.938Z</updated>
+  <updated>2015-09-10T16:11:08.046Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://molloc.me/2015/09/09/ZY-2015-09-05/"/>
     <id>http://molloc.me/2015/09/09/ZY-2015-09-05/</id>
     <published>2015-09-09T14:18:46.000Z</published>
-    <updated>2015-09-09T16:12:59.938Z</updated>
+    <updated>2015-09-10T16:11:08.046Z</updated>
     <content type="html"><![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
 <h2 id="linux上的任务计划"><a class="header-anchor" href="#linux上的任务计划"></a>Linux上的任务计划</h2>
 <h3 id="任务计划"><a class="header-anchor" href="#任务计划"></a>任务计划</h3>
@@ -66,6 +66,57 @@
 <p>指定的日期必须跟在指定时间的后面。上面介绍的都是绝对计时法，其实还能够使用相对计时法，这对于安排不久就要执行的命令是很有好处的。</p>
 <p>指定格式为：now + count time-units ，now就是当前时间，timeunits是时间单位，这里能够是minutes（分钟）、hours（小时）、days（天）、weeks（星期）。count是时间的数量，究竟是几天，还是几小时，等等。</p>
 <p>更有一种计时方法就是直接使用today（今天）、tomorrow（明天）来指定完成命令的时间。</p>
+<h3 id="batch"><a class="header-anchor" href="#batch"></a>batch</h3>
+<p>由系统自行选择在资源较为空闲时运行指定的任务；</p>
+<h3 id="crontab"><a class="header-anchor" href="#crontab"></a>crontab</h3>
+<p><strong>at - 周期性任务计划，且需要开启crond进程</strong></p>
+<p>Linux下的任务调度分为两类，系统任务调度和用户任务调度。</p>
+<ol>
+<li>
+<p>系统cron任务；没有默认运行用户身份，所以需要额外指定运行者；
+<code>/etc/crontab</code>
+vim命令</p>
+<h1>Example of job definition:</h1>
+<h1>.---------------- minute (0 - 59)</h1>
+<h1>|  .------------- hour (0 - 23)</h1>
+<h1>|  |  .---------- day of month (1 - 31)</h1>
+<h1>|  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</h1>
+<h1>|  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</h1>
+<h1>|  |  |  |  |</h1>
+<h1>*  *  *  *  * user-name  command to be executed</h1>
+<p>7个字段：
+前5个字段：时间点
+user-name: 以哪个用户的身份运行任务
+command to be executed: 要运行任务</p>
+</li>
+<li>
+<p>用户cron任务：由某个用户所提交，默认就以提交者的身份运行，所以无需额外指定运行者；
+<code>/var/spool/cron/USERNAME</code>
+vim命令；不建议
+crontab命令：建议</p>
+<h1>Example of job definition:</h1>
+<pre><code>             # .---------------- minute (0 - 59)
+             # |  .------------- hour (0 - 23)
+             # |  |  .---------- day of month (1 - 31)
+             # |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+             # |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+             # |  |  |  |  |
+             # *  *  *  *  *  command to be executed
+</code></pre>
+</li>
+</ol>
+<p>5个时间点：分钟(0-59),小时(0-23),日(1-31)月(1-12),周(0-7)</p>
+<ul>
+<li>注意：几月几号与4周几，不建议同时使用；*</li>
+</ul>
+<p>时间表示法：</p>
+<ul>
+<li>*: 对应时间点有效取值范围内的每个时间点；</li>
+<li>-: 一个特定连续时间范围, 3-7</li>
+<li>,：一个离散的时间点, 3,5,7</li>
+<li>/#：有效时间范围内的每多少时间；用于指定频率；1-30/4, */4</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## SYNOPSIS</span></span><br><span class="line">at [OPTION]... TIME</span><br><span class="line">crontab [-u user] file</span><br><span class="line">crontab [-u user] [<span class="operator">-l</span> | -r | <span class="operator">-e</span>] [-i] [<span class="operator">-s</span>]</span><br><span class="line">crontab -n [ hostname ]</span><br><span class="line">crontab -c</span><br><span class="line"></span><br><span class="line"><span class="comment">## 常用参数</span></span><br><span class="line">-u user: 不是管理自己的cron任务，而是指定的目标用户的cron任务；仅root拥有管理其它用户的cron任务的权限；默认管理自己的；</span><br><span class="line"><span class="operator">-l</span>: list，列出任务；</span><br><span class="line">-r: remove, 移除所有任务；</span><br><span class="line"><span class="operator">-e</span>: edit，编辑，打开一当前shell会话的默认编辑器来编辑cron任务表；</span><br><span class="line">-i: 在删除用户的crontab文件时给确认提示。</span><br><span class="line"></span><br><span class="line"><span class="comment">## 操作实践</span></span><br><span class="line">$ crontab <span class="operator">-e</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#1 用gentoo创建一个新的crontab文件</span></span><br><span class="line">$ crontab <span class="operator">-e</span></span><br><span class="line">--&gt; no crontab <span class="keyword">for</span> gentoo - using an empty one</span><br><span class="line">	crontab: installing new crontab</span><br><span class="line"></span><br><span class="line">$ crontab <span class="operator">-l</span></span><br><span class="line">--&gt; * * * * * `<span class="built_in">which</span> ls --skip-alias` .</span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
     <![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
