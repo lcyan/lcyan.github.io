@@ -40,7 +40,7 @@ Linux上的任务计划
 smtp: Simple Mail Transfer Protocol
 POP3: Post Office Protocol - Version 3
 imap4: Internet Message Access">
-<meta property="og:updated_time" content="2015-09-10T16:11:08.046Z">
+<meta property="og:updated_time" content="2015-09-10T16:14:07.205Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZY-2015-09-05">
 <meta name="twitter:description" content="文中 --&amp;gt; 为开头的为命令行的输出.
@@ -129,7 +129,7 @@ imap4: Internet Message Access">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux上的任务计划"><span class="toc-number">1.</span> <span class="toc-text">Linux上的任务计划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#任务计划"><span class="toc-number">1.1.</span> <span class="toc-text">任务计划</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#电子邮件服务"><span class="toc-number">1.2.</span> <span class="toc-text">电子邮件服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关命令"><span class="toc-number">2.</span> <span class="toc-text">相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mailx"><span class="toc-number">2.1.</span> <span class="toc-text">mailx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#at"><span class="toc-number">2.2.</span> <span class="toc-text">at</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#batch"><span class="toc-number">2.3.</span> <span class="toc-text">batch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#crontab"><span class="toc-number">2.4.</span> <span class="toc-text">crontab</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">Example of job definition:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">.---------------- minute (0 - 59)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">|  .------------- hour (0 - 23)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">|  |  .---------- day of month (1 - 31)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">|  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">|  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">|  |  |  |  |</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">*  *  *  *  * user-name  command to be executed</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">Example of job definition:</span></a>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux上的任务计划"><span class="toc-number">1.</span> <span class="toc-text">Linux上的任务计划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#任务计划"><span class="toc-number">1.1.</span> <span class="toc-text">任务计划</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#电子邮件服务"><span class="toc-number">1.2.</span> <span class="toc-text">电子邮件服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关命令"><span class="toc-number">2.</span> <span class="toc-text">相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mailx"><span class="toc-number">2.1.</span> <span class="toc-text">mailx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#at"><span class="toc-number">2.2.</span> <span class="toc-text">at</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#batch"><span class="toc-number">2.3.</span> <span class="toc-text">batch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#crontab"><span class="toc-number">2.4.</span> <span class="toc-text">crontab</span></a></li></ol></li></ol>
 		
 		</div>
 		
@@ -188,15 +188,15 @@ imap4: Internet Message Access">
 <li>
 <p>系统cron任务；没有默认运行用户身份，所以需要额外指定运行者；
 <code>/etc/crontab</code>
-vim命令</p>
-<h1>Example of job definition:</h1>
-<h1>.---------------- minute (0 - 59)</h1>
-<h1>|  .------------- hour (0 - 23)</h1>
-<h1>|  |  .---------- day of month (1 - 31)</h1>
-<h1>|  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</h1>
-<h1>|  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</h1>
-<h1>|  |  |  |  |</h1>
-<h1>*  *  *  *  * user-name  command to be executed</h1>
+vim命令
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed</p>
 <p>7个字段：
 前5个字段：时间点
 user-name: 以哪个用户的身份运行任务
@@ -206,16 +206,15 @@ command to be executed: 要运行任务</p>
 <p>用户cron任务：由某个用户所提交，默认就以提交者的身份运行，所以无需额外指定运行者；
 <code>/var/spool/cron/USERNAME</code>
 vim命令；不建议
-crontab命令：建议</p>
-<h1>Example of job definition:</h1>
-<pre><code>             # .---------------- minute (0 - 59)
-             # |  .------------- hour (0 - 23)
-             # |  |  .---------- day of month (1 - 31)
-             # |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
-             # |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
-             # |  |  |  |  |
-             # *  *  *  *  *  command to be executed
-</code></pre>
+crontab命令：建议
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  *  command to be executed</p>
 </li>
 </ol>
 <p>5个时间点：分钟(0-59),小时(0-23),日(1-31)月(1-12),周(0-7)</p>
@@ -288,7 +287,7 @@ crontab命令：建议</p>
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux上的任务计划"><span class="toc-number">1.</span> <span class="toc-text">Linux上的任务计划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#任务计划"><span class="toc-number">1.1.</span> <span class="toc-text">任务计划</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#电子邮件服务"><span class="toc-number">1.2.</span> <span class="toc-text">电子邮件服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关命令"><span class="toc-number">2.</span> <span class="toc-text">相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mailx"><span class="toc-number">2.1.</span> <span class="toc-text">mailx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#at"><span class="toc-number">2.2.</span> <span class="toc-text">at</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#batch"><span class="toc-number">2.3.</span> <span class="toc-text">batch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#crontab"><span class="toc-number">2.4.</span> <span class="toc-text">crontab</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">Example of job definition:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">.---------------- minute (0 - 59)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">|  .------------- hour (0 - 23)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">|  |  .---------- day of month (1 - 31)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">|  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">|  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">|  |  |  |  |</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">*  *  *  *  * user-name  command to be executed</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">Example of job definition:</span></a>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux上的任务计划"><span class="toc-number">1.</span> <span class="toc-text">Linux上的任务计划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#任务计划"><span class="toc-number">1.1.</span> <span class="toc-text">任务计划</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#电子邮件服务"><span class="toc-number">1.2.</span> <span class="toc-text">电子邮件服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关命令"><span class="toc-number">2.</span> <span class="toc-text">相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mailx"><span class="toc-number">2.1.</span> <span class="toc-text">mailx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#at"><span class="toc-number">2.2.</span> <span class="toc-text">at</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#batch"><span class="toc-number">2.3.</span> <span class="toc-text">batch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#crontab"><span class="toc-number">2.4.</span> <span class="toc-text">crontab</span></a></li></ol></li></ol>
  
   </div>
 

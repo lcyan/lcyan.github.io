@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-09-10T16:11:08.046Z</updated>
+  <updated>2015-09-10T16:14:07.205Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://molloc.me/2015/09/09/ZY-2015-09-05/"/>
     <id>http://molloc.me/2015/09/09/ZY-2015-09-05/</id>
     <published>2015-09-09T14:18:46.000Z</published>
-    <updated>2015-09-10T16:11:08.046Z</updated>
+    <updated>2015-09-10T16:14:07.205Z</updated>
     <content type="html"><![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
 <h2 id="linux上的任务计划"><a class="header-anchor" href="#linux上的任务计划"></a>Linux上的任务计划</h2>
 <h3 id="任务计划"><a class="header-anchor" href="#任务计划"></a>任务计划</h3>
@@ -75,15 +75,15 @@
 <li>
 <p>系统cron任务；没有默认运行用户身份，所以需要额外指定运行者；
 <code>/etc/crontab</code>
-vim命令</p>
-<h1>Example of job definition:</h1>
-<h1>.---------------- minute (0 - 59)</h1>
-<h1>|  .------------- hour (0 - 23)</h1>
-<h1>|  |  .---------- day of month (1 - 31)</h1>
-<h1>|  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</h1>
-<h1>|  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</h1>
-<h1>|  |  |  |  |</h1>
-<h1>*  *  *  *  * user-name  command to be executed</h1>
+vim命令
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed</p>
 <p>7个字段：
 前5个字段：时间点
 user-name: 以哪个用户的身份运行任务
@@ -93,16 +93,15 @@ command to be executed: 要运行任务</p>
 <p>用户cron任务：由某个用户所提交，默认就以提交者的身份运行，所以无需额外指定运行者；
 <code>/var/spool/cron/USERNAME</code>
 vim命令；不建议
-crontab命令：建议</p>
-<h1>Example of job definition:</h1>
-<pre><code>             # .---------------- minute (0 - 59)
-             # |  .------------- hour (0 - 23)
-             # |  |  .---------- day of month (1 - 31)
-             # |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
-             # |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
-             # |  |  |  |  |
-             # *  *  *  *  *  command to be executed
-</code></pre>
+crontab命令：建议
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  *  command to be executed</p>
 </li>
 </ol>
 <p>5个时间点：分钟(0-59),小时(0-23),日(1-31)月(1-12),周(0-7)</p>
