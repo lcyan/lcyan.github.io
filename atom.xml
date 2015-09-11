@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-09-11T15:17:17.408Z</updated>
+  <updated>2015-09-11T15:19:58.797Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -13,6 +13,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[ZY-2015-09-10]]></title>
+    <link href="http://molloc.me/2015/09/11/ZY-2015-09-10/"/>
+    <id>http://molloc.me/2015/09/11/ZY-2015-09-10/</id>
+    <published>2015-09-11T15:18:37.000Z</published>
+    <updated>2015-09-11T15:19:58.797Z</updated>
+    <content type="html"><![CDATA[<p>总结rpm和yum实现程序包的管理功能</p>
+<p>待补充...</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>总结rpm和yum实现程序包的管理功能</p>
+<p>待补充...</p>
+]]>
+    </summary>
+    
+      <category term="linux" scheme="http://molloc.me/tags/linux/"/>
+    
+      <category term="作业" scheme="http://molloc.me/categories/%E4%BD%9C%E4%B8%9A/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[ZY-2015-09-05]]></title>
@@ -3121,35 +3142,6 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
       <category term="linux" scheme="http://molloc.me/tags/linux/"/>
     
       <category term="nginx" scheme="http://molloc.me/tags/nginx/"/>
-    
-      <category term="探索发现" scheme="http://molloc.me/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Linux Kernel 4.1 将是下一个长期支持版]]></title>
-    <link href="http://molloc.me/2015/06/06/Linux-Kernel-4-1-%E5%B0%86%E6%98%AF%E4%B8%8B%E4%B8%80%E4%B8%AA%E9%95%BF%E6%9C%9F%E6%94%AF%E6%8C%81%E7%89%88/"/>
-    <id>http://molloc.me/2015/06/06/Linux-Kernel-4-1-将是下一个长期支持版/</id>
-    <published>2015-06-06T00:43:07.000Z</published>
-    <updated>2015-06-28T07:42:34.000Z</updated>
-    <content type="html"><![CDATA[<p>Linux基金会长期支持计划项目组以及稳定内核分支维护者Greg Kroah-Hartman<a href="http://linux.slashdot.org/story/15/06/04/1341219/linux-kernel-41-will-be-an-lts-release" target="_blank" rel="external">证实</a>，下一个版本Linux Kernel 4.1将是一个长期支持版。长期支持内核针对的是嵌入式设备，嵌入式设备的生命期短更新更快，一般为两年左右，长期支持内核将提供两年的维护更新。</p>
-<p>上一个 长期支持版是Linux 3.18，2014年12月发布，将一直支持到2017年1月。Kernel 4.1预计将在本月发布。</p>
-<p><img src="http://static.molloc.com/img/201506/06081651_tmdK.png" style="display:block;margin:auto"></p>
-<a id="more"></a>
-<p><img src="http://static.molloc.com/img/201506/06081651_XC8U.png" style="display:block;margin:auto"></p>
-<p><img src="http://static.molloc.com/img/201506/06081651_3uNy.png" style="display:block;margin:auto"></p>
-<p><a href="http://www.oschina.net/news/63112/linux-kernel-41-will-be-an-lts-release" target="_blank" rel="external">原文地址</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Linux基金会长期支持计划项目组以及稳定内核分支维护者Greg Kroah-Hartman<a href="http://linux.slashdot.org/story/15/06/04/1341219/linux-kernel-41-will-be-an-lts-release">证实</a>，下一个版本Linux Kernel 4.1将是一个长期支持版。长期支持内核针对的是嵌入式设备，嵌入式设备的生命期短更新更快，一般为两年左右，长期支持内核将提供两年的维护更新。</p>
-<p>上一个 长期支持版是Linux 3.18，2014年12月发布，将一直支持到2017年1月。Kernel 4.1预计将在本月发布。</p>
-<p><img src="http://static.molloc.com/img/201506/06081651_tmdK.png" style="display:block;margin:auto"/></p>]]>
-    
-    </summary>
-    
-      <category term="kernel" scheme="http://molloc.me/tags/kernel/"/>
-    
-      <category term="linux" scheme="http://molloc.me/tags/linux/"/>
     
       <category term="探索发现" scheme="http://molloc.me/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/"/>
     
