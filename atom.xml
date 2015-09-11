@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-09-11T15:05:04.537Z</updated>
+  <updated>2015-09-11T15:06:45.278Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://molloc.me/2015/09/09/ZY-2015-09-05/"/>
     <id>http://molloc.me/2015/09/09/ZY-2015-09-05/</id>
     <published>2015-09-09T14:18:46.000Z</published>
-    <updated>2015-09-11T15:05:04.537Z</updated>
+    <updated>2015-09-11T15:06:45.278Z</updated>
     <content type="html"><![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
 <h2 id="linux上的任务计划"><a class="header-anchor" href="#linux上的任务计划"></a>Linux上的任务计划</h2>
 <h3 id="任务计划"><a class="header-anchor" href="#任务计划"></a>任务计划</h3>
@@ -133,7 +133,7 @@ crontab命令：建议
 <p><strong>每周日凌晨2点30分，运行cp命令对/etc/fstab文件进行备份，存储位置为<code>/backups/fstab-YYYY-MM-DD-hh-mm-ss</code>;</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">30</span> <span class="number">2</span> * * <span class="number">0</span> `<span class="built_in">which</span> cp` <span class="operator">-a</span> /etc/fstab /backups/fstab-$(date <span class="string">'+\%F-\%H-\%M-\%S'</span>)</span><br></pre></td></tr></table></figure>
 <p><strong>每天晚上12点，取得/proc/meminfo文件中所有以S或M开头的行，追加至<code>/statistics/meminfo.txt</code>文件中，且每天的消息之前，要加上类似===============分隔线;</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* <span class="number">12</span> * * * <span class="built_in">echo</span> <span class="operator">-e</span> <span class="string">'\033[31m===========================\033[0m'</span> &gt;&gt; /statistics/meminfo.txt;cat /proc/meminfo | egrep <span class="string">'^(S|M)'</span> &gt;&gt; /statistics/meminfo.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* <span class="number">12</span> * * * <span class="built_in">echo</span> <span class="operator">-e</span> <span class="string">'\033[31m===========================\033[0m'</span> &gt;&gt; /statistics/meminfo.txt; \</span><br><span class="line">cat /proc/meminfo | egrep <span class="string">'^(S|M)'</span> &gt;&gt; /statistics/meminfo.txt</span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
     <![CDATA[<p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
