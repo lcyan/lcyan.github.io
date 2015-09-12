@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-09-12T08:58:58.860Z</updated>
+  <updated>2015-09-12T10:26:13.094Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -13,6 +13,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[ZY-2015-09-01]]></title>
+    <link href="http://molloc.me/2015/09/12/ZY-2015-09-01/"/>
+    <id>http://molloc.me/2015/09/12/ZY-2015-09-01/</id>
+    <published>2015-09-12T09:42:18.000Z</published>
+    <updated>2015-09-12T10:26:13.094Z</updated>
+    <content type="html"><![CDATA[<h2 id="linux-磁盘管理"><a class="header-anchor" href="#linux-磁盘管理"></a>Linux 磁盘管理</h2>
+<p>硬盘分为:机械式硬盘,SSD</p>
+<h2 id="机械式硬盘"><a class="header-anchor" href="#机械式硬盘"></a>机械式硬盘</h2>
+<ul>
+<li>rpm: 5400, 7200, 10000, 15000</li>
+<li>track</li>
+<li>sector 512byte</li>
+<li>cylinder, 分区以柱面为基本单位进行的</li>
+<li>MBR(Master Boot Record)</li>
+</ul>
+<p>MBR位于0磁道,占512byte,</p>
+<p>其中前446字节是存放bootloader,</p>
+<p>后64字节是存放filesystem allocation table.</p>
+<p>后64字节中,每16字节标识一个分区,因此只能有四个分区,</p>
+<p>最后2个字节(55,55AA)用来标记次MBR中的数据有效与否.</p>
+<h2 id="磁盘接口的类型"><a class="header-anchor" href="#磁盘接口的类型"></a>磁盘接口的类型</h2>
+<ul>
+<li>IDE(ATA) -&gt; 理论接口速率(133MB/s) -&gt; (在centos5下,被识别为<code>/dev/hd[a-z]</code>)</li>
+<li>SCSI -&gt; 理论接口速率(640MB/s)</li>
+<li>SATA -&gt; 理论接口速率(6Gbps/s)</li>
+<li>SAS -&gt; 理论接口速率(6Gbps/s)</li>
+<li>USB -&gt; 理论接口速率(480MB/s)</li>
+</ul>
+<h2 id="识别硬盘设备-dev-sd"><a class="header-anchor" href="#识别硬盘设备-dev-sd"></a>识别硬盘设备: <code>/dev/sd</code></h2>
+<ul>
+<li>标记不同的硬盘设备<code>/dev/sd[a-z]</code></li>
+<li>标记同一设备上的不同分区<code>/dev/sd[a-z][1-n]</code>
+<ul>
+<li>1-4: 主或扩展分区标识</li>
+<li>5+ : 逻辑分区标识</li>
+</ul>
+</li>
+</ul>
+<p>设备文件是一种特殊文件,每一个设备文件它都没有大小,而有设备号的概念,</p>
+<p>设备号由major(用来标识识别类型),minor(用来标识同一类型下的不同设备)组成.</p>
+<p>major(主设备号)的主要作用在于让内核去识别配套的设备驱动的.</p>
+<p>minor(次设备号)的主要作用在于让驱动程序来识别同一种驱动程序上所映射到的不同设备的.</p>
+<p>&quot;块&quot; block, 设备类型标识均为'b', 允许随机访问,因此也被称为随机访问设备.</p>
+<p>&quot;字符&quot; character 设备类型标识均为 'c', 也称为线性设备.</p>
+<p>大于2T的硬盘用MBR管理会有问题,MBR不能识别大于2T的空间, 可以用GPT技术来管理.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="linux-磁盘管理"><a class="header-anchor" href="#linux-磁盘管理"></a>Linux 磁盘管理</h2>
+<p>硬盘分为:机械式硬盘,SSD</p>
+<h2 id="机械式硬盘"><a class="header-an]]>
+    </summary>
+    
+      <category term="linux" scheme="http://molloc.me/tags/linux/"/>
+    
+      <category term="Task" scheme="http://molloc.me/categories/Task/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[ZY-2015-09-10]]></title>
@@ -3189,26 +3248,6 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
       <category term="tomcat" scheme="http://molloc.me/tags/tomcat/"/>
     
       <category term="工作相关" scheme="http://molloc.me/categories/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Nginx版本无缝升级]]></title>
-    <link href="http://molloc.me/2015/06/08/Nginx%E7%89%88%E6%9C%AC%E6%97%A0%E7%BC%9D%E5%8D%87%E7%BA%A7/"/>
-    <id>http://molloc.me/2015/06/08/Nginx版本无缝升级/</id>
-    <published>2015-06-08T04:19:42.000Z</published>
-    <updated>2015-06-28T07:42:34.000Z</updated>
-    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -V     <span class="comment">#查看版本</span></span><br><span class="line">nginx version: nginx/<span class="number">1.4</span>.<span class="number">3</span></span><br><span class="line">built by gcc <span class="number">4.4</span>.<span class="number">7</span> <span class="number">20120313</span> (Red Hat <span class="number">4.4</span>.<span class="number">7</span>-<span class="number">3</span>) (GCC)</span><br><span class="line">TLS SNI support enabled</span><br><span class="line">configure arguments: --prefix=/usr/<span class="built_in">local</span>/nginx --user=www --group=www</span><br><span class="line">                     --with-http_stub_status_module --with-http_ssl_module</span><br><span class="line">                     --with-http_flv_module --with-http_gzip_static_module</span><br><span class="line">                     --with-ld-opt=<span class="string">'-ljemalloc'</span> <span class="comment">#注意这里的编译项</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> lnmp/src</span><br><span class="line"></span><br><span class="line">wget http://nginx.org/download/nginx-<span class="number">1.4</span>.<span class="number">4</span>.tar.gz</span><br><span class="line"></span><br><span class="line">tar xzf nginx-<span class="number">1.4</span>.<span class="number">4</span>.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> nginx-<span class="number">1.4</span>.<span class="number">4</span></span><br><span class="line"></span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/nginx --user=www</span><br><span class="line">                                      --group=www --with-http_stub_status_module</span><br><span class="line">                                      --with-http_ssl_module --with-http_flv_module</span><br><span class="line">                                      --with-http_gzip_static_module --with-ld-opt=<span class="string">'-ljemalloc'</span></span><br><span class="line">make    //注意只make  不要make install</span><br><span class="line"></span><br><span class="line">mv /usr/<span class="built_in">local</span>/nginx/sbin/nginx /usr/<span class="built_in">local</span>/nginx/sbin/nginx$(date +%m%d)    <span class="comment">#备份nginx原文件</span></span><br><span class="line"></span><br><span class="line">cp objs/nginx /usr/<span class="built_in">local</span>/nginx/sbin/nginx     <span class="comment">#复制编译make后的文件覆盖nginx原文件</span></span><br><span class="line"></span><br><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -t     <span class="comment">#检测nginx文件配置</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">kill</span> -USR2 `cat /usr/<span class="built_in">local</span>/nginx/logs/nginx.pid`    <span class="comment">#把nginx.pid改成nginx.pid.oldbin跟着启动新的nginx</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">kill</span> -QUIT `cat /usr/<span class="built_in">local</span>/nginx/logs/nginx.pid.oldbin`   <span class="comment">#退出旧的nignx</span></span><br></pre></td></tr></table></figure>
-]]></content>
-    <summary type="html">
-    <![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class=]]>
-    </summary>
-    
-      <category term="linux" scheme="http://molloc.me/tags/linux/"/>
-    
-      <category term="nginx" scheme="http://molloc.me/tags/nginx/"/>
-    
-      <category term="探索发现" scheme="http://molloc.me/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0/"/>
     
   </entry>
   
