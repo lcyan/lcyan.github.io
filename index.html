@@ -95,7 +95,7 @@
     <div class="article-content">
         
         <h2 id="linux-磁盘管理"><a class="header-anchor" href="#linux-磁盘管理"></a>Linux 磁盘管理</h2>
-<p>硬盘分为:机械式硬盘,SSD</p>
+<p><strong>硬盘分为:机械式硬盘,SSD</strong></p>
 <h3 id="机械式硬盘"><a class="header-anchor" href="#机械式硬盘"></a>机械式硬盘</h3>
 <ul>
 <li>rpm: 5400, 7200, 10000, 15000</li>
@@ -104,11 +104,41 @@
 <li>cylinder, 分区以柱面为基本单位进行的</li>
 <li>MBR(Master Boot Record)</li>
 </ul>
+<p>&lt;--more--&gt;</p>
+<p>MBR位于0磁道,占512byte,</p>
+<p>其中前446字节是存放bootloader,</p>
+<p>后64字节是存放filesystem allocation table.</p>
+<p>后64字节中,每16字节标识一个分区,因此只能有四个分区,</p>
+<p>最后2个字节(55,55AA)用来标记次MBR中的数据有效与否.</p>
+<h3 id="磁盘接口的类型"><a class="header-anchor" href="#磁盘接口的类型"></a>磁盘接口的类型</h3>
+<ul>
+<li>IDE(ATA) -&gt; 理论接口速率(133MB/s) -&gt; (在centos5下,被识别为<code>/dev/hd[a-z]</code>)</li>
+<li>SCSI -&gt; 理论接口速率(640MB/s)</li>
+<li>SATA -&gt; 理论接口速率(6Gbps/s)</li>
+<li>SAS -&gt; 理论接口速率(6Gbps/s)</li>
+<li>USB -&gt; 理论接口速率(480MB/s)</li>
+</ul>
+<h3 id="识别硬盘设备-dev-sd"><a class="header-anchor" href="#识别硬盘设备-dev-sd"></a>识别硬盘设备: <code>/dev/sd</code></h3>
+<ul>
+<li>标记不同的硬盘设备<code>/dev/sd[a-z]</code></li>
+<li>标记同一设备上的不同分区<code>/dev/sd[a-z][1-n]</code>
+<ul>
+<li>1-4: 主或扩展分区标识</li>
+<li>5+ : 逻辑分区标识</li>
+</ul>
+</li>
+</ul>
+<p>设备文件是一种特殊文件,每一个设备文件它都没有大小,而有设备号的概念,</p>
+<p>设备号由major(用来标识识别类型),minor(用来标识同一类型下的不同设备)组成.</p>
+<p>major(主设备号)的主要作用在于让内核去识别配套的设备驱动的.</p>
+<p>minor(次设备号)的主要作用在于让驱动程序来识别同一种驱动程序上所映射到的不同设备的.</p>
+<p>&quot;块&quot; block, 设备类型标识均为'b', 允许随机访问,因此也被称为随机访问设备.</p>
+<p>&quot;字符&quot; character 设备类型标识均为 'c', 也称为线性设备.</p>
+<p>大于2T的硬盘用MBR管理会有问题,MBR不能识别大于2T的空间, 可以用GPT技术来管理.</p>
+
         
         
         <p class="article-more-link">
-          
-            <a href="/2015/09/12/ZY-2015-09-01/#more">Read More</a>
           
        </p>
     </div>
