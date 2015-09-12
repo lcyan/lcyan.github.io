@@ -14,7 +14,7 @@
     
     <meta name="description" content="总结rpm和yum实现程序包的管理功能
 程序包管理
-###包管理器
+包管理器
 打包,包管理(安装,升级,卸载,查询及校验)
 
 deb: debian
@@ -26,18 +26,18 @@ DNF:">
 <meta property="og:site_name" content="Robot">
 <meta property="og:description" content="总结rpm和yum实现程序包的管理功能
 程序包管理
-###包管理器
+包管理器
 打包,包管理(安装,升级,卸载,查询及校验)
 
 deb: debian
 rpm: redhat package manager --&amp;gt; RPM is Package Manager
 DNF:">
-<meta property="og:updated_time" content="2015-09-12T03:47:52.608Z">
+<meta property="og:updated_time" content="2015-09-12T03:51:06.739Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZY-2015-09-10">
 <meta name="twitter:description" content="总结rpm和yum实现程序包的管理功能
 程序包管理
-###包管理器
+包管理器
 打包,包管理(安装,升级,卸载,查询及校验)
 
 deb: debian
@@ -117,13 +117,13 @@ DNF:">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#程序包管理"><span class="toc-number">1.</span> <span class="toc-text">程序包管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#rpm包的命名机制"><span class="toc-number">1.0.1.</span> <span class="toc-text">rpm包的命名机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#打包-一个单一的归档文件"><span class="toc-number">1.0.2.</span> <span class="toc-text">打包: 一个单一的归档文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#包校验"><span class="toc-number">1.0.3.</span> <span class="toc-text">包校验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#程序包组成"><span class="toc-number">1.1.</span> <span class="toc-text">程序包组成</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yum"><span class="toc-number">2.</span> <span class="toc-text">YUM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#yum程序的配置文件"><span class="toc-number">2.1.</span> <span class="toc-text">YUM程序的配置文件</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#程序包管理"><span class="toc-number">1.</span> <span class="toc-text">程序包管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#包管理器"><span class="toc-number">1.1.</span> <span class="toc-text">包管理器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#rpm包的命名机制"><span class="toc-number">1.1.1.</span> <span class="toc-text">rpm包的命名机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#打包-一个单一的归档文件"><span class="toc-number">1.1.2.</span> <span class="toc-text">打包: 一个单一的归档文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#包校验"><span class="toc-number">1.1.3.</span> <span class="toc-text">包校验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#程序包组成"><span class="toc-number">1.2.</span> <span class="toc-text">程序包组成</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yum"><span class="toc-number">2.</span> <span class="toc-text">YUM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#yum程序的配置文件"><span class="toc-number">2.1.</span> <span class="toc-text">YUM程序的配置文件</span></a></li></ol></li></ol>
 		
 		</div>
 		
 		<p>总结rpm和yum实现程序包的管理功能</p>
 <h2 id="程序包管理"><a class="header-anchor" href="#程序包管理"></a>程序包管理</h2>
-<p>###包管理器</p>
+<h3 id="包管理器"><a class="header-anchor" href="#包管理器"></a>包管理器</h3>
 <p><strong>打包,包管理(安装,升级,卸载,查询及校验)</strong></p>
 <ul>
 <li>deb: debian</li>
@@ -236,7 +236,7 @@ DNF:">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#程序包管理"><span class="toc-number">1.</span> <span class="toc-text">程序包管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#rpm包的命名机制"><span class="toc-number">1.0.1.</span> <span class="toc-text">rpm包的命名机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#打包-一个单一的归档文件"><span class="toc-number">1.0.2.</span> <span class="toc-text">打包: 一个单一的归档文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#包校验"><span class="toc-number">1.0.3.</span> <span class="toc-text">包校验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#程序包组成"><span class="toc-number">1.1.</span> <span class="toc-text">程序包组成</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yum"><span class="toc-number">2.</span> <span class="toc-text">YUM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#yum程序的配置文件"><span class="toc-number">2.1.</span> <span class="toc-text">YUM程序的配置文件</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#程序包管理"><span class="toc-number">1.</span> <span class="toc-text">程序包管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#包管理器"><span class="toc-number">1.1.</span> <span class="toc-text">包管理器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#rpm包的命名机制"><span class="toc-number">1.1.1.</span> <span class="toc-text">rpm包的命名机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#打包-一个单一的归档文件"><span class="toc-number">1.1.2.</span> <span class="toc-text">打包: 一个单一的归档文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#包校验"><span class="toc-number">1.1.3.</span> <span class="toc-text">包校验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#程序包组成"><span class="toc-number">1.2.</span> <span class="toc-text">程序包组成</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yum"><span class="toc-number">2.</span> <span class="toc-text">YUM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#yum程序的配置文件"><span class="toc-number">2.1.</span> <span class="toc-text">YUM程序的配置文件</span></a></li></ol></li></ol>
  
   </div>
 
