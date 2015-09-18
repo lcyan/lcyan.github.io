@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-09-18T13:29:07.264Z</updated>
+  <updated>2015-09-18T13:30:58.294Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,11 +19,12 @@
     <link href="http://molloc.me/2015/09/15/ZY-2015-09-15/"/>
     <id>http://molloc.me/2015/09/15/ZY-2015-09-15/</id>
     <published>2015-09-15T15:19:32.000Z</published>
-    <updated>2015-09-18T13:29:07.264Z</updated>
+    <updated>2015-09-18T13:30:58.294Z</updated>
     <content type="html"><![CDATA[<h2 id="sed"><a class="header-anchor" href="#sed"></a>Sed</h2>
 <p><em>Sed Stream editor</em></p>
 <p>Sed的工作方式,一次从文件中读取一行到<code>pattern space</code>,然后判断这一行是不是我们需要编辑的行,如何符合条件则对其进行处理,</p>
 <p>处理完之后把处理的结果输出到屏幕上.如果不符合要求也输出到屏幕上来(Sed的默认操作,称之为打印模式空间).</p>
+<a id="more"></a>
 <h3 id="语法"><a class="header-anchor" href="#语法"></a>语法</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">sed [OPTION]... &#123;script-only-if-no-other-script&#125; [input-file]...</span><br><span class="line"></span><br><span class="line">	-r 	<span class="comment"># 支持扩展正则表达式</span></span><br><span class="line">	-n  <span class="comment"># 静默模式；</span></span><br><span class="line">	<span class="operator">-e</span>  <span class="comment"># 指定多脚本运行 eg: -e script1 -e script2 -e script3</span></span><br><span class="line">	<span class="operator">-f</span>  <span class="comment"># 从指定的文件中读取脚本并运行, -f /path/to/script_file</span></span><br><span class="line">	-i: <span class="comment"># 直接修改源文件；</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># script 的组成有两部分, 地址定界和边界命令</span></span><br><span class="line"><span class="comment">## 地址定界</span></span><br><span class="line">	<span class="comment"># 							# 指定行；</span></span><br><span class="line">	$							<span class="comment"># 最后一行；</span></span><br><span class="line">	/regexp/	  				<span class="comment"># 任何能够被regexp所匹配到的行；</span></span><br><span class="line">	\%regexp%					<span class="comment"># 同上，只不过换作%为regexp边界符；</span></span><br><span class="line">	/regexp/</span><br><span class="line">	\%regexp%|  				<span class="comment"># 匹配时忽略字符大小写；</span></span><br><span class="line">	startline,endline</span><br><span class="line">		<span class="comment">#,/regexp/				# 从#行开始，到第一次被/regexp/所匹配到的行结束，中间的所有行；</span></span><br><span class="line">		<span class="comment">#,#</span></span><br><span class="line">		/regexp1/,/regexp2/		<span class="comment"># 从第一次被/regexp1/匹配到的行开始，到第一次被/regexp2/匹配到的行结束，中间的所有行；</span></span><br><span class="line">		<span class="comment">#,+n					# 从#行开始，一直到向下的n行；</span></span><br><span class="line">	first~step 					<span class="comment"># 指定起始行，以及步长；</span></span><br><span class="line">		<span class="number">1</span>~<span class="number">2</span>，<span class="number">2</span>~<span class="number">2</span></span><br><span class="line"><span class="comment">## 编辑命令</span></span><br><span class="line">	d 						 	<span class="comment"># 删除模式空间中的行；</span></span><br><span class="line">	=						 	<span class="comment"># 显示行号；</span></span><br><span class="line">	a \text					 	<span class="comment"># 附加text</span></span><br><span class="line">	i \text					 	<span class="comment"># 插入text，支持\n实现多行插入；</span></span><br><span class="line">	c \text					 	<span class="comment"># 用text替换匹配到的行；</span></span><br><span class="line">	p 						 	<span class="comment"># 打印模式空间中的行；</span></span><br><span class="line">	s /regexp/replacement/g   	<span class="comment"># 替换由regexp所匹配到的内容为replacement;g全局替换；</span></span><br><span class="line">	w /path/to/somefile		 	<span class="comment"># 把指定的内容另存至/path/to/somefile路径所指定的文件中；</span></span><br><span class="line">	r /path/from/somefile	 	<span class="comment"># 在文件的指定位置插入另一个文件的所有内容，完成文件合并</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 高级命令</span></span><br><span class="line">	h	<span class="comment"># 将pattern space中的内容拷贝到hold space中，原来的hold space里的内容被清除</span></span><br><span class="line">	H	<span class="comment"># 将pattern space中的内容append到hold space\n后</span></span><br><span class="line">	g	<span class="comment"># 将hold space中的内容拷贝到pattern space中，原来pattern space里的内容清除</span></span><br><span class="line">	G	<span class="comment"># 将hold space中的内容append到pattern space\n后</span></span><br><span class="line">	x	<span class="comment"># 交换pattern space和hold space的内容</span></span><br><span class="line">	n	<span class="comment"># 读取匹配到的行的下一行至模式空间；（会覆盖模式空间中的原有内容）；</span></span><br><span class="line">	N	<span class="comment"># 读取匹配到的行的下一行至模式空间，追加在模式空间中原有内容的后面；</span></span><br><span class="line">	d	<span class="comment"># 删除模式空间中的内容；</span></span><br><span class="line">	D	<span class="comment"># 删除多行模式空间中的首行；</span></span><br><span class="line">		<span class="comment"># 注意：命令功能可使用!取反(对命令取反,eg: sed '1,3!d' 代表删除第1到3行之外的行)；分号可用于分隔脚本；</span></span><br></pre></td></tr></table></figure>
 <h3 id="sed实践"><a class="header-anchor" href="#sed实践"></a>Sed实践</h3>
@@ -32,8 +33,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ cat t.txt</span><br><span class="line">one</span><br><span class="line">two</span><br><span class="line">three</span><br></pre></td></tr></table></figure>
 <p>第一个示例</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ sed <span class="string">'H;g'</span> t.txt</span><br><span class="line">one</span><br><span class="line"></span><br><span class="line">one</span><br><span class="line">two</span><br><span class="line"></span><br><span class="line">one</span><br><span class="line">two</span><br><span class="line">three</span><br></pre></td></tr></table></figure>
-<p>是不是有点没看懂，我作个图你就看懂了。
-<img src="http://static.molloc.com/linux/imgs/ZY-2015-09-15/sed_demo_00.jpg" alt="sed 'H;g' t.txt" title="sed 'H;g' t.txt"></p>
+<p>是不是有点没看懂，我作个图你就看懂了。</p>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-09-15/sed_demo_00.jpg" alt="sed 'H;g' t.txt" title="sed 'H;g' t.txt"></p>
 <p>第二个示例，反序了一个文件的行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sed <span class="string">'1!G;h;$!d'</span> t.txt</span><br><span class="line">three</span><br><span class="line">two</span><br><span class="line">one</span><br></pre></td></tr></table></figure>
 <p>其中的 <code>1!G;h;$!d</code> 可拆解为三个命令</p>
@@ -42,14 +43,16 @@
 <li><code>h</code> —— 第一行都执行h命令，将pattern space中的内容拷贝到hold space中</li>
 <li><code>$!d</code> —— 除了最后一行不执行d命令，其它行都执行d命令，删除当前行</li>
 </ul>
-<p>这个执行序列很难理解，做个图如下大家就明白了
-<img src="http://static.molloc.com/linux/imgs/ZY-2015-09-15/sed_demo.jpg" alt="sed '1!G;h;$!d' t.txt" title="sed '1!G;h;$!d' t.txt"></p>
+<p>这个执行序列很难理解，做个图如下大家就明白了</p>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-09-15/sed_demo.jpg" alt="sed '1!G;h;$!d' t.txt" title="sed '1!G;h;$!d' t.txt"></p>
 <h2 id="awk"><a class="header-anchor" href="#awk"></a>Awk</h2>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="sed"><a class="header-anchor" href="#sed"></a>Sed</h2>
 <p><em>Sed Stream editor</em></p>
-<p>Sed的工作方式,一次从文件中读取一行到<code>pattern space<]]>
+<p>Sed的工作方式,一次从文件中读取一行到<code>pattern space</code>,然后判断这一行是不是我们需要编辑的行,如何符合条件则对其进行处理,</p>
+<p>处理完之后把处理的结果输出到屏幕上.如果不符合要求也输出到屏幕上来(Sed的默认操作,称之为打印模式空间).</p>]]>
+    
     </summary>
     
       <category term="linux" scheme="http://molloc.me/tags/linux/"/>
