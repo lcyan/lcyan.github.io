@@ -26,7 +26,7 @@ Sed的工作方式,一次从文件中读取一行到pattern space,然后判断�
 处理完之后把处理的结果输出到屏幕上.如果不符合要求也输出到屏幕上来(Sed的默认操作,称之为打印模式空间).">
 <meta property="og:image" content="http://static.molloc.com/linux/imgs/ZY-2015-09-15/sed_demo_00.jpg">
 <meta property="og:image" content="http://static.molloc.com/linux/imgs/ZY-2015-09-15/sed_demo.jpg">
-<meta property="og:updated_time" content="2015-09-18T14:28:42.950Z">
+<meta property="og:updated_time" content="2015-09-18T14:30:29.045Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZY-2015-09-13">
 <meta name="twitter:description" content="Sed
@@ -216,16 +216,11 @@ Sed的工作方式,一次从文件中读取一行到pattern space,然后判断�
 <p>关联数组：</p>
 <p>(1) <code>array[index-expression]</code></p>
 <p>index-expression: 可以使用任意字符串; 如果某数组元素事先不存在，那么在引用时，awk会自动创建此元素并将其初始化空串；因此，要判断某数组是否存在某元素，必须使用“index in array”这种格式；</p>
-<pre><code>`A[first]=&quot;hello awk&quot;`
-`print A[second]`
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A[first]=<span class="string">"hello awk"</span></span><br><span class="line"><span class="built_in">print</span> A[second]</span><br></pre></td></tr></table></figure>
 <p>(2) 要遍历数组中的每一个元素，需要使用如下特殊结构：</p>
 <p><code>for (var in array) {for body}</code></p>
 <p>其var会遍历array的索引；</p>
-<p><code>state[LISTEN]++</code></p>
-<p><code>state[ESTABLISHED]++</code></p>
-<p><code>netstat -tan | awk '/^tcp/{++state[$NF]}END{for (s in state) {print s,state[s]}}'</code></p>
-<p><code>awk '{ip[$1]++}END{for (i in ip) {print i,ip[i]}}' /var/log/httpd/access_log</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">state[LISTEN]++</span><br><span class="line">state[ESTABLISHED]++</span><br><span class="line">$ netstat -tan | awk <span class="string">'/^tcp/&#123;++state[$NF]&#125;END&#123;for (s in state) &#123;print s,state[s]&#125;&#125;'</span></span><br><span class="line">$ awk <span class="string">'&#123;ip[$1]++&#125;END&#123;for (i in ip) &#123;print i,ip[i]&#125;&#125;'</span> /var/<span class="built_in">log</span>/httpd/access_<span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 <p>(3) 删除数组元素：
 <code>delete array[index]</code></p>
 <h3 id="awk的内置函数"><a class="header-anchor" href="#awk的内置函数"></a>awk的内置函数</h3>
