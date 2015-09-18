@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-09-18T14:26:07.026Z</updated>
+  <updated>2015-09-18T14:28:42.950Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://molloc.me/2015/09/15/ZY-2015-09-15/"/>
     <id>http://molloc.me/2015/09/15/ZY-2015-09-15/</id>
     <published>2015-09-15T15:19:32.000Z</published>
-    <updated>2015-09-18T14:26:07.026Z</updated>
+    <updated>2015-09-18T14:28:42.950Z</updated>
     <content type="html"><![CDATA[<h2 id="sed"><a class="header-anchor" href="#sed"></a>Sed</h2>
 <p><em>Sed Stream editor</em></p>
 <p>Sed的工作方式,一次从文件中读取一行到<code>pattern space</code>,然后判断这一行是不是我们需要编辑的行,如何符合条件则对其进行处理,</p>
@@ -123,39 +123,30 @@
 <h3 id="数组"><a class="header-anchor" href="#数组"></a>数组</h3>
 <p>传统数组：Index编号从1开始；</p>
 <p>关联数组：</p>
-<pre><code>`array[index-expression]`
-
-index-expression: 可以使用任意字符串; 如果某数组元素事先不存在，那么在引用时，awk会自动创建此元素并将其初始化为空串；因此，要判断某数组是否存在某元素，必须使用“index in array”这种格式；
-
-    `A[first]=&quot;hello awk&quot;`
-    `print A[second]`
-
-要遍历数组中的每一个元素，需要使用如下特殊结构：
-
-    `for (var in array) {for body}`
-
-    其var会遍历array的索引；
-
-`state[LISTEN]++`
-
-`state[ESTABLISHED]++`
-
-`netstat -tan | awk '/^tcp/{++state[$NF]}END{for (s in state) {print s,state[s]}}'`
-
-`awk '{ip[$1]++}END{for (i in ip) {print i,ip[i]}}' /var/log/httpd/access_log`
+<p>(1) <code>array[index-expression]</code></p>
+<p>index-expression: 可以使用任意字符串; 如果某数组元素事先不存在，那么在引用时，awk会自动创建此元素并将其初始化空串；因此，要判断某数组是否存在某元素，必须使用“index in array”这种格式；</p>
+<pre><code>`A[first]=&quot;hello awk&quot;`
+`print A[second]`
 </code></pre>
-<p>删除数组元素：
+<p>(2) 要遍历数组中的每一个元素，需要使用如下特殊结构：</p>
+<p><code>for (var in array) {for body}</code></p>
+<p>其var会遍历array的索引；</p>
+<p><code>state[LISTEN]++</code></p>
+<p><code>state[ESTABLISHED]++</code></p>
+<p><code>netstat -tan | awk '/^tcp/{++state[$NF]}END{for (s in state) {print s,state[s]}}'</code></p>
+<p><code>awk '{ip[$1]++}END{for (i in ip) {print i,ip[i]}}' /var/log/httpd/access_log</code></p>
+<p>(3) 删除数组元素：
 <code>delete array[index]</code></p>
 <h3 id="awk的内置函数"><a class="header-anchor" href="#awk的内置函数"></a>awk的内置函数</h3>
-<p><code>split(string,array[,fieldsep[,seps]])</code></p>
+<p>(1) <code>split(string,array[,fieldsep[,seps]])</code></p>
 <p>功能：将string表示的字符串以fieldsep为分隔符进行切片，并切片后的结果保存至array为名的数组中；数组下标从1开始；</p>
 <p><code>root:x:0:0::/root:/bin/bash</code></p>
 <p><code>user[1]=&quot;root&quot;, user[2]</code></p>
 <p>此函数有返回值，返回值为切片后的元素的个数</p>
 <p><code>$ netstat -tn | awk '/^tcp/{lens=split($5,client,&quot;:&quot;);ip[client[1]]++}END{for (i in ip) print i,ip[i]}'</code></p>
-<p><code>length(string)</code></p>
+<p>(2) <code>length(string)</code></p>
 <p>功能：返回给定字串的长度</p>
-<p><code>substr(string,start[,length])</code></p>
+<p>(3) <code>substr(string,start[,length])</code></p>
 <p>功能：从string中取子串，从start为起始位置为取length长度的子串；</p>
 <h3 id="实践-v2"><a class="header-anchor" href="#实践-v2"></a>实践</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1 把/etc/passwd按:切片</span></span><br><span class="line">$ awk -F: <span class="string">'&#123;print $1,$NF&#125;'</span> /etc/passwd</span><br><span class="line">postfix /sbin/nologin</span><br><span class="line">sshd /sbin/nologin</span><br><span class="line">avahi /sbin/nologin</span><br><span class="line">tcpdump /sbin/nologin</span><br><span class="line">kernel /bin/bash</span><br><span class="line">gentoo /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment">#2</span></span><br></pre></td></tr></table></figure>
