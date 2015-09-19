@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Robot]]></title>
+  <title><![CDATA[Kernel]]></title>
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-09-19T00:49:15.005Z</updated>
+  <updated>2015-09-19T00:56:59.996Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
-    <name><![CDATA[Lcyan]]></name>
+    <name><![CDATA[Kernel]]></name>
     
   </author>
   
@@ -19,7 +19,7 @@
     <link href="http://molloc.me/2015/09/15/ZY-2015-09-15/"/>
     <id>http://molloc.me/2015/09/15/ZY-2015-09-15/</id>
     <published>2015-09-15T15:19:32.000Z</published>
-    <updated>2015-09-19T00:49:15.005Z</updated>
+    <updated>2015-09-19T00:56:59.996Z</updated>
     <content type="html"><![CDATA[<h2 id="sed"><a class="header-anchor" href="#sed"></a>Sed</h2>
 <p><em>Sed Stream editor</em></p>
 <p>Sed的工作方式,一次从文件中读取一行到<code>pattern space</code>,然后判断这一行是不是我们需要编辑的行,如何符合条件则对其进行处理,</p>
