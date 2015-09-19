@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-09-19T00:59:05.735Z</updated>
+  <updated>2015-09-19T01:24:06.898Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://molloc.me/2015/09/15/ZY-2015-09-15/"/>
     <id>http://molloc.me/2015/09/15/ZY-2015-09-15/</id>
     <published>2015-09-15T15:19:32.000Z</published>
-    <updated>2015-09-19T00:59:05.735Z</updated>
+    <updated>2015-09-19T01:24:06.898Z</updated>
     <content type="html"><![CDATA[<h2 id="sed"><a class="header-anchor" href="#sed"></a>Sed</h2>
 <p><em>Sed Stream editor</em></p>
 <p>Sed的工作方式,一次从文件中读取一行到<code>pattern space</code>,然后判断这一行是不是我们需要编辑的行,如何符合条件则对其进行处理,</p>
@@ -162,14 +162,143 @@
   
   <entry>
     <title><![CDATA[ZY-2015-09-13]]></title>
-    <link href="http://molloc.me/2015/09/15/ZY-2015-09-13/"/>
-    <id>http://molloc.me/2015/09/15/ZY-2015-09-13/</id>
-    <published>2015-09-15T15:19:32.000Z</published>
-    <updated>2015-09-15T15:19:32.882Z</updated>
-    <content type="html"></content>
+    <link href="http://molloc.me/2015/09/13/ZY-2015-09-13/"/>
+    <id>http://molloc.me/2015/09/13/ZY-2015-09-13/</id>
+    <published>2015-09-13T15:19:32.000Z</published>
+    <updated>2015-09-19T08:40:34.417Z</updated>
+    <content type="html"><![CDATA[<h2 id="shell"><a class="header-anchor" href="#shell"></a>Shell</h2>
+<p>注意本文讨论的是Bash，而不一定是/bin/sh所链接的那个shell。这里出现的所有代码片段，默认在顶上都添加了<code>#!/bin/bash</code>。</p>
+<p>计算机理解语言的 0 和 1 的称为二进制语言。</p>
+<p>在早期的计算机时代，指令提供使用二进制语言，很难对我们所有人，读和写。所以在 Os 中是叫 Shell 的特别节目。壳 (大部分) 接受你的指令或命令在英语中的，如果它是一个有效的命令，它是传递给内核。</p>
+<p>外壳是用户或程序是提供用户交互环境。Shell 是命令语言解释器执行命令从标准输入设备 (键盘) 或从文件读取。</p>
+<p><code>Shell</code>不是系统内核的一部分，但使用系统内核执行程序、 创建文件等。</p>
+<a id="more"></a>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-2015-09-13/linux-system-call.png" alt="linux-system-call.png"></p>
+<h2 id="进程"><a class="header-anchor" href="#进程"></a>进程</h2>
+<ul>
+<li>守护进程,服务进程: 启动,开机时自动启动.</li>
+<li>交互式进程: shell应用程序</li>
+</ul>
+<h2 id="shell应用程序"><a class="header-anchor" href="#shell应用程序"></a>shell应用程序</h2>
+<p><em>广义上分为: GUI,CLI</em></p>
+<h3 id="cli"><a class="header-anchor" href="#cli"></a>CLI</h3>
+<p><em>由<code>prompt(#|$) COMMAND options arguments</code> 组成, 在进行词法分析</em></p>
+<p>命令有有内建命令,外部命令(PATH)之分.把一系列命令写在一个文件中,称为shell脚本.</p>
+<p>脚本或程序源文件执行的两种方式:</p>
+<ul>
+<li>编译执行: 预处理 --&gt; 编译 --&gt; 链接; 事先完成,最终生成二进制文件.</li>
+<li>解释执行: 有解释器全程参与运行过程, 每次读取一行, 运行一行.</li>
+</ul>
+<h2 id="程序"><a class="header-anchor" href="#程序"></a>程序</h2>
+<ul>
+<li>程序：指令+数据</li>
+<li>过程式编程：以指令为中心，设计算法，数据服务于算法；</li>
+<li>对象式编程：以数据为中心，设计数据结构(类)，程序服务于数据结构</li>
+</ul>
+<h3 id="python：编程库"><a class="header-anchor" href="#python：编程库"></a>Python：编程库</h3>
+<ul>
+<li>程序控制结构，调用编程库完成程序编写；</li>
+<li>库文件：功能模块，在编程中可调用；通过其API；</li>
+</ul>
+<h3 id="bash：编程"><a class="header-anchor" href="#bash：编程"></a>Bash：编程</h3>
+<ul>
+<li>程序控制结构，调用机器上命令程序文件进行程序编写；</li>
+<li>外部命令：各应用程序提供；</li>
+</ul>
+<h3 id="bash过程式编程"><a class="header-anchor" href="#bash过程式编程"></a>bash过程式编程</h3>
+<ul>
+<li>顺序执行：逐个执行</li>
+<li>选择执行：只执行其中一个分支</li>
+<li>循环执行：一段代码要执行0,1或多遍</li>
+<li>编程元素：变量、流程、函数</li>
+</ul>
+<h2 id="shell基本语法"><a class="header-anchor" href="#shell基本语法"></a>Shell基本语法</h2>
+<h3 id="变量"><a class="header-anchor" href="#变量"></a>变量</h3>
+<ul>
+<li>本地变量：当前shell进程；</li>
+<li>环境变量：当前shell进程及其子进程；</li>
+<li>局部变量：某个函数执行过程；</li>
+<li>位置参数变量：在脚本中引用传递给脚本的参数；在函数中引用传递给函数的参数；</li>
+<li>特殊变量：<code>$?, $*, $@, $#, $$</code></li>
+</ul>
+<p>变量的类型作用: 存储空间, 运算, 存储格式;</p>
+<p>Bash变量只有两种类型，字符串和数组。不过从严格意义上，Bash没有变量类型。Bash中的变量，在运行的时候会被展开成其对应的值（字符串）。你可以把它看做C/C++中的宏定义，或者一些模板语言中的占位符。</p>
+<p>一般情况下，变量通过=赋值，注意=两边不要留空格。有些好孩子，已经养成了符号两端留空格的习惯，结果当开始写Bash的时候，他们抓狂了。</p>
+<p>要想访问变量，只需在变量名前面添加<code>$</code>，解释器就会对它进行展开。如果该变量并不存在，解释器会把它展开成“”。</p>
+<p>作为脚本语言，第一要义当然是要随时随地获取到命令行输入啦。</p>
+<p>在Bash中，使用<code>$1</code>可以获取命令行输入的第一个参数，<code>$2</code>可以获取命令行输入的第2个参数，<code>$3</code>可以获取命令行输入的第......
+你看，<code>$1</code>到<code>$10000</code>的用法就这么交代完了。Bash还是挺有逻辑的嘛。</p>
+<p>顺便一提，<code>$0</code>获取的脚本的名字（其实就是其他语言中的第0个参数），<code>$@</code>获取所有的参数，<code>$#</code>获取参数的数目。记住<code>@</code>和<code>#</code>这两个符号，在Bash这一神秘的符文体系中，前者表示全部参数，后者表示参数的数目。</p>
+<p>假如Bash变量中含有空白字符，或者含有特殊字符，比如<code>*</code>，展开后会污染到外面的字符串.所以需要加双引号括起来.</p>
+<p>另外一种Bomb的可能是，变量后面需要接其它字符串，比如<code>$FRUITs</code>。如果想让解释器识别成<code>$FRUIT</code>变量，而不是<code>$FRUITs</code>，需要用花括号括起来，像<code>${FRUIT}s</code></p>
+<p>Bash中可以使用两种容器。</p>
+<p>一种是数组，另一种是关联数组，类似于其他语言中的<code>Map/Hash/Dict</code>。</p>
+<ul>
+<li>声明数组的常用语法： <code>declare -a ARY</code>或者<code>ARY=(1 2 3)</code></li>
+<li>声明关联数组的唯一语法： <code>declare -A MAP</code></li>
+</ul>
+<p>赋值的语法：</p>
+<ul>
+<li>直接<code>ARY[N]=VALUE</code>，<code>N</code>可以是数字索引也可以是键。</li>
+<li>关联数组可以使用<code>MAP=([x]=a [y]=b)</code>进行多项赋值。</li>
+</ul>
+<p>注意这是赋值的语句而不是声明。数组中的索引不一定要按顺序来，你可以先给2和3上的元素赋值。</p>
+<p>往现有数组批量添加元素：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ARY+=(a b c)</span><br><span class="line">MAP+=([a]=<span class="number">1</span> [b]=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>取值：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$&#123;ARY[INDEX]&#125;</span></span><br><span class="line"><span class="variable">$&#123;MAP[KEY]&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="花括号的使用"><a class="header-anchor" href="#花括号的使用"></a>花括号的使用</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$&#123;A[@]&#125;</span>   		<span class="comment"># 展开成所有的变量，</span></span><br><span class="line"><span class="variable">$&#123;#A[@]&#125;</span>  		<span class="comment"># 而获取数组长度使用</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$&#123;ARY[@]:N:M&#125;</span> 	<span class="comment"># N是offset而M是length</span></span><br><span class="line"><span class="variable">$&#123;!MAP[@]&#125;</span> 		<span class="comment"># 返回索引，相当于keys()</span></span><br></pre></td></tr></table></figure>
+<p>试试下面的代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">declare</span> <span class="operator">-a</span> ARY</span><br><span class="line"><span class="built_in">declare</span> -A MAP</span><br><span class="line">MAP+=([a]=<span class="number">1</span> [b]=<span class="number">2</span>)</span><br><span class="line">ARY+=(a b c)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;ARY[1]&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;MAP[a]&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$&#123;ARY[@]&#125;</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$&#123;MAP[@]&#125;</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$&#123;ARY[@]:0:1&#125;</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;#ARY[@]&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$&#123;!MAP[@]&#125;</span>"</span></span><br><span class="line"></span><br><span class="line">ARY[<span class="number">4</span>]=a</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;ARY[@]&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;ARY[3]&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="变量-字符串-变换"><a class="header-anchor" href="#变量-字符串-变换"></a>变量（字符串）变换</h3>
+<p>Bash中的变量变换，大体是${变量[操作符]}的形式</p>
+<h3 id="大小写变换"><a class="header-anchor" href="#大小写变换"></a>大小写变换</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">HI=HellO</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$HI</span>"</span> <span class="comment"># HellO</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;HI^&#125;</span> <span class="comment"># HellO</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;HI^^&#125;</span> <span class="comment"># HELLO</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;HI,&#125;</span> <span class="comment"># hellO</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;HI,,&#125;</span> <span class="comment"># hello</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;HI~&#125;</span> <span class="comment"># hellO</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;HI~~&#125;</span> <span class="comment">#hELLo</span></span><br></pre></td></tr></table></figure>
+<p><code>^</code>大写，<code>,</code>小写， <code>~</code>大小写切换</p>
+<p>重复一次只修改首字母，重复两次则应用于所有字母。</p>
+<p>混着用会怎样？</p>
+<p><code>echo ${HI^,^} # HellO</code></p>
+<p>看来是不行的×_×</p>
+<h3 id="移除匹配的字符串"><a class="header-anchor" href="#移除匹配的字符串"></a>移除匹配的字符串</h3>
+<ul>
+<li><code>%xx</code> 从后往前，开始匹配，移除匹配的内容</li>
+<li><code>%%xx</code> 跟上面的差不多，不过这是贪婪匹配</li>
+<li><code>#xx</code> 从前往后，开始匹配，移除匹配的内容</li>
+<li><code>##xx</code> 跟上面的差不多，不过这是贪婪匹配</li>
+</ul>
+<p>这个比较难理解，不过看下面几个例子应该能明白了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FILENAME=/home/spacewander/param.sh</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;FILENAME%/*&#125;</span> <span class="comment"># /home/spacewander</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;FILENAME%%/*&#125;</span> <span class="comment">#</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;FILENAME#*/&#125;</span> <span class="comment"># home/spacewander/param.sh</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;FILENAME##*/&#125;</span> <span class="comment"># param.sh</span></span><br></pre></td></tr></table></figure>
+<h3 id="查找并替换"><a class="header-anchor" href="#查找并替换"></a>查找并替换</h3>
+<ul>
+<li><code>/MATCH/VALUE</code> 替换第一个匹配的内容。</li>
+<li><code>//MATCH/VALUE</code> 替换匹配的内容</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;FILENAME/home/office&#125;</span> <span class="comment"># /office/spacewander/param.sh</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;FILENAME//s/S&#125;</span> <span class="comment"># /home/Spacewander/param.Sh</span></span><br></pre></td></tr></table></figure>
+<h3 id="其它字符串操作"><a class="header-anchor" href="#其它字符串操作"></a>其它字符串操作</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$&#123;#FILENAME&#125;</span> 		<span class="comment"># 获取变量（字符串）长度：</span></span><br><span class="line"><span class="variable">$&#123;STR:offset:len&#125;</span> 	<span class="comment"># 字符串切片：跟数组切片是同样的语法，</span></span><br><span class="line"></span><br><span class="line">TEXT=这个程序充满了BUG!</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;TEXT:0:8&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;TEXT:4&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 你还可以使用负数作为offset，这时候就是从后往前算起。注意负数要用括号括起来，避免冲突。</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;TEXT:(-4)&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="关于变量-其它的内容"><a class="header-anchor" href="#关于变量-其它的内容"></a>关于变量，其它的内容</h3>
+<p>Bash中有一项特性，你可以方便地检查某个变量是否设置了，如果没有设置，就赋予一个默认值。尤其在处理环境变量的时候，这项特性会让你感到欣慰。</p>
+<p>语法是<code>${VAR:=VALUE}</code>或者<code>${VAR:=VALUE}</code>。此外，还有一个相似的语法，<code>${VAR:=VALUE}</code>和<code>${VAR：=VALUE}</code>。</p>
+<p>下面展示下两者的区别</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># expand to default variable</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;NULL-"Not null"&#125;</span> <span class="comment"># Not null</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;NULL&#125;</span> <span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># set default variable</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;NIL="Not nil"&#125;</span> <span class="comment"># Not nil</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;NIL&#125;</span> <span class="comment"># Not nil</span></span><br></pre></td></tr></table></figure>
+<p>可以看出，前者只是当变量不存在时，展开成指定的值。而后者在变量不存在时，将变量的值设置为指定值。</p>
+<p>最后介绍一个，当目标变量不存在时，指定报错信息的语法。</p>
+<p><code>echo ${TARGET?Not Found}</code> 当<code>$TARGET</code>不存在时，显示<code>TARGET: Not Found</code>，并结束程序。</p>
+]]></content>
     <summary type="html">
+    <![CDATA[<h2 id="shell"><a class="header-anchor" href="#shell"></a>Shell</h2>
+<p>注意本文讨论的是Bash，而不一定是/bin/sh所链接的那个shell。这里出现的所有代码片段，默认在顶上都添加了<code>#!/bin/bash</code>。</p>
+<p>计算机理解语言的 0 和 1 的称为二进制语言。</p>
+<p>在早期的计算机时代，指令提供使用二进制语言，很难对我们所有人，读和写。所以在 Os 中是叫 Shell 的特别节目。壳 (大部分) 接受你的指令或命令在英语中的，如果它是一个有效的命令，它是传递给内核。</p>
+<p>外壳是用户或程序是提供用户交互环境。Shell 是命令语言解释器执行命令从标准输入设备 (键盘) 或从文件读取。</p>
+<p><code>Shell</code>不是系统内核的一部分，但使用系统内核执行程序、 创建文件等。</p>]]>
     
     </summary>
+    
+      <category term="linux" scheme="http://molloc.me/tags/linux/"/>
+    
+      <category term="Task" scheme="http://molloc.me/categories/Task/"/>
     
   </entry>
   
