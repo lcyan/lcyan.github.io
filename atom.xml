@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-09-19T01:24:06.898Z</updated>
+  <updated>2015-09-19T08:44:25.156Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[ZY-2015-09-13]]></title>
+    <title><![CDATA[ZY-2015-09-15]]></title>
     <link href="http://molloc.me/2015/09/15/ZY-2015-09-15/"/>
     <id>http://molloc.me/2015/09/15/ZY-2015-09-15/</id>
     <published>2015-09-15T15:19:32.000Z</published>
-    <updated>2015-09-19T01:24:06.898Z</updated>
+    <updated>2015-09-19T08:44:25.156Z</updated>
     <content type="html"><![CDATA[<h2 id="sed"><a class="header-anchor" href="#sed"></a>Sed</h2>
 <p><em>Sed Stream editor</em></p>
 <p>Sed的工作方式,一次从文件中读取一行到<code>pattern space</code>,然后判断这一行是不是我们需要编辑的行,如何符合条件则对其进行处理,</p>
@@ -162,10 +162,10 @@
   
   <entry>
     <title><![CDATA[ZY-2015-09-13]]></title>
-    <link href="http://molloc.me/2015/09/15/ZY-2015-09-13/"/>
-    <id>http://molloc.me/2015/09/15/ZY-2015-09-13/</id>
-    <published>2015-09-15T15:19:32.000Z</published>
-    <updated>2015-09-19T08:41:59.205Z</updated>
+    <link href="http://molloc.me/2015/09/13/ZY-2015-09-13/"/>
+    <id>http://molloc.me/2015/09/13/ZY-2015-09-13/</id>
+    <published>2015-09-13T15:19:32.000Z</published>
+    <updated>2015-09-19T08:44:25.363Z</updated>
     <content type="html"><![CDATA[<h2 id="shell"><a class="header-anchor" href="#shell"></a>Shell</h2>
 <p>注意本文讨论的是Bash，而不一定是/bin/sh所链接的那个shell。这里出现的所有代码片段，默认在顶上都添加了<code>#!/bin/bash</code>。</p>
 <p>计算机理解语言的 0 和 1 的称为二进制语言。</p>
