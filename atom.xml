@@ -167,7 +167,7 @@
     <link href="http://molloc.me/2015/09/13/ZY-2015-09-13/"/>
     <id>http://molloc.me/2015/09/13/ZY-2015-09-13/</id>
     <published>2015-09-13T15:19:32.000Z</published>
-    <updated>2015-09-20T16:27:41.942Z</updated>
+    <updated>2015-09-20T16:32:32.492Z</updated>
     <content type="html"><![CDATA[<h2 id="shell"><a class="header-anchor" href="#shell"></a>Shell</h2>
 <p>注意本文讨论的是Bash，而不一定是/bin/sh所链接的那个shell。这里出现的所有代码片段，默认在顶上都添加了<code>#!/bin/bash</code>。</p>
 <p>计算机理解语言的 0 和 1 的称为二进制语言。</p>
@@ -223,7 +223,7 @@
 <li>位置参数变量：在脚本中引用传递给脚本的参数；在函数中引用传递给函数的参数；</li>
 <li>特殊变量：<code>$?, $*, $@, $#, $$</code></li>
 </ul>
-<p>###引用</p>
+<h3 id="引用"><a class="header-anchor" href="#引用"></a>引用</h3>
 <ul>
 <li>弱引用: &quot;&quot;, 其内部的变量引用会被替换为变量值；</li>
 <li>强引用：''，其变量的变量引用会保持原有字符；</li>
