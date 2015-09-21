@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-09-21T16:01:26.828Z</updated>
+  <updated>2015-09-21T16:04:46.478Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://molloc.me/2015/09/21/ZY-2015-09-17/"/>
     <id>http://molloc.me/2015/09/21/ZY-2015-09-17/</id>
     <published>2015-09-21T13:59:43.000Z</published>
-    <updated>2015-09-21T16:01:26.828Z</updated>
+    <updated>2015-09-21T16:04:46.478Z</updated>
     <content type="html"><![CDATA[<p>Linux进程查看与管理</p>
 <p>OS的基本功能：文件系统、网络功能、进程管理、内存管理、驱动程序、安全功能</p>
 <p>OS提供虚拟的计算机，进而能够将有限资源借助于“保护”机制分配多个同时运行的程序，即“进程”使用，从而实现了所谓的多任务；</p>
@@ -27,7 +27,7 @@
 <p><code>top, pstree, ps, pidof, pgrep, pkill, htop, glances, pmap, vmstat, dstat, iostat, sar, kill, job, bg, fg</code></p>
 <p>程序=指令+数据</p>
 <a id="more"></a>
-## 进程管理与查看
+<h2 id="进程管理与查看"><a class="header-anchor" href="#进程管理与查看"></a>进程管理与查看</h2>
 <h3 id="cpu"><a class="header-anchor" href="#cpu"></a>CPU</h3>
 <ul>
 <li>特权指令</li>
