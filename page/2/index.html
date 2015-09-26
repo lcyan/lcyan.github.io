@@ -81,6 +81,71 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/08/20/ZY-2015-08-20/" title="ZY-2015.08.20" itemprop="url">ZY-2015.08.20</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
+		
+  <p class="article-time">
+    <time datetime="2015-08-20T14:32:07.000Z" itemprop="datePublished"> 发表于 2015-08-20</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
+<p><em>涉及到的命令有,date,clock,hwclock,cal,ls,cd,pwd,tty,whereis,which,stat,echo,shutdown,halt,reboot,poweroff,who,w,whoami</em></p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2015/08/20/ZY-2015-08-20/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Task/">Task</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/linux/">linux</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/08/20/ZY-2015-08-20/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/08/20/ZY-2015-08-20/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/06/29/hello-hexo/" title="Hello Hexo" itemprop="url">Hello Hexo</a>
   </h1>
   <p class="article-author">By
@@ -674,77 +739,9 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/06/13/通过crontab添加定时删除tomcat日志任务/" title="通过crontab添加定时删除tomcat日志任务" itemprop="url">通过crontab添加定时删除tomcat日志任务</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
-		
-  <p class="article-time">
-    <time datetime="2015-06-13T07:34:18.000Z" itemprop="datePublished"> 发表于 2015-06-13</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="使用场景"><a class="header-anchor" href="#使用场景"></a>使用场景</h2>
-<p><strong>定时清除生产环境上tomcat日志文件夹的日志,避免占满服务器硬盘.</strong>
-<img src="http://static.molloc.com/img/201506/server_info.png" style="display:block;margin:auto" alt="server-info" title="server-info" /></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-rw-r--r--. <span class="number">1</span> root root   <span class="number">2398</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">15</span>:<span class="number">29</span> admin.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root <span class="number">249758</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">23</span>:<span class="number">55</span> catalina.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root <span class="number">373453</span> <span class="number">6</span>月  <span class="number">12</span> <span class="number">23</span>:<span class="number">55</span> catalina.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">12</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root <span class="number">239142</span> <span class="number">6</span>月  <span class="number">13</span> <span class="number">15</span>:<span class="number">30</span> catalina.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">13</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root      <span class="number">0</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">15</span>:<span class="number">26</span> host-manager.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root   <span class="number">2334</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">15</span>:<span class="number">29</span> localhost.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root      <span class="number">0</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">15</span>:<span class="number">26</span> manager.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root <span class="number">114835</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">23</span>:<span class="number">55</span> portal.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root  <span class="number">43149</span> <span class="number">6</span>月  <span class="number">12</span> <span class="number">23</span>:<span class="number">55</span> portal.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">12</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root  <span class="number">26826</span> <span class="number">6</span>月  <span class="number">13</span> <span class="number">15</span>:<span class="number">30</span> portal.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">13</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root      <span class="number">0</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">15</span>:<span class="number">27</span> portal-error.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br></pre></td></tr></table></figure>
-<h2 id="解决思路"><a class="header-anchor" href="#解决思路"></a>解决思路</h2>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/06/13/通过crontab添加定时删除tomcat日志任务/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/工作相关/">工作相关</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/tomcat/">tomcat</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/06/13/通过crontab添加定时删除tomcat日志任务/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/06/13/通过crontab添加定时删除tomcat日志任务/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
-    <a class="extend prev" rel="prev" href="/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next<span></span></a>
+    <a class="extend prev" rel="prev" href="/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next<span></span></a>
   </nav>
 
 </div>
@@ -760,7 +757,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 		<ul>
 		
 		  
-			<li><a href="/categories/Task/" title="Task">Task<sup>10</sup></a></li>
+			<li><a href="/categories/Task/" title="Task">Task<sup>11</sup></a></li>
 		  
 		
 		  
@@ -786,7 +783,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
   </div>
 
 
@@ -796,7 +793,7 @@ With 122 dealerships worldwide, Automobili Lamborghini is building on a successi
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/linux/" title="linux">linux<sup>17</sup></a></li>
+				<li><a href="/tags/linux/" title="linux">linux<sup>18</sup></a></li>
 			
 		
 			

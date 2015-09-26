@@ -81,6 +81,74 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/06/13/通过crontab添加定时删除tomcat日志任务/" title="通过crontab添加定时删除tomcat日志任务" itemprop="url">通过crontab添加定时删除tomcat日志任务</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
+		
+  <p class="article-time">
+    <time datetime="2015-06-13T07:34:18.000Z" itemprop="datePublished"> 发表于 2015-06-13</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="使用场景"><a class="header-anchor" href="#使用场景"></a>使用场景</h2>
+<p><strong>定时清除生产环境上tomcat日志文件夹的日志,避免占满服务器硬盘.</strong>
+<img src="http://static.molloc.com/img/201506/server_info.png" style="display:block;margin:auto" alt="server-info" title="server-info" /></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-rw-r--r--. <span class="number">1</span> root root   <span class="number">2398</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">15</span>:<span class="number">29</span> admin.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root <span class="number">249758</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">23</span>:<span class="number">55</span> catalina.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root <span class="number">373453</span> <span class="number">6</span>月  <span class="number">12</span> <span class="number">23</span>:<span class="number">55</span> catalina.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">12</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root <span class="number">239142</span> <span class="number">6</span>月  <span class="number">13</span> <span class="number">15</span>:<span class="number">30</span> catalina.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">13</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root      <span class="number">0</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">15</span>:<span class="number">26</span> host-manager.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root   <span class="number">2334</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">15</span>:<span class="number">29</span> localhost.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root      <span class="number">0</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">15</span>:<span class="number">26</span> manager.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root <span class="number">114835</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">23</span>:<span class="number">55</span> portal.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root  <span class="number">43149</span> <span class="number">6</span>月  <span class="number">12</span> <span class="number">23</span>:<span class="number">55</span> portal.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">12</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root  <span class="number">26826</span> <span class="number">6</span>月  <span class="number">13</span> <span class="number">15</span>:<span class="number">30</span> portal.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">13</span>.log</span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root      <span class="number">0</span> <span class="number">6</span>月  <span class="number">11</span> <span class="number">15</span>:<span class="number">27</span> portal-error.<span class="number">2015</span>-<span class="number">06</span>-<span class="number">11</span>.log</span><br></pre></td></tr></table></figure>
+<h2 id="解决思路"><a class="header-anchor" href="#解决思路"></a>解决思路</h2>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2015/06/13/通过crontab添加定时删除tomcat日志任务/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/工作相关/">工作相关</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/tomcat/">tomcat</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/06/13/通过crontab添加定时删除tomcat日志任务/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/06/13/通过crontab添加定时删除tomcat日志任务/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/06/12/catalina_pid file contains +1 pid number instead of correct pid/" title="catalina_pid file contains +1 pid number instead of correct pid" itemprop="url">catalina_pid file contains +1 pid number instead of correct pid</a>
   </h1>
   <p class="article-author">By
@@ -696,75 +764,9 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/05/15/高效Linux-bash快捷键及alias总结/" title="高效Linux bash快捷键及alias总结" itemprop="url">高效Linux bash快捷键及alias总结</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
-		
-  <p class="article-time">
-    <time datetime="2015-05-15T14:33:57.000Z" itemprop="datePublished"> 发表于 2015-05-15</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>习惯使用编辑的快捷键可以大大提高效率，记忆学习过程要有意识的忽略功能键、方向键和数字小键盘。以下快捷键适用在bash处于默认的Emacs模式下。如果你有 set -o vi ，就处于  vi 模式就不适用了。另外下面的内容并不包含所有快捷键，只是我个人适用频率最高的几种，但相信已经可以大大提高工作效率了：</p>
-<h2 id="bash-shortcut"><a class="header-anchor" href="#bash-shortcut"></a>bash shortcut</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + l   <span class="comment"># 清除屏幕，同clear</span></span><br><span class="line">Ctrl + a   <span class="comment"># 将光标定位到命令的开头</span></span><br><span class="line">Ctrl + e   <span class="comment"># 与上一个快捷键相反，将光标定位到命令的结尾</span></span><br><span class="line">Ctrl + u   <span class="comment"># 剪切光标之前的内容，在输错命令或密码</span></span><br><span class="line">Ctrl + k   <span class="comment"># 与上一个快捷键相反，剪切光标之后的内容</span></span><br><span class="line">Ctrl + y   <span class="comment"># 粘贴以上两个快捷键所剪切的内容。Alt+y粘贴更早的内容</span></span><br><span class="line">Ctrl + w   <span class="comment"># 删除光标左边的参数（选项）或内容（实际是以空格为单位向前剪切一个word）</span></span><br><span class="line">Ctrl + /   <span class="comment"># 撤销，同Ctrl+x u</span></span><br><span class="line">Ctrl + f   <span class="comment"># 按字符前移（右向），同→</span></span><br><span class="line">Ctrl + b   <span class="comment"># 按字符后移（左向），同←</span></span><br><span class="line">Alt  + f   <span class="comment"># 单词前移，标点等特殊字符与空格一样分隔单词（右向），同Ctrl+→</span></span><br><span class="line">Alt  + b   <span class="comment"># 单词后移（左向），同Ctrl+←</span></span><br><span class="line">Alt  + d   <span class="comment"># 光标处删除至字尾。可以Ctrl+y粘贴回来</span></span><br><span class="line">Alt  + \   <span class="comment"># 除当前光标前面所有的空白字符</span></span><br><span class="line">Ctrl + d   <span class="comment"># 删除光标处的字符，同Del键。没有命令是表示注销用户</span></span><br><span class="line">Ctrl + h   <span class="comment"># 删除光标前的字符</span></span><br><span class="line">Ctrl + r   <span class="comment"># 逆向搜索命令历史，比history好用</span></span><br><span class="line">Ctrl + g   <span class="comment"># 从历史搜索模式退出，同ESC</span></span><br><span class="line">Ctrl + p   <span class="comment"># 历史中的上一条命令，同↑</span></span><br><span class="line">Ctrl + n   <span class="comment"># 历史中的下一条命令，同↓</span></span><br><span class="line">Alt  + .   <span class="comment"># 同!$，输出上一个命令的最后一个参数（选项or单词）。</span></span><br></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/05/15/高效Linux-bash快捷键及alias总结/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/工作相关/">工作相关</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/alias/">alias</a><a href="/tags/bash/">bash</a><a href="/tags/linux/">linux</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/05/15/高效Linux-bash快捷键及alias总结/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/05/15/高效Linux-bash快捷键及alias总结/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
-    <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
   </nav>
 
 </div>
@@ -780,7 +782,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Task/" title="Task">Task<sup>10</sup></a></li>
+			<li><a href="/categories/Task/" title="Task">Task<sup>11</sup></a></li>
 		  
 		
 		  
@@ -806,7 +808,7 @@
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
   </div>
 
 
@@ -816,7 +818,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/linux/" title="linux">linux<sup>17</sup></a></li>
+				<li><a href="/tags/linux/" title="linux">linux<sup>18</sup></a></li>
 			
 		
 			

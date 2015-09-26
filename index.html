@@ -81,6 +81,153 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/09/26/ZY-2015-08-30/" title="ZY-2015-08-30" itemprop="url">ZY-2015-08-30</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
+		
+  <p class="article-time">
+    <time datetime="2015-09-26T02:55:52.000Z" itemprop="datePublished"> 发表于 2015-09-26</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>Vim是一个类似于Vi的著名的功能强大、高度可定制的文本编辑器，在Vi的基础上改进和增加了很多特性。VIM是纯粹的自由软件。Vim普遍被推崇为类Vi编辑器中最好的一个，事实上真正的劲敌来自Emacs的不同变体。1999 年Emacs被选为Linuxworld文本编辑分类的优胜者，Vim屈居第二。但在2000年2月Vim赢得了Slashdot Beanie的最佳开放源代码文本编辑器大奖，又将Emacs推至二线， 总的来看， Vim和Emacs同样都是非常优秀的文本编辑器。</p>
+<p><code>vi, vi iMproved</code> --&gt; <code>vim</code></p>
+<h2 id="vim的模式"><a class="header-anchor" href="#vim的模式"></a>vim的模式</h2>
+<ul>
+<li>编辑模式,也叫命令模式</li>
+<li>输入模式</li>
+<li>末行模式</li>
+</ul>
+<h2 id="编辑模式到输入模式"><a class="header-anchor" href="#编辑模式到输入模式"></a>编辑模式到输入模式</h2>
+<ul>
+<li><code>i</code> insert</li>
+<li><code>a</code> append</li>
+<li><code>o</code> new line, 当前行的下方</li>
+<li><code>O</code> new line, 当前行的上方</li>
+<li><code>I</code> 行首</li>
+<li><code>A</code> 行尾</li>
+</ul>
+<h2 id="输入模式到编辑模式"><a class="header-anchor" href="#输入模式到编辑模式"></a>输入模式到编辑模式</h2>
+<ul>
+<li><code>ESC</code></li>
+</ul>
+<h2 id="编辑模式到末行模式"><a class="header-anchor" href="#编辑模式到末行模式"></a>编辑模式到末行模式</h2>
+<ul>
+<li><code>:</code></li>
+</ul>
+<h2 id="末行模式到编辑模式"><a class="header-anchor" href="#末行模式到编辑模式"></a>末行模式到编辑模式</h2>
+<ul>
+<li><code>ESC</code></li>
+</ul>
+<p>无法直接从输入模式回到末行模式,必须先按<code>ESC</code>退回到编辑模式,然后在进入末行模式.</p>
+<h2 id="打开vim"><a class="header-anchor" href="#打开vim"></a>打开<code>vim</code></h2>
+<ul>
+<li><code>vim</code></li>
+<li><code>vim /PATH/TO/SOMEFILE</code></li>
+<li><code>+#</code> <code>#</code>为行号,打开文件的时候,光标直接位于<code>#</code>行</li>
+<li><code>+/PATTERN</code> 打开文件的时候,光标位于<code>PATTERN</code>第一次匹配的位置.</li>
+</ul>
+<h2 id="关闭vim"><a class="header-anchor" href="#关闭vim"></a>关闭vim</h2>
+<ul>
+<li><code>:q</code>  退出</li>
+<li><code>:wq</code> 存盘并退出</li>
+<li><code>:q!</code> 不保存退出</li>
+<li><code>:x</code>  保存退出</li>
+<li><code>:w /PATH/TO/SOMEFILE</code> 另存为SOMEFILE文件</li>
+<li>在编辑模式下<code>ZZ</code> 保存退出</li>
+</ul>
+<h2 id="vim中的跳转"><a class="header-anchor" href="#vim中的跳转"></a>vim中的跳转</h2>
+<p>(1) 逐字符跳转<code>h(左),l(右),j(下),k(上)</code>一个字符. <code>#{h|l|j|k}</code>可以跳转#个字符,<code>10h</code>表示向左移动10字符.其他类似.</p>
+<p>(2) 单词间跳转<code>w,e,b</code></p>
+<p>连字符代表<code>-</code>,不包括上划线和下划线.</p>
+<p><code>w</code> 表示跳至下一个单词的词首,此处的单词是由连续的字母加数字,下划线(不包括特殊字符和连字符,特殊字符和连字符算一个单词)组成.</p>
+<p><code>e</code> 跳至当前或下一个单词的词尾,此处的单词是由连续的字符,数字,下划线组成(不包括特殊字符,特殊字符算一个单词).</p>
+<p><code>b</code> 跳至当前或上一个单词的词首,此处的单词是由连续的字符,数字,下划线组成(不包括特殊字符,特殊字符算一个单词).</p>
+<p><code>#{w|e|b}</code> 跳转<code>#</code>个单词位置.</p>
+<p>(3) 行内跳转</p>
+<p><code>^</code> 跳转至行首的第一个非空白字符</p>
+<p><code>0</code> 跳转至行首(绝对行首)</p>
+<p><code>$</code> 跳转至行尾(绝对行尾)</p>
+<p>(4) 行间移动</p>
+<p><code>#G</code> 跳转至<code>#</code>行, <code>1G</code>跳转至第一行,<code>G</code>跳转至最后一行.</p>
+<p><code>gg</code> 跳转至第一行</p>
+<p>(5) 句间移动(针对写论文之类的比较有意义)</p>
+<p><code>)</code> 跳转至下一句</p>
+<p><code>(</code> 跳转至上一句</p>
+<p>(6) 段落间移动</p>
+<p><code>}</code> 跳转至下一段落</p>
+<p><code>{</code> 跳转至上一段落</p>
+<h2 id="vim的编辑命令"><a class="header-anchor" href="#vim的编辑命令"></a>vim的编辑命令</h2>
+<p>(1) 字符编辑操作</p>
+<p><code>x</code>  删除光标所在处的字符.</p>
+<p><code>#x</code> 删除光标所在处以及向后的指定个数的字符.</p>
+<p><code>xp</code> <code>p</code>表示粘贴之意,把光标所在的字符与后一个字符对调.<code>to</code> --&gt; <code>ot</code></p>
+<p><code>r</code> 替换光标所在处的字符.</p>
+<p>(2) 删除命令</p>
+<p><code>d</code>  根光标跳转结合起来使用.</p>
+<p><code>d$</code> 删除光标所在处到行尾的所有字符.</p>
+<p><code>d^</code> 删除光标所在处到行首的所有字符.</p>
+<p><code>d0</code> 删除光标所在处到行首(绝对行首)的所有字符.</p>
+<p><code>[#]dw</code> 删除光标所在处到词尾或下一个单词词尾的的字符(注意单词的界定)</p>
+<p><code>[#]db</code> 删除光标所在处到词首或前一个单词的词首的字符(注意单词的界定)</p>
+<p><code>[#]dd</code> 删除光标所在处的一整行的内容,<code>3dd</code>代表删除3行.</p>
+<p>Note: 删除的内容会被vim编辑器保存至缓冲区当中.最近一次的删除操作还可以粘贴到某位置.</p>
+<p>(3) 粘贴命令</p>
+<p><code>p</code> <code>p</code>(paste,put), 取决于我们之前删除的是什么</p>
+<p>如果此复制或删除的内容不是一个完整行.</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Task/">Task</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/linux/">linux</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/09/26/ZY-2015-08-30/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/09/26/ZY-2015-08-30/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/09/21/ZY-2015-09-17/" title="ZY-2015-09-17" itemprop="url">ZY-2015-09-17</a>
   </h1>
   <p class="article-author">By
@@ -704,74 +851,9 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/08/20/ZY-2015-08-20/" title="ZY-2015.08.20" itemprop="url">ZY-2015.08.20</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
-		
-  <p class="article-time">
-    <time datetime="2015-08-20T14:32:07.000Z" itemprop="datePublished"> 发表于 2015-08-20</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
-<p><em>涉及到的命令有,date,clock,hwclock,cal,ls,cd,pwd,tty,whereis,which,stat,echo,shutdown,halt,reboot,poweroff,who,w,whoami</em></p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/08/20/ZY-2015-08-20/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Task/">Task</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/linux/">linux</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/08/20/ZY-2015-08-20/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/08/20/ZY-2015-08-20/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
   </nav>
 
 </div>
@@ -787,7 +869,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Task/" title="Task">Task<sup>10</sup></a></li>
+			<li><a href="/categories/Task/" title="Task">Task<sup>11</sup></a></li>
 		  
 		
 		  
@@ -813,7 +895,7 @@
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
   </div>
 
 
@@ -823,7 +905,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/linux/" title="linux">linux<sup>17</sup></a></li>
+				<li><a href="/tags/linux/" title="linux">linux<sup>18</sup></a></li>
 			
 		
 			
