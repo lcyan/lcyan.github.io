@@ -5,22 +5,24 @@
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="oxwWO_yZe21RAWOe9W6x1uUtSckxKC_eFEYqRbB88lY" />
   
-    <title>Kernel</title>
+    <title>ZY-2015-09-24 | Kernel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Kernel">
     
 
     
-    <meta name="description" content="Better Wife , Better Life">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kernel">
-<meta property="og:url" content="http://molloc.me/index.html">
+    <meta name="description" content="网络模型大概有两种,一种是OSI的参考模型,它把协议栈大体上分为七层,上三层叫资源子网,下四层叫通讯子网,TCP协议将协议栈分成四层,TCP协议栈的应用层对用OSI的上三层,用来表示应用的,底下的三层,首先TCP,UDP这一层也叫传输层,对应OSI的传输层,其次互联网层(IPV4,IPV6)层对用OSI的网络层,最后身边驱动程序和硬件则对应OSI的数据链路层和物理层.传输层及传输层以下的叫通讯子网">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ZY-2015-09-24">
+<meta property="og:url" content="http://molloc.me/2015/09/27/ZY-2015-09-24/index.html">
 <meta property="og:site_name" content="Kernel">
-<meta property="og:description" content="Better Wife , Better Life">
+<meta property="og:description" content="网络模型大概有两种,一种是OSI的参考模型,它把协议栈大体上分为七层,上三层叫资源子网,下四层叫通讯子网,TCP协议将协议栈分成四层,TCP协议栈的应用层对用OSI的上三层,用来表示应用的,底下的三层,首先TCP,UDP这一层也叫传输层,对应OSI的传输层,其次互联网层(IPV4,IPV6)层对用OSI的网络层,最后身边驱动程序和硬件则对应OSI的数据链路层和物理层.传输层及传输层以下的叫通讯子网">
+<meta property="og:image" content="http://static.molloc.com/linux/imgs/ZY-2015-09-24/TCP-IP.jpg">
+<meta property="og:updated_time" content="2015-09-30T15:33:40.262Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kernel">
-<meta name="twitter:description" content="Better Wife , Better Life">
+<meta name="twitter:title" content="ZY-2015-09-24">
+<meta name="twitter:description" content="网络模型大概有两种,一种是OSI的参考模型,它把协议栈大体上分为七层,上三层叫资源子网,下四层叫通讯子网,TCP协议将协议栈分成四层,TCP协议栈的应用层对用OSI的上三层,用来表示应用的,底下的三层,首先TCP,UDP这一层也叫传输层,对应OSI的传输层,其次互联网层(IPV4,IPV6)层对用OSI的网络层,最后身边驱动程序和硬件则对应OSI的数据链路层和物理层.传输层及传输层以下的叫通讯子网">
 
     
     <link rel="alternative" href="/atom.xml" title="Kernel" type="application/atom+xml">
@@ -73,12 +75,10 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
   <h1 itemprop="name">
     
       <a href="/2015/09/27/ZY-2015-09-24/" title="ZY-2015-09-24" itemprop="url">ZY-2015-09-24</a>
@@ -92,9 +92,16 @@
     
   </p>
 </header>
-    <div class="article-content">
-        
-        <p>网络模型大概有两种,一种是OSI的参考模型,它把协议栈大体上分为七层,上三层叫资源子网,下四层叫通讯子网,TCP协议将协议栈分成四层,TCP协议栈的应用层对用OSI的上三层,用来表示应用的,底下的三层,首先TCP,UDP这一层也叫传输层,对应OSI的传输层,其次互联网层(IPV4,IPV6)层对用OSI的网络层,最后身边驱动程序和硬件则对应OSI的数据链路层和物理层.传输层及传输层以下的叫通讯子网,而上面的叫资源子网.</p>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#web-server"><span class="toc-number">1.</span> <span class="toc-text">Web Server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传输层"><span class="toc-number">2.</span> <span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#套接字"><span class="toc-number">3.</span> <span class="toc-text">套接字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#socket-domain-根据其所使用的地址"><span class="toc-number">4.</span> <span class="toc-text">Socket Domain (根据其所使用的地址)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#套接字相关的系统调用"><span class="toc-number">5.</span> <span class="toc-text">套接字相关的系统调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#套接字的类型"><span class="toc-number">6.</span> <span class="toc-text">套接字的类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ipv4分类"><span class="toc-number">7.</span> <span class="toc-text">IPV4分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tcp协议的特性"><span class="toc-number">8.</span> <span class="toc-text">TCP协议的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-hyper-text-transfer-protocal-tcp-80"><span class="toc-number">9.</span> <span class="toc-text">(HTTP Hyper Text Transfer Protocal) tcp/80</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http协议的版本"><span class="toc-number">10.</span> <span class="toc-text">http协议的版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mime类型-major-minor"><span class="toc-number">11.</span> <span class="toc-text">MIME类型(major/minor)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一次完整的http请求过程"><span class="toc-number">12.</span> <span class="toc-text">一次完整的HTTP请求过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#并发访问响应模型-web-i-o"><span class="toc-number">13.</span> <span class="toc-text">并发访问响应模型(WEB I/O)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#请求报文的格式"><span class="toc-number">14.</span> <span class="toc-text">请求报文的格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web服务器资源路径映射方式"><span class="toc-number">15.</span> <span class="toc-text">web服务器资源路径映射方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mime类型"><span class="toc-number">16.</span> <span class="toc-text">MIME类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#url的重定向"><span class="toc-number">17.</span> <span class="toc-text">URL的重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见的http服务器"><span class="toc-number">18.</span> <span class="toc-text">常见的http服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用程序服务器-netcraft-com"><span class="toc-number">19.</span> <span class="toc-text">应用程序服务器(netcraft.com)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#httpd的特性"><span class="toc-number">20.</span> <span class="toc-text">httpd的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#httpd的功能特性"><span class="toc-number">21.</span> <span class="toc-text">httpd的功能特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mpm-multi-processing-module"><span class="toc-number">22.</span> <span class="toc-text">MPM(Multi-Processing Module)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#prefork"><span class="toc-number">23.</span> <span class="toc-text">prefork</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#worker"><span class="toc-number">24.</span> <span class="toc-text">worker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#event"><span class="toc-number">25.</span> <span class="toc-text">event</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#httpd的安装配置和使用"><span class="toc-number">26.</span> <span class="toc-text">httpd的安装配置和使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序环境"><span class="toc-number">27.</span> <span class="toc-text">程序环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件"><span class="toc-number">27.1.</span> <span class="toc-text">配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务脚本"><span class="toc-number">27.2.</span> <span class="toc-text">服务脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块文件目录"><span class="toc-number">27.3.</span> <span class="toc-text">模块文件目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主程序文件"><span class="toc-number">27.4.</span> <span class="toc-text">主程序文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日志文件目录"><span class="toc-number">27.5.</span> <span class="toc-text">日志文件目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#站点文档目录"><span class="toc-number">27.6.</span> <span class="toc-text">站点文档目录</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<p>网络模型大概有两种,一种是OSI的参考模型,它把协议栈大体上分为七层,上三层叫资源子网,下四层叫通讯子网,TCP协议将协议栈分成四层,TCP协议栈的应用层对用OSI的上三层,用来表示应用的,底下的三层,首先TCP,UDP这一层也叫传输层,对应OSI的传输层,其次互联网层(IPV4,IPV6)层对用OSI的网络层,最后身边驱动程序和硬件则对应OSI的数据链路层和物理层.传输层及传输层以下的叫通讯子网,而上面的叫资源子网.</p>
 <p>IP地址用于标记主机到主机的,数据链路层的MAC地址是用来标记设备到设备的.</p>
 <p><img src="http://static.molloc.com/linux/imgs/ZY-2015-09-24/TCP-IP.jpg" alt="tcp-ip"></p>
 <h2 id="web-server"><a class="header-anchor" href="#web-server"></a>Web Server</h2>
@@ -293,14 +300,9 @@
 <h3 id="站点文档目录"><a class="header-anchor" href="#站点文档目录"></a>站点文档目录</h3>
 <p>默认在<code>var/www/html</code></p>
 <p>源码编译安装:</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
+  
+	</div>
+		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
@@ -318,659 +320,47 @@
 
 
 
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://molloc.me/2015/09/27/ZY-2015-09-24/" data-title="ZY-2015-09-24 | Kernel" data-tsina="2205010230" class="share clearfix">
+	  </div>
+	
+	</div>
 
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/09/27/ZY-2015-09-24/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/09/27/ZY-2015-09-24/" data-count-type="comments">&nbsp;</a>
-	
-</div>
 
 </footer>
 
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/09/26/ZY-2015-08-30/" title="ZY-2015-08-30" itemprop="url">ZY-2015-08-30</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
-		
-  <p class="article-time">
-    <time datetime="2015-09-26T02:55:52.000Z" itemprop="datePublished"> 发表于 2015-09-26</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>Vim是一个类似于Vi的著名的功能强大、高度可定制的文本编辑器，在Vi的基础上改进和增加了很多特性。VIM是纯粹的自由软件。Vim普遍被推崇为类Vi编辑器中最好的一个，事实上真正的劲敌来自Emacs的不同变体。1999 年Emacs被选为Linuxworld文本编辑分类的优胜者，Vim屈居第二。但在2000年2月Vim赢得了Slashdot Beanie的最佳开放源代码文本编辑器大奖，又将Emacs推至二线， 总的来看， Vim和Emacs同样都是非常优秀的文本编辑器。</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/09/26/ZY-2015-08-30/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Task/">Task</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/linux/">linux</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
+   	       
+	</article>
 	
-	  	<span></span>
-		<a href="/2015/09/26/ZY-2015-08-30/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/09/26/ZY-2015-08-30/" data-count-type="comments">&nbsp;</a>
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/09/26/ZY-2015-08-30/"  title="ZY-2015-08-30">
+ <strong>下一篇：</strong><br/> 
+ <span>ZY-2015-08-30
+</span>
+</a>
+</div>
+
+</nav>
+
 	
-</div>
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/09/27/ZY-2015-09-24/" data-title="ZY-2015-09-24" data-url="http://molloc.me/2015/09/27/ZY-2015-09-24/"></div>
+</section>
 
-</footer>
 
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/09/21/ZY-2015-09-17/" title="ZY-2015-09-17" itemprop="url">ZY-2015-09-17</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
-		
-  <p class="article-time">
-    <time datetime="2015-09-21T13:59:43.000Z" itemprop="datePublished"> 发表于 2015-09-21</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>Linux进程查看与管理</p>
-<p>OS的基本功能：文件系统、网络功能、进程管理、内存管理、驱动程序、安全功能</p>
-<p>OS提供虚拟的计算机，进而能够将有限资源借助于“保护”机制分配多个同时运行的程序，即“进程”使用，从而实现了所谓的多任务；</p>
-<p>Linux进程查看及管理工具</p>
-<p><code>top, pstree, ps, pidof, pgrep, pkill, htop, glances, pmap, vmstat, dstat, iostat, sar, kill, job, bg, fg</code></p>
-<p>程序=指令+数据</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/09/21/ZY-2015-09-17/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Task/">Task</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/linux/">linux</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/09/21/ZY-2015-09-17/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/09/21/ZY-2015-09-17/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/09/15/ZY-2015-09-15/" title="ZY-2015-09-15" itemprop="url">ZY-2015-09-15</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
-		
-  <p class="article-time">
-    <time datetime="2015-09-15T15:19:32.000Z" itemprop="datePublished"> 发表于 2015-09-15</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="sed"><a class="header-anchor" href="#sed"></a>Sed</h2>
-<p><em>Sed Stream editor</em></p>
-<p>sed和awk是用户、程序员和管理员应用的工具。之所以称为sed是因为它是一个流编辑器（stream editor），用于对许多文件执行一系列的编辑操作。awk是根据它的开发者Aho、Weinberger和Kernighan命名的。awk是一种编程语言，它可以使你很容易地处理结构化数据和生成格式化报告。</p>
-<p>Sed的工作方式,一次从文件中读取一行到<code>pattern space</code>,然后判断这一行是不是我们需要编辑的行,如何符合条件则对其进行处理,</p>
-<p>处理完之后把处理的结果输出到屏幕上.如果不符合要求也输出到屏幕上来(Sed的默认操作,称之为打印模式空间).</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/09/15/ZY-2015-09-15/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Task/">Task</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/linux/">linux</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/09/15/ZY-2015-09-15/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/09/15/ZY-2015-09-15/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/09/13/ZY-2015-09-13/" title="ZY-2015-09-13" itemprop="url">ZY-2015-09-13</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
-		
-  <p class="article-time">
-    <time datetime="2015-09-13T15:19:32.000Z" itemprop="datePublished"> 发表于 2015-09-13</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="shell"><a class="header-anchor" href="#shell"></a>Shell</h2>
-<p>注意本文讨论的是Bash，而不一定是/bin/sh所链接的那个shell。这里出现的所有代码片段，默认在顶上都添加了<code>#!/bin/bash</code>。</p>
-<p>计算机理解语言的 0 和 1 的称为二进制语言。</p>
-<p>在早期的计算机时代，指令提供使用二进制语言，很难对我们所有人，读和写。所以在 Os 中是叫 Shell 的特别节目。壳 (大部分) 接受你的指令或命令在英语中的，如果它是一个有效的命令，它是传递给内核。</p>
-<p>外壳是用户或程序是提供用户交互环境。Shell 是命令语言解释器执行命令从标准输入设备 (键盘) 或从文件读取。</p>
-<p><code>Shell</code>不是系统内核的一部分，但使用系统内核执行程序、 创建文件等。</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/09/13/ZY-2015-09-13/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Task/">Task</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/linux/">linux</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/09/13/ZY-2015-09-13/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/09/13/ZY-2015-09-13/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/09/12/ZY-2015-09-01/" title="ZY-2015-09-01" itemprop="url">ZY-2015-09-01</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
-		
-  <p class="article-time">
-    <time datetime="2015-09-12T09:42:18.000Z" itemprop="datePublished"> 发表于 2015-09-12</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="linux-磁盘管理"><a class="header-anchor" href="#linux-磁盘管理"></a>Linux 磁盘管理</h2>
-<p><strong>硬盘分为:机械式硬盘,SSD</strong></p>
-<h3 id="机械式硬盘"><a class="header-anchor" href="#机械式硬盘"></a>机械式硬盘</h3>
-<ul>
-<li>rpm: 5400, 7200, 10000, 15000</li>
-<li>track</li>
-<li>sector 512byte</li>
-<li>cylinder, 分区以柱面为基本单位进行的</li>
-<li>MBR(Master Boot Record)</li>
-</ul>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/09/12/ZY-2015-09-01/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Task/">Task</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/linux/">linux</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/09/12/ZY-2015-09-01/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/09/12/ZY-2015-09-01/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/09/11/ZY-2015-09-10/" title="ZY-2015-09-10" itemprop="url">ZY-2015-09-10</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
-		
-  <p class="article-time">
-    <time datetime="2015-09-11T15:18:37.000Z" itemprop="datePublished"> 发表于 2015-09-11</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>总结rpm和yum实现程序包的管理功能</p>
-<h2 id="程序包管理"><a class="header-anchor" href="#程序包管理"></a>程序包管理</h2>
-<h3 id="包管理器"><a class="header-anchor" href="#包管理器"></a>包管理器</h3>
-<p><strong>打包,包管理(安装,升级,卸载,查询及校验)</strong></p>
-<ul>
-<li>deb: debian</li>
-<li>rpm: redhat package manager --&gt; RPM is Package Manager</li>
-<li>DNF:</li>
-</ul>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/09/11/ZY-2015-09-10/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Task/">Task</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/linux/">linux</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/09/11/ZY-2015-09-10/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/09/11/ZY-2015-09-10/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/09/09/ZY-2015-09-05/" title="ZY-2015-09-05" itemprop="url">ZY-2015-09-05</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
-		
-  <p class="article-time">
-    <time datetime="2015-09-09T14:18:46.000Z" itemprop="datePublished"> 发表于 2015-09-09</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
-<h2 id="linux上的任务计划"><a class="header-anchor" href="#linux上的任务计划"></a>Linux上的任务计划</h2>
-<h3 id="任务计划"><a class="header-anchor" href="#任务计划"></a>任务计划</h3>
-<ul>
-<li>在未来时间点一次性执行某任务: <code>at, batch</code></li>
-<li>周期性执行某任务: <code>crontab</code></li>
-</ul>
-<h3 id="电子邮件服务"><a class="header-anchor" href="#电子邮件服务"></a>电子邮件服务</h3>
-<ul>
-<li>smtp: Simple Mail Transfer Protocol</li>
-<li>POP3: Post Office Protocol - Version 3</li>
-<li>imap4: Internet Message Access Protocol 4 交互式数据消息访问协议第四个版本</li>
-<li>邮件用户代理（MUA，Mail User Agent）(mail,mailx)</li>
-<li>邮件传送代理（MTA，Mail Transport Agent）(sendmail)</li>
-<li>邮件分发代理（MDA，Mail Deliver Agent）</li>
-<li>通俗的说MUA就是用户使用的客户端，而MTA则是真正发送邮件的发送进程，MUA编写的邮件最终也交由MTA发送至目标端。</li>
-<li>mail和mailx即为负责查看、编写邮件和向MTA发送邮件的MUA。mailx是mail的功能加强版。</li>
-<li>sendmail即为负责邮件在网络上传输的MTA，将邮件从一个MTA传送至另一个MTA。</li>
-</ul>
-<p>linux中mail的存放路径<code>/var/sool/mail/USERNAME</code></p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/09/09/ZY-2015-09-05/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Task/">Task</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/linux/">linux</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/09/09/ZY-2015-09-05/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/09/09/ZY-2015-09-05/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/08/30/ZY-2015-08-27/" title="ZY-2015-08-27" itemprop="url">ZY-2015-08-27</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
-		
-  <p class="article-time">
-    <time datetime="2015-08-29T16:00:33.000Z" itemprop="datePublished"> 发表于 2015-08-30</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
-<p><em>本文涉及的命令有: chmod, chown, chgrp, umask, grep, egrep</em></p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/08/30/ZY-2015-08-27/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Task/">Task</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/linux/">linux</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/08/30/ZY-2015-08-27/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/08/30/ZY-2015-08-27/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/08/25/ZY-2015-08-25/" title="ZY-2015-08-25" itemprop="url">ZY-2015-08-25</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
-		
-  <p class="article-time">
-    <time datetime="2015-08-25T15:39:11.000Z" itemprop="datePublished"> 发表于 2015-08-25</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><em>文中 <code>--&gt;</code> 为开头的为命令行的输出.</em></p>
-<p><em>用户和组管理的相关命令,useradd、usermod、passwd、userdel groupadd、groupmod、gpasswd、groupdel chage、chsh、chfn id、su</em></p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/08/25/ZY-2015-08-25/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Task/">Task</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/linux/">linux</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/08/25/ZY-2015-08-25/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/08/25/ZY-2015-08-25/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-
-  <nav id="page-nav" class="clearfix">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
-  </nav>
-
-</div>
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#web-server"><span class="toc-number">1.</span> <span class="toc-text">Web Server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传输层"><span class="toc-number">2.</span> <span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#套接字"><span class="toc-number">3.</span> <span class="toc-text">套接字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#socket-domain-根据其所使用的地址"><span class="toc-number">4.</span> <span class="toc-text">Socket Domain (根据其所使用的地址)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#套接字相关的系统调用"><span class="toc-number">5.</span> <span class="toc-text">套接字相关的系统调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#套接字的类型"><span class="toc-number">6.</span> <span class="toc-text">套接字的类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ipv4分类"><span class="toc-number">7.</span> <span class="toc-text">IPV4分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tcp协议的特性"><span class="toc-number">8.</span> <span class="toc-text">TCP协议的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-hyper-text-transfer-protocal-tcp-80"><span class="toc-number">9.</span> <span class="toc-text">(HTTP Hyper Text Transfer Protocal) tcp/80</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http协议的版本"><span class="toc-number">10.</span> <span class="toc-text">http协议的版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mime类型-major-minor"><span class="toc-number">11.</span> <span class="toc-text">MIME类型(major/minor)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一次完整的http请求过程"><span class="toc-number">12.</span> <span class="toc-text">一次完整的HTTP请求过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#并发访问响应模型-web-i-o"><span class="toc-number">13.</span> <span class="toc-text">并发访问响应模型(WEB I/O)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#请求报文的格式"><span class="toc-number">14.</span> <span class="toc-text">请求报文的格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web服务器资源路径映射方式"><span class="toc-number">15.</span> <span class="toc-text">web服务器资源路径映射方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mime类型"><span class="toc-number">16.</span> <span class="toc-text">MIME类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#url的重定向"><span class="toc-number">17.</span> <span class="toc-text">URL的重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见的http服务器"><span class="toc-number">18.</span> <span class="toc-text">常见的http服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用程序服务器-netcraft-com"><span class="toc-number">19.</span> <span class="toc-text">应用程序服务器(netcraft.com)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#httpd的特性"><span class="toc-number">20.</span> <span class="toc-text">httpd的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#httpd的功能特性"><span class="toc-number">21.</span> <span class="toc-text">httpd的功能特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mpm-multi-processing-module"><span class="toc-number">22.</span> <span class="toc-text">MPM(Multi-Processing Module)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#prefork"><span class="toc-number">23.</span> <span class="toc-text">prefork</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#worker"><span class="toc-number">24.</span> <span class="toc-text">worker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#event"><span class="toc-number">25.</span> <span class="toc-text">event</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#httpd的安装配置和使用"><span class="toc-number">26.</span> <span class="toc-text">httpd的安装配置和使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序环境"><span class="toc-number">27.</span> <span class="toc-text">程序环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件"><span class="toc-number">27.1.</span> <span class="toc-text">配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务脚本"><span class="toc-number">27.2.</span> <span class="toc-text">服务脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块文件目录"><span class="toc-number">27.3.</span> <span class="toc-text">模块文件目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主程序文件"><span class="toc-number">27.4.</span> <span class="toc-text">主程序文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日志文件目录"><span class="toc-number">27.5.</span> <span class="toc-text">日志文件目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#站点文档目录"><span class="toc-number">27.6.</span> <span class="toc-text">站点文档目录</span></a></li></ol></li></ol>
+ 
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -1186,6 +576,11 @@ $(document).ready(function(){
     o.css("top",Math.max(80,260-$(this).scrollTop()));
   });
   
+        getSize();
+        if (myWidth >= 1024) {
+          c.click();
+        }
+  
   $(window).resize(function(){
     getSize(); 
     if (myWidth >= 1024) {
@@ -1194,12 +589,69 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
 
 
 
@@ -1300,7 +752,6 @@ $(document).ready(function(){
 
 <!-- Tiny_search End -->
 
-    <a href="https://github.com/lcyan"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://static.molloc.com/imgs/github/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" data-canonical-src="http://static.molloc.com/imgs/github/forkme_right_darkblue_121621.png"></a>
   </body>
- </html>
+</html>
 
