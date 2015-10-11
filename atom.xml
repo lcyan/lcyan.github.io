@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-09-30T15:33:40.262Z</updated>
+  <updated>2015-10-11T10:16:13.689Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://molloc.me/2015/09/27/ZY-2015-09-24/"/>
     <id>http://molloc.me/2015/09/27/ZY-2015-09-24/</id>
     <published>2015-09-27T15:43:59.000Z</published>
-    <updated>2015-09-30T15:33:40.262Z</updated>
+    <updated>2015-10-11T10:16:13.689Z</updated>
     <content type="html"><![CDATA[<p>网络模型大概有两种,一种是OSI的参考模型,它把协议栈大体上分为七层,上三层叫资源子网,下四层叫通讯子网,TCP协议将协议栈分成四层,TCP协议栈的应用层对用OSI的上三层,用来表示应用的,底下的三层,首先TCP,UDP这一层也叫传输层,对应OSI的传输层,其次互联网层(IPV4,IPV6)层对用OSI的网络层,最后身边驱动程序和硬件则对应OSI的数据链路层和物理层.传输层及传输层以下的叫通讯子网,而上面的叫资源子网.</p>
 <p>IP地址用于标记主机到主机的,数据链路层的MAC地址是用来标记设备到设备的.</p>
 <p><img src="http://static.molloc.com/linux/imgs/ZY-2015-09-24/TCP-IP.jpg" alt="tcp-ip"></p>
@@ -182,7 +182,7 @@
 <h2 id="prefork"><a class="header-anchor" href="#prefork"></a>prefork</h2>
 <p>多进程模型, 每个进程响应一个请求</p>
 <p>基本工作机制为一个主进程,负责生成N个子进程, 子进程也称为工作进程, 每个进程处理一个用户请求, 即便没有用户请求,也会预先生成多个空闲进程, 随时等待请求到达. 最大不会超过1024个.</p>
-<p>web服务启动以后, 主进程用来监听<code>socket</code>请求, 主进程只负责接收(通过子进程), 并不负责请求处理及响应. 由主进程创建的子进程来处理.</p>
+<p>web服务启动以后, 主进程用来监听<code>socket</code>请求, 主进程只负责接收(通过子进程接收), 并不负责请求处理及响应. 由主进程创建的子进程来处理.</p>
 <h2 id="worker"><a class="header-anchor" href="#worker"></a>worker</h2>
 <p>多线程模型, 每个线程响应一个请求</p>
 <p>基本工作机制为一个主进程, 生成多个子进程, 每个子进程负责生成多个线程, 每个线程响应一个请求.</p>
@@ -210,15 +210,283 @@
 <h3 id="模块文件目录"><a class="header-anchor" href="#模块文件目录"></a>模块文件目录</h3>
 <p><code>etc/httpd/modules</code> --&gt; <code>usr/lib64/httpd/modules</code></p>
 <h3 id="主程序文件"><a class="header-anchor" href="#主程序文件"></a>主程序文件</h3>
-<p>2.4 之前</p>
-<p><code>/usr/sbin/httpd</code>(prefork)
-<code>/usr/sbin/httpd.worker</code>(workder)
-<code>/user/sbin/httpd.event</code>(event)</p>
+<p><strong>2.4 之前</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/usr/sbin/httpd (prefork)</span><br><span class="line">/usr/sbin/httpd.worker (workder)</span><br><span class="line">/user/sbin/httpd.event (event)</span><br></pre></td></tr></table></figure>
 <h3 id="日志文件目录"><a class="header-anchor" href="#日志文件目录"></a>日志文件目录</h3>
 <p><code>var/log/httd</code>下, <code>access_log</code> 访问日志文件, <code>error_log</code>: 错误日志</p>
 <h3 id="站点文档目录"><a class="header-anchor" href="#站点文档目录"></a>站点文档目录</h3>
 <p>默认在<code>var/www/html</code></p>
-<p>源码编译安装:</p>
+<h3 id="配置文件-v2"><a class="header-anchor" href="#配置文件-v2"></a>配置文件</h3>
+<p>Directive Value(不区分大小写)
+指令      值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'Section'</span> httpd.conf</span><br><span class="line"><span class="comment">### Section 1: Global Environment</span></span><br><span class="line"><span class="comment">### Section 2: 'Main' server configuration</span></span><br><span class="line"><span class="comment">### Section 3: Virtual Hosts</span></span><br></pre></td></tr></table></figure>
+<p><code>Main server</code>和<code>Virtual Hosts</code>不能同时启用,默认启用的是<code>Main server</code></p>
+<p>修改配置文件后检查语法是否正确<code>httpd -t</code></p>
+<h2 id="指定监听地址和端口"><a class="header-anchor" href="#指定监听地址和端口"></a>指定监听地址和端口</h2>
+<p><code>Listen [IP:]80</code></p>
+<ul>
+<li><code>IP</code>省略时表示监听本机上所有可用的<code>IP</code>地址.</li>
+<li><code>Listen</code>指令可以出现多次,用于指明多个不同监听端口或套接字.</li>
+</ul>
+<h2 id="持久连接相关"><a class="header-anchor" href="#持久连接相关"></a>持久连接相关</h2>
+<p>持久连接: 连接建立后,灭个资源获取结束不会断开连接,而继续等待其他资源请求并完成传输.</p>
+<p>如何断开?</p>
+<ul>
+<li>数量限制, 如100个.</li>
+<li>时间显示, 如60秒.</li>
+</ul>
+<p>劣势: 对并发访问量较大的服务器,开持久连接会导致有些请求得不到服务.
+改进: 减短, <code>http-2.4</code>支持毫秒级.</p>
+<p>非持久连接: 每个资源都是单独通过专用的连接进行获取.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">KeepAlive Off|On <span class="comment"># 开启持久连接</span></span><br><span class="line">MaxKeepAliveRequests <span class="number">100</span> <span class="comment"># 最大保活连接请求数</span></span><br><span class="line">KeepAliveTimeout <span class="number">15</span> <span class="comment"># 保活连接的超时时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 测试</span></span><br><span class="line">$ telnet <span class="number">192.168</span>.<span class="number">1.166</span> <span class="number">80</span></span><br><span class="line">Trying <span class="number">192.168</span>.<span class="number">1.166</span>...</span><br><span class="line">Connected to <span class="number">192.168</span>.<span class="number">1.166</span>.</span><br><span class="line">Escape character is <span class="string">'^]'</span>.</span><br><span class="line">GET / HTTP/<span class="number">1.1</span></span><br><span class="line">Host: <span class="number">192.168</span>.<span class="number">1.166</span></span><br><span class="line"></span><br><span class="line">HTTP/<span class="number">1.1</span> <span class="number">200</span> OK</span><br><span class="line">Date: Fri, <span class="number">09</span> Oct <span class="number">2015</span> <span class="number">15</span>:<span class="number">16</span>:<span class="number">43</span> GMT</span><br><span class="line">Server: Apache/<span class="number">2.2</span>.<span class="number">15</span> (CentOS)</span><br><span class="line">Last-Modified: Fri, <span class="number">09</span> Oct <span class="number">2015</span> <span class="number">14</span>:<span class="number">55</span>:<span class="number">42</span> GMT</span><br><span class="line">ETag: <span class="string">"fa2-1e-521ad2c70024e"</span></span><br><span class="line">Accept-Ranges: bytes</span><br><span class="line">Content-Length: <span class="number">30</span></span><br><span class="line">Content-Type: text/html; charset=UTF-<span class="number">8</span></span><br><span class="line"></span><br><span class="line">&lt;h2&gt;Hello Apache httpd !&lt;/h2&gt;</span><br><span class="line">Connection closed by foreign host.</span><br></pre></td></tr></table></figure>
+<h2 id="mpm相关"><a class="header-anchor" href="#mpm相关"></a>MPM相关</h2>
+<p>多路处理模块, 并发请求响应的不同实现.(prefork, workder, event)</p>
+<p>httpd-2.2不支持同事编译多个不同的MPM, rpm安装的httpd-2.2提供了三个文件分别用于实现提供对不同的MPM的支持.</p>
+<p>默认为<code>/user/sbin/httpd</code>其为<code>prefork</code></p>
+<p><code>httpd -l</code>: 查看静态编译的模块列表</p>
+<p><code>httpd -M</code>: 查看所有模块, 包括静态编译和DSO模块</p>
+<p>确认方法<code>ps aux | grep httpd</code></p>
+<p>更换支持不同的MPM的主程序, <code>vim /etc/sysconfig/httpd</code>修改<code>HTTPD=/usr/sbin/httpd.worker</code>为自己想要的MPM.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># prefork MPM</span></span><br><span class="line"><span class="comment"># StartServers: number of server processes to start</span></span><br><span class="line"><span class="comment"># MinSpareServers: minimum number of server processes which are kept spare</span></span><br><span class="line"><span class="comment"># MaxSpareServers: maximum number of server processes which are kept spare</span></span><br><span class="line"><span class="comment"># ServerLimit: maximum value for MaxClients for the lifetime of the server</span></span><br><span class="line"><span class="comment"># MaxClients: maximum number of server processes allowed to start</span></span><br><span class="line"><span class="comment"># MaxRequestsPerChild: maximum number of requests a server process serves</span></span><br><span class="line">&lt;IfModule prefork.c&gt;</span><br><span class="line">StartServers       <span class="number">8</span></span><br><span class="line">M<span class="keyword">in</span>SpareServers    <span class="number">5</span></span><br><span class="line">MaxSpareServers   <span class="number">20</span></span><br><span class="line">ServerLimit      <span class="number">256</span></span><br><span class="line">MaxClients       <span class="number">256</span></span><br><span class="line">MaxRequestsPerChild  <span class="number">4000</span></span><br><span class="line">&lt;/IfModule&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># worker MPM</span></span><br><span class="line"><span class="comment"># StartServers: initial number of server processes to start</span></span><br><span class="line"><span class="comment"># MaxClients: maximum number of simultaneous client connections</span></span><br><span class="line"><span class="comment"># MinSpareThreads: minimum number of worker threads which are kept spare</span></span><br><span class="line"><span class="comment"># MaxSpareThreads: maximum number of worker threads which are kept spare</span></span><br><span class="line"><span class="comment"># ThreadsPerChild: constant number of worker threads in each server process</span></span><br><span class="line"><span class="comment"># MaxRequestsPerChild: maximum number of requests a server process serves</span></span><br><span class="line">&lt;IfModule worker.c&gt;</span><br><span class="line">StartServers         <span class="number">4</span></span><br><span class="line">MaxClients         <span class="number">300</span></span><br><span class="line">M<span class="keyword">in</span>SpareThreads     <span class="number">25</span></span><br><span class="line">MaxSpareThreads     <span class="number">75</span></span><br><span class="line">ThreadsPerChild     <span class="number">25</span></span><br><span class="line">MaxRequestsPerChild  <span class="number">0</span></span><br><span class="line">&lt;/IfModule&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="dso机制"><a class="header-anchor" href="#dso机制"></a>DSO机制</h2>
+<p>配置指令模块加载: <code>LoadModule &lt;module_name&gt; &lt;module_path&gt;</code>, <code>&lt;module_path&gt;</code>可使用相对路径,相对于<code>ServerRoot</code>指令指向的位置而言.</p>
+<p>注意: 建议使用<code>service httpd reload</code>重新装载配置文件.</p>
+<h2 id="定义main-server的文档页面路径"><a class="header-anchor" href="#定义main-server的文档页面路径"></a>定义<code>Main server</code>的文档页面路径</h2>
+<p><code>DocumentRoot</code> 指令, 文档路径映射, <code>DocumentRoot</code>指向的路径为URL起始的位置.</p>
+<h2 id="站点路径访问控制"><a class="header-anchor" href="#站点路径访问控制"></a>站点路径访问控制</h2>
+<ul>
+<li>基于来源地址</li>
+<li>基于账号</li>
+</ul>
+<h3 id="基于来源地址"><a class="header-anchor" href="#基于来源地址"></a>基于来源地址</h3>
+<ul>
+<li>文件系统路径来定义 <code>&lt;Directory &quot;/PATH/TO/SOMEDIR&quot;&gt;...&lt;/Directory&gt;</code></li>
+<li>URL路径来定义 <code>&lt;Location &quot;/URL&quot;&gt;...&lt;/Location&gt;</code></li>
+</ul>
+<h3 id="directory中的访问控制定义"><a class="header-anchor" href="#directory中的访问控制定义"></a>Directory中的访问控制定义</h3>
+<p>(1) Options</p>
+<ul>
+<li>Indexes: 当访问的路径下无默认主页面文件存在, 且没有指定具体要访问的资源时, 会将此路径下的所有资源以列表呈现给用户;非常危险.</li>
+<li>FollowSymLinks: 如果某页面文件是为指向<code>DocumentRoot</code>之外路径上的其他文件时, 将直接显示目标文件的内容.不建议使用.</li>
+<li>None: 什么特性都不启用</li>
+<li>All: 所有都启用</li>
+</ul>
+<p>(2) 基于来源地址访问控制</p>
+<p>Order 检查次序</p>
+<ul>
+<li><code>Order Allow Deny</code> 只能明确<code>Allow</code>的来源地址, 才允许访问, 其他的均为<code>Deny</code></li>
+<li><code>Order Deny Allow</code> 只能明确<code>Deny</code>的来源地址, 不允许访问, 其他的均为<code>Allow</code></li>
+</ul>
+<p><code>Allow from</code> 允许访问的来源地址
+<code>Deny from</code> 拒绝访问的来源地址</p>
+<p><code>from</code>后可跟上的地址格式: IP地址, 网络地址</p>
+<ul>
+<li><code>172.16</code></li>
+<li><code>172.16.0.0</code></li>
+<li><code>172.16.0.0/16</code></li>
+<li><code>172.16.0.0/255.255.0.0</code></li>
+</ul>
+<p>配置示例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Order Allow Deny</span><br><span class="line">Deny from <span class="number">172.16</span>.<span class="number">100.2</span></span><br><span class="line">Allow from <span class="number">172.16</span>.<span class="number">0.0</span>/<span class="number">16</span></span><br></pre></td></tr></table></figure>
+<h2 id="定义默认主页面"><a class="header-anchor" href="#定义默认主页面"></a>定义默认主页面</h2>
+<p><code>DirectoryIndex index.html index.html.var</code>, 自作而右, 找到首次匹配到的文件, 就将其作为默认主页面返回.</p>
+<h2 id="日志配置"><a class="header-anchor" href="#日志配置"></a>日志配置</h2>
+<ul>
+<li>错误日志 <code>ErrorLog logs/error_log, LogLevel warn</code></li>
+<li>访问日志, <code>CustomLog logs/access_log combined</code> 不仅要定义日志文件, 还要定义日志格式.</li>
+</ul>
+<p><code>LogFormat &quot;%h %l %u %t \&quot;%r\&quot; %&gt;s %b \&quot;%{Referer}i\&quot; \&quot;%{User-Agent}i\&quot;&quot; combined</code></p>
+<p>+<code>%h</code> Remote host 客户端主机
++<code>%l</code> Remote logname (from identd, if supplied) 客户用户通过<code>identd</code>登录时使用的名称,一般为<code>-</code>
++<code>%u</code> Remote user (from auth; may be bogus if return status (%s) is 401) 认证登录的名字, 无登录机制一般为<code>-</code>
++<code>%t</code> Time the request was received (standard english format) 收到客户端请求时的时间.
++<code>%r</code> First line of request 请求报文的首行 eg: <code>&lt;method&gt; &lt;url&gt; &lt;version&gt;</code>
++<code>%s</code> Status. For requests that got internally redirected. 响应的状态码
++<code>%b</code> Size of response in bytes, excluding HTTP headers. 响应报文的大小,单位为字节, 不包含首部信息.仅为响应内容自身的大小.
++<code>%{Referer}i</code> 记录http首部Referer对应的值. 即访问来源, 从那到此页面.
++<code>%{User-Agent}i</code> 记录http首部User-Agent对应的值, 即浏览器类型.</p>
+<p><a href="http://httpd.apache.org/docs/2.2/mod/mod_log_config.html#formats" target="_blank" rel="external">See More</a></p>
+<h2 id="路径别名"><a class="header-anchor" href="#路径别名"></a>路径别名</h2>
+<p><code>Alias /URL/ &quot;path/to/some_directory&quot;</code></p>
+<h2 id="设定默认字符集"><a class="header-anchor" href="#设定默认字符集"></a>设定默认字符集</h2>
+<p><code>AddDefaultCharset UTF-8</code>, 常用字符集, <code>GBK, GB2312, GB18030</code></p>
+<h2 id="基于用户的访问控制"><a class="header-anchor" href="#基于用户的访问控制"></a>基于用户的访问控制</h2>
+<p>质询: <code>www-Authenticate</code>, 服务器用401状态拒绝客户端请求,说明需要用户提供用户名密码, 弹出对话框.</p>
+<p>认证: <code>Authorization</code>, 客户端用户填入账号密码后再次发请求至服务器, 认证通过, 则请求授权.</p>
+<p>安全域: 需要用户认证后方能访问的路径. 应该有其名称, 用于向用户通知此认证的原因等.</p>
+<p>http协议支持的认证方式</p>
+<ul>
+<li>basic 基本认证, (BASE64编码)</li>
+<li>digest 摘要</li>
+</ul>
+<p><code>basic</code>认证机制的实现.</p>
+<p>(1) 修改配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;Directory <span class="string">"/data/web/html/employee"</span>&gt;</span><br><span class="line">    Options None</span><br><span class="line">    AllowOverride None</span><br><span class="line">    AuthType Basic</span><br><span class="line">    AuthName <span class="string">"Employee Information, only for employee"</span></span><br><span class="line">    AuthUserFile /etc/httpd/users/.htpasswd</span><br><span class="line">    Require user tom,jerry</span><br><span class="line">&lt;/Directory&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">## 说明</span></span><br><span class="line">Require valid-user <span class="comment"># 所有位于AuthUserFile文件中定义的用于都允许访问.</span></span><br><span class="line">Require user user1 user2... <span class="comment">#仅允许user1,user2等出现在AuthUserFile文件中定义的特定几个用户登陆.</span></span><br></pre></td></tr></table></figure>
+<p>(2) 提供用户的账号文件,要求密码加密存放, <code>htpasswd</code>命令用户维护此文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">htpasswd [ -c ] [ -m ] [ -D ] passwdfile username</span><br><span class="line"></span><br><span class="line">-c <span class="comment"># 添加第一个用户时创建此文件. 第二个不需要加此参数.</span></span><br><span class="line">-m <span class="comment"># 以md5格式加密用户密码存放.</span></span><br><span class="line"><span class="operator">-s</span> <span class="comment"># 以sha格式加密用户密码存放.</span></span><br><span class="line">-D <span class="comment"># 删除指定用户</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加第一个用户tom</span></span><br><span class="line">$ htpasswd -c -m /etc/httpd/users/.htpasswd tom</span><br><span class="line">New password:</span><br><span class="line">Re-type new password:</span><br><span class="line">Adding password <span class="keyword">for</span> user tom</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加第二个用户jerry</span></span><br><span class="line">$ htpasswd -m /etc/httpd/users/.htpasswd jerry</span><br><span class="line">New password:</span><br><span class="line">Re-type new password:</span><br><span class="line">Adding password <span class="keyword">for</span> user jerry</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看创建的密码文件</span></span><br><span class="line">$ ll /etc/httpd/users/.htpasswd</span><br><span class="line">-rw-r--r-- <span class="number">1</span> root root <span class="number">86</span> Oct <span class="number">10</span> <span class="number">21</span>:<span class="number">55</span> /etc/httpd/users/.htpasswd</span><br><span class="line"></span><br><span class="line">$ cat /etc/httpd/users/.htpasswd</span><br><span class="line">tom:<span class="variable">$apr1</span><span class="variable">$QuG35pFo</span><span class="variable">$Q77vs83bik</span>.h.<span class="number">53</span>cUlmK30</span><br><span class="line">jerry:<span class="variable">$apr1</span><span class="variable">$vkFx</span>.WeG<span class="variable">$yUH</span>.MP8.QxSMk33S9Vuzc.</span><br></pre></td></tr></table></figure>
+<p>(3) 组认证</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;Directory <span class="string">"/data/web/html/employee"</span>&gt;</span><br><span class="line">    Options None</span><br><span class="line">    AllowOverride None</span><br><span class="line">    AuthType Basic</span><br><span class="line">    AuthName <span class="string">"Employee Information, only for employee"</span></span><br><span class="line">    AuthUserFile /etc/httpd/users/.htpasswd</span><br><span class="line">    AuthGroupFile /etc/httpd/users/.htgroup</span><br><span class="line">    Require group group1 group2...</span><br><span class="line">&lt;/Directory&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 组文件的定义方法,每行定义一个组</span></span><br><span class="line"><span class="comment"># Example</span></span><br><span class="line">mygroup: bob joe anne</span><br></pre></td></tr></table></figure>
+<h2 id="虚拟主机"><a class="header-anchor" href="#虚拟主机"></a>虚拟主机</h2>
+<p>一个物理机器可以服务于多个站点, 每个站点可通过一个或多个虚拟主机来实现.</p>
+<p><code>httpd</code>支持三种类型的虚拟主机</p>
+<ul>
+<li>基于IP来实现</li>
+<li>基于port来实现</li>
+<li>基于FQDN来实现, 需要开启<code>NameVirtualHost *:80</code>指令.</li>
+</ul>
+<p>注意: 定义虚拟主机, 得首先关闭<code>Main Server</code>, 方法, 注释<code>DocumentRoot</code> 指令即可.</p>
+<p>定义虚拟主机的方法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost <span class="string">"IP:PORT"</span>&gt;</span><br><span class="line">	ServerName</span><br><span class="line">	ServerAlias</span><br><span class="line">	DocumentRoot</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">注意: 大多数可用户全局或<span class="string">'mainserver'</span>中的指令,都可以定义在`VirtualHost`中.</span><br><span class="line"></span><br><span class="line"><span class="comment"># example 基于IP</span></span><br><span class="line"><span class="comment"># 注意, 本机要配置上这里配置的所有IP地址并能够用于通信.</span></span><br><span class="line">&lt;VirtualHost <span class="number">192.168</span>.<span class="number">1.166</span>:<span class="number">80</span>&gt;</span><br><span class="line">    ServerName www.a.com</span><br><span class="line">    DocumentRoot /vhosts/a.com/</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost <span class="number">192.168</span>.<span class="number">1.168</span>:<span class="number">80</span>&gt;</span><br><span class="line">    ServerName www.b.com</span><br><span class="line">    DocumentRoot /vhosts/b.com/</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># example 基于Port</span></span><br><span class="line"><span class="comment"># 注意,http要监听这里指明的所有端口`Listen`指令</span></span><br><span class="line">&lt;VirtualHost <span class="number">192.168</span>.<span class="number">1.166</span>:<span class="number">80</span>&gt;</span><br><span class="line">    ServerName www.a.com</span><br><span class="line">    DocumentRoot /vhosts/a.com/</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost <span class="number">192.168</span>.<span class="number">1.166</span>:<span class="number">8080</span>&gt;</span><br><span class="line">    ServerName www.b.com</span><br><span class="line">    DocumentRoot /vhosts/b.com/</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># example 基于FQDN</span></span><br><span class="line"><span class="comment"># http-2.2中要启用NameVirtualHost指令, 2.4不需要</span></span><br><span class="line">NameVirtualHost *:<span class="number">80</span></span><br><span class="line">&lt;VirtualHost *:<span class="number">80</span>&gt;</span><br><span class="line">    ServerName www.a.com</span><br><span class="line">    DocumentRoot /vhosts/a.com/</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost *:<span class="number">80</span>&gt;</span><br><span class="line">    ServerName www.b.com</span><br><span class="line">    DocumentRoot /vhosts/b.com/</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<p>注意: 额外经常用于每个虚拟主机的配置有<code>ErrorLog, CustomLog, Directory, Location, ServerAlias</code></p>
+<p>为centos6增加一个Ip地址</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">ifconfig eth0:<span class="number">0</span> <span class="number">192.168</span>.<span class="number">1.168</span>/<span class="number">24</span> up</span><br><span class="line">eth0      Link encap:Ethernet  HWaddr <span class="number">00</span>:<span class="number">0</span>C:<span class="number">29</span>:<span class="number">53</span>:E8:<span class="number">20</span></span><br><span class="line">          inet addr:<span class="number">192.168</span>.<span class="number">1.166</span>  Bcast:<span class="number">192.168</span>.<span class="number">1.255</span>  Mask:<span class="number">255.255</span>.<span class="number">255.0</span></span><br><span class="line">          inet6 addr: fe80::<span class="number">20</span>c:<span class="number">29</span>ff:fe53:e820/<span class="number">64</span> Scope:Link</span><br><span class="line">          UP BROADCAST RUNNING MULTICAST  MTU:<span class="number">1500</span>  Metric:<span class="number">1</span></span><br><span class="line">          RX packets:<span class="number">14310</span> errors:<span class="number">0</span> dropped:<span class="number">0</span> overruns:<span class="number">0</span> frame:<span class="number">0</span></span><br><span class="line">          TX packets:<span class="number">5054</span> errors:<span class="number">0</span> dropped:<span class="number">0</span> overruns:<span class="number">0</span> carrier:<span class="number">0</span></span><br><span class="line">          collisions:<span class="number">0</span> txqueuelen:<span class="number">1000</span></span><br><span class="line">          RX bytes:<span class="number">1292767</span> (<span class="number">1.2</span> MiB)  TX bytes:<span class="number">814645</span> (<span class="number">795.5</span> KiB)</span><br><span class="line"></span><br><span class="line">eth0:<span class="number">0</span>    Link encap:Ethernet  HWaddr <span class="number">00</span>:<span class="number">0</span>C:<span class="number">29</span>:<span class="number">53</span>:E8:<span class="number">20</span></span><br><span class="line">          inet addr:<span class="number">192.168</span>.<span class="number">1.168</span>  Bcast:<span class="number">192.168</span>.<span class="number">1.255</span>  Mask:<span class="number">255.255</span>.<span class="number">255.0</span></span><br><span class="line">          UP BROADCAST RUNNING MULTICAST  MTU:<span class="number">1500</span>  Metric:<span class="number">1</span></span><br><span class="line"></span><br><span class="line">lo        Link encap:Local Loopback</span><br><span class="line">          inet addr:<span class="number">127.0</span>.<span class="number">0.1</span>  Mask:<span class="number">255.0</span>.<span class="number">0.0</span></span><br><span class="line">          inet6 addr: ::<span class="number">1</span>/<span class="number">128</span> Scope:Host</span><br><span class="line">          UP LOOPBACK RUNNING  MTU:<span class="number">65536</span>  Metric:<span class="number">1</span></span><br><span class="line">          RX packets:<span class="number">82</span> errors:<span class="number">0</span> dropped:<span class="number">0</span> overruns:<span class="number">0</span> frame:<span class="number">0</span></span><br><span class="line">          TX packets:<span class="number">82</span> errors:<span class="number">0</span> dropped:<span class="number">0</span> overruns:<span class="number">0</span> carrier:<span class="number">0</span></span><br><span class="line">          collisions:<span class="number">0</span> txqueuelen:<span class="number">0</span></span><br><span class="line">          RX bytes:<span class="number">8933</span> (<span class="number">8.7</span> KiB)  TX bytes:<span class="number">8933</span> (<span class="number">8.7</span> KiB)</span><br></pre></td></tr></table></figure>
+<h2 id="内置的status页面"><a class="header-anchor" href="#内置的status页面"></a>内置的status页面</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Location /server-status&gt;</span><br><span class="line">    SetHandler server-status</span><br><span class="line">    Order deny,allow</span><br><span class="line">    Deny from all</span><br><span class="line">    Allow from .example.com</span><br><span class="line">&lt;/Location&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="http协议"><a class="header-anchor" href="#http协议"></a>HTTP协议</h2>
+<p>URL: Unifrom Resource Locator</p>
+<ul>
+<li>URL方案: schema eg:<code>http://, https://</code></li>
+<li>服务器地址: IP:PORT</li>
+<li>资源路径: path</li>
+</ul>
+<p>基本语法: <code>&lt;scheme&gt;://&lt;user&gt;:&lt;password&gt;@&lt;host&gt;:&lt;port&gt;/&lt;path&gt;;&lt;params&gt;?&lt;query&gt;#&lt;frag&gt;</code></p>
+<p>版本: <code>http/0.9, http/1.0, http/1.1, http/2.0</code></p>
+<p>http协议是无状态的. <code>steteless</code>服务器无法持续追踪访问者来源.(可以基于cookie, session来追踪同一个用户)</p>
+<p>http事物</p>
+<ul>
+<li>请求: request</li>
+<li>响应: response</li>
+</ul>
+<h2 id="报文语法格式"><a class="header-anchor" href="#报文语法格式"></a>报文语法格式</h2>
+<ul>
+<li>method: 请求方法, 表明客户端希望服务器对资源执行的动作, <code>GET, HEADE, POST, PUT, DELETE</code></li>
+<li>version: <code>HTTP/&lt;major&gt;.&lt;minor&gt;</code></li>
+<li>status: 三位的数字, <code>200, 301, 302, 404, 502</code>, 标记请求处理过程中发生的情况.</li>
+<li>reason-phrase: 状态码所标记的状态的简要描述 <code>OK, NOT FOUND</code></li>
+<li>headers: 用来标记请求或响应的属性. 每个请求和响应报文可包含任意个首部.格式<code>key:value</code></li>
+<li>entity-body: 请求时附加的数据或响应时附加的数据.</li>
+</ul>
+<h2 id="method"><a class="header-anchor" href="#method"></a>method</h2>
+<ul>
+<li>GET 从服务器获取一个资源.</li>
+<li>HEAD 只从服务器获取文档的响应首部.</li>
+<li>POST 向服务器发送要处理的数据.</li>
+<li>PUT 将请求的主题部分存储在服务器上.</li>
+<li>DELETE 请求删除服务器上指定的文档.</li>
+<li>TRACE 追踪请求到达服务器中间经过的代理服务器.</li>
+<li>OPTIONS 请求服务器返回对指定资源支持使用的请求方法.</li>
+</ul>
+<p>协议查看或分析的工具<code>tcpdump, tshark, wireshark</code></p>
+<h2 id="status"><a class="header-anchor" href="#status"></a>status</h2>
+<ul>
+<li>1xx 100-101 信息提示.</li>
+<li>2xx 200-206 成功类的响应.</li>
+<li>3xx 300-305 重定向类的状态码.</li>
+<li>4xx 400-415 错误类信息, 客户端错误.</li>
+<li>5xx 500-505 错误类信息, 服务器端错误.</li>
+</ul>
+<h2 id="常用的状态码"><a class="header-anchor" href="#常用的状态码"></a>常用的状态码</h2>
+<ul>
+<li>200 <code>OK</code> 请求的所有数据通过响应报文的entity-body全部发送.</li>
+<li>301 <code>Moved Permanently</code> 请求的URL指向的资源已经被删除, 但在响应报文中通过首部Location指明了资源现在所处的新位置.永久重定向</li>
+<li>302 <code>Found</code> 与301相似, 但在响应报文中通过Location指明资源现在所处临时新位置, 临时重定向</li>
+<li>304 <code>Not Modified</code> 客户端发出了条件式请求, 但服务器上的资源未曾发生改变,则通过304响应状态码通知客户端.</li>
+<li>401 <code>Unauthorized</code> 需要输入账号密码认证方能访问资源.</li>
+<li>403 <code>Forbidden</code> 请求被禁止</li>
+<li>404 <code>Not Found</code> 服务器无法找到客户端请求的资源.</li>
+<li>500 <code>Internal Server Error</code> 服务器内部错误</li>
+<li>502 <code>Bad Gateway</code> 代理服务器从后端服务器收到了一条伪响应.</li>
+</ul>
+<h2 id="首部-header-的分类"><a class="header-anchor" href="#首部-header-的分类"></a>首部(header)的分类</h2>
+<ul>
+<li>通用首部
+<ul>
+<li>Date 报文的创建时间.</li>
+<li>Connection 连接方式 <code>keep-alive, close</code></li>
+<li>Via 显示报文经过的中间节点.</li>
+<li>Cache-Control 控制缓存</li>
+<li>Pragma</li>
+</ul>
+</li>
+<li>请求首部
+<ul>
+<li>Accept 通知服务器自己可接受的媒体类型.</li>
+<li>Accept-Charset 通知服务器自己可接受的字符集</li>
+<li>Accept-Encoding 通知服务器自己可接受的编码格式, eg: <code>gzip, deflate, sdch</code></li>
+<li>Accept-Language 通知服务器自己可接受的语言</li>
+<li>Client-IP</li>
+<li>Host 请求的服务器名称和端口号</li>
+<li>Referer 包含了当前正在请求的资源的上一级资源.</li>
+<li>User-Agent 客户端代理</li>
+<li>条件式请求首部
+<ul>
+<li>Expect</li>
+<li>If-Modified-Since 自从指定的时间之后, 请求的资源是否发生过修改.</li>
+<li>If-Unmodified-Since</li>
+<li>If-None-Match 本地缓存中存储的文档的Etag标签是否与服务器文档的Etag标签不匹配</li>
+<li>If-Match</li>
+</ul>
+</li>
+<li>安全请求首部
+<ul>
+<li>Authorization 向服务器发送认证信息, 比如账号密码</li>
+<li>Cookie 客户端请求时, 向服务器端发送cookie标识</li>
+<li>Cookie2</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>代理请求首部
+<ul>
+<li>Proxy-Authorization 向代理服务器认证</li>
+</ul>
+</li>
+<li>响应首部
+<ul>
+<li>Age 响应持续市场</li>
+<li>Server 服务器程序软件名称和版本 <code>Apache/2.2.15 (CentOS), nginx</code></li>
+<li>协商首部, 某资源有多种表示方法时使用
+<ul>
+<li>Accept-Ranges: 服务器可接受的请求范围类型.</li>
+<li>Vary: 服务器查看的其他首部列表.</li>
+</ul>
+</li>
+<li>安全响应首部
+<ul>
+<li>Set-Cookie 想客户端设置cookie</li>
+<li>Set-Cookie2</li>
+<li>www-Authenticate 来自服务器对客户端的质询认证表单</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实体首部
+<ul>
+<li>Allow 列出对此资源可使用的请求方法.</li>
+<li>Location 告诉客户端真正实体位于何处</li>
+<li>Content-Encoding 内容的编码格式</li>
+<li>Content-Language</li>
+<li>Content-length 主体的长度</li>
+<li>Content-Location 实体真正所处的位置</li>
+<li>Content-Range</li>
+<li>Content-Type 主体的对象的类型</li>
+<li>缓存相关
+<ul>
+<li>Etag 实体的扩展标签</li>
+<li>Expires 实体的过期时间</li>
+<li>Last-Modified 最后一次的修改时间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>扩展首部</li>
+</ul>
+<p>example</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">+ Cache-Control:max-age=<span class="number">900</span></span><br><span class="line">+ Connection:keep-alive</span><br><span class="line">+ Content-Type:text/html; charset=utf-<span class="number">8</span></span><br><span class="line">+ Date:Sun, <span class="number">11</span> Oct <span class="number">2015</span> <span class="number">08</span>:<span class="number">33</span>:<span class="number">08</span> GMT</span><br><span class="line">+ ETag:<span class="string">"56171ec1-cd9f"</span></span><br><span class="line">+ Expires:Sun, <span class="number">11</span> Oct <span class="number">2015</span> <span class="number">08</span>:<span class="number">35</span>:<span class="number">53</span> GMT</span><br><span class="line">+ Last-Modified:Fri, <span class="number">09</span> Oct <span class="number">2015</span> <span class="number">01</span>:<span class="number">56</span>:<span class="number">17</span> GMT</span><br><span class="line">+ X-Via:<span class="number">1.0</span> zhj76:<span class="number">8109</span> (Cdn Cache Server V2.<span class="number">0</span>), <span class="number">1.0</span> wenzhou20:<span class="number">5</span> (Cdn Cache Server V2.<span class="number">0</span>)</span><br><span class="line">+ Accept:text/html,application/xhtml+xml,application/xml;q=<span class="number">0.9</span>,image/webp,*/*;q=<span class="number">0.8</span></span><br><span class="line">+ Accept-Encoding:gzip, deflate, sdch</span><br><span class="line">+ Accept-Language:zh-CN,zh;q=<span class="number">0.8</span>,en-US;q=<span class="number">0.6</span>,en;q=<span class="number">0.4</span></span><br><span class="line">+ Cache-Control:max-age=<span class="number">0</span></span><br><span class="line">+ Connection:keep-alive</span><br><span class="line">+ Cookie:xmuuid=XMGUEST-D468AF20-<span class="number">6</span>FF1-<span class="number">11</span>E5-<span class="number">8384</span>-<span class="number">2</span>F3D6C29A250</span><br></pre></td></tr></table></figure>
+<p><code>request</code>报文</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;method&gt; &lt;request-URL&gt; &lt;version&gt; <span class="comment"># 起始行</span></span><br><span class="line">&lt;headers&gt; <span class="comment"># 头信息, 后面是两次换行</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;entity-body&gt;</span><br></pre></td></tr></table></figure>
+<p><code>response</code>报文</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;version&gt; &lt;status&gt; &lt;reason-phrase&gt; <span class="comment"># 起始行</span></span><br><span class="line">&lt;headers&gt; <span class="comment"># 头信息, 后面是两次换行</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;entity-body&gt; <span class="comment"># 响应实体</span></span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>网络模型大概有两种,一种是OSI的参考模型,它把协议栈大体上分为七层,上三层叫资源子网,下四层叫通讯子网,TCP协议将协议栈分成四层,TCP协议栈的应用层对用OSI的上三层,用来表示应用的,底下的三层,首先TCP,UDP这一层也叫传输层,对应OSI的传输层,其次互联网层(I]]>
