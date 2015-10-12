@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Code First！Code Review！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://molloc.me/"/>
-  <updated>2015-10-12T15:57:55.254Z</updated>
+  <updated>2015-10-12T15:59:53.949Z</updated>
   <id>http://molloc.me/</id>
   
   <author>
@@ -19,9 +19,10 @@
     <link href="http://molloc.me/2015/09/27/ZY-2015-09-24/"/>
     <id>http://molloc.me/2015/09/27/ZY-2015-09-24/</id>
     <published>2015-09-27T15:43:59.000Z</published>
-    <updated>2015-10-12T15:57:55.254Z</updated>
+    <updated>2015-10-12T15:59:53.949Z</updated>
     <content type="html"><![CDATA[<p>网络模型大概有两种,一种是OSI的参考模型,它把协议栈大体上分为七层,上三层叫资源子网,下四层叫通讯子网,TCP协议将协议栈分成四层,TCP协议栈的应用层对用OSI的上三层,用来表示应用的,底下的三层,首先TCP,UDP这一层也叫传输层,对应OSI的传输层,其次互联网层(IPV4,IPV6)层对用OSI的网络层,最后身边驱动程序和硬件则对应OSI的数据链路层和物理层.传输层及传输层以下的叫通讯子网,而上面的叫资源子网.</p>
 <p>IP地址用于标记主机到主机的,数据链路层的MAC地址是用来标记设备到设备的.</p>
+<a id="more"></a>
 <p><img src="http://static.molloc.com/linux/imgs/ZY-2015-09-24/TCP-IP.jpg" alt="tcp-ip"></p>
 <h2 id="web-server"><a class="header-anchor" href="#web-server"></a>Web Server</h2>
 <h2 id="传输层"><a class="header-anchor" href="#传输层"></a>传输层</h2>
@@ -550,7 +551,9 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">elinks [options]...[url]...</span><br><span class="line">	-dump <span class="comment"># 不进入交互式模式, 而直接将URL的内容输出至标准输出.</span></span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>网络模型大概有两种,一种是OSI的参考模型,它把协议栈大体上分为七层,上三层叫资源子网,下四层叫通讯子网,TCP协议将协议栈分成四层,TCP协议栈的应用层对用OSI的上三层,用来表示应用的,底下的三层,首先TCP,UDP这一层也叫传输层,对应OSI的传输层,其次互联网层(I]]>
+    <![CDATA[<p>网络模型大概有两种,一种是OSI的参考模型,它把协议栈大体上分为七层,上三层叫资源子网,下四层叫通讯子网,TCP协议将协议栈分成四层,TCP协议栈的应用层对用OSI的上三层,用来表示应用的,底下的三层,首先TCP,UDP这一层也叫传输层,对应OSI的传输层,其次互联网层(IPV4,IPV6)层对用OSI的网络层,最后身边驱动程序和硬件则对应OSI的数据链路层和物理层.传输层及传输层以下的叫通讯子网,而上面的叫资源子网.</p>
+<p>IP地址用于标记主机到主机的,数据链路层的MAC地址是用来标记设备到设备的.</p>]]>
+    
     </summary>
     
       <category term="linux" scheme="http://molloc.me/tags/linux/"/>
