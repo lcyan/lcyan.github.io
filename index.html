@@ -94,52 +94,12 @@
 </header>
     <div class="article-content">
         
-        <p>编译安装httpd-2.4</p>
-<h2 id="http-2-4新特性"><a class="header-anchor" href="#http-2-4新特性"></a>http-2.4新特性</h2>
-<ul>
-<li>MPM支持运行DOS机制.</li>
-<li>支持<code>event</code> MPM.</li>
-<li>支持异步读写.</li>
-<li>支持每模块及每个目录分别使用各自的日志基本.</li>
-<li>每请求配置 <code>&lt;If&gt;</code></li>
-<li>增强版的表达式分析器.</li>
-<li>支持毫米级的<code>keepalive timeout</code>.</li>
-<li>基于FQDN的虚拟知己不再需要<code>NameVirtualHost</code>指令.</li>
-<li>支持用户自定义变量</li>
-</ul>
-<h2 id="httpd-2-4新模块"><a class="header-anchor" href="#httpd-2-4新模块"></a>httpd-2.4新模块</h2>
-<ul>
-<li><code>mod_proxy_fcgi</code></li>
-<li><code>mod_ratelimit</code> 限制速率</li>
-<li><code>mod_remoteip</code></li>
-</ul>
-<h2 id="http-2-4修改了一些配置机制"><a class="header-anchor" href="#http-2-4修改了一些配置机制"></a>http-2.4修改了一些配置机制</h2>
-<ul>
-<li>不再支持使用<code>Order, Deny, Allow</code>来做基于IP的访问控制.</li>
-</ul>
-<h2 id="httpd依赖的包"><a class="header-anchor" href="#httpd依赖的包"></a><code>httpd</code>依赖的包</h2>
-<ul>
-<li><code>apr</code> apache portable runtime apache的可移植运行时环境.(1.4+)</li>
-<li>apr-util</li>
-<li>apr-iconv</li>
-<li>pcre</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 1. 安装编译环境</span></span><br><span class="line">$ yum groupinstall <span class="string">"Development tools"</span> <span class="string">"Server Platform Development"</span> -y</span><br><span class="line"></span><br><span class="line"><span class="comment">## 2. 下载相关包</span></span><br><span class="line">$ ls /sources/httpd</span><br><span class="line">apr-<span class="number">1.5</span>.<span class="number">2</span>.tar.bz2  apr-util-<span class="number">1.5</span>.<span class="number">4</span>.tar.bz2  httpd-<span class="number">2.4</span>.<span class="number">17</span>.tar.bz2  pcre-<span class="number">8.37</span>.tar.bz2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 pcre</span></span><br><span class="line">$ tar xf pcre-<span class="number">8.37</span>.tar.bz2</span><br><span class="line">$ <span class="built_in">cd</span> pcre-<span class="number">8.37</span>/</span><br><span class="line">$ ./configure</span><br><span class="line">$ make &amp;&amp; make install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 httpd</span></span><br><span class="line">$ tar xf httpd-<span class="number">2.4</span>.<span class="number">17</span>.tar.bz2</span><br><span class="line">$ tar xf apr-<span class="number">1.5</span>.<span class="number">2</span>.tar.bz2</span><br><span class="line">$ tar xf apr-util-<span class="number">1.5</span>.<span class="number">4</span>.tar.bz2</span><br><span class="line">$ <span class="built_in">cd</span> httpd-<span class="number">2.4</span>.<span class="number">17</span>/</span><br><span class="line">$ cp -R ../apr-<span class="number">1.5</span>.<span class="number">2</span> ./srclib/apr</span><br><span class="line">$ cp -R ../apr-util-<span class="number">1.5</span>.<span class="number">4</span> ./srclib/apr-util</span><br><span class="line">$ ./configure --prefix=/usr/<span class="built_in">local</span>/apache \</span><br><span class="line">	--enable-so \</span><br><span class="line">	--enable-headers \</span><br><span class="line">	--enable-deflate \</span><br><span class="line">	--enable-mime-magic \</span><br><span class="line">	--enable-static-support \</span><br><span class="line">	--enable-ssl \</span><br><span class="line">	--enable-cgi \</span><br><span class="line">	--enable-rewrite \</span><br><span class="line">	--enable-expires \</span><br><span class="line">	--enable-suexec \</span><br><span class="line">	--with-ssl \</span><br><span class="line">	--with-included-apr \</span><br><span class="line">	--enable-modules=most \</span><br><span class="line">	--enable-mpms-shared=all \</span><br><span class="line">	--with-mpm=event \</span><br><span class="line">	--disable-userdir</span><br><span class="line">$ make &amp;&amp; make install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加环境变量</span></span><br><span class="line">$ vim /etc/profile <span class="comment"># 添加下面的内容</span></span><br><span class="line"><span class="built_in">export</span> PATH=/usr/<span class="built_in">local</span>/apache/bin:<span class="variable">$PATH</span></span><br><span class="line">$ . /etc/profile <span class="comment"># 使配置生效</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动脚本</span></span><br><span class="line">$ cp /usr/<span class="built_in">local</span>/apache/bin/apachectl /etc/init.d/httpd</span><br><span class="line">$ sed -i <span class="string">'2a # chkconfig: - 85 15'</span> /etc/init.d/httpd</span><br><span class="line">$ sed -i <span class="string">'3a # description: Apache is a World Wide Web server. It is used to serve'</span> /etc/init.d/httpd</span><br><span class="line">$ chmod +x /etc/init.d/httpd</span><br><span class="line">$ chkconfig --add httpd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改运行httpd的用户与组</span></span><br><span class="line">$ useradd -M <span class="operator">-s</span> /sbin/nologin</span><br><span class="line">$ sed -i <span class="string">'s/^User daemon/User apache/'</span> /usr/<span class="built_in">local</span>/apache/conf/httpd.conf</span><br><span class="line">$ sed -i <span class="string">'s/^Group daemon/Group apache/'</span> /usr/<span class="built_in">local</span>/apache/conf/httpd.conf</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试是否安装成功</span></span><br><span class="line">$ service httpd start</span><br><span class="line"><span class="comment"># 浏览器访问正常</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># apache路径下的文件说明</span></span><br><span class="line">$ ls <span class="operator">-l</span> /usr/<span class="built_in">local</span>/apache</span><br><span class="line">bin 	<span class="comment"># 各种二进制程序</span></span><br><span class="line">build   <span class="comment"># 编译安装过程中的目录</span></span><br><span class="line">cgi-bin <span class="comment"># 跟cgi相关的</span></span><br><span class="line">error	<span class="comment"># 错误页面文件相关</span></span><br><span class="line">htdocs	<span class="comment"># 网页文件的存放位置</span></span><br><span class="line">icons	<span class="comment"># 图标</span></span><br><span class="line"><span class="comment"># 头文件要保存为系统所用的话,</span></span><br><span class="line"><span class="comment"># 需要ln -sv /usr/local/apache/include/ /usr/include/httpd/</span></span><br><span class="line">include <span class="comment"># 头文件,</span></span><br><span class="line">logs	<span class="comment"># 日志文件</span></span><br><span class="line">man		<span class="comment"># 帮助手册 vim /etc/man.config添加MANPATH</span></span><br><span class="line">manual	<span class="comment"># httpd自带的手册,修改主配置文件,Include /etc/httpd/extra/httpd-maual.conf</span></span><br><span class="line">modules <span class="comment"># 模块目录</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-4中配置项的变化"><a class="header-anchor" href="#2-4中配置项的变化"></a>2.4中配置项的变化</h2>
-<ul>
-<li>允许所有主机访问 <code>Require all granted</code></li>
-<li>拒绝所有主机访问 <code>Require all deny</code></li>
-<li>控制特定IP访问 <code>Require ip IPADDR</code></li>
-<li>拒绝特定IP访问 <code>Require not all IPADDR</code></li>
-<li>控制特定的主机访问 (HOSTNAME) <code>Require host HOSTNAME</code></li>
-<li>拒绝特定的主机访问 (HOSTNAME) <code>Require not host HOSTNAME</code></li>
-<li>基于FDQN的虚拟主机配置,不在需要<code>NameVirtualHost</code></li>
-</ul>
-<p>注: <code>HOSTNAME</code>的取值<code>{FQDN|DOMAIN}</code></p>
-
+        <p>httpd-2.4编译安装</p>
         
         
         <p class="article-more-link">
+          
+            <a href="/2015/10/13/ZY-DAY-20/#more">Read More</a>
           
        </p>
     </div>
