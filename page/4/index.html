@@ -81,6 +81,72 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/05/25/Nginx-配置文件总结/" title="Nginx 配置文件总结" itemprop="url">Nginx 配置文件总结</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
+		
+  <p class="article-time">
+    <time datetime="2015-05-25T04:28:09.000Z" itemprop="datePublished"> 发表于 2015-05-25</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="顶级配置"><a class="header-anchor" href="#顶级配置"></a>顶级配置</h2>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义 Nginx 运行的用户和用户组</span></span><br><span class="line"><span class="title">user</span> nginx;</span><br><span class="line"></span><br><span class="line"><span class="comment">#进程文件</span></span><br><span class="line"><span class="title">pid</span> /var/run/nginx.pid;</span><br><span class="line"></span><br><span class="line"><span class="comment">#错误日志位置和级别，debug、info、notice、warn、error、crit</span></span><br><span class="line"><span class="title">error_log</span>  /var/log/nginx/error.log <span class="built_in">warn</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#Nginx worker 的进程数，一般可设置为可用的CPU内核数。</span></span><br><span class="line"><span class="title">worker_processes</span> <span class="number">8</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#每个 worker 打开文件描述符的最大数量限制。</span></span><br><span class="line"><span class="comment">#理论值应该是最多打开文件数（系统的值ulimit -n）与 nginx 进程数相除，</span></span><br><span class="line"><span class="comment">#但是 nginx 分配请求并不均匀，所以建议与ulimit -n的值保持一致。</span></span><br><span class="line"><span class="title">worker_rlimit_nofile</span> <span class="number">65535</span>;</span><br></pre></td></tr></table></figure>
+<p>修改系统文件打开数量限制：</p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2015/05/25/Nginx-配置文件总结/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/工作相关/">工作相关</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/linux/">linux</a><a href="/tags/nginx/">nginx</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/05/25/Nginx-配置文件总结/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/05/25/Nginx-配置文件总结/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/05/22/Git-push与pull的默认行为/" title="Git push与pull的默认行为" itemprop="url">Git push与pull的默认行为</a>
   </h1>
   <p class="article-author">By
@@ -226,7 +292,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Task/" title="Task">Task<sup>12</sup></a></li>
+			<li><a href="/categories/Task/" title="Task">Task<sup>13</sup></a></li>
 		  
 		
 		  
@@ -252,7 +318,7 @@
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
   </div>
 
 
@@ -262,7 +328,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/linux/" title="linux">linux<sup>19</sup></a></li>
+				<li><a href="/tags/linux/" title="linux">linux<sup>20</sup></a></li>
 			
 		
 			
