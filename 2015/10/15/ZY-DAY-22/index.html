@@ -19,9 +19,7 @@ desc TABLE_NAME 可以描述表结构
 help show 查看show命令的帮助手册
 For server side help, type &apos;help contents&apos;
 show global variables like &apos;%skip%&apos;
-set password for &apos;root&apos;@&apos;127.0.0.1&apos; = password(&apos;molloc&apos;)
-
-C">
+set password for &apos;root&apos;@&apos;127.0.0.1&apos; = password(&apos;molloc&apos;)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ZY-DAY-22">
 <meta property="og:url" content="http://molloc.me/2015/10/15/ZY-DAY-22/index.html">
@@ -33,10 +31,8 @@ desc TABLE_NAME 可以描述表结构
 help show 查看show命令的帮助手册
 For server side help, type &apos;help contents&apos;
 show global variables like &apos;%skip%&apos;
-set password for &apos;root&apos;@&apos;127.0.0.1&apos; = password(&apos;molloc&apos;)
-
-C">
-<meta property="og:updated_time" content="2015-10-24T07:47:43.247Z">
+set password for &apos;root&apos;@&apos;127.0.0.1&apos; = password(&apos;molloc&apos;)">
+<meta property="og:updated_time" content="2015-10-24T07:49:40.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZY-DAY-22">
 <meta name="twitter:description" content="MariaDB基础
@@ -46,9 +42,7 @@ desc TABLE_NAME 可以描述表结构
 help show 查看show命令的帮助手册
 For server side help, type &apos;help contents&apos;
 show global variables like &apos;%skip%&apos;
-set password for &apos;root&apos;@&apos;127.0.0.1&apos; = password(&apos;molloc&apos;)
-
-C">
+set password for &apos;root&apos;@&apos;127.0.0.1&apos; = password(&apos;molloc&apos;)">
 
     
     <link rel="alternative" href="/atom.xml" title="Kernel" type="application/atom+xml">
@@ -136,6 +130,7 @@ C">
 <li>show global variables like '%skip%'</li>
 <li>set password for 'root'@'127.0.0.1' = password('molloc')</li>
 </ul>
+<a id="more"></a>
 <h2 id="create-table-创建表的同时-可创建索引"><a class="header-anchor" href="#create-table-创建表的同时-可创建索引"></a><code>CREATE TABLE</code> 创建表的同时,可创建索引</h2>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> (<span class="keyword">create</span> defination)</span><br><span class="line">	col_name col_defination | <span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> (coll, ...)</span><br><span class="line"></span><br><span class="line"><span class="comment">--eg</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> mydb.ac_teacher (</span><br><span class="line">	t_id <span class="built_in">INT</span> UNSIGNED <span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> auto_increment,</span><br><span class="line">	NAME <span class="built_in">VARCHAR</span> (<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">	age TINYINT UNSIGNED,</span><br><span class="line">	gender enum (<span class="string">'F'</span>, <span class="string">'M'</span>) <span class="keyword">DEFAULT</span> <span class="string">'M'</span>,</span><br><span class="line">	dz <span class="built_in">VARCHAR</span> (<span class="number">100</span>),</span><br><span class="line">	<span class="keyword">UNIQUE</span> <span class="keyword">KEY</span> (NAME, dz)</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
 <h2 id="查看表上的索引"><a class="header-anchor" href="#查看表上的索引"></a>查看表上的索引</h2>
