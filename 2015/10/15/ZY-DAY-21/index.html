@@ -5,29 +5,23 @@
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="oxwWO_yZe21RAWOe9W6x1uUtSckxKC_eFEYqRbB88lY" />
   
-    <title>catalina_pid file contains +1 pid number instead of correct pid | Kernel</title>
+    <title>ZY-DAY-21 | Kernel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Kernel">
     
 
     
-    <meta name="description" content="Problem description
-I have recently enabled catalina_pid functionality using environment variable. The PID file got created and contains +1 PID number.
-If the Tomcat&apos;s real PID number 5446, the pid fi">
+    <meta name="description" content="Better Wife , Better Life">
 <meta property="og:type" content="article">
-<meta property="og:title" content="catalina_pid file contains +1 pid number instead of correct pid">
-<meta property="og:url" content="http://molloc.me/2015/06/12/catalina_pid file contains +1 pid number instead of correct pid/index.html">
+<meta property="og:title" content="ZY-DAY-21">
+<meta property="og:url" content="http://molloc.me/2015/10/15/ZY-DAY-21/index.html">
 <meta property="og:site_name" content="Kernel">
-<meta property="og:description" content="Problem description
-I have recently enabled catalina_pid functionality using environment variable. The PID file got created and contains +1 PID number.
-If the Tomcat&apos;s real PID number 5446, the pid fi">
-<meta property="og:updated_time" content="2015-06-28T07:42:34.000Z">
+<meta property="og:description" content="Better Wife , Better Life">
+<meta property="og:updated_time" content="2015-10-15T13:57:53.937Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="catalina_pid file contains +1 pid number instead of correct pid">
-<meta name="twitter:description" content="Problem description
-I have recently enabled catalina_pid functionality using environment variable. The PID file got created and contains +1 PID number.
-If the Tomcat&apos;s real PID number 5446, the pid fi">
+<meta name="twitter:title" content="ZY-DAY-21">
+<meta name="twitter:description" content="Better Wife , Better Life">
 
     
     <link rel="alternative" href="/atom.xml" title="Kernel" type="application/atom+xml">
@@ -86,14 +80,14 @@ If the Tomcat&apos;s real PID number 5446, the pid fi">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/06/12/catalina_pid file contains +1 pid number instead of correct pid/" title="catalina_pid file contains +1 pid number instead of correct pid" itemprop="url">catalina_pid file contains +1 pid number instead of correct pid</a>
+      <a href="/2015/10/15/ZY-DAY-21/" title="ZY-DAY-21" itemprop="url">ZY-DAY-21</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
 		
   <p class="article-time">
-    <time datetime="2015-06-12T15:07:21.000Z" itemprop="datePublished"> 发表于 2015-06-12</time>
+    <time datetime="2015-10-15T13:57:53.000Z" itemprop="datePublished"> 发表于 2015-10-15</time>
     
   </p>
 </header>
@@ -102,41 +96,15 @@ If the Tomcat&apos;s real PID number 5446, the pid fi">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#problem-description"><span class="toc-number">1.</span> <span class="toc-text">Problem description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#issue-tracking"><span class="toc-number">2.</span> <span class="toc-text">Issue tracking</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-solution"><span class="toc-number">3.</span> <span class="toc-text">The solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#test"><span class="toc-number">4.</span> <span class="toc-text">Test</span></a></li></ol>
+			
 		
 		</div>
 		
-		<h2 id="problem-description"><a class="header-anchor" href="#problem-description"></a>Problem description</h2>
-<p>I have recently enabled catalina_pid functionality using environment variable. The PID file got created and contains +1 PID number.</p>
-<p>If the Tomcat's real PID number 5446, the pid file would contain 5447 as PID number.</p>
-<a id="more"></a>
-<h2 id="issue-tracking"><a class="header-anchor" href="#issue-tracking"></a>Issue tracking</h2>
-<p>My guess is that you have changed the logging to use cronolog and as such the PID being written is actually the logging process and not the catalina process. Check your catalina.sh file If you see something like this</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org.apache.catalina.startup.Bootstrap <span class="string">"<span class="variable">$@</span>"</span> start \</span><br><span class="line"><span class="number">2</span>&gt;&amp;<span class="number">1</span> |/usr/sbin/cronolog <span class="string">"<span class="variable">$CATALINA_BASE</span>/logs/catalina.%Y-%m-%d.log"</span> &amp;</span><br></pre></td></tr></table></figure>
-<p>Then there is your answer</p>
-<h2 id="the-solution"><a class="header-anchor" href="#the-solution"></a>The solution</h2>
-<p>You need to change the block where the pid is assigned which should be just under the line I described</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ ! -z <span class="string">"<span class="variable">$CATALINA_PID</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
-<p>And this is a bit of a hack but something like this will give you the correct pid.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ ! -z <span class="string">"<span class="variable">$CATALINA_PID</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">	ps aux | grep tomcat | grep <span class="string">'/dev/product'</span> | awk <span class="string">'&#123;print $2&#125;'</span> &gt; <span class="string">"<span class="variable">$CATALINA_PID</span>"</span> <span class="comment">#'/dev/product' is arbitrary</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
-<h2 id="test"><a class="header-anchor" href="#test"></a>Test</h2>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /root/fhcs/dev/product/bin/CATALINA_PID # =&#62; 56974&#10;ps auxf | grep tomcat | grep &#39;/dev/product/&#39; | awk &#39;&#123;print $2&#125;&#39; # =&#62; 56974</span><br></pre></td></tr></table></figure>
-<p>Tks.</p>
-  
+		  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/工作相关/">工作相关</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/linux/">linux</a><a href="/tags/tomcat/">tomcat</a>
-  </div>
 
 </div>
 
@@ -144,7 +112,7 @@ If the Tomcat&apos;s real PID number 5446, the pid fi">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://molloc.me/2015/06/12/catalina_pid file contains +1 pid number instead of correct pid/" data-title="catalina_pid file contains +1 pid number instead of correct pid | Kernel" data-tsina="2205010230" class="share clearfix">
+	  <div data-url="http://molloc.me/2015/10/15/ZY-DAY-21/" data-title="ZY-DAY-21 | Kernel" data-tsina="2205010230" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -158,18 +126,18 @@ If the Tomcat&apos;s real PID number 5446, the pid fi">
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/06/13/通过crontab添加定时删除tomcat日志任务/" title="通过crontab添加定时删除tomcat日志任务">
+ <a href="/2015/10/15/ZY-DAY-22/" title="ZY-DAY-22">
   <strong>上一篇：</strong><br/>
   <span>
-  通过crontab添加定时删除tomcat日志任务</span>
+  ZY-DAY-22</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/06/12/Tomcat无法shutdown进程/"  title="Tomcat无法shutdown进程">
+<a href="/2015/10/13/ZY-DAY-20/"  title="ZY-DAY-20">
  <strong>下一篇：</strong><br/> 
- <span>Tomcat无法shutdown进程
+ <span>ZY-DAY-20
 </span>
 </a>
 </div>
@@ -178,7 +146,7 @@ If the Tomcat&apos;s real PID number 5446, the pid fi">
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/06/12/catalina_pid file contains +1 pid number instead of correct pid/" data-title="catalina_pid file contains +1 pid number instead of correct pid" data-url="http://molloc.me/2015/06/12/catalina_pid file contains +1 pid number instead of correct pid/"></div>
+	<div class="ds-thread" data-thread-key="2015/10/15/ZY-DAY-21/" data-title="ZY-DAY-21" data-url="http://molloc.me/2015/10/15/ZY-DAY-21/"></div>
 </section>
 
 
@@ -188,7 +156,7 @@ If the Tomcat&apos;s real PID number 5446, the pid fi">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#problem-description"><span class="toc-number">1.</span> <span class="toc-text">Problem description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#issue-tracking"><span class="toc-number">2.</span> <span class="toc-text">Issue tracking</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-solution"><span class="toc-number">3.</span> <span class="toc-text">The solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#test"><span class="toc-number">4.</span> <span class="toc-text">Test</span></a></li></ol>
+ 
  
   </div>
 

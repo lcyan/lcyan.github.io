@@ -1,0 +1,608 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="oxwWO_yZe21RAWOe9W6x1uUtSckxKC_eFEYqRbB88lY" />
+  
+    <title>ZY-DAY-23 | Kernel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Kernel">
+    
+
+    
+    <meta name="description" content="LAMP PHP+HTTPD的三种方式
+
+modules: 把php编译成为httpd模块, 其中prefork --&amp;gt; libphp5.so, worker, event --&amp;gt; zts;
+cgi: 常用于perl + httpd
+fastcgi: php5.3.3自带了fpm组件, 提供守护进程, 前端httpd, httpd-proxy-fcgi反向代理用户对动态内容请求至后端的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ZY-DAY-23">
+<meta property="og:url" content="http://molloc.me/2015/10/15/ZY-DAY-23/index.html">
+<meta property="og:site_name" content="Kernel">
+<meta property="og:description" content="LAMP PHP+HTTPD的三种方式
+
+modules: 把php编译成为httpd模块, 其中prefork --&amp;gt; libphp5.so, worker, event --&amp;gt; zts;
+cgi: 常用于perl + httpd
+fastcgi: php5.3.3自带了fpm组件, 提供守护进程, 前端httpd, httpd-proxy-fcgi反向代理用户对动态内容请求至后端的">
+<meta property="og:image" content="http://static.molloc.com/linux/imgs/ZY-DAY-23padmin.jpg">
+<meta property="og:image" content="http://static.molloc.com/linux/imgs/ZY-DAY-23wordpress.jpg">
+<meta property="og:updated_time" content="2015-10-24T07:47:43.257Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ZY-DAY-23">
+<meta name="twitter:description" content="LAMP PHP+HTTPD的三种方式
+
+modules: 把php编译成为httpd模块, 其中prefork --&amp;gt; libphp5.so, worker, event --&amp;gt; zts;
+cgi: 常用于perl + httpd
+fastcgi: php5.3.3自带了fpm组件, 提供守护进程, 前端httpd, httpd-proxy-fcgi反向代理用户对动态内容请求至后端的">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Kernel" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo_v3.png" alt="Kernel" title="Kernel"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Kernel">Kernel</a></h1>
+				<h2 class="blog-motto">Code First！Code Review！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" autocomplete="off" name="q" maxlength="20" placeholder="搜索" />
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/10/15/ZY-DAY-23/" title="ZY-DAY-23" itemprop="url">ZY-DAY-23</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Kernel" target="_blank" itemprop="author">Kernel</a>
+		
+  <p class="article-time">
+    <time datetime="2015-10-15T13:57:53.000Z" itemprop="datePublished"> 发表于 2015-10-15</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#lamp-php-httpd的三种方式"><span class="toc-number">1.</span> <span class="toc-text">LAMP PHP+HTTPD的三种方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#httpd对fastcgi协议的支持"><span class="toc-number">2.</span> <span class="toc-text">httpd对fastcgi协议的支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mariadb的监听方式"><span class="toc-number">3.</span> <span class="toc-text">MariaDB的监听方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装次序"><span class="toc-number">4.</span> <span class="toc-text">安装次序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#场景一-php编译为httpd模块"><span class="toc-number">5.</span> <span class="toc-text">场景一, php编译为Httpd模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装phpmyadmin"><span class="toc-number">6.</span> <span class="toc-text">安装phpmyadmin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附成功截图"><span class="toc-number">7.</span> <span class="toc-text">附成功截图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#场景二-php以fpm工作为独立守护进程"><span class="toc-number">8.</span> <span class="toc-text">场景二, php以fpm工作为独立守护进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统扩展方式"><span class="toc-number">9.</span> <span class="toc-text">系统扩展方式</span></a></li></ol>
+		
+		</div>
+		
+		<h2 id="lamp-php-httpd的三种方式"><a class="header-anchor" href="#lamp-php-httpd的三种方式"></a>LAMP PHP+HTTPD的三种方式</h2>
+<ol>
+<li>modules: 把php编译成为httpd模块, 其中<code>prefork --&gt; libphp5.so, worker, event --&gt; zts</code>;</li>
+<li>cgi: 常用于<code>perl + httpd</code></li>
+<li>fastcgi: php5.3.3自带了fpm组件, 提供守护进程, 前端httpd, httpd-proxy-fcgi反向代理用户对动态内容请求至后端的fastcgi server.</li>
+</ol>
+<h2 id="httpd对fastcgi协议的支持"><a class="header-anchor" href="#httpd对fastcgi协议的支持"></a>httpd对fastcgi协议的支持</h2>
+<ul>
+<li>http-2.2 需要安装额外模块fcgi.</li>
+<li>http-2.4 自带fcgi模块.</li>
+</ul>
+<h2 id="mariadb的监听方式"><a class="header-anchor" href="#mariadb的监听方式"></a>MariaDB的监听方式</h2>
+<ul>
+<li>Unix Sock</li>
+<li>tcp/ip</li>
+</ul>
+<h2 id="安装次序"><a class="header-anchor" href="#安装次序"></a>安装次序</h2>
+<p>httpd, mariadb, php, 编译php依赖于httpd和mariadb.</p>
+<h2 id="场景一-php编译为httpd模块"><a class="header-anchor" href="#场景一-php编译为httpd模块"></a>场景一, php编译为Httpd模块</h2>
+<p><a href="http://www.molloc.com/archives/1151" target="_blank" rel="external">点我编译安装httpd-2.4</a></p>
+<p>安装MariaDB-5.5.42</p>
+<p>安装php, (额外安装libxml2-devel, libmcrypt, libmcrypt-devel, bzip2-devel), 如果httpd使用的mpm是worker,event, 还应额外使用<code>--enable-maintainer-zts</code>选项.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$ yum install libxml2-devel libmcrypt libmcrypt-devel bzip2-devel</span><br><span class="line">$ axel http://cn2.php.net/distributions/php-<span class="number">5.4</span>.<span class="number">45</span>.tar.bz2</span><br><span class="line">$ <span class="built_in">cd</span> /<span class="built_in">source</span>/php</span><br><span class="line">$ tar xvf php-<span class="number">5.4</span>.<span class="number">45</span>.tar.bz2</span><br><span class="line">$ <span class="built_in">cd</span> php-<span class="number">5.4</span>.<span class="number">45</span>/</span><br><span class="line">$ ./configure \</span><br><span class="line">  &gt; --prefix=/usr/<span class="built_in">local</span>/php \ <span class="comment"># 指明默认安装目录</span></span><br><span class="line">  &gt; --with-mysql=/usr/<span class="built_in">local</span>/mysql \ <span class="comment">#指明Mysql的安装路径</span></span><br><span class="line">  &gt; --with-mysqli=/usr/<span class="built_in">local</span>/mysql/bin/mysql_config \ <span class="comment"># mysql的另外一种访问接口</span></span><br><span class="line">  &gt; --with-apxs2=/usr/<span class="built_in">local</span>/apache/bin/apxs \ <span class="comment"># 指明apache的apxs的位置</span></span><br><span class="line">  &gt; --enable-mbstring \ <span class="comment"># 支持多字节</span></span><br><span class="line">  &gt; --with-freetype-dir  \ <span class="comment"># 字体, 不指定去系统上自动搜索</span></span><br><span class="line">  &gt; --with-jpeg-dir  \ <span class="comment"># 支持jpeg图片生成</span></span><br><span class="line">  &gt; --with-png-dir \ <span class="comment"># 支持png图片生成</span></span><br><span class="line">  &gt; --with-zlib \ <span class="comment"># 通信时实现压缩</span></span><br><span class="line">  &gt; --with-libxml-dir=/usr \ <span class="comment"># 依赖于libxml2-devel</span></span><br><span class="line">  &gt; --enable-xml \ <span class="comment"># 支持xml的处理</span></span><br><span class="line">  &gt; --enable-sockets \ <span class="comment"># 启用sockets功能</span></span><br><span class="line">  &gt; --with-mcrypt \ <span class="comment"># Include mcrypt support</span></span><br><span class="line">  &gt; --with-bz2 \ <span class="comment"># Include BZip2 support</span></span><br><span class="line">  &gt; --enable-maintainer-zts \<span class="comment"># apache event, worker</span></span><br><span class="line">  &gt; --with-config-file-path=/etc/php/php.ini \ <span class="comment">#</span></span><br><span class="line">  &gt; --with-config-file-scan-dir=/etc/php.d/ <span class="comment">#</span></span><br><span class="line"></span><br><span class="line">$ make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<p>为php提供配置文件, <code>cp php.ini-production /etc/php.ini</code></p>
+<p>编辑apache配置文件<code>httpd.conf</code>,让apche支持php</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加如下两行</span></span><br><span class="line">AddType application/x-httpd-php .php</span><br><span class="line">AddType application/x-httpd-php-source .phps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改DirectoryIndex</span></span><br><span class="line">DirectoryIndex index.php index.html</span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">LoadModule php5_module        modules/libphp5.so</span><br><span class="line">PHPIniDir /etc/php/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重载httpd配置文件</span></span><br><span class="line">service httpd reload</span><br></pre></td></tr></table></figure>
+<h2 id="安装phpmyadmin"><a class="header-anchor" href="#安装phpmyadmin"></a>安装phpmyadmin</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">$ mv phpMyAdmin-<span class="number">4.5</span>.<span class="number">1</span>-all-languages /usr/<span class="built_in">local</span>/apache/htdocs/padmin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置vhost --&gt; phpmyadmin, wordpress</span></span><br><span class="line"></span><br><span class="line">$ vim httpd.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 注释主服务配置</span></span><br><span class="line"><span class="comment">#DocumentRoot "/usr/local/apache/htdocs"</span></span><br><span class="line"><span class="comment">#&lt;Directory "/usr/local/apache/htdocs"&gt;</span></span><br><span class="line"><span class="comment">#   Options Indexes FollowSymLinks</span></span><br><span class="line"><span class="comment">#   AllowOverride None</span></span><br><span class="line"><span class="comment">#   Require all granted</span></span><br><span class="line"><span class="comment">#&lt;/Directory&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开Virtual hosts的配置</span></span><br><span class="line"><span class="comment"># Virtual hosts</span></span><br><span class="line">Include conf/extra/httpd-vhosts.conf</span><br><span class="line"></span><br><span class="line">vim conf/extra/httpd-vhosts.conf</span><br><span class="line">&lt;VirtualHost *:<span class="number">80</span>&gt;</span><br><span class="line">    ServerAdmin padmin@molloc.com</span><br><span class="line">    DocumentRoot <span class="string">"/usr/local/apache/htdocs/vhost/padmin"</span></span><br><span class="line">    ServerName padmin.molloc.com</span><br><span class="line">    ServerAlias padmin.molloc.me</span><br><span class="line">    ErrorLog <span class="string">"logs/padmin.molloc.com-error_log"</span></span><br><span class="line">    CustomLog <span class="string">"logs/padmin.molloccom-access_log"</span> combined</span><br><span class="line">    &lt;Directory <span class="string">"/usr/local/apache/htdocs/vhost/padmin"</span>&gt;</span><br><span class="line">        AllowOverride None</span><br><span class="line">        Options None</span><br><span class="line">        Require all granted</span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost *:<span class="number">80</span>&gt;</span><br><span class="line">    ServerAdmin wordpress@molloc.com</span><br><span class="line">    DocumentRoot <span class="string">"/usr/local/apache/htdocs/vhost/wordpress"</span></span><br><span class="line">    ServerName wordpress.molloc.com</span><br><span class="line">    ErrorLog <span class="string">"logs/wordpress.molloc.com-error_log"</span></span><br><span class="line">    CustomLog <span class="string">"logs/wordpress.molloc.com-access_log"</span> combined</span><br><span class="line">    &lt;Directory <span class="string">"/usr/local/apache/htdocs/vhost/wordpress"</span>&gt;</span><br><span class="line">        AllowOverride None</span><br><span class="line">        Options None</span><br><span class="line">        Require all granted</span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">$ vim /etc/hosts <span class="comment"># 添加以下行</span></span><br><span class="line"><span class="number">192.168</span>.<span class="number">1.166</span> padmin.molloc.com</span><br><span class="line"><span class="number">192.168</span>.<span class="number">1.166</span> wordpress.molloc.com</span><br></pre></td></tr></table></figure>
+<h2 id="附成功截图"><a class="header-anchor" href="#附成功截图"></a>附成功截图</h2>
+<p><img src="http://static.molloc.com/linux/imgs/ZY-DAY-23padmin.jpg" alt="padmin">
+<img src="http://static.molloc.com/linux/imgs/ZY-DAY-23wordpress.jpg" alt="wordpress"></p>
+<h2 id="场景二-php以fpm工作为独立守护进程"><a class="header-anchor" href="#场景二-php以fpm工作为独立守护进程"></a>场景二, php以fpm工作为独立守护进程</h2>
+<h2 id="系统扩展方式"><a class="header-anchor" href="#系统扩展方式"></a>系统扩展方式</h2>
+<ul>
+<li>scale up 向上扩展, 垂直扩展, (属于硬件升级的方案)</li>
+<li>scale out 向外扩展 (集群)</li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Task/">Task</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/linux/">linux</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://molloc.me/2015/10/15/ZY-DAY-23/" data-title="ZY-DAY-23 | Kernel" data-tsina="2205010230" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/10/15/ZY-DAY-22/"  title="ZY-DAY-22">
+ <strong>下一篇：</strong><br/> 
+ <span>ZY-DAY-22
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/10/15/ZY-DAY-23/" data-title="ZY-DAY-23" data-url="http://molloc.me/2015/10/15/ZY-DAY-23/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#lamp-php-httpd的三种方式"><span class="toc-number">1.</span> <span class="toc-text">LAMP PHP+HTTPD的三种方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#httpd对fastcgi协议的支持"><span class="toc-number">2.</span> <span class="toc-text">httpd对fastcgi协议的支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mariadb的监听方式"><span class="toc-number">3.</span> <span class="toc-text">MariaDB的监听方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装次序"><span class="toc-number">4.</span> <span class="toc-text">安装次序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#场景一-php编译为httpd模块"><span class="toc-number">5.</span> <span class="toc-text">场景一, php编译为Httpd模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装phpmyadmin"><span class="toc-number">6.</span> <span class="toc-text">安装phpmyadmin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附成功截图"><span class="toc-number">7.</span> <span class="toc-text">附成功截图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#场景二-php以fpm工作为独立守护进程"><span class="toc-number">8.</span> <span class="toc-text">场景二, php以fpm工作为独立守护进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统扩展方式"><span class="toc-number">9.</span> <span class="toc-text">系统扩展方式</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Task/" title="Task">Task<sup>15</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/学习笔记/" title="学习笔记">学习笔记<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/工作相关/" title="工作相关">工作相关<sup>11</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/探索发现/" title="探索发现">探索发现<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/美图世界/" title="美图世界">美图世界<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">归档</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li></ul>
+  </div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/linux/" title="linux">linux<sup>22</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/pmp/" title="pmp">pmp<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tomcat/" title="tomcat">tomcat<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/nginx/" title="nginx">nginx<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/alias/" title="alias">alias<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/mysql/" title="mysql">mysql<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Redis/" title="Redis">Redis<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/bash/" title="bash">bash<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/kernel/" title="kernel">kernel<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/java/" title="java">java<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/push/" title="push">push<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/pull/" title="pull">pull<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Cars/" title="Cars">Cars<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.molloc.com" target="_blank" title="Code First">Code First</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2205010230&verifier=98069e91&dpc=1"></iframe>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2205010230" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/lcyan" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		<a href="https://www.zhihu.com/people/lcyan" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		
+		<a href="mailto:290236573@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="Kernel">Kernel</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <!-- <script src="/js/jquery-2.0.3.min.js"></script> -->
+<!-- <script src="/js/jquery.imagesloaded.min.js"></script> -->
+<script src="http://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery.imagesloaded/2.1.0/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+        getSize();
+        if (myWidth >= 1024) {
+          c.click();
+        }
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"molloc"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
+
